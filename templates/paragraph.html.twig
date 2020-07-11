@@ -50,10 +50,10 @@
 	<div{{attributes.addClass(classes)}}>
 
 		{% block content %}
-			<div class="page-section-first">
-				<h2 class="section-title">{{ content.field_page_section_title.0 }}</h2>
+			<div class="column column-first">
+				<h2 class="subtitle">{{ content.field_page_section_title.0 }}</h2>
 			</div>
-			<div class="page-section-second">
+			<div class="column column-second">
 				{{ content.field_page_section_body.0 }}
 
 				{% set has_links = content.field_page_section_links.0|render|striptags|trim is not empty %}
@@ -61,19 +61,11 @@
 				{% set has_files = content.field_page_section_files.0|render|striptags|trim is not empty %}
 
 				{% if has_links %}
-					<div class="section-link__wrapper">
-						<div class="section-link">
-							{{ content.field_page_section_links }}
-						</div>
-					</div>
+					{{ content.field_page_section_links }}
 				{% endif %}
 
 				{% if has_files %}
-					<div class="section-file__wrapper">
-						<div class="section-file">
-							{{ content.field_page_section_files}}
-						</div>
-					</div>
+					{{ content.field_page_section_files}}
 				{% endif %}
 
 			</div>

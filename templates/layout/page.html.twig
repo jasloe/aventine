@@ -62,11 +62,21 @@
 
 		<div class="layout-content">
 
+			{% if page.breadcrumb %}
+				{{ page.breadcrumb }}
+			{% endif %}
+
 			{{ page.page_title}}
+
 			{{ page.content_pre }}
+
 			{{ page.content }}
+
+			{% if page.callout %}
+				{{ page.callout }}
+			{% endif %}
+
 		</div>
-		{{ page.callout }}
 		{# /.layout-content #}
 	</main>
 
@@ -77,16 +87,12 @@
 		</footer>
 	{% endif %}
 
-	<div id="overlay" class="is-closed">
+	<div id="overlay">
 		<div class="menu-container">
 			<div class="flex">
-				<div class="logo-wrapper">
-					<a class="logo" href="https://www.aarome.org">
-						American Academy in Rome
-					</a>
-				</div>
+
 				<div class="menu-wrapper">
-					{{ drupal_menu('footer',1,1) }}
+					{{ drupal_menu('footer') }}
 				</div>
 			</div>
 		</div>
