@@ -1,30 +1,15 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var watch = require('gulp-watch');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-
+var uglify = require('gulp-uglify');
 var fs = require("fs");
 var runSequence = require('run-sequence');
-var config = require("./config.js");
-
-/**
- * If config.js exists, load that config for overriding certain values below.
- */
-function loadConfig() {
-  if (fs.existsSync(__dirname + "./config.js")) {
-    config = {};
-    config = require("./config");
-  }
-
-  return config;
-}
-
-loadConfig();
+var config = require("./config");
 
 /**
  * This task generates CSS from all SCSS files and compresses them down.
@@ -34,17 +19,14 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       noCache: true,
-      outputStyle: 'expanded',
-      lineNumbers: true,
+      outputStyle: "compressed",
+      lineNumbers: false,
       loadPath: './css/*',
       sourceMap: true
     })).on('error', function (error) {
       gutil.log(error);
       this.emit('end');
     })
-    .pipe(postcss([
-      autoprefixer()
-    ]))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./css'))
     .pipe(notify({
@@ -58,10 +40,11 @@ gulp.task('sass', function () {
  * This task minifies javascript in the js/js-src folder and places them in the js directory.
  */
 gulp.task('compress', function () {
-  return gulp.src('./src/js/**/*.js')
+  return gulp.src('./js/js-src/*.js')
     .pipe(sourcemaps.init())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./js'))
     .pipe(notify({
       title: "JS Minified",
       message: "All JS files in the theme have been minified.",
@@ -111,10 +94,13 @@ gulp.task('drush:cr', function () {
     }));
 });
 
-
+/**
+ * Define a task to spawn Browser Sync.
+ * Options are defaulted, but can be overridden within your config.js file.
+ */
 gulp.task('browser-sync', function () {
   browserSync.init({
-    files: ['css/**/*.css', 'dist/js/*.js'],
+    files: ['css/**/*.css', 'js/*.js'],
     port: config.browserSync.port,
     proxy: config.browserSync.hostname,
     open: config.browserSync.openAutomatically,
@@ -123,18 +109,31 @@ gulp.task('browser-sync', function () {
   });
 });
 
+/**
+ * Define a task to be called to instruct browser sync to reload.
+ */
 gulp.task('reload', function () {
   browserSync.reload();
 });
 
+/**
+ * Combined tasks that are run synchronously specifically for twig template changes.
+ */
 gulp.task('flush', function () {
   runSequence('drush:cr', 'reload');
 });
 
+/**
+ * Defines the watcher task.
+ */
 gulp.task('watch', function () {
+  // watch scss for changes and clear drupal theme cache on change
   gulp.watch(['scss/**/*.scss'], ['sass', 'drush:cc']);
-  gulp.watch(['src/js/*.js', 'src/js/**/*.js'], ['compress', 'drush:cc']);
 
+  // watch js for changes and clear drupal theme cache on change
+  gulp.watch(['js/js-src/**/*.js'], ['compress', 'drush:cc']);
+
+  // If user has specified an override, rebuild Drupal cache
   if (!config.twig.useCache) {
     gulp.watch(['templates/**/*.html.twig'], ['flush']);
   }

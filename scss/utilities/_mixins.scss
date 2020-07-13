@@ -1,0 +1,87 @@
+$large: 3rem;
+$medium: 2.2rem;
+$small: 1.75rem;
+$default: 1.1rem;
+
+$tradegothic: "Trade Gothic";
+$tradegothiccond: "Trade Gothic Bold Condensed Twenty";
+$dignitas: "Dignitas Regular";
+$dignitasital: "Dignitas Italic";
+$dignitasbold: "Dignitas Bold";
+
+$display-sans: $tradegothiccond;
+$display-serif: $dignitas;
+
+$column-first: 30%;
+$column-second: 70%;
+
+@mixin title-card-sans {
+  font-family: $display-sans;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@mixin title-card-serif {
+  font-family: $display-serif;
+  line-height: 1;
+  text-transform: initial;
+}
+
+@mixin body {
+  font-family: $dignitas;
+
+  em {
+    font-family: $dignitasital;
+  }
+
+  strong {
+    font-family: $dignitasbold;
+  }
+
+  line-height: 1.4;
+}
+
+@mixin body-card {
+  @include body;
+  font-size: $default;
+}
+
+@mixin label {
+  font-family: $display-sans;
+  text-transform: uppercase;
+}
+
+@mixin layout-columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin layout-cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  .card:nth-child(odd) {
+    margin-right: 1rem;
+  }
+
+  .card:nth-child(even) {
+    margin-left: 1rem;
+  }
+}
+
+@mixin layout-page-section {
+  display: flex;
+
+  .column-first {
+    flex-basis: $column-first;
+  }
+
+  .column-second {
+    flex-basis: $column-second;
+  }
+
+}

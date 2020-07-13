@@ -70,13 +70,17 @@
  *   in different view modes.
  */
 #}
-<article{{attributes.addClass('card-wrapper')}}>
+<article{{attributes.addClass('card-inner')}}>
 
 	{{ content.field_page_image }}
 	<div class='card-body'>
 		<h2 class="title">{{ label }}</h2>
 		{{ content.field_page_summary }}
-		<a href="{{ url }}">Read more</a>
-	</div>
 
-</article>
+		{% if content.field_page_internal_link|render is not empty %}
+			{{ content.field_page_internal_link }}
+		{% else %}
+			<a href={{ url }}>{{ url }}</a>
+		{% endif %}
+
+	</article>

@@ -1,0 +1,46 @@
+// Card defaults. Used for most section indices.
+.card-image-wrapper,
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-inner {
+
+  h2.title {
+    @include title-card-sans;
+  }
+
+  .field>p {
+    @include body-card;
+  }
+}
+
+// Overrides default, news, events.
+.path-events-calendar,
+.path-news-features {
+  .card-body {
+    h2.title {
+      @include title-card-serif;
+    }
+  }
+}
+
+// Overrides events.
+.card-image-wrapper {
+  .field-events-canceled {
+    @include label;
+  }
+}
+
+.card-body {
+  .field-events-event-series {
+    @include label;
+  }
+
+  .daterange,
+  .field-events-rel-places,
+  .field-events-event-dates-overrid {
+    @include body-card;
+  }
+}

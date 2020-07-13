@@ -70,21 +70,14 @@
  *   in different view modes.
  */
 #}
-<div class="card">
-	<article{{attributes.addClass('card-inner')}}>
-		{#
-									{{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value.0 }} #}
+<article{{attributes.addClass('card-inner')}}>
 
-		{# {{ drupal_entity('media', 22765) }} #}
+	{{ content.field_program_image }}
+	<div class='card-body'>
+		{{ content.field_program_dates}}
+		<h2 class="title">{{ label }}</h2>
+		{{ content.field_program_summary }}
 
-
-		{# {{ node.field_news_features_images.entity.field_media_image.entity.fileuri }} #}
-
-			<div class='card-body'> {{ 	content.field_news_features_date}}
-			<h2 class="title">{{ label }}</h2>
-			{{ content.field_news_features_summary }}
-			<a href="{{ url }}">Read more</a>
-		</div>
+		<a href={{ url }}>{{ url }}</a>
 
 	</article>
-</div>

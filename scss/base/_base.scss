@@ -1,0 +1,37 @@
+// Box-sizing default.
+*,
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a,
+a:link,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}

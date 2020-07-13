@@ -1,6 +1,6 @@
 aventine.mobile:
   label: mobile
-  mediaQuery: "screen and (max-width: 639.98px)"
+  mediaQuery: "screen and (min-width: 639.98px)"
   weight: 0
   multipliers:
     - 1x

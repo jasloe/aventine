@@ -1,0 +1,15 @@
+h1 {
+  @include font-size($large);
+}
+
+h2 {
+  @include font-size($medium);
+}
+
+h3 {
+  @include font-size($small);
+}
+
+p {
+  @include font-size($default);
+}

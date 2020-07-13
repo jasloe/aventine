@@ -70,8 +70,16 @@
  *   in different view modes.
  */
 #}
+<article{{attributes.addClass('card-wrapper')}}>
 
+	<div{{content_attributes.addClass('card')}}>
 
-{# {{ content.field_news_features_images }} #}
+		{{ content.field_page_image }}
+		<div class='card-body'>
+			<h2 class="title">{{ label }}</h2>
+			{{ content.field_page_summary }}
+			<a href="{{ url }}">Read more</a>
+		</div>
+	</div>
 
-{# {{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value }} #}
+</article>

@@ -1,0 +1,41 @@
+body.index {
+  .layout-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .region-page-title {
+      flex-basis: $column-first;
+    }
+
+    .region-content {
+      flex-basis: $column-second;
+    }
+  }
+}
+
+body.index {
+  .region-content {
+    @include layout-cards;
+  }
+}
+
+.views-infinite-scroll-content-wrapper {
+  @include layout-cards;
+}
+
+.region-content-pre {
+  width: 100%;
+}
+
+.page-section {
+  @include layout-page-section;
+}
+
+.column-second {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section.resources {
+  @include layout-page-section;
+}
