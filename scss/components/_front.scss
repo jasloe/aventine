@@ -1,0 +1,169 @@
+// Global.
+.front-wrapper {
+  margin: 0 auto;
+  max-width: $max-vw;
+}
+
+.front.news .slide__description,
+.front.elsewhere .views-element-container,
+.front.rome-prize {
+  padding: 0 1rem;
+
+  @include mq($from: wide) {
+    padding: 0;
+  }
+}
+
+.front:not(:first-child) {
+  margin: 5rem 0;
+}
+
+// News block.
+.front.news .front-wrapper,
+.front.elsewhere .item {
+  position: relative;
+}
+
+.front.news,
+.front.elsewhere {
+  .card-link {
+    font-size: 0;
+  }
+
+  .card-link a span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+.front.elsewhere {
+  .front-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include mq($from: tablet) {
+      flex-direction: row;
+
+      .item {
+        flex-basis: 33%;
+        margin-bottom: 0;
+      }
+
+      .item:nth-child(2) {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .item {
+    margin-bottom: 1rem;
+  }
+}
+
+// Elsewhere block.
+.front.elsewhere {
+  .datetime {
+    @include label;
+    margin-bottom: .5rem;
+  }
+
+  h2 {
+    @include title-card-serif;
+    margin-bottom: 1rem;
+  }
+}
+
+.rome-prize-cta {
+
+  display: flex;
+  flex-direction: column;
+
+  @include mq($from: tablet) {
+    flex-direction: row-reverse;
+  }
+
+  .column {
+    flex-basis: 50%;
+  }
+}
+
+.rome-prize-cta h2 {
+  @include title-card-sans;
+}
+
+.rome-prize-cta h2.subtitle {
+  color: $gray;
+}
+
+.rome-prize-cta .field-page-page-section {
+  margin-top: 2rem;
+}
+
+.rome-prize-cta .body p {
+  @include body;
+  padding-right: 20%;
+  margin-bottom: 3rem;
+}
+
+.rome-prize-cta img {
+  width: 100%;
+}
+
+.rome-prize-cta .field-page-section-links {
+  display: flex;
+  @include label;
+}
+
+.rome-prize-cta .field-page-section-links .field__item:first-child {
+  margin-right: 2rem;
+}
+
+// Join us block.
+.front.join-us .join-us {
+  display: flex;
+  flex-direction: column;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+
+    .column {
+      flex-basis: 50%;
+    }
+  }
+}
+
+.front.join-us .front-wrapper {
+  padding: 4rem;
+  background-color: $green;
+}
+
+.front.join-us .join-us .field-page-page-section {
+  margin-top: 0;
+}
+
+.front.join-us .join-us h2 {
+  @include title-serif;
+  @include font-size(2.5rem);
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+
+.front.join-us .join-us .field__item a {
+  @include subtitle-sans;
+  @include font-size(1.8rem);
+  text-indent: 3rem;
+  margin-left: -2.5rem;
+}
+
+.front.join-us .join-us .field__item a:before {
+  background: url(../images/arrow_large_gray.svg) no-repeat 0 0;
+  height: .8rem;
+  width: .8rem;
+  content: "";
+  margin-top: 3px;
+  padding-left: 2.5rem;
+}

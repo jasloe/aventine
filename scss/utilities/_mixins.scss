@@ -35,7 +35,8 @@ $breadcrumbs: $tradegothic;
 }
 
 @mixin inner-padding-tablet {
-    padding: 0 1rem;
+  padding: 0 1rem;
+
   @include mq($from: 768px) {
     padding: 0;
   }
@@ -43,16 +44,25 @@ $breadcrumbs: $tradegothic;
 
 @mixin inner-padding-wide {
   padding: 0 1rem;
+
   @include mq($from: 1280px) {
     padding: 0;
   }
 }
 
 @mixin margin-top {
-  margin-top: 2rem !important;
+  margin-top: 2rem;
+
   @include mq($from: tablet) {
-    margin-top: 100px !important;
+    margin-top: 100px;
   }
+}
+
+@mixin title-serif {
+  font-family: $display-serif;
+  @include font-size($large);
+  line-height: 1;
+  text-transform: initial;
 }
 
 @mixin title-sans {
@@ -84,7 +94,7 @@ $breadcrumbs: $tradegothic;
 
 @mixin body {
   font-family: $dignitas;
-  @include font-size(1.2rem);
+  @include font-size(1.3rem);
 
   em {
     font-family: $dignitasital;
@@ -93,6 +103,7 @@ $breadcrumbs: $tradegothic;
   strong {
     font-family: $dignitasbold;
   }
+
   line-height: 1.4;
 }
 
@@ -126,22 +137,22 @@ $breadcrumbs: $tradegothic;
   display: flex;
   flex-direction: column;
 
-@include mq($from: tablet) {
+  @include mq($from: tablet) {
     flex-direction: row;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  .card {
-    flex-basis: calc(50% - 1rem);
-  }
+    .card {
+      flex-basis: calc(50% - 1rem);
+    }
 
-  .card:nth-child(odd) {
-    margin-right: 1rem;
-  }
+    .card:nth-child(odd) {
+      margin-right: 1rem;
+    }
 
-  .card:nth-child(even) {
-    margin-left: 1rem;
+    .card:nth-child(even) {
+      margin-left: 1rem;
+    }
   }
-}
 }
 
 @mixin layout-page-section {
@@ -151,6 +162,7 @@ $breadcrumbs: $tradegothic;
   @include mq($from: tablet) {
     flex-direction: row;
   }
+
   .column-first {
     flex-basis: $column-first;
   }
@@ -159,5 +171,3 @@ $breadcrumbs: $tradegothic;
     flex-basis: $column-second;
   }
 }
-
-

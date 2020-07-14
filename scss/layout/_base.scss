@@ -3,34 +3,20 @@
 }
 
 // Set padding on smaller viewports.
-#block-aventine-notice .field {
-      @include inner-padding-wide;
-}
+#block-aventine-notice .field {}
 
 .region-header {
   padding: 0 5rem;
 }
 
-body.index .layout-content {
-    @include global-margin;
-}
+body.index .layout-content {}
 
-#block-aventine-breadcrumbs {
-
-}
+#block-aventine-breadcrumbs {}
 
 h1 {
-  @include inner-padding-wide;
   margin-bottom: 1rem;
 }
 
-.card-body {
-  @include inner-padding-tablet;
-}
+.card-body {}
 
-.field-page-page-section {
-    @include inner-padding-wide;
-
-}
-
-
+.field-page-page-section {}

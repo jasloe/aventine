@@ -7,20 +7,21 @@ body.index .region-content,
 
 body.index,
 .path-news-features {
-.layout-content {
-@include mq($from: tablet) {
-  display: flex;
-.region-page-title {
-  flex-basis: $column-first;
-}
-.region-content {
-  flex-basis: $column-second;
-}
+  .layout-content {
+    @include mq($from: tablet) {
+      display: flex;
 
-}
+      .region-page-title {
+        flex-basis: $column-first;
+      }
 
-}
+      .region-content {
+        flex-basis: $column-second;
+      }
 
+    }
+
+  }
 }
 
 body.index {
@@ -32,4 +33,3 @@ body.index {
 .views-infinite-scroll-content-wrapper {
   @include layout-cards;
 }
-

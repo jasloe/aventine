@@ -1,20 +1,18 @@
-#block-aventine-notice .field {
-  @include global-margin;
-}
+#block-aventine-notice .field {}
 
 header {
   background: $white;
 }
 
 .region-header {
-  @include global-margin;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: .2rem 1rem;
+
   @include mq($from: wide) {
-  padding: .2rem 0;
+    padding: .2rem 0;
   }
 }
 
@@ -36,12 +34,13 @@ header {
 
 @include mq($from: mobile) {
   .region-header {
-   justify-content: space-between;
+    justify-content: space-between;
   }
 
   .main-menu {
     margin-left: auto;
   }
+
   .language {
     margin: 0;
   }

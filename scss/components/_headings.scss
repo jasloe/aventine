@@ -13,3 +13,11 @@ h3 {
 p {
   @include font-size($default);
 }
+
+body.events h1 {
+  @include title-serif;
+}
+
+body.news-features h1 {
+  @include title-serif;
+}

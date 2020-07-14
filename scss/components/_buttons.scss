@@ -7,3 +7,42 @@
   height: 1.5rem;
 }
 
+.front.elsewhere {
+  .card-link {
+    display: block;
+    background-repeat: no-repeat;
+    text-indent: -9000px;
+    vertical-align: top;
+    background-image: url(../images/arrow_small_external.svg);
+    height: 1.5rem;
+  }
+}
+
+// Slideshow buttons.
+.slick-prev {
+  margin-left: 1rem;
+  background-image: url(../images/arrow_large_black_left.svg);
+}
+
+.slick-next {
+  margin-right: 1rem;
+  background-image: url(../images/arrow_large_black_right.svg);
+}
+
+.slick-prev,
+.slick-next {
+  background-repeat: no-repeat;
+  text-indent: -8999px;
+  height: 60px;
+  width: 34px;
+}
+
+// Home page buttons.
+
+.rome-prize-cta .field-page-section-links .field__item:first-child a {
+  border: 1px solid #919191;
+  display: inline;
+  padding: 1rem 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}

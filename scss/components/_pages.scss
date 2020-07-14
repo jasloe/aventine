@@ -1,17 +1,8 @@
 body.page {
-  .region-page-title,
-  .field-page-page-section,
-  .blazy__caption {
-    @include global-margin;
-  }
   .field-page-image {
     margin: 0 auto;
     max-width: $jumbotron;
   }
-}
-
-.page-section {
-  @include layout-page-section;
 }
 
 .field-page-page-section {
@@ -59,7 +50,25 @@ body.page {
   @include label;
 }
 
+// Events
+body.events .field-events-event-series,
+body.events .field-events-event-type {
+  @include label;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
 
+.events-detail {
+
+  .daterange {
+    @include body;
+    margin-bottom: 1rem;
+  }
+
+  .field-events-rel-places {
+    margin-bottom: 2rem;
+  }
+}
 
 // Resources.
 .page-section.resources {
