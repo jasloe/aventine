@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["document","querySelector","innerHTML"],"mappings":"AACAA,SAASC,cAAc,iCAAiCC,UAAY","file":"../main.js","sourcesContent":["// This should be a preprocess function at *.theme\ndocument.querySelector('.field-page-internal-link > a').innerHTML = '<span></span>'\n"]}

@@ -1,0 +1,9 @@
+#block-aventine-notice {
+  background: $black;
+}
+
+#block-aventine-notice .field p {
+  @include label;
+  color: $white;
+  padding: .5rem 0;
+}

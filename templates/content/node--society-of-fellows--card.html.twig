@@ -70,21 +70,21 @@
  *   in different view modes.
  */
 #}
-<article{{attributes.addClass('card-inner')}}>
+<div class="card">
+	<article{{attributes.addClass('card-inner')}}>
+		{#
+									{{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value.0 }} #}
 
-	{{ content.field_page_image }}
-	<div class='card-body'>
-		<h2 class="title sans">{{ label }}</h2>
-		{{ content.field_page_summary }}
+		{# {{ drupal_entity('media', 22765) }} #}
 
-  {% if content.field_page_internal_link|render is not empty %}
-	  <div class="read-more">
-			{{ content.field_page_internal_link }}
-    </div>
-	  {% else %}
-    <div class="read-more">
-      <a href={{ url }}>{{ url }}<span></span></a>
-    </div>
-	{% endif %}
 
-</article>
+		{# {{ node.field_news_features_images.entity.field_media_image.entity.fileuri }} #}
+
+			<div class='card-body'>
+        {{ node.getCreatedTime()|date("F j, Y") }}
+			  <h2 class="title serif">{{ label }}</h2>
+			  <a href="{{ url }}">Read more</a>
+		</div>
+
+	</article>
+</div>

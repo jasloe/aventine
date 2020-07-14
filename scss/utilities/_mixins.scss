@@ -1,7 +1,15 @@
-$large: 3rem;
-$medium: 2.2rem;
-$small: 1.75rem;
 $default: 1.1rem;
+
+$large: 3rem;
+$medium: 2rem;
+$small: 1.65rem;
+
+$body: 1.2rem;
+$caption: 1rem;
+$label-default: 1rem;
+
+$column-first: 30%;
+$column-second: 70%;
 
 $tradegothic: "Trade Gothic";
 $tradegothiccond: "Trade Gothic Bold Condensed Twenty";
@@ -11,14 +19,54 @@ $dignitasbold: "Dignitas Bold";
 
 $display-sans: $tradegothiccond;
 $display-serif: $dignitas;
+$menu: $display-sans;
+$label: $display-sans;
+$breadcrumbs: $tradegothic;
 
-$column-first: 30%;
-$column-second: 70%;
+
+@mixin global-margin {
+  margin: 0 auto;
+  max-width: $max-vw;
+}
+
+@mixin global-margin-image {
+  margin: 0 auto;
+  max-width: $wide;
+}
+
+@mixin inner-padding-tablet {
+    padding: 0 1rem;
+  @include mq($from: 768px) {
+    padding: 0;
+  }
+}
+
+@mixin inner-padding-wide {
+  padding: 0 1rem;
+  @include mq($from: 1280px) {
+    padding: 0;
+  }
+}
+
+@mixin margin-top {
+  margin-top: 2rem !important;
+  @include mq($from: tablet) {
+    margin-top: 100px !important;
+  }
+}
+
+@mixin title-sans {
+  font-family: $display-sans;
+  @include font-size($large);
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 @mixin title-card-sans {
   font-family: $display-sans;
   line-height: 1;
   text-transform: uppercase;
+  @include font-size($medium);
 }
 
 @mixin title-card-serif {
@@ -27,8 +75,16 @@ $column-second: 70%;
   text-transform: initial;
 }
 
+@mixin subtitle-sans {
+  font-family: $display-sans;
+  @include font-size($medium);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 @mixin body {
   font-family: $dignitas;
+  @include font-size(1.2rem);
 
   em {
     font-family: $dignitasital;
@@ -37,7 +93,6 @@ $column-second: 70%;
   strong {
     font-family: $dignitasbold;
   }
-
   line-height: 1.4;
 }
 
@@ -49,15 +104,30 @@ $column-second: 70%;
 @mixin label {
   font-family: $display-sans;
   text-transform: uppercase;
+  font-size: $label-default;
 }
 
-@mixin layout-columns {
-  display: flex;
-  flex-wrap: wrap;
+
+@mixin caption {
+  font-family: $dignitas;
+  font-size: $caption;
+
+  em {
+    font-family: $dignitasital;
+  }
+
+  strong {
+    font-family: $dignitasbold;
+  }
 }
+
 
 @mixin layout-cards {
   display: flex;
+  flex-direction: column;
+
+@include mq($from: tablet) {
+    flex-direction: row;
   flex-wrap: wrap;
 
   .card {
@@ -72,10 +142,15 @@ $column-second: 70%;
     margin-left: 1rem;
   }
 }
+}
 
 @mixin layout-page-section {
   display: flex;
+  flex-direction: column;
 
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
   .column-first {
     flex-basis: $column-first;
   }
@@ -83,5 +158,6 @@ $column-second: 70%;
   .column-second {
     flex-basis: $column-second;
   }
-
 }
+
+

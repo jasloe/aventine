@@ -70,7 +70,7 @@
  *   in different view modes.
  */
 #}
-<div class="card">
+
 	<article{{attributes.addClass('card-inner')}}>
 
 
@@ -87,7 +87,7 @@
 				{{ content.field_events_event_type }}
 			{% endif %}
 
-			<h2 class="title">{{ label }}</h2>
+			<h2 class="title serif">{{ label }}</h2>
 
 			{% if content.field_events_event_dates_overrid|render is not empty %}
 				{{ content.field_events_event_dates_overrid }}
@@ -109,4 +109,4 @@
 		<a href=" {{ url }} ">Read more</a>
 
 	</article>
-</div>
+

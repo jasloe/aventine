@@ -1,11 +1,36 @@
 // Card defaults. Used for most section indices.
+body.index,
+.path-news-features {
+.card {
+  margin-bottom: 4rem;
+}
+
+.card:nth-last-child(-n+2) {
+  margin-bottom: 0rem;
+}
+}
+
 .card-image-wrapper,
 .card-body {
   display: flex;
   flex-direction: column;
 }
 
+.card-body h2 {
+  margin: 1rem 0;
+}
+
+.card-body .field-news-features-summary,
+.card-body .field-page-summary {
+  margin: 0 0 1rem 0;
+}
+
+
 .card-inner {
+
+  .datetime {
+    @include label;
+  }
 
   h2.title {
     @include title-card-sans;
@@ -43,4 +68,53 @@
   .field-events-event-dates-overrid {
     @include body-card;
   }
+}
+
+// Card:hover.
+.card .card-inner {
+  .card-body > *:not(.read-more) {
+    color: $black;
+    transition: color .22s ease;
+  }
+  .blazy,
+  .read-more {
+    transition: opacity .22s ease;
+  }
+  .blazy {
+    opacity: 1;
+  }
+  .read-more {
+    opacity: 1;
+  }
+}
+
+.card .card-inner:hover {
+  cursor: pointer;
+  .card-body > *:not(.read-more) {
+    color: $gray;
+  }
+  .blazy,
+  .read-more {
+    transition: opacity .22s ease;
+  }
+  .blazy {
+    opacity: .9;
+  }
+  .read-more {
+    opacity: .5;
+  }
+}
+
+.card-inner {
+  position: relative;
+}
+
+.field-page-internal-link a span,
+.read-more a span {
+      position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }

@@ -1,0 +1,5 @@
+.blazy__caption {
+  @include caption;
+    @include inner-padding-wide;
+    padding-top: .5rem !important;
+}

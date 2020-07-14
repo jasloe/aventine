@@ -3,12 +3,12 @@ global-styling:
   css:
     base:
       css/main.css: { weight: 999 }
-# global-scripts:
-#   version: VERSION
-#   js:
-#     dist/js/headroom.js: {}
-#     dist/js/header.js: {}
-#     dist/js/main.js: {}
+global-scripts:
+  version: VERSION
+  js:
+    js/headroom.js: {}
+    js/header.js: {}
+    js/main.js: {}
 #   dependencies:
 #     - core/jquery
 #     - core/jquery.once

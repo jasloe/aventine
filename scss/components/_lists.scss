@@ -1,0 +1,16 @@
+.page-section ul {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.page-section li {
+  @include body;
+  padding-left: 1rem;
+  text-indent: calc(-1rem - 12px);
+  padding-bottom: 1rem;
+
+  &:before {
+    content: "–";
+    margin-right: 1rem;
+  }
+}

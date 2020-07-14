@@ -80,10 +80,14 @@
 
 		{# {{ node.field_news_features_images.entity.field_media_image.entity.fileuri }} #}
 
-			<div class='card-body'> {{ 	content.field_news_features_date}}
-			<h2 class="title">{{ label }}</h2>
+			<div class='card-body'>
+      {{ 	content.field_news_features_date}}
+			<h2 class="title serif">{{ label }}</h2>
 			{{ content.field_news_features_summary }}
-			<a href="{{ url }}">Read more</a>
+<div class="read-more">
+
+      <a href="{{ url }}">Read more<span></span></a>
+</div>
 		</div>
 
 	</article>

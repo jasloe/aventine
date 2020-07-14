@@ -1,0 +1,35 @@
+body.index .region-content,
+.path-news-features {
+  @include mq($from: tablet) {
+    margin-top: 5rem;
+  }
+}
+
+body.index,
+.path-news-features {
+.layout-content {
+@include mq($from: tablet) {
+  display: flex;
+.region-page-title {
+  flex-basis: $column-first;
+}
+.region-content {
+  flex-basis: $column-second;
+}
+
+}
+
+}
+
+}
+
+body.index {
+  .region-content {
+    @include layout-cards;
+  }
+}
+
+.views-infinite-scroll-content-wrapper {
+  @include layout-cards;
+}
+

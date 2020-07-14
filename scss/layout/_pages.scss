@@ -1,0 +1,67 @@
+body.page {
+  .region-page-title,
+  .field-page-page-section,
+  .blazy__caption {
+    @include global-margin;
+  }
+  .field-page-image {
+    margin: 0 auto;
+    max-width: $jumbotron;
+  }
+}
+
+.page-section {
+  @include layout-page-section;
+}
+
+.field-page-page-section {
+  @include margin-top;
+}
+
+.field-page-page-section .field__item {
+  margin-bottom: 2rem;
+}
+
+.field-page-page-section .field__item:last-child {
+  margin-bottom: 0;
+}
+
+.page-section h2.subtitle {
+  @include subtitle-sans;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+@include mq($from: tablet) {
+  .page-section .column-second {
+    padding-right: 20%;
+  }
+}
+
+.page-section .column-second {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section .column-second p {
+  @include body;
+}
+
+.page-section .column-second p {
+  margin-bottom: 1rem;
+}
+
+.page-section .column-second p:last-child {
+  margin-bottom: 0;
+}
+
+.page-section .column-second h3 {
+  @include label;
+}
+
+
+
+// Resources.
+.page-section.resources {
+  @include layout-page-section;
+}

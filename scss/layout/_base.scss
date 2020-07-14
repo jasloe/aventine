@@ -1,41 +1,36 @@
-body.index {
-  .layout-content {
-    display: flex;
-    flex-wrap: wrap;
-
-    .region-page-title {
-      flex-basis: $column-first;
-    }
-
-    .region-content {
-      flex-basis: $column-second;
-    }
-  }
+.layout-container {
+  margin-top: 100px;
 }
 
-body.index {
-  .region-content {
-    @include layout-cards;
-  }
+// Set padding on smaller viewports.
+#block-aventine-notice .field {
+      @include inner-padding-wide;
 }
 
-.views-infinite-scroll-content-wrapper {
-  @include layout-cards;
+.region-header {
+  padding: 0 5rem;
 }
 
-.region-content-pre {
-  width: 100%;
+body.index .layout-content {
+    @include global-margin;
 }
 
-.page-section {
-  @include layout-page-section;
+#block-aventine-breadcrumbs {
+
 }
 
-.column-second {
-  display: flex;
-  flex-direction: column;
+h1 {
+  @include inner-padding-wide;
+  margin-bottom: 1rem;
 }
 
-.page-section.resources {
-  @include layout-page-section;
+.card-body {
+  @include inner-padding-tablet;
 }
+
+.field-page-page-section {
+    @include inner-padding-wide;
+
+}
+
+

@@ -1,0 +1,48 @@
+#block-aventine-notice .field {
+  @include global-margin;
+}
+
+header {
+  background: $white;
+}
+
+.region-header {
+  @include global-margin;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: .2rem 1rem;
+  @include mq($from: wide) {
+  padding: .2rem 0;
+  }
+}
+
+.mobile-menu {
+  margin-right: auto;
+}
+
+.language {
+  margin-left: auto;
+}
+
+.language ul.links {
+  display: flex;
+}
+
+.toggle span.label {
+  display: none;
+}
+
+@include mq($from: mobile) {
+  .region-header {
+   justify-content: space-between;
+  }
+
+  .main-menu {
+    margin-left: auto;
+  }
+  .language {
+    margin: 0;
+  }
+}
