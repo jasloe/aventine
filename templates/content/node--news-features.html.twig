@@ -70,3 +70,24 @@
  *   in different view modes.
  */
 #}
+{%
+  set classes = [
+    'page',
+    'wrapper',
+  ]
+ %}
+
+{{ content.field_news_features_byline }}
+{{ content.field_news_features_date }}
+
+<article{{attributes.addClass(classes)}}>
+	<div class="slideshow-wrapper">
+		{{ content.field_news_features_images }}
+		<div class="page-section">
+			<div class="column column-first"></div>
+			<div class="column column-second">
+				{{ content.body.0 }}
+			</div>
+		</div>
+	</div>
+</article>

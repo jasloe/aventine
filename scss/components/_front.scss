@@ -1,8 +1,5 @@
 // Global.
-.front-wrapper {
-  margin: 0 auto;
-  max-width: $max-vw;
-}
+.front-wrapper {}
 
 .front.news .slide__description,
 .front.elsewhere .views-element-container,
@@ -166,4 +163,68 @@
   content: "";
   margin-top: 3px;
   padding-left: 2.5rem;
+}
+
+// Front fellows.
+.front.fellows,
+.front.residents {
+
+  h2 {
+    @include subtitle-sans;
+  }
+}
+
+.front.residents h2 {
+  margin-bottom: .5rem;
+}
+
+.front.fellows {
+  .meet-the-fellows {
+    @include body;
+  }
+}
+
+
+.front.fellows .front-wrapper header {
+  margin-bottom: .5rem;
+}
+
+.front.fellows,
+.front.residents {
+  .slick__slide {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+  .portrait-wrapper {
+    background: $light-brown;
+  }
+
+  .media {
+    display: flex;
+  }
+
+  h3 {
+    @include label;
+    margin-top: .25rem;
+  }
+
+  .field-affil-discipline {
+    @include body;
+    line-height: 1;
+    color: $gray;
+  }
+}
+
+.slick__slide {
+  position: relative;
+}
+
+.more a span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }

@@ -1,4 +1,5 @@
-.blazy__caption {
+.blazy__caption,
+.field-media-caption {
   @include caption;
   padding-top: .5rem !important;
 }

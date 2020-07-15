@@ -20,9 +20,9 @@
 %}
 
 <div{{attributes.addClass(classes)}}>
-
-	{% if content %}
-		{{ content }}
-	{% endif %}
-
+	<div class="callout-inner">
+		{% if content %}
+			{{ content }}
+		{% endif %}
+	</div>
 </div>

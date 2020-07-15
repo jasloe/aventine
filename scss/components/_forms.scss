@@ -1,0 +1,25 @@
+.views-exposed-form {
+  display: flex;
+}
+
+.views-exposed-form div:first-child {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.select2-search__field {
+  display: none;
+}
+
+.select2-results__options li:first-of-type {
+  display: none;
+}
+
+span.select2-selection,
+.select2-results__options li {
+  @include label;
+}
+
+span.select2 {
+  border: none;
+}

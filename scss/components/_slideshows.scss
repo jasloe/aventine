@@ -14,7 +14,8 @@
   }
 }
 
-.front.news {
+.front.news,
+.slideshow-wrapper {
   .field-media-image {
     height: 0;
     overflow: hidden;
@@ -32,7 +33,6 @@
     }
   }
 }
-
 
 .front.news .slide__caption {
   padding-top: .5rem;

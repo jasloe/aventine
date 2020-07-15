@@ -77,14 +77,15 @@
 		<h2 class="title sans">{{ label }}</h2>
 		{{ content.field_page_summary }}
 
-  {% if content.field_page_internal_link|render is not empty %}
-	  <div class="read-more">
-			{{ content.field_page_internal_link }}
-    </div>
-	  {% else %}
-    <div class="read-more">
-      <a href={{ url }}>{{ url }}<span></span></a>
-    </div>
-	{% endif %}
+		{% if content.field_page_internal_link|render is not empty %}
+			<div class="read-more">
+				{{ content.field_page_internal_link }}
+			</div>
+		{% else %}
+			<div class="read-more">
+				<a href={{ url }}>{{ url }}<span></span>
+				</a>
+			</div>
+		{% endif %}
 
-</article>
+	</article>

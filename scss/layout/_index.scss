@@ -1,12 +1,16 @@
 body.index .region-content,
-.path-news-features {
+.path-news-features,
+.path-events-calendar,
+.path-events-exhibitions {
   @include mq($from: tablet) {
-    margin-top: 5rem;
+    margin-top: 10rem;
   }
 }
 
 body.index,
-.path-news-features {
+.path-news-features,
+.path-events-calendar,
+.path-events-exhibitions {
   .layout-content {
     @include mq($from: tablet) {
       display: flex;

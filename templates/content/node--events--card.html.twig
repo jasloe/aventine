@@ -71,42 +71,41 @@
  */
 #}
 
-	<article{{attributes.addClass('card-inner')}}>
+<article{{attributes.addClass('card-inner')}}>
 
 
-		<div class="card-image-wrapper">
-			{{ content.field_events_image }}
-			{{ content.field_events_canceled }}
-		</div>
+	<div class="card-image-wrapper">
+		{{ content.field_events_image }}
+		{{ content.field_events_canceled }}
+	</div>
 
-		<div class='card-body'>
+	<div class='card-body'>
 
-			{% if content.field_events_event_series|render is not empty %}
-				{{ content.field_events_event_series }}
-			{% else %}
-				{{ content.field_events_event_type }}
-			{% endif %}
+		{% if content.field_events_event_series|render is not empty %}
+			{{ content.field_events_event_series }}
+		{% else %}
+			{{ content.field_events_event_type }}
+		{% endif %}
 
-			<h2 class="title serif">{{ label }}</h2>
+		<h2 class="title serif">{{ label }}</h2>
 
-			{% if content.field_events_event_dates_overrid|render is not empty %}
-				{{ content.field_events_event_dates_overrid }}
-			{% else %}
-				{{ content.field_events_event_dates }}
-			{% endif %}
+		{% if content.field_events_event_dates_overrid|render is not empty %}
+			{{ content.field_events_event_dates_overrid }}
+		{% else %}
+			{{ content.field_events_event_dates }}
+		{% endif %}
 
-			{% spaceless %}
-				<div class="field field-events-rel-places entity-reference field__items">
-					<span>
-						{{ content.field_events_rel_places[0]['#node'].getTitle() }},
-						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-					</span>
-				</div>
-			{% endspaceless %}
+		{% spaceless %}
+			<div class="field field-events-rel-places entity-reference field__items">
+				<span>
+					{{ content.field_events_rel_places[0]['#node'].getTitle() }},
+					{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+				</span>
+			</div>
+		{% endspaceless %}
 
-		</div>
+	</div>
 
-		<a href=" {{ url }} ">Read more</a>
+	<a href=" {{ url }} ">Read more</a>
 
-	</article>
-
+</article>

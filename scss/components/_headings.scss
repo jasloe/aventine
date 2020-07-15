@@ -21,3 +21,13 @@ body.events h1 {
 body.news-features h1 {
   @include title-serif;
 }
+
+
+
+h3.sans {
+  @include label;
+}
+
+.people h3 .name {
+  @include title-card-sans;
+}

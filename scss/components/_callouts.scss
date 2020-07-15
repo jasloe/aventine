@@ -1,0 +1,29 @@
+.region-callout .callout-inner {
+  background: $green;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    align-items: flex-end
+  }
+
+  .callout {
+    margin-bottom: 1rem;
+
+    @include mq($from: tablet) {
+      margin-right: 3rem;
+    }
+  }
+
+  h2 {
+    @include title-card-serif;
+    margin-bottom: 1rem;
+  }
+
+  .callout p,
+  a {
+    @include body;
+  }
+}
