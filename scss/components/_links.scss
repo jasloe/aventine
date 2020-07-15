@@ -1,0 +1,47 @@
+.horizontal-menu a:hover,
+.language a:hover {
+  display: inline;
+  color: $gray;
+  border-bottom: 1px solid $gray;
+  transition: color 0.22s ease;
+  padding-bottom: 3px;
+}
+
+.language a.is-active,
+.horizontal-menu li.menu-item a.is-active {
+  color: $gray;
+  border-bottom: 1px solid $gray;
+  transition: color 0.22s ease;
+  padding-bottom: 3px;
+}
+
+.language a.is-active:hover,
+.horizontal-menu li.menu-item a.is-active:hover {
+  color: $black;
+  border-bottom: 1px solid $black;
+  transition: color 0.22s ease;
+  padding-bottom: 3px;
+}
+
+// Toggle. Overrides.
+a.toggle span.icon {
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+  vertical-align: top;
+  background-image: url(../images/menu.svg);
+  height: 1.5rem;
+}
+
+.responsive-menu-toggle-icon:before,
+.responsive-menu-toggle-icon:after,
+.responsive-menu-toggle-icon span.icon {
+  background: #fff;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 0;
+  // position: absolute;
+  top: 0;
+  border-radius: 0;
+}

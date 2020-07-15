@@ -8,5 +8,15 @@
 
 .language {
   @include label;
+  margin-left: 1rem;
 }
 
+.language li:first-child {
+  padding-right: 8px;
+}
+
+.language li.en::after {
+  content: "/";
+  display: inline-block;
+  padding-left: 8px;
+}

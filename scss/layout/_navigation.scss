@@ -1,19 +1,30 @@
-#block-aventine-notice .field {}
-
 header {
   background: $white;
 }
 
 .region-header {
-
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
-  padding: .2rem 1rem;
+  padding: 0.5rem 1rem;
+}
 
-  @include mq($from: wide) {
-    padding: .2rem 0;
-  }
+.site-name,
+.responsive-menu-block-wrapper .horizontal-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.horizontal-menu a,
+.language a {
+  color: $black;
+  transition: color 0.22s ease;
+}
+
+.site-name a:hover {
+  color: $gray;
+  transition: color 0.22s ease;
 }
 
 .mobile-menu {
@@ -30,6 +41,25 @@ header {
 
 .toggle span.label {
   display: none;
+}
+
+.horizontal-menu > li {
+  margin: 0 1rem;
+}
+
+.horizontal-menu > li:first-child {
+  margin-left: 0;
+}
+
+.horizontal-menu > li:last-child {
+  margin-right: 0;
+}
+
+.horizontal-menu > li > a {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
 }
 
 @include mq($from: mobile) {

@@ -10,3 +10,9 @@
 #block-aventine-breadcrumbs a {
   color: $gray;
 }
+#block-aventine-breadcrumbs li:after {
+  content: " \2F";
+  padding-right: 5px;
+  vertical-align: baseline;
+  color: #919191;
+}

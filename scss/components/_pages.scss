@@ -9,24 +9,23 @@ body.page {
   @include margin-top;
 }
 
-.field-page-page-section .field__item {
-  margin-bottom: 2rem;
-}
-
 .field-page-page-section .field__item:last-child {
   margin-bottom: 0;
 }
 
 .page-section {
   display: flex;
-}
+  flex-direction: column;
+  @include mq($from: tablet) {
+    flex-direction: row;
+    .column-first {
+      flex-basis: $column-first;
+    }
 
-.page-section .column-first {
-  flex-basis: $column-first;
-}
-
-.page-section .column-second {
-  flex-basis: $column-second;
+    .column-second {
+      flex-basis: $column-second;
+    }
+  }
 }
 
 .page-section h2.subtitle {
@@ -67,11 +66,10 @@ body.events .field-events-event-series,
 body.events .field-events-event-type {
   @include label;
   margin-top: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .events-detail {
-
   .daterange {
     @include body;
     margin-bottom: 1rem;
@@ -82,14 +80,8 @@ body.events .field-events-event-type {
   }
 }
 
-// Resources.
-.page-section.resources {
-  @include layout-page-section;
-}
-
 // News features.
 body.news-features {
-
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -99,4 +91,137 @@ body.news-features {
   .page-section {
     @include margin-top;
   }
+}
+
+// Profile.
+.profile.wrapper {
+  margin-right: 0;
+  margin-bottom: 0;
+  .columns {
+    display: flex;
+    flex-direction: column;
+    @include mq($from: tablet) {
+      flex-direction: row;
+      .column-first {
+        flex-basis: $column-first;
+      }
+      .column-second {
+        flex-basis: $column-second;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.profile.wrapper {
+  h2 {
+    @include title-card-sans;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @include mq($from: tablet) {
+      margin-top: 0;
+    }
+  }
+  .field-people-affiliations .field__item {
+    @include body;
+    line-height: 1.2;
+  }
+  .field-people-affiliations {
+    margin-bottom: 1rem;
+  }
+  .field .field__label {
+    @include label-ulcase;
+  }
+  .field-people-professions,
+  .field-people-project-title,
+  .field-people-project-description p,
+  .field-people-biographical-note p {
+    @include body;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+}
+
+// Publications.
+.publications > div {
+  margin-bottom: 4rem;
+}
+
+.publications > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.publication.wrapper {
+  margin-right: 0;
+  margin-bottom: 0;
+  .columns {
+    display: flex;
+    flex-direction: column;
+    @include mq($from: tablet) {
+      flex-direction: row;
+      .column-first {
+        flex-basis: $column-first;
+      }
+      .column-second {
+        flex-basis: $column-second;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.publication.wrapper {
+  h2 {
+    @include title-card-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @include mq($from: tablet) {
+      margin-top: 0;
+    }
+  }
+
+  .field.field__item {
+    margin-bottom: 0 !important;
+  }
+
+  .field.field__item,
+  .field.field__item p {
+    @include body;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .body {
+    margin-top: 1rem;
+  }
+}
+
+// Resources.
+.page-section.resources {
+  @include layout-page-section;
+}
+
+.page-section.resources h3 {
+  @include title-card-sans;
+  @include font-size($small);
+}
+
+.page-section.resources .resource-title {
+  @include label;
+  text-transform: initial;
+}
+
+.page-section.resources {
+  margin-bottom: 2rem;
+}
+
+.page-section.resources .resource {
+  margin-bottom: 1rem;
+}
+.page-section.resources:last-child,
+.page-section.resources .resource:last-child {
+  margin-bottom: 0;
 }

@@ -5,7 +5,7 @@ body.index,
     margin-bottom: 4rem;
   }
 
-  .card:nth-last-child(-n+2) {
+  .card:nth-last-child(-n + 2) {
     margin-bottom: 0rem;
   }
 }
@@ -25,9 +25,7 @@ body.index,
   margin: 0 0 1rem 0;
 }
 
-
 .card-inner {
-
   .datetime {
     @include label;
   }
@@ -36,7 +34,7 @@ body.index,
     @include title-card-sans;
   }
 
-  .field>p {
+  .field > p {
     @include body-card;
   }
 }
@@ -73,7 +71,7 @@ body.index,
 // Profiles.
 .people h3 .name {
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .profile-container {
@@ -109,14 +107,14 @@ body.index,
 
 // Card:hover.
 .card .card-inner {
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   .blazy,
   .read-more {
-    transition: opacity .22s ease;
+    transition: opacity 0.22s ease;
   }
 
   .blazy {
@@ -131,21 +129,21 @@ body.index,
 .card .card-inner:hover {
   cursor: pointer;
 
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $gray;
   }
 
   .blazy,
   .read-more {
-    transition: opacity .22s ease;
+    transition: opacity 0.22s ease;
   }
 
   .blazy {
-    opacity: .9;
+    opacity: 0.9;
   }
 
   .read-more {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 

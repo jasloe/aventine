@@ -23,7 +23,6 @@ $menu: $display-sans;
 $label: $display-sans;
 $breadcrumbs: $tradegothic;
 
-
 @mixin global-margin {
   margin: 0 auto;
   max-width: $max-vw;
@@ -94,7 +93,7 @@ $breadcrumbs: $tradegothic;
 
 @mixin body {
   font-family: $dignitas;
-  @include font-size(1.3rem);
+  @include font-size($body);
 
   em {
     font-family: $dignitasital;
@@ -114,10 +113,15 @@ $breadcrumbs: $tradegothic;
 
 @mixin label {
   font-family: $display-sans;
-  text-transform: uppercase;
   font-size: $label-default;
+  text-transform: uppercase;
 }
 
+@mixin label-ulcase {
+  font-family: $display-sans;
+  font-size: $label-default;
+  font-weight: 900;
+}
 
 @mixin caption {
   font-family: $dignitas;
@@ -131,7 +135,6 @@ $breadcrumbs: $tradegothic;
     font-family: $dignitasbold;
   }
 }
-
 
 @mixin layout-cards {
   display: flex;

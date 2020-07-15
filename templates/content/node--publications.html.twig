@@ -70,24 +70,29 @@
  *   in different view modes.
  */
 #}
+
 {%
   set classes = [
-    'page',
+    'publication',
     'wrapper',
   ]
  %}
 
 <article{{attributes.addClass(classes)}}>
-	<div class="slideshow-wrapper">
-		{{ content.field_news_features_images }}
-		<div class="page-section">
-			<div class="column column-first"></div>
-			<div class="column column-second">
-				{{ content.field_news_features_byline }}
-				{{ content.field_news_features_date }}
+	<div class="columns">
+		<div class="column column-first">
+			{{ content.field_publications_image }}
+		</div>
 
-				{{ content.body.0 }}
-			</div>
+		<div class="column column-second">
+			<h2>{{ label }}</h2>
+			{{ content.field_publications_author }}
+			{{ content.field_publications_publisher }}
+			{{ content.field_publications_page_count }}
+			{{ content.field_publications_date }}
+			{{ content.body }}
+			{{ content.field_publication_files }}
+			{{ content.field_publications_links }}
 		</div>
 	</div>
 </article>
