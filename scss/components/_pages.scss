@@ -16,8 +16,10 @@ body.page {
 .page-section {
   display: flex;
   flex-direction: column;
+
   @include mq($from: tablet) {
     flex-direction: row;
+
     .column-first {
       flex-basis: $column-first;
     }
@@ -69,8 +71,14 @@ body.events .field-events-event-type {
   margin-bottom: 0.5rem;
 }
 
+body.events h1 {
+  margin-bottom: 1rem;
+}
+
 .events-detail {
-  .daterange {
+
+  .daterange,
+  .field-events-event-dates-overrid p {
     @include body;
     margin-bottom: 1rem;
   }
@@ -80,8 +88,15 @@ body.events .field-events-event-type {
   }
 }
 
+body.events {
+  .blazy img {
+    width: 100%;
+  }
+}
+
 // News features.
 body.news-features {
+
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -97,19 +112,24 @@ body.news-features {
 .profile.wrapper {
   margin-right: 0;
   margin-bottom: 0;
+
   .columns {
     display: flex;
     flex-direction: column;
+
     @include mq($from: tablet) {
       flex-direction: row;
+
       .column-first {
         flex-basis: $column-first;
       }
+
       .column-second {
         flex-basis: $column-second;
       }
     }
   }
+
   img {
     width: 100%;
   }
@@ -120,20 +140,25 @@ body.news-features {
     @include title-card-sans;
     margin-top: 1rem;
     margin-bottom: 1rem;
+
     @include mq($from: tablet) {
       margin-top: 0;
     }
   }
+
   .field-people-affiliations .field__item {
     @include body;
     line-height: 1.2;
   }
+
   .field-people-affiliations {
     margin-bottom: 1rem;
   }
+
   .field .field__label {
     @include label-ulcase;
   }
+
   .field-people-professions,
   .field-people-project-title,
   .field-people-project-description p,
@@ -145,30 +170,35 @@ body.news-features {
 }
 
 // Publications.
-.publications > div {
+.publications>div {
   margin-bottom: 4rem;
 }
 
-.publications > div:last-of-type {
+.publications>div:last-of-type {
   margin-bottom: 0;
 }
 
 .publication.wrapper {
   margin-right: 0;
   margin-bottom: 0;
+
   .columns {
     display: flex;
     flex-direction: column;
+
     @include mq($from: tablet) {
       flex-direction: row;
+
       .column-first {
         flex-basis: $column-first;
       }
+
       .column-second {
         flex-basis: $column-second;
       }
     }
   }
+
   img {
     width: 100%;
   }
@@ -179,6 +209,7 @@ body.news-features {
     @include title-card-serif;
     margin-top: 1rem;
     margin-bottom: 1rem;
+
     @include mq($from: tablet) {
       margin-top: 0;
     }
@@ -194,6 +225,7 @@ body.news-features {
     line-height: 1.4;
     margin-bottom: 1rem;
   }
+
   .body {
     margin-top: 1rem;
   }
@@ -221,6 +253,7 @@ body.news-features {
 .page-section.resources .resource {
   margin-bottom: 1rem;
 }
+
 .page-section.resources:last-child,
 .page-section.resources .resource:last-child {
   margin-bottom: 0;

@@ -23,3 +23,13 @@ span.select2-selection,
 span.select2 {
   border: none;
 }
+
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $green;
+  color: $gray;
+}
