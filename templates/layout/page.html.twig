@@ -77,23 +77,23 @@
 		{# /.layout-content #}
 	</main>
 
-	{# {% if page.footer %}
-						<footer role="contentinfo">
-							{{ page.footer }}
-							{{ page.footer_second }}
-						</footer>
-					{% endif %} #}
+	{% if page.footer %}
+		<footer role="contentinfo">
+			{{ page.footer }}
+			{{ page.footer_second }}
+		</footer>
+	{% endif %}
 
-	{# <div id="overlay">
-						<div class="menu-container">
-							<div class="flex">
+	<div id="overlay">
+		<div class="menu-container">
+			<div class="flex">
 
-								<div class="menu-wrapper">
-									{{ drupal_menu('footer') }}
-								</div>
-							</div>
-						</div>
-					</div> #}
+				<div class="menu-wrapper">
+					{{ drupal_menu('footer') }}
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
 {# /.layout-container #}

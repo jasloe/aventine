@@ -9,8 +9,8 @@ global-scripts:
     js/headroom.js: {}
     js/header.js: {}
     js/main.js: {}
-#   dependencies:
-#     - core/jquery
-#     - core/jquery.once
-#     - core/drupal.dialog.ajax
-#     - core/jquery.form
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+    - core/jquery.form
