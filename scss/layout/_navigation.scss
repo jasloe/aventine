@@ -1,23 +1,121 @@
+// Header. Layout.
 header {
   background: $white;
+  z-index: 501 !important;
 }
 
-.region-header {
+.header-menu,
+.main-menu__utilities,
+.language-switcher-language-url {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 0.5rem 1rem;
+  align-items: center;
 }
 
-.site-name,
-.responsive-menu-block-wrapper .horizontal-menu {
+.header-menu {
+  justify-content: space-between;
+}
+
+.header-menu .main-menu {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
 }
 
-.horizontal-menu a,
-.language a {
+.header-menu nav {
+  display: none;
+  @include mq($from: desktop) {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+}
+
+.hamburger {
+  padding: 0;
+  @include mq($from: desktop) {
+    display: none;
+  }
+}
+
+.language li {
+  padding-right: 0.5rem;
+}
+
+.language li.en {
+  position: relative;
+
+  &::after {
+    content: "/";
+    display: inline-block;
+    padding-left: 8px;
+  }
+}
+
+// Search.
+.search {
+  display: none;
+
+  @include mq($from: desktop) {
+    display: initial;
+    margin-left: 0.5rem;
+  }
+}
+
+.search a {
+  background-image: url(../images/search.svg);
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+// Hot fixes. Menu states.
+// Main menu.
+.main-menu li.menu-item a {
+  color: $black;
+  transition: color 0.22s ease;
+}
+
+.main-menu li.menu-item a:hover {
+  color: $gray;
+  transition: color 0.22s ease;
+}
+
+.main-menu li.menu-item--active-trail a {
+  color: $black;
+  border-bottom: 1px solid $black;
+  padding-bottom: 2px;
+  transition: color 0.22s ease;
+}
+
+.main-menu li.menu-item--active-trail a:hover {
+  color: $gray;
+  border-bottom: 1px solid $gray;
+  padding-bottom: 2px;
+  transition: color 0.22s ease;
+}
+
+// Language switcher.
+ul.language-switcher-language-url li a {
+  color: $black;
+  transition: color 0.22s ease;
+}
+
+ul.language-switcher-language-url li a:hover {
+  color: $gray;
+  transition: color 0.22s ease;
+}
+
+ul.language-switcher-language-url li.is-active a {
+  color: $black;
+  border-bottom: 1px solid $black;
+  padding-bottom: 2px;
+  transition: color 0.22s ease;
+}
+
+ul.language-switcher-language-url li.is-active a:hover {
+  color: $gray;
+  transition: color 0.22s ease;
+}
+
+// Site name.
+.site-name a {
   color: $black;
   transition: color 0.22s ease;
 }
@@ -27,51 +125,65 @@ header {
   transition: color 0.22s ease;
 }
 
-.mobile-menu {
-  margin-right: auto;
-}
+// // Footer menu. Top level.
+// .region-footer ul.menu li.menu-item a {
+//   color: $black;
+//   transition: color 0.22s ease;
+// }
 
-.language {
-  margin-left: auto;
-}
+// .region-footer ul.menu li.menu-item a:hover {
+//   color: $gray;
+//   transition: color 0.22s ease;
+// }
 
-.language ul.links {
-  display: flex;
-}
+// .region-footer ul.menu li.menu-item--active-trail a {
+//   color: $gray;
+//   transition: color 0.22s ease;
+// }
 
-.toggle span.label {
-  display: none;
-}
+// .region-footer ul.menu li.menu-item--active-trail a:hover {
+//   color: $black;
+//   transition: color 0.22s ease;
+// }
 
-.horizontal-menu > li {
-  margin: 0 1rem;
-}
+// // Footer menu. Submenus.
+// .region-footer ul.menu li.menu-item ul.menu li.menu-item a {
+//   color: $gray !important;
+//   transition: color 0.22s ease;
+// }
 
-.horizontal-menu > li:first-child {
-  margin-left: 0;
-}
+// .region-footer ul.menu li.menu-item ul.menu li.menu-item a:hover {
+//   color: $black !important;
+//   transition: color 0.22s ease;
+// }
 
-.horizontal-menu > li:last-child {
-  margin-right: 0;
-}
+// .region-footer ul.menu li.menu-item ul.menu li.menu-item--active-trail a {
+//   color: $black !important;
+//   transition: color 0.22s ease;
+// }
 
-.horizontal-menu > li > a {
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-}
+// .region-footer ul.menu li.menu-item ul.menu li.menu-item--active-trail a:hover {
+//   color: $gray !important;
+//   transition: color 0.22s ease;
+// }
 
-@include mq($from: mobile) {
-  .region-header {
-    justify-content: space-between;
-  }
+// // Footer menu. Icons.
+// .region-footer a.logo {
+//   opacity: 1;
+//   transition: opacity 0.5s ease;
+// }
 
-  .main-menu {
-    margin-left: auto;
-  }
+// .region-footer a.logo:hover {
+//   opacity: 0.5;
+//   transition: opacity 0.5s ease;
+// }
 
-  .language {
-    margin: 0;
-  }
-}
+// .region-footer-second .social li a {
+//   opacity: 1;
+//   transition: opacity 1s ease;
+// }
+
+// .region-footer-second .social li a:hover {
+//   opacity: 0.5;
+//   transition: opacity 0.22s ease;
+// }
