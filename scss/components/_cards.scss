@@ -23,7 +23,7 @@
     @include title-card-sans;
   }
 
-  .field>p {
+  .field > p {
     @include body-card;
   }
 }
@@ -54,7 +54,6 @@
 }
 
 .card-body {
-
   .field-events-event-type,
   .field-events-event-series {
     @include label;
@@ -77,7 +76,7 @@
 .card-image-wrapper .field-events-canceled {
   position: absolute;
   right: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: $white;
   background-color: $black;
 }
@@ -121,7 +120,7 @@
 
 // Card:hover.
 .card .card-inner {
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $black;
     transition: color 0.22s ease;
   }
@@ -143,7 +142,7 @@
 .card .card-inner:hover {
   cursor: pointer;
 
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $gray;
   }
 
