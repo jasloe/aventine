@@ -47,36 +47,38 @@
 }
 
 // File links.
-.field-page-section-links {
-  display: flex;
-  flex-direction: column;
-}
+article {
+  .field-page-section-links {
+    display: flex;
+    flex-direction: column;
+  }
 
-.field-page-section-links .field__item {
-  padding-bottom: 3rem;
-}
+  .field-page-section-links .field__item {
+    padding-bottom: 3rem;
+  }
 
-.field-page-section-files a,
-.field-page-section-links a {
-  @include label;
-  border: 1px solid #919191;
-  display: inline;
-  padding: 1rem 2rem;
-  text-align: center;
-}
+  .field-page-section-files a,
+  .field-page-section-links a {
+    @include label;
+    border: 1px solid #919191;
+    display: inline;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
 
-.field-page-page-section > .field__item {
-  margin-bottom: 2rem;
-}
+  .field-page-page-section>.field__item {
+    margin-bottom: 2rem;
+  }
 
-.page-section .column-second p + .field-page-section-links {
-  margin-top: 1rem;
-}
+  .page-section .column-second p+.field-page-section-links {
+    margin-top: 1rem;
+  }
 
-.path-support-annual-fund {
-  .field__item:nth-child(4) {
-    .column-second .field .field__item:first-child {
-      margin-top: 1rem;
+  .path-support-annual-fund {
+    .field__item:nth-child(4) {
+      .column-second .field .field__item:first-child {
+        margin-top: 1rem;
+      }
     }
   }
 }

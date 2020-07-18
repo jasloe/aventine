@@ -73,7 +73,6 @@
 
 <article{{attributes.addClass('card-inner')}}>
 
-
 	<div class="card-image-wrapper">
 		{{ content.field_events_image }}
 		{{ content.field_events_canceled }}
@@ -106,6 +105,10 @@
 
 	</div>
 
-	<a href=" {{ url }} ">Read more</a>
+	<div class="read-more">
+		<a href="{{ url }}">Read more<span></span>
+		</a>
+	</div>
+
 
 </article>
