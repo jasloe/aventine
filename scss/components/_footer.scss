@@ -1,0 +1,103 @@
+#overlay {
+  display: none;
+}
+
+footer {
+  border-top: 1px solid $black;
+  margin-top: 5rem;
+}
+
+.region-footer {
+  display: flex;
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+.footer-menu {
+  margin-bottom: 3rem;
+}
+
+.footer-menu>ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
+  display: none; // hide sub-menu items by default
+}
+
+.footer-menu>ul.menu>li.menu-item {
+  flex-basis: 50%;
+  padding-right: 2rem;
+}
+
+@include mq($from: mobile) {
+  .footer-menu>ul.menu>li {
+    margin-bottom: 3rem;
+  }
+
+  .footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
+    display: flex;
+  }
+
+  .footer-menu>ul.menu>li.menu-item {
+
+    flex-basis: 50%;
+    padding-right: 2rem;
+
+    &:nth-child(even) {
+      padding-right: 0rem;
+    }
+
+  }
+}
+
+@include mq($from: desktop) {
+  .footer-menu>ul.menu {
+    >li.menu-item {
+      flex-basis: 20%;
+      padding-right: 1rem;
+
+      &:nth-child(5) {
+        padding-right: 0rem; // unset right padding for Events menu group
+      }
+    }
+  }
+}
+
+// Logo, menu flex.
+@include mq($from: mobile) {
+  .footer-menu {
+    ul.menu ul.menu {
+      margin: 1rem 0 0;
+    }
+  }
+}
+
+.footer-menu>ul.menu>li.menu-item>ul.menu {
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.region-footer-second {
+
+  .social ul.menu,
+  .legal ul.menu {
+    display: flex;
+  }
+}
+
+.region-footer-second {
+
+  .addresses,
+  .social ul.menu,
+  .legal ul.menu {
+    margin-bottom: 1rem;
+  }
+
+  .addresses p {
+    line-height: 1.4;
+  }
+}

@@ -11,7 +11,6 @@ for (i = 0; i < el.length; ++i) {
   var $hamburger = $(".hamburger");
   var $body = $("body");
   var $overlay = $("#overlay");
-  var $hamburger = $(".hamburger");
 
   function resize() { // resize function
     if ($window.width() < 1024) {
@@ -20,12 +19,13 @@ for (i = 0; i < el.length; ++i) {
       $body.removeClass("mobile");
       $body.removeClass("is-open");
       $hamburger.removeClass("is-active");
+      $overlay.removeClass("is-open");
     }
   };
 
   $hamburger.on("click", function () { // hamburger clicked
     $hamburger.toggleClass("is-active"); // change hamburger state
-    // $body.toggleClass("no-scroll"); // disable scrolling
+    $body.toggleClass("no-scroll"); // disable scrolling
     $body.toggleClass("is-open"); // add class to hide menu
     $overlay.toggleClass("is-open");
   });

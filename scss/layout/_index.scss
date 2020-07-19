@@ -1,9 +1,10 @@
 body.index .region-content,
+body.index-people .region-content,
 .path-news-features,
 .path-events-calendar,
 .path-events-exhibitions {
   @include mq($from: tablet) {
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 }
 

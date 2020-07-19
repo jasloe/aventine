@@ -1,22 +1,97 @@
 .layout-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.layout-container {
   margin-top: 100px;
 }
 
 // Set padding on smaller viewports.
-#block-aventine-notice .field {
+.region-header-pre .field,
+.region-footer,
+.region-footer-second,
+.region-header,
+.region-page-title {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.region-header {
+.field-page-image .blazy__caption,
+.page-section {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-body.index .layout-content {
+.index .layout-content {
+  max-width: $max-vw;
+  margin: 0 auto;
+
+  .card-body {
+    padding: 0 1rem;
+  }
+
+  @include mq($from: tablet) {
+    padding: 0 1rem;
+
+    .region-page-title {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .region-page-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .card-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
 }
 
-#block-aventine-breadcrumbs {
-}
+.index-people .layout-content {
+  max-width: $max-vw;
+  margin: 0 auto;
 
-.card-body {
-}
+  @include mq($from: tablet) {
+    .region-content {
+      padding: 0 1rem;
+    }
+  }
 
-.field-page-page-section {
+  .name {
+    padding: 0 1rem;
+  }
+
+  .profile .title {
+    padding: 0 1rem;
+  }
+
+  .field-affil-year {
+    padding: 0 1rem;
+  }
+
+  .field-media-image {
+    width: 100%;
+
+  }
+
+  @include mq($from: tablet) {
+    .name {
+      padding: 0;
+    }
+
+    .profile .title {
+      padding: 0;
+    }
+
+    .field-affil-year {
+      padding: 0;
+    }
+  }
 }

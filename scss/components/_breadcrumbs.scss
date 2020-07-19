@@ -7,9 +7,19 @@
   text-transform: lowercase;
 }
 
-#block-aventine-breadcrumbs a {
+#block-aventine-breadcrumbs li {
   color: $gray;
 }
+
+#block-aventine-breadcrumbs a {
+  color: $gray;
+  transition: color .22s ease;
+}
+
+#block-aventine-breadcrumbs a:hover {
+  color: $black;
+}
+
 #block-aventine-breadcrumbs li:after {
   content: " \2F";
   padding-right: 5px;

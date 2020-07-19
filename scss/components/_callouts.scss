@@ -1,13 +1,8 @@
 .region-callout .callout-inner {
   background: $green;
-  padding: 3rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
-
-  @include mq($from: tablet) {
-    flex-direction: row;
-    align-items: flex-end
-  }
 
   .callout {
     margin-bottom: 1rem;
@@ -17,13 +12,44 @@
     }
   }
 
+  .callout p,
+  a {
+    @include body;
+  }
+}
+
+.news-callout .regionl-callout .callout-inner {
   h2 {
     @include title-card-serif;
     margin-bottom: 1rem;
   }
 
-  .callout p,
-  a {
-    @include body;
+  @include mq($from: tablet) {
+    flex-direction: row;
+    align-items: flex-end
   }
+}
+
+.research-callout .region-callout .callout-inner {
+  h2 {
+    @include label;
+    margin-bottom: 1rem;
+  }
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .callout {
+      flex-basis: calc(50% - 3rem);
+    }
+  }
+
+  @include mq($from: desktop) {
+    .callout {
+      flex-basis: calc(25% - 3rem);
+    }
+  }
+
 }

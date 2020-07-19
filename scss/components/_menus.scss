@@ -6,17 +6,113 @@
   @include label;
 }
 
-.language {
+.footer-menu>ul.menu>li.menu-item>a {
+  @include label;
+  transition: color .22s ease;
+}
+
+.footer-menu>ul.menu>li.menu-item--active-trail>a {
+  color: $gray;
+}
+
+.footer-menu>ul.menu>li.menu-item--active-trail>a:hover {
+  color: $black;
+}
+
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
+  padding-bottom: .3rem;
+}
+
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a {
+  font-family: $tradegothic;
+  color: $gray;
+  transition: color .22s ease;
+}
+
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a:hover,
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail>a {
+  color: $black;
+}
+
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail:hover>a {
+  color: $gray;
+}
+
+.language-switcher-language-url {
   @include label;
   margin-left: 1rem;
 }
 
-.language li:first-child {
+.language-switcher-language-url li:first-child {
   padding-right: 8px;
 }
 
-.language li.en::after {
+.language-switcher-language-url li.en::after {
   content: "/";
   display: inline-block;
   padding-left: 8px;
+}
+
+.region-footer-second {
+  font-family: $tradegothic;
+  color: $gray;
+}
+
+.region-footer-second a {
+  color: $gray;
+  transition: color .22s ease;
+}
+
+.region-footer-second a:hover {
+  color: $black;
+}
+
+.region-footer a.logo {
+  background-image: url(../images/AAR.svg);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  min-width: 5rem;
+  max-height: 5rem;
+}
+
+.social .menu li a {
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  vertical-align: top;
+  margin-right: 0.8em;
+  width: 1.2rem;
+  height: 1.2rem;
+  opacity: 1;
+  transition: opacity .22s ease;
+}
+
+.social .menu li a:hover {
+  opacity: .5;
+}
+
+li a.shop {
+  background-image: url(../images/social_shopping.svg);
+}
+
+li a.facebook {
+  background-image: url(../images/social_facebook.svg);
+}
+
+li a.twitter {
+  background-image: url(../images/social_twitter.svg);
+}
+
+li a.instagram {
+  background-image: url(../images/social_instagram.svg);
+}
+
+.legal li.menu-item:after {
+  padding-right: .4rem;
+  padding-left: .2rem;
+  content: "\B7";
+}
+
+.legal li.menu-item:last-child:after {
+  display: none;
 }

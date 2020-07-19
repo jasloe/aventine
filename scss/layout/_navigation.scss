@@ -13,6 +13,7 @@ header {
 
 .header-menu {
   justify-content: space-between;
+  padding: .5rem 0;
 }
 
 .header-menu .main-menu {
@@ -21,6 +22,7 @@ header {
 
 .header-menu nav {
   display: none;
+
   @include mq($from: desktop) {
     display: flex;
     justify-content: space-between;
@@ -30,6 +32,7 @@ header {
 
 .hamburger {
   padding: 0;
+
   @include mq($from: desktop) {
     display: none;
   }
@@ -55,18 +58,43 @@ header {
 
   @include mq($from: desktop) {
     display: initial;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 }
 
 .search a {
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+  vertical-align: top;
   background-image: url(../images/search.svg);
   width: 0.8rem;
   height: 0.8rem;
 }
 
+.search a,
+.hamburger {
+  &:hover {
+    transition: opacity .22s ease;
+    opacity: .5;
+  }
+}
+
 // Hot fixes. Menu states.
 // Main menu.
+.main-menu li.menu-item {
+  margin: 0 1rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+
 .main-menu li.menu-item a {
   color: $black;
   transition: color 0.22s ease;
