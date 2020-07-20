@@ -53,9 +53,12 @@
   padding-left: 8px;
 }
 
-.region-footer-second {
+.region-footer-second,
+.region-footer-second li a,
+.region-footer-second p {
   font-family: $tradegothic;
-  color: $gray;
+  font-size: 1rem !important;
+  color: red;
 }
 
 .region-footer-second a {
