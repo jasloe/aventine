@@ -236,3 +236,18 @@
   left: 0;
   z-index: 1000;
 }
+
+
+.front.news {
+  max-width: $jumbotron;
+  margin: 0 auto;
+}
+
+.front.elsewhere,
+.front.rome-prize,
+.front.fellows,
+.front.join-us,
+.front.residents {
+  max-width: $max-vw;
+  margin: 0 auto;
+}
