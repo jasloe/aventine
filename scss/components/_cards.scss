@@ -243,3 +243,12 @@
 .press-releases h2 {
   margin-bottom: 1.5rem;
 }
+
+.card .field-program-dates {
+  @include label;
+  margin-top: 1rem;
+}
+
+.path-apply-academic-programs .read-more {
+  margin-top: 1rem;
+}
