@@ -2,4 +2,5 @@
 .field-media-caption {
   @include caption;
   padding-top: .5rem !important;
+  max-width: 75%;
 }
