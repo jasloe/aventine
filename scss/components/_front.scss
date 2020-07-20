@@ -1,6 +1,4 @@
 // Global.
-.front-wrapper {}
-
 .front.news .slide__description,
 .front.elsewhere .views-element-container,
 .front.rome-prize {
@@ -11,9 +9,30 @@
   }
 }
 
-.front:not(:first-child) {
-  margin: 5rem 0;
+.front.news {
+  max-width: $jumbotron;
+  margin: 0 auto;
 }
+
+.front.news .slide__caption {
+  max-width: $max-vw;
+  margin: 0 auto;
+}
+
+.front.news .field-media-caption {
+  display: none;
+}
+
+.front.elsewhere,
+.front.rome-prize,
+.front.fellows,
+.front.join-us,
+.front.residents {
+  max-width: $max-vw;
+  margin: 7rem auto;
+}
+
+
 
 // News block.
 .front.news .front-wrapper,
@@ -235,19 +254,4 @@
   top: 0;
   left: 0;
   z-index: 1000;
-}
-
-
-.front.news {
-  max-width: $jumbotron;
-  margin: 0 auto;
-}
-
-.front.elsewhere,
-.front.rome-prize,
-.front.fellows,
-.front.join-us,
-.front.residents {
-  max-width: $max-vw;
-  margin: 0 auto;
 }
