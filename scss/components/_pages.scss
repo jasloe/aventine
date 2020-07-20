@@ -258,3 +258,48 @@ body.news-features {
 .page-section.resources .resource:last-child {
   margin-bottom: 0;
 }
+
+.programs .page-section {
+  @include margin-top;
+
+}
+
+.programs .field-page-section-files {
+  margin-top: 1rem;
+
+  .field__item {
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.programs .field-program-image {
+  margin: 0 auto;
+  max-width: $jumbotron;
+
+  img {
+    width: 100%;
+  }
+}
+
+.field-program-image {
+  .field-media-image {
+    height: 0;
+    overflow: hidden;
+    padding-top: 56.25%;
+    background: white;
+    position: relative;
+    background-color: #f8faf5;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
