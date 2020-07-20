@@ -32,6 +32,24 @@
   margin: 7rem auto;
 }
 
+.front.fellows h2,
+.front.fellows header,
+.front.residents h2 {
+  padding: 0 1rem;
+
+  @include mq($from: wide) {
+    padding: 0;
+  }
+}
+
+.front.fellows .slick-list,
+.front.residents .slick-list {
+  padding-left: 1rem;
+
+  @include mq($from: wide) {
+    padding: 0;
+  }
+}
 
 
 // News block.
@@ -109,6 +127,14 @@
 
 .rome-prize-cta h2 {
   @include title-card-sans;
+}
+
+.rome-prize-cta h2:first-child {
+  margin-top: .5rem;
+
+  @include mq($from: tablet) {
+    margin-top: 0;
+  }
 }
 
 .rome-prize-cta h2.subtitle {
@@ -209,12 +235,19 @@
   .meet-the-fellows {
     @include body;
   }
+
+  .meet-the-fellows a:after {
+    content: "/";
+    padding: 0 0.3rem;
+  }
 }
 
 
 .front.fellows .front-wrapper header {
   margin-bottom: .5rem;
 }
+
+
 
 .front.fellows,
 .front.residents {
