@@ -70,10 +70,10 @@
  *   in different view modes.
  */
 #}
-{# <div class="card">
+<div class="card">
 	<article{{attributes.addClass('card-inner')}}>
 		{#
-															{{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value.0 }} #}
+																	{{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value.0 }} #}
 
 		{# {{ drupal_entity('media', 22765) }} #}
 
@@ -90,4 +90,4 @@
 		</div>
 
 	</article>
-</div> #}
+</div>

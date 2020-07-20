@@ -23,7 +23,10 @@ body.news-features h1 {
   @include title-serif;
 }
 
-
+h2.serif {
+  @include title-serif;
+  @include font-size($medium);
+}
 
 h3.sans {
   @include label;

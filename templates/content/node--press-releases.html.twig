@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: (optional) The title of the node.
+ * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -70,35 +70,15 @@
  *   in different view modes.
  */
 #}
+{%
+  set classes = [
+    'page',
+    'wrapper',
+  ]
+ %}
 
-<article{{attributes.addClass(classes)}}>
+{{ content.field_press_date}}
 
-	{% if content.field_events_event_series|render is not empty %}
-		{{ content.field_events_event_series }}
-	{% else %}
-		{{ content.field_events_event_type }}
-	{% endif %}
+<h2 class="title serif">{{ label }}</h2>
 
-	<h1 class="title serif">{{ label }}</h1>
-
-	<div class="events-detail">
-
-		{% if content.field_events_event_dates_overrid|render is not empty %}
-			{{ content.field_events_event_dates_overrid }}
-		{% else %}
-			{{ content.field_events_event_dates }}
-		{% endif %}
-
-		{{ content.field_events_rel_places }}
-	</div>
-</div>
-
-<div class="events-body">
-	{{ content.field_events_image}}
-	<div class="page-section">
-		<div class="column column-first"></div>
-		<div class="column column-second">
-			{{ content.body}}
-		</div>
-	</div>
-</div></article>
+{{ content.field_press_releases_files }}

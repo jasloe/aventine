@@ -18,6 +18,11 @@
   padding: 0 1rem;
 }
 
+.region-callout {
+  margin: 0 auto;
+  max-width: $max-vw;
+}
+
 .field-page-image .blazy__caption,
 .page-section {
   max-width: $max-vw;
@@ -25,6 +30,10 @@
   padding: 0 1rem;
 }
 
+.path-attualita-comunicati-stampa .layout-content,
+.path-news-press-releases .layout-content,
+.index-news .layout-content,
+.index-events .layout-content,
 .index .layout-content {
   max-width: $max-vw;
   margin: 0 auto;
@@ -78,7 +87,6 @@
 
   .field-media-image {
     width: 100%;
-
   }
 
   @include mq($from: tablet) {
@@ -93,5 +101,91 @@
     .field-affil-year {
       padding: 0;
     }
+  }
+}
+
+body.events .region-content article {
+
+  .events-detail {
+    max-width: $max-vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  h1.title {
+    margin: 0rem auto .5rem auto;
+    padding: 0 1rem;
+    max-width: $max-vw;
+  }
+
+  .field-events-event-series,
+  .field-events-event-type {
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
+    max-width: $max-vw;
+  }
+
+  .field-events-image {
+    max-width: 1380px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .field.body {
+    margin-top: 100px;
+  }
+}
+
+body.news-features article {
+  .field-news-features-date {
+    @include label;
+    margin-bottom: 1rem;
+  }
+}
+
+.index-publications .region-content {
+  margin: 0 auto;
+  max-width: $max-vw;
+
+  .column-second {
+    padding: 0 1rem;
+  }
+
+  @include mq($from: tablet) {
+    padding: 0 1rem;
+
+    .column-second {
+      padding: 0;
+    }
+
+    .body {
+      padding-right: 20%;
+    }
+  }
+}
+
+.path-news-press-releases,
+.path-attualita-comunicati-stampa {
+  .region-content {
+    @include margin-top;
+  }
+}
+
+.region-content .press-releases {
+  padding: 0 1rem;
+
+  @include mq($from: tablet) {
+    padding: 0;
+  }
+}
+
+.region-content .press-releases .press-release {
+  padding-right: 0;
+
+  @include mq($from: tablet) {
+    padding-right: 20%;
   }
 }

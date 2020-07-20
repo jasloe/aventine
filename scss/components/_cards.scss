@@ -37,7 +37,8 @@
 }
 
 // Overrides default, news, events title.
-.path-events-calendar,
+.index-events,
+.index-news,
 .path-news-features {
   .card-body {
     h2.title {
@@ -212,4 +213,33 @@
     transition: opacity .22s ease;
   }
 
+}
+
+.path-news-features,
+.path-attualita-altrove {
+
+  .field-quick-news-published-date {
+    margin-top: 1rem;
+  }
+
+  .body {
+    margin-bottom: 1rem;
+  }
+}
+
+
+.press-releases .press-release {
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.press-releases .field-press-date {
+  @include label;
+}
+
+.press-releases h2 {
+  margin-bottom: 1.5rem;
 }

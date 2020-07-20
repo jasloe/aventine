@@ -1,11 +1,20 @@
 .region-callout .callout-inner {
   background: $green;
-  padding: 5rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
+
+  @include mq($from: tablet) {
+    padding: 5rem;
+  }
 
   .callout {
-    margin-bottom: 1rem;
+    // margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include mq($from: tablet) {
       margin-right: 3rem;
@@ -18,7 +27,7 @@
   }
 }
 
-.news-callout .regionl-callout .callout-inner {
+.news-callout .region-callout .callout-inner {
   h2 {
     @include title-card-serif;
     margin-bottom: 1rem;
@@ -43,6 +52,7 @@
 
     .callout {
       flex-basis: calc(50% - 3rem);
+      margin-bottom: 0;
     }
   }
 

@@ -6,11 +6,15 @@
 .page-section li {
   @include body;
   padding-left: 1rem;
-  text-indent: calc(-1rem - 12px);
+  text-indent: -1.5rem;
   padding-bottom: 1rem;
 
   &:before {
     content: "–";
     margin-right: 1rem;
   }
+}
+
+.page-section h3+ul {
+  margin-top: 1rem;
 }

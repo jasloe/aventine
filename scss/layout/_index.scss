@@ -1,17 +1,25 @@
 body.index .region-content,
 body.index-people .region-content,
+body.index-events .region-content,
+body.index-news .region-content,
 .path-news-features,
 .path-events-calendar,
-.path-events-exhibitions {
+.path-events-exhibitions,
+.path-news-press-releases .region-content,
+.path-attualita-comunicati-stampa .region-content {
   @include mq($from: tablet) {
     margin-top: 5rem;
   }
 }
 
 body.index,
+body.index-events,
+body.index-news,
 .path-news-features,
 .path-events-calendar,
-.path-events-exhibitions {
+.path-events-exhibitions,
+.path-news-press-releases,
+.path-attualita-comunicati-stampa {
   .layout-content {
     @include mq($from: tablet) {
       display: flex;
@@ -23,11 +31,11 @@ body.index,
       .region-content {
         flex-basis: $column-second;
       }
-
     }
-
   }
 }
+
+
 
 body.index {
   .region-content {

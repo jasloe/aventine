@@ -7,6 +7,11 @@
   height: 1.5rem;
 }
 
+.card.watch .read-more {
+  background-image: url(../images/arrow_small_external.svg);
+  height: 2rem;
+}
+
 .front.elsewhere {
   .card-link {
     display: block;
@@ -15,6 +20,13 @@
     vertical-align: top;
     background-image: url(../images/arrow_small_external.svg);
     height: 1.5rem;
+  }
+}
+
+.path-news-elsewhere,
+.path-attualita-altrove {
+  .read-more {
+    background-image: url(../images/arrow_small_external.svg);
   }
 }
 
@@ -80,5 +92,28 @@ article {
         margin-top: 1rem;
       }
     }
+  }
+}
+
+.field-publications-links a,
+.field-media-file a {
+  @include label;
+  color: $black;
+  transition: color .22s ease;
+  border-bottom: 1px solid $black;
+  padding-bottom: 3px;
+}
+
+.field-publications-links a:hover,
+.field-media-file a:hover {
+  color: $gray;
+  border-bottom: none;
+}
+
+.field-press-releases-files {
+  display: flex;
+
+  .field__item:first-child {
+    margin-right: 1rem;
   }
 }
