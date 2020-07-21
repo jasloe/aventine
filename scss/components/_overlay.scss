@@ -28,19 +28,38 @@ body.mobile {
     position: absolute;
     height: 100%;
     width: 100%;
+    max-width: 100%;
     top: 0;
     left: 0;
   }
 
   #overlay.is-open .flex {
+    margin-top: 3rem;
     display: flex;
-    // justify-content: space-between;
+    width: 30%;
   }
 
   #overlay.is-open {
-    .logo-wrapper {
-      flex-basis: 50%;
+    .menu-container {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+      padding: 0 1rem;
     }
+  }
+
+  #overlay.is-open .main-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    .menu-item {
+      flex-basis: 40%;
+    }
+  }
+
+  #overlay.is-open .main-menu li.menu-item {
+    margin: 0;
+    padding-bottom: .5rem;
   }
 
   #overlay.is-open .logo-wrapper {
@@ -49,18 +68,7 @@ body.mobile {
     text-indent: -9999px;
     min-width: 5rem;
     max-height: 4rem;
+    margin-right: 1rem;
   }
 
-  #overlay.is-open .menu {
-    // display: flex;
-    // flex-wrap: wrap;
-  }
-
-  #overlay.is-open .menu-item {
-    // width: 50%;
-  }
-
-  #overlay.is-open li.menu-item {
-    // margin-bottom: 0.5rem;
-  }
 }
