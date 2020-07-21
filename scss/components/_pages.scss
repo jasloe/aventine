@@ -109,9 +109,40 @@ body.news-features {
 }
 
 // Profile.
-.profile.wrapper {
+.people .region-content {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.people .region-content .profile.wrapper {
   margin-right: 0;
-  margin-bottom: 0;
+}
+
+.people .region-content .column-second {
+  padding: 0 1rem;
+}
+
+@include mq($from: tablet) {
+  .people .region-content .column-first {
+    padding-left: 1rem;
+    padding-right: 0;
+    margin-right: 1rem;
+  }
+
+  .column-second {
+    padding: 0 !important;
+  }
+
+  .field-people-project-description,
+  .field-people-biographical-note {
+    padding-right: 20%;
+  }
+}
+
+
+.profile.wrapper {
+
 
   .columns {
     display: flex;
@@ -168,6 +199,8 @@ body.news-features {
     margin-bottom: 1rem;
   }
 }
+
+.profile.wrapper .column-first .field-people-portrait {}
 
 // Publications.
 .publications>div {
