@@ -15,20 +15,21 @@ footer {
 }
 
 .region-footer>a {
-  flex-basis: 40%;
+  flex-basis: 30%;
 }
 
 .region-footer .footer-menu {
-  flex-basis: 60%;
+  flex-basis: 70%;
 }
 
 @include mq($from: tablet) {
+
   .region-footer>a {
-    flex-basis: 10%;
+    flex-basis: 12.5%;
   }
 
   .region-footer .footer-menu {
-    flex-basis: 90%;
+    flex-basis: 86.5%;
   }
 }
 
