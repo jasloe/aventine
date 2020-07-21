@@ -264,6 +264,12 @@ body.news-features {
   }
 }
 
+@include mq($from: tablet) {
+  .publication.wrapper .column-first {
+    padding-right: 1rem;
+  }
+}
+
 // Resources.
 .page-section.resources {
   @include layout-page-section;
