@@ -23,6 +23,11 @@
     @include title-card-sans;
   }
 
+  h2.title.serif {
+    text-transform: initial !important;
+    font-family: $display-serif;
+  }
+
   .field>p {
     @include body-card;
   }
