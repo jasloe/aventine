@@ -75,8 +75,14 @@
   background-repeat: no-repeat;
   text-indent: -9999px;
   min-width: 5rem;
-  max-height: 5rem;
+  max-height: 4rem;
+
+  @include mq($from: tablet) {
+    max-height: 5rem;
+  }
 }
+
+
 
 .social .menu li a {
   display: block;

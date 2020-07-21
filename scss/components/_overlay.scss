@@ -39,19 +39,16 @@ body.mobile {
 
   #overlay.is-open {
     .logo-wrapper {
-      // flex-basis: 50%;
-    }
-
-    .menu-wrapper {
-      // flex-basis: 50%;
+      flex-basis: 50%;
     }
   }
 
   #overlay.is-open .logo-wrapper {
-    // background-image: url(../images/AAR.svg);
-    // background-repeat: no-repeat;
-    // text-indent: -9999px;
-    // height: 4rem;
+    background-image: url(../images/AAR.svg);
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    min-width: 5rem;
+    max-height: 4rem;
   }
 
   #overlay.is-open .menu {
@@ -66,5 +63,4 @@ body.mobile {
   #overlay.is-open li.menu-item {
     // margin-bottom: 0.5rem;
   }
-
 }
