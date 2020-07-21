@@ -17,7 +17,6 @@
 }
 
 // turn off the hideous preloader
-.media--loading,
 .media--loading::before {
   display: none !important;
   animation: none !important;
