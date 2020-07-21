@@ -40,7 +40,11 @@
 
 .language-switcher-language-url {
   @include label;
-  margin-left: 1rem;
+  margin-left: 0;
+
+  @include mq($from: desktop) {
+    margin-left: 1rem;
+  }
 }
 
 .language-switcher-language-url li:first-child {
