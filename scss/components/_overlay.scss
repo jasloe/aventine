@@ -50,11 +50,7 @@ body.mobile {
 
   #overlay.is-open .main-menu {
     display: flex;
-    flex-wrap: wrap;
-
-    .menu-item {
-      flex-basis: 40%;
-    }
+    flex-direction: column;
   }
 
   #overlay.is-open .main-menu li.menu-item {
@@ -68,7 +64,8 @@ body.mobile {
     text-indent: -9999px;
     min-width: 5rem;
     max-height: 4rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
+    margin-left: 3rem;
   }
 
 }
