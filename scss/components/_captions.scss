@@ -17,3 +17,7 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.page.wrapper h4 {
+  @include caption;
+}
