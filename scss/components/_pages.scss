@@ -303,3 +303,16 @@ body.news-features {
     }
   }
 }
+
+.news-features .slideshow-wrapper {
+  margin: 0 auto;
+  max-width: $jumbotron;
+
+  img {
+    width: 100%;
+  }
+}
+
+.news-features .field-media-caption {
+  padding: 0 1rem;
+}

@@ -4,3 +4,16 @@
   padding-top: .5rem !important;
   max-width: 75%;
 }
+
+.field-page-image .blazy__caption,
+.page-section {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.news-features .field-media-caption {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

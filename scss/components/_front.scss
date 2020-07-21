@@ -1,26 +1,29 @@
 // Global.
-.front.news .slide__description,
-.front.elsewhere .views-element-container,
-.front.rome-prize {
-  padding: 0 1rem;
-
-  @include mq($from: wide) {
-    padding: 0;
+.front.news {
+  .slick {
+    max-width: $jumbotron;
+    margin: 0 auto;
   }
 }
 
 .front.news {
-  max-width: $jumbotron;
-  margin: 0 auto;
-}
+  .slide__caption {
+    margin: 0 auto;
+    max-width: $max-vw;
+    padding: 0 1rem;
 
-.front.news .slide__caption {
-  max-width: $max-vw;
-  margin: 0 auto;
-}
+    @include mq($from: $jumbotron) {
+      padding: 0;
+    }
 
-.front.news .field-media-caption {
-  display: none;
+    .slide__description {
+      margin-top: 1rem;
+    }
+  }
+
+  .field-media-caption {
+    display: none;
+  }
 }
 
 .front.elsewhere,
@@ -28,16 +31,30 @@
 .front.fellows,
 .front.join-us,
 .front.residents {
+  margin: 3rem auto;
   max-width: $max-vw;
-  margin: 7rem auto;
+
+  @include mq($from: tablet) {
+    margin: 7rem auto;
+  }
 }
+
+.front.elsewhere,
+.front.rome-prize {
+  padding: 0 1rem;
+
+  @include mq($from: $jumbotron) {
+    padding: 0;
+  }
+}
+
 
 .front.fellows h2,
 .front.fellows header,
 .front.residents h2 {
   padding: 0 1rem;
 
-  @include mq($from: wide) {
+  @include mq($from: $jumbotron) {
     padding: 0;
   }
 }
@@ -74,6 +91,31 @@
   }
 }
 
+.front.news .slide__content {
+  .field-media-image {
+    opacity: 1;
+    transition: opacity .22s ease;
+  }
+
+  time,
+  h2.title {
+    color: $black;
+    transition: color .22s ease;
+  }
+}
+
+.front.news .slide__content:hover {
+  .field-media-image {
+    opacity: .8;
+  }
+
+  time,
+  h2.title {
+    color: $gray;
+  }
+}
+
+// Elsewhere block.
 .front.elsewhere {
   .front-wrapper {
     display: flex;
@@ -98,7 +140,6 @@
   }
 }
 
-// Elsewhere block.
 .front.elsewhere {
   .datetime {
     @include label;
@@ -164,6 +205,8 @@
   margin-right: 2rem;
 }
 
+
+
 // Join us block.
 .front.join-us .join-us {
   display: flex;
@@ -207,6 +250,8 @@
   @include font-size(1.8rem);
   text-indent: 3rem;
   margin-left: -2.5rem;
+  color: $black;
+  transition: color .22s ease;
 }
 
 .front.join-us .join-us .field__item a:before {
@@ -216,6 +261,16 @@
   content: "";
   margin-top: 3px;
   padding-left: 2.5rem;
+  opacity: 1;
+  transition: opacity .22s ease;
+}
+
+.front.join-us .join-us .field__item a:hover {
+  color: $gray;
+}
+
+.front.join-us .join-us .field__item a:hover:before {
+  opacity: .5;
 }
 
 // Front fellows.
@@ -234,20 +289,32 @@
 .front.fellows {
   .meet-the-fellows {
     @include body;
+    margin-bottom: .5rem;
+
   }
 
   .meet-the-fellows a:after {
     content: "/";
     padding: 0 0.3rem;
   }
+
+  .meet-the-fellows a:last-child:after {
+    content: "";
+  }
+
+  .meet-the-fellows a {
+    color: $black;
+    transition: color .22s ease;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .front.fellows .front-wrapper header {
+    margin-bottom: .5rem;
+  }
 }
-
-
-.front.fellows .front-wrapper header {
-  margin-bottom: .5rem;
-}
-
-
 
 .front.fellows,
 .front.residents {
@@ -264,15 +331,32 @@
     display: flex;
   }
 
-  h3 {
+  .blazy {
+    opacity: 1;
+    transition: opacity .22s ease;
+  }
+
+  .title {
     @include label;
     margin-top: .25rem;
+    color: $black;
+    transition: color 22s ease;
   }
 
   .field-affil-discipline {
     @include body;
     line-height: 1;
     color: $gray;
+  }
+}
+
+.front.fellows,
+.front.residents {
+  .slick__slide:hover {
+
+    .blazy {
+      opacity: .8;
+    }
   }
 }
 

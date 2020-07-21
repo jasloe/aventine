@@ -23,6 +23,39 @@
   }
 }
 
+.front.elsewhere {
+  .item {
+
+    .datetime,
+    h2 {
+      color: $black;
+      transition: color .22s ease;
+    }
+
+    .card-link {
+      opacity: 1;
+      transition: opacity .22s ease;
+    }
+  }
+}
+
+
+.front.elsewhere {
+  .item:hover {
+
+    .datetime,
+    h2 {
+      color: $gray;
+      transition: color .22s ease;
+    }
+
+    .card-link {
+      opacity: .5;
+    }
+  }
+}
+
+
 .path-news-elsewhere,
 .path-attualita-altrove {
   .read-more {
@@ -47,15 +80,35 @@
   text-indent: -8999px;
   height: 60px;
   width: 34px;
+  color: none;
+}
+
+.slick-arrow {
+  filter: invert(90%);
+  opacity: .85;
+}
+
+.slick-arrow:hover,
+.slick-arrow:hover::before {
+  filter: invert(120);
 }
 
 // Home page buttons.
 .rome-prize-cta .field-page-section-links .field__item:first-child a {
-  border: 1px solid #919191;
+  border: 1px solid $gray;
   display: inline;
   padding: 1rem 3rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.rome-prize-cta .field-page-section-links .field__item a {
+  color: $black;
+  transition: color .22s ease;
+}
+
+.rome-prize-cta .field-page-section-links .field__item a:hover {
+  color: $gray;
 }
 
 // File links.
@@ -115,5 +168,22 @@ article {
 
   .field__item:first-child {
     margin-right: 1rem;
+  }
+}
+
+.pager {
+  @include label;
+  text-align: right;
+
+  a {
+    border-bottom: 1px solid $black;
+    padding-bottom: 2px;
+    color: $black;
+    transition: color .22s ease;
+
+    &:hover {
+      color: $gray;
+      border: none;
+    }
   }
 }
