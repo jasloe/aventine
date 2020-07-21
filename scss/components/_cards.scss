@@ -28,7 +28,7 @@
     font-family: $display-serif;
   }
 
-  .field>p {
+  .field > p {
     @include body-card;
   }
 }
@@ -60,7 +60,6 @@
 }
 
 .card-body {
-
   .field-events-event-type,
   .field-events-event-series {
     @include label;
@@ -94,15 +93,40 @@
   margin-bottom: 0.5rem;
 }
 
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .profile {
   position: relative;
-  margin-right: 1rem;
   margin-bottom: 2rem;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile .field-media-image {
+  img {
+    width: 100%;
+    // height: auto;
+  }
+}
+
+@include mq($from: tablet) {
+  .profile-container {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
+  .profile {
+    margin-right: 1rem;
+  }
+
+  .profile .field-media-image {
+    img {
+      width: auto;
+      height: 300px;
+    }
+  }
 }
 
 .card-link {
@@ -127,7 +151,7 @@
 
 // Card:hover.
 .card .card-inner {
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $black;
     transition: color 0.22s ease;
   }
@@ -149,7 +173,7 @@
 .card .card-inner:hover {
   cursor: pointer;
 
-  .card-body>*:not(.read-more) {
+  .card-body > *:not(.read-more) {
     color: $gray;
   }
 
@@ -187,19 +211,18 @@
 
 .profile-container .profile {
   h3 {
-    margin-top: .25rem;
+    margin-top: 0.25rem;
   }
 
   h3,
   .field-affil-year {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   .field-media-image {
     opacity: 1;
   }
-
 }
 
 .profile-container .profile:hover {
@@ -210,19 +233,17 @@
   h3,
   .field-affil-year {
     color: $gray;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   .field-media-image {
-    opacity: .9;
-    transition: opacity .22s ease;
+    opacity: 0.9;
+    transition: opacity 0.22s ease;
   }
-
 }
 
 .path-news-features,
 .path-attualita-altrove {
-
   .field-quick-news-published-date {
     margin-top: 1rem;
   }
@@ -231,7 +252,6 @@
     margin-bottom: 1rem;
   }
 }
-
 
 .press-releases .press-release {
   margin-bottom: 5rem;
