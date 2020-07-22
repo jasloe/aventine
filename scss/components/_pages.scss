@@ -76,6 +76,7 @@ body.events h1 {
 }
 
 .events-detail {
+
   .daterange,
   .field-events-event-dates-overrid p {
     @include body;
@@ -95,6 +96,7 @@ body.events {
 
 // News features.
 body.news-features {
+
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -195,15 +197,14 @@ body.news-features {
   }
 }
 
-.profile.wrapper .column-first .field-people-portrait {
-}
+.profile.wrapper .column-first .field-people-portrait {}
 
 // Publications.
-.publications > div {
+.publications>div {
   margin-bottom: 4rem;
 }
 
-.publications > div:last-of-type {
+.publications>div:last-of-type {
   margin-bottom: 0;
 }
 
@@ -344,5 +345,39 @@ body.news-features {
 
   img {
     width: 100%;
+  }
+}
+
+.news-features .page.extended {
+  .summary-wrapper {
+    margin: 0 auto 1rem 0;
+    max-width: $max-vw;
+    padding: 0 1rem;
+  }
+
+  .field-news-features-byline {
+    display: flex;
+    margin-top: 1rem;
+
+    .field__label {
+      margin-right: 4px;
+    }
+  }
+
+  .field-news-features-byline p,
+  .field-news-features-summary p {
+    @include body;
+  }
+
+  .page-section.wrapper {
+    @include margin-top;
+  }
+
+  .page-section {
+    margin-top: 0;
+  }
+
+  .image-wrapper {
+    margin-bottom: 1rem;
   }
 }
