@@ -25,45 +25,38 @@
 
 .front.elsewhere {
   .item {
-
     .datetime,
     h2 {
       color: $black;
-      transition: color .22s ease;
+      transition: color 0.22s ease;
     }
 
     .card-link {
       opacity: 1;
-      transition: opacity .22s ease;
+      transition: opacity 0.22s ease;
     }
   }
 }
-
 
 .front.elsewhere {
   .item:hover {
-
     .datetime,
     h2 {
       color: $gray;
-      transition: color .22s ease;
+      transition: color 0.22s ease;
     }
 
     .card-link {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }
-
-
 .path-news-elsewhere,
 .path-attualita-altrove {
   .read-more {
     background-image: url(../images/arrow_small_external.svg);
   }
 }
-
-
 
 // Slideshow buttons.
 .slick-prev {
@@ -80,19 +73,17 @@
 .slick-next {
   background-repeat: no-repeat;
   text-indent: -8999px;
-  height: 60px;
-  width: 34px;
   color: none;
 }
 
 .slick-arrow {
   filter: invert(90%);
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .slick-arrow:hover,
 .slick-arrow:hover::before {
-  filter: invert(120);
+  filter: invert(100);
 }
 
 // Home page buttons.
@@ -106,7 +97,7 @@
 
 .rome-prize-cta .field-page-section-links .field__item a {
   color: $black;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
 .rome-prize-cta .field-page-section-links .field__item a:hover {
@@ -133,11 +124,11 @@ article {
     text-align: center;
   }
 
-  .field-page-page-section>.field__item {
+  .field-page-page-section > .field__item {
     margin-bottom: 2rem;
   }
 
-  .page-section .column-second p+.field-page-section-links {
+  .page-section .column-second p + .field-page-section-links {
     margin-top: 1rem;
   }
 
@@ -154,7 +145,7 @@ article {
 .field-media-file a {
   @include label;
   color: $black;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
   border-bottom: 1px solid $black;
   padding-bottom: 3px;
 }
@@ -181,7 +172,7 @@ article {
     border-bottom: 1px solid $black;
     padding-bottom: 2px;
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
 
     &:hover {
       color: $gray;

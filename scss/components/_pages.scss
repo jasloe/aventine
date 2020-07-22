@@ -76,7 +76,6 @@ body.events h1 {
 }
 
 .events-detail {
-
   .daterange,
   .field-events-event-dates-overrid p {
     @include body;
@@ -96,7 +95,6 @@ body.events {
 
 // News features.
 body.news-features {
-
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -197,14 +195,15 @@ body.news-features {
   }
 }
 
-.profile.wrapper .column-first .field-people-portrait {}
+.profile.wrapper .column-first .field-people-portrait {
+}
 
 // Publications.
-.publications>div {
+.publications > div {
   margin-bottom: 4rem;
 }
 
-.publications>div:last-of-type {
+.publications > div:last-of-type {
   margin-bottom: 0;
 }
 

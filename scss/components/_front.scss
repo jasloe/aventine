@@ -48,7 +48,6 @@
   }
 }
 
-
 .front.fellows h2,
 .front.fellows header,
 .front.residents h2 {
@@ -67,7 +66,6 @@
     padding: 0;
   }
 }
-
 
 // News block.
 .front.news .front-wrapper,
@@ -94,19 +92,19 @@
 .front.news .slide__content {
   .field-media-image {
     opacity: 1;
-    transition: opacity .22s ease;
+    transition: opacity 0.22s ease;
   }
 
   time,
   h2.title {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 }
 
 .front.news .slide__content:hover {
   .field-media-image {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   time,
@@ -117,7 +115,7 @@
 
 // Elsewhere block.
 .front.elsewhere {
-  .front-wrapper {
+  .front-wrapper .items {
     display: flex;
     flex-direction: column;
 
@@ -143,17 +141,40 @@
 .front.elsewhere {
   .datetime {
     @include label;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
+  h2:first-child {
+    @include title-card-sans;
+    margin-bottom: 1rem;
+  }
   h2 {
     @include title-card-serif;
     margin-bottom: 1rem;
   }
+
+  .more-link {
+    margin-top: 1rem;
+    text-align: left;
+    @include mq($from: tablet) {
+      text-align: right;
+    }
+  }
+  .more-link a {
+    @include label;
+    border-bottom: 1px solid $black;
+    padding-bottom: 2px;
+    text-align: right;
+    transition: color 0.22s ease;
+    display: inline;
+  }
+  .more-link a:hover {
+    color: $gray;
+    border-bottom: none;
+  }
 }
 
 .rome-prize-cta {
-
   display: flex;
   flex-direction: column;
 
@@ -171,7 +192,7 @@
 }
 
 .rome-prize-cta h2:first-child {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 
   @include mq($from: tablet) {
     margin-top: 0;
@@ -204,8 +225,6 @@
 .rome-prize-cta .field-page-section-links .field__item:first-child {
   margin-right: 2rem;
 }
-
-
 
 // Join us block.
 .front.join-us .join-us {
@@ -251,18 +270,18 @@
   text-indent: 3rem;
   margin-left: -2.5rem;
   color: $black;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
 .front.join-us .join-us .field__item a:before {
   background: url(../images/arrow_large_gray.svg) no-repeat 0 0;
-  height: .8rem;
-  width: .8rem;
+  height: 0.8rem;
+  width: 0.8rem;
   content: "";
   margin-top: 3px;
   padding-left: 2.5rem;
   opacity: 1;
-  transition: opacity .22s ease;
+  transition: opacity 0.22s ease;
 }
 
 .front.join-us .join-us .field__item a:hover {
@@ -270,27 +289,25 @@
 }
 
 .front.join-us .join-us .field__item a:hover:before {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 // Front fellows.
 .front.fellows,
 .front.residents {
-
   h2 {
     @include subtitle-sans;
   }
 }
 
 .front.residents h2 {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .front.fellows {
   .meet-the-fellows {
     @include body;
-    margin-bottom: .5rem;
-
+    margin-bottom: 0.5rem;
   }
 
   .meet-the-fellows a:after {
@@ -304,7 +321,7 @@
 
   .meet-the-fellows a {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
 
     &:hover {
       color: $gray;
@@ -312,15 +329,15 @@
   }
 
   .front.fellows .front-wrapper header {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
 .front.fellows,
 .front.residents {
   .slick__slide {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .portrait-wrapper {
@@ -333,12 +350,12 @@
 
   .blazy {
     opacity: 1;
-    transition: opacity .22s ease;
+    transition: opacity 0.22s ease;
   }
 
   .title {
     @include label;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
     color: $black;
     transition: color 22s ease;
   }
@@ -353,9 +370,8 @@
 .front.fellows,
 .front.residents {
   .slick__slide:hover {
-
     .blazy {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 }
