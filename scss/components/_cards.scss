@@ -252,7 +252,7 @@
     margin-top: 1rem;
   }
 
-  .body {
+  .page-section .body {
     margin-bottom: 1rem;
   }
 }
@@ -292,7 +292,14 @@
   }
 }
 
-img {
-  width: 100%;
-  height: auto;
+.index-news,
+.index-sof {
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.index-sof .datetime {
+  margin-top: 1rem;
 }

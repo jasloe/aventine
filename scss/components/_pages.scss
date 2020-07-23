@@ -337,7 +337,7 @@ body.news-features {
     }
   }
 }
-
+.society-of-fellows .slideshow-wrapper,
 .news-features .slideshow-wrapper {
   margin: 0 auto;
   max-width: $jumbotron;
@@ -380,3 +380,19 @@ body.news-features {
     margin-bottom: 1rem;
   }
 }
+
+@include mq($from: tablet) {
+  .news-features .page-section .column-second,
+  .society-of-fellows .page-section .column-second {
+    padding-right: 20% !important;
+  }
+}
+
+.news-features .page-section,
+.society-of-fellows .page-section {
+  @include margin-top;
+}
+
+// .region-header-pre {
+//   display: none;
+// }

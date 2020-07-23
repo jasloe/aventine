@@ -1,7 +1,7 @@
 .blazy__caption,
 .field-media-caption {
   @include caption;
-  padding-top: .5rem !important;
+  padding-top: 0.5rem !important;
   max-width: 75%;
 }
 
@@ -12,6 +12,7 @@
   padding: 0 1rem;
 }
 
+.society-of-fellows .field-media-caption,
 .news-features .field-media-caption {
   max-width: $max-vw;
   margin: 0 auto;

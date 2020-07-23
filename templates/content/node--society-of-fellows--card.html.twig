@@ -72,15 +72,11 @@
 #}
 <div class="card">
 	<article{{attributes.addClass('card-inner')}}>
-		{#
-																							{{ content.field_news_features_images[0]['#media'].field_media_image.0.entity.uri.value.0 }} #}
 
-		{# {{ drupal_entity('media', 22765) }} #}
+		{{ content.field_sof_images.0 }}
 
-
-		{# {{ node.field_news_features_images.entity.field_media_image.entity.fileuri }} #}
-
-			<div class='card-body'> <div class="datetime">{{ node.getCreatedTime()|date("F j, Y") }}</div>
+		<div class='card-body'>
+			<div class="datetime">{{ node.getCreatedTime()|date("F j, Y") }}</div>
 			<h2 class="title serif">{{ label }}</h2>
 			<div class="read-more">
 				<a href="{{ url }}">Read more<span></span>

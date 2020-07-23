@@ -39,3 +39,25 @@ figure {
 iframe {
   width: 100% !important;
 }
+
+.page-section p a {
+  border-bottom: 1px solid $black !important;
+  padding-bottom: 2px;
+  color: $black;
+  transition: color 0.22s ease;
+}
+
+.page-section p a:hover {
+  color: $link-hover;
+  border-bottom: 1px solid $link-hover !important;
+}
+
+.page-section p a:visited {
+  color: $link-visited;
+  border-bottom: 1px solid $link-visited !important;
+}
+
+.page-section p a:visited:hover {
+  color: $link-hover;
+  border-bottom: 1px solid $link-hover !important;
+}
