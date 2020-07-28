@@ -1,3 +1,7 @@
+.resources-list {
+  @include margin-top;
+}
+
 .resources-list .views-exposed-form {
   max-width: $max-vw;
   margin: 0 auto 2rem auto;
