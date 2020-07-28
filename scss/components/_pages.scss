@@ -541,3 +541,29 @@ body.news-features {
     color: $gray;
   }
 }
+
+.path-research-library-about,
+.path-ricerca-biblioteca-sulla-collezione {
+  .field-page-section-files {
+    margin-top: 1rem;
+
+    >.field__item:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+
+
+}
+
+.path-research-resources-tutorials,
+.path-ricerca-risorse-tutorial-di-ricerca {
+  .field-page-section-files {
+    margin-top: 1rem;
+
+    >.field__item:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+
+
+}

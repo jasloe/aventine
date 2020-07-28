@@ -45,6 +45,10 @@
     margin-bottom: 1rem;
   }
 
+  .callout {
+    margin-bottom: 0;
+  }
+
   @include mq($from: tablet) {
     flex-direction: row;
     align-items: flex-start;
@@ -52,7 +56,7 @@
 
     .callout {
       flex-basis: calc(50% - 3rem);
-      margin-bottom: 0;
+      margin-bottom: 3rem;
     }
   }
 
@@ -61,5 +65,4 @@
       flex-basis: calc(25% - 3rem);
     }
   }
-
 }
