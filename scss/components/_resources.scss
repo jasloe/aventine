@@ -1,0 +1,52 @@
+.resources-list .views-exposed-form {
+  max-width: $max-vw;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+
+}
+
+.resources-list .column-first {
+  h2 {
+    @include title-sans;
+    @include font-size($small);
+    margin-bottom: 1rem;
+  }
+}
+
+.resources-list .page-section:not(:first-of-type) {
+  margin-top: 3rem;
+}
+
+@include mq($from: tablet) {
+  .resources-list .column-second {
+    .resource-description {
+      padding-right: 20%;
+    }
+  }
+}
+
+.resources-list .column-second {
+  .resource-title a {
+    font-family: $tradegothiccond;
+    @include font-size($body);
+    color: $black;
+    transition: color .22s ease;
+  }
+
+  .resource-title a:after {
+    margin-left: .5rem;
+    content: url(../images/arrow_small_external.svg);
+  }
+
+  .record {
+    margin-bottom: 1rem;
+  }
+}
+
+.resources-list .column-second {
+  .record:hover {
+    .resource-title a {
+      color: $gray !important;
+    }
+  }
+}
