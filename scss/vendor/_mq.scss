@@ -31,11 +31,13 @@ $mq-responsive: true !default;
 ///
 /// @type Map
 /// @link https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint Full documentation and examples
-$mq-breakpoints: (mobile: 320px,
+$mq-breakpoints: (
+  mobile: 320px,
   mobileplus: 480px,
   tablet: 740px,
   desktop: 980px,
-  wide: 1300px) !default;
+  wide: 1300px,
+) !default;
 
 /// Static breakpoint (for fixed-width layouts)
 ///
@@ -94,9 +96,7 @@ $mq-media-type: all !default;
     @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
 
     @return mq-px2em($px * 1px, $base-font-size);
-  }
-
-  @else if unit($px)==em {
+  } @else if unit($px) ==em {
     @return $px;
   }
 
@@ -118,9 +118,7 @@ $mq-media-type: all !default;
 @function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
   @if map-has-key($breakpoints, $name) {
     @return map-get($breakpoints, $name);
-  }
-
-  @else {
+  } @else {
     @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
   }
 }
@@ -179,55 +177,58 @@ $mq-media-type: all !default;
 ///    }
 ///  }
 
-@mixin mq($from: false,
+@mixin mq(
+  $from: false,
   $until: false,
   $and: false,
   $media-type: $mq-media-type,
   $breakpoints: $mq-breakpoints,
   $responsive: $mq-responsive,
-  $static-breakpoint: $mq-static-breakpoint) {
+  $static-breakpoint: $mq-static-breakpoint
+) {
   $min-width: 0;
   $max-width: 0;
   $media-query: "";
 
   // From: this breakpoint (inclusive)
   @if $from {
-    @if type-of($from)==number {
+    @if type-of($from) ==number {
       $min-width: mq-px2em($from);
-    }
-
-    @else {
+    } @else {
       $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
     }
   }
 
   // Until: that breakpoint (exclusive)
   @if $until {
-    @if type-of($until)==number {
+    @if type-of($until) ==number {
       $max-width: mq-px2em($until);
-    }
-
-    @else {
-      $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - 0.01em;
+    } @else {
+      $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) -
+        0.01em;
     }
   }
 
   // Responsive support is disabled, rasterize the output outside @media blocks
   // The browser will rely on the cascade itself.
   @if $responsive==false {
-    $static-breakpoint-width: mq-get-breakpoint-width($static-breakpoint,
-        $breakpoints);
+    $static-breakpoint-width: mq-get-breakpoint-width(
+      $static-breakpoint,
+      $breakpoints
+    );
     $target-width: mq-px2em($static-breakpoint-width);
 
     // Output only rules that start at or span our target width
-    @if $and==false and $min-width <=$target-width and ($until==false or $max-width >=$target-width) and $media-type !="print"
-
-      {
+    @if $and==false and
+      $min-width
+      <=$target-width and
+      ($until==false or $max-width >=$target-width) and
+      $media-type !=
+      "print"
+    {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @if $min-width !=0 {
       $media-query: "#{$media-query} and (min-width: #{$min-width})";
     }
@@ -241,7 +242,7 @@ $mq-media-type: all !default;
     }
 
     // Remove unnecessary media query prefix 'all and '
-    @if $media-type=="all"and $media-query !="" {
+    @if $media-type== "all" and $media-query != "" {
       $media-type: "";
       $media-query: str-slice(unquote($media-query), 6);
     }
@@ -264,19 +265,15 @@ $mq-media-type: all !default;
   $equal: ();
   $large: ();
 
-  @if length($list)>1 {
+  @if length($list) >1 {
     $seed: nth($list, ceil(length($list) / 2));
 
     @each $item in $list {
       @if $item==$seed {
         $equal: append($equal, $item);
-      }
-
-      @else if $item < $seed {
+      } @else if $item < $seed {
         $less: append($less, $item);
-      }
-
-      @else if $item>$seed {
+      } @else if $item>$seed {
         $large: append($large, $item);
       }
     }
@@ -303,8 +300,12 @@ $mq-media-type: all !default;
   @each $value in $map-values-sorted {
     $index: index($map-values, $value);
     $key: nth($map-keys, $index);
-    $map-sorted: map-merge($map-sorted,
-        ($key: $value));
+    $map-sorted: map-merge(
+      $map-sorted,
+      (
+        $key: $value,
+      )
+    );
 
     // Unset the value in $map-values to prevent the loop
     // from finding the same index twice
@@ -326,7 +327,9 @@ $mq-media-type: all !default;
 ///  @include mq(tvscreen) {}
 
 @mixin mq-add-breakpoint($name, $width) {
-  $new-breakpoint: ($name: $width);
+  $new-breakpoint: (
+    $name: $width,
+  );
   $mq-breakpoints: map-merge($mq-breakpoints, $new-breakpoint) !global;
   $mq-breakpoints: _mq-map-sort-by-value($mq-breakpoints) !global;
 }
@@ -347,8 +350,10 @@ $mq-media-type: all !default;
 ///  // Show breakpoints using custom settings
 ///  @include mq-show-breakpoints((L, XL), (S: 300px, L: 800px, XL: 1200px));
 
-@mixin mq-show-breakpoints($show-breakpoints: $mq-show-breakpoints,
-  $breakpoints: $mq-breakpoints) {
+@mixin mq-show-breakpoints(
+  $show-breakpoints: $mq-show-breakpoints,
+  $breakpoints: $mq-breakpoints
+) {
   body:before {
     background-color: #fcf8e3;
     border-bottom: 1px solid #fbeed5;
@@ -372,9 +377,3 @@ $mq-media-type: all !default;
     }
   }
 }
-
-@if length($mq-show-breakpoints)>0 {
-  @include mq-show-breakpoints;
-}
-
-// @import "./mq_dev";

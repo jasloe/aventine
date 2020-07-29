@@ -76,7 +76,6 @@ body.events h1 {
 }
 
 .events-detail {
-
   .daterange,
   .field-events-event-dates-overrid p {
     @include body;
@@ -96,7 +95,6 @@ body.events {
 
 // News features.
 body.news-features {
-
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -197,20 +195,21 @@ body.news-features {
   }
 }
 
-.profile.wrapper .column-first .field-people-portrait {}
+.profile.wrapper .column-first .field-people-portrait {
+}
 
 // Publications.
-.publications>div {
+.publications > div {
   margin-bottom: 4rem;
 }
 
-.publications>div:last-of-type {
+.publications > div:last-of-type {
   margin-bottom: 0;
 }
 
 .publication.wrapper {
   margin-right: 0;
-  margin-bottom: 0;
+  margin-bottom: 3rem;
 
   .columns {
     display: flex;
@@ -384,7 +383,6 @@ body.news-features {
 }
 
 @include mq($from: tablet) {
-
   .news-features .page-section .column-second,
   .society-of-fellows .page-section .column-second {
     padding-right: 20% !important;
@@ -408,7 +406,6 @@ body.news-features {
 .path-sostegno-iscriviti-e-rinnova,
 .path-support-join-renew {
   .field__item:nth-child(3) .page-section {
-
     .field-page-section-files {
       .field__item:nth-child(2) {
         padding-top: 3rem;
@@ -421,7 +418,6 @@ body.news-features {
 .path-support-join-renew {
   .field__item:nth-child(3) .page-section {
     padding-top: 2rem;
-    ;
   }
 }
 
@@ -429,7 +425,6 @@ body.news-features {
 .path-support-join-renew {
   .field__item:nth-child(4) .page-section {
     padding-top: 2rem;
-    ;
   }
 }
 
@@ -521,8 +516,6 @@ body.news-features {
   }
 }
 
-
-
 .path-sostegno-azienda,
 .path-support-corporate {
   .field__item:nth-child(3) .page-section {
@@ -534,7 +527,7 @@ body.news-features {
 .field-page-section-links {
   a {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   a:hover {
@@ -547,12 +540,10 @@ body.news-features {
   .field-page-section-files {
     margin-top: 1rem;
 
-    >.field__item:not(:first-child) {
+    > .field__item:not(:first-child) {
       margin-top: 3rem;
     }
   }
-
-
 }
 
 .path-research-resources-tutorials,
@@ -560,10 +551,11 @@ body.news-features {
   .field-page-section-files {
     margin-top: 1rem;
 
-    >.field__item:not(:first-child) {
+    > .field__item:not(:first-child) {
       margin-top: 3rem;
     }
   }
+}
 
-
+.publications .column-second .publication.wrapper {
 }
