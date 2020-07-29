@@ -53,6 +53,9 @@
 }
 
 // Overrides events.
+.index-events .card {
+  position: relative;
+}
 .card-image-wrapper {
   .field-events-canceled {
     @include label;
