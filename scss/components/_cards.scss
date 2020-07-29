@@ -74,8 +74,9 @@
   .field-events-event-dates-overrid {
     @include body-card;
   }
-
-  margin-bottom: 1rem;
+  .read-more {
+    margin-top: 1rem;
+  }
 }
 
 .card-image-wrapper {
@@ -174,6 +175,52 @@
 }
 
 .card .card-inner:hover {
+  cursor: pointer;
+
+  .card-body > *:not(.read-more) {
+    color: $gray;
+  }
+
+  .blazy,
+  .read-more {
+    transition: opacity 0.22s ease;
+  }
+
+  .blazy {
+    opacity: 0.9;
+  }
+
+  .read-more {
+    opacity: 0.5;
+  }
+
+  .field-events-canceled {
+    background: $gray;
+  }
+}
+
+// Events card hover states. This is a hotfix and should be refactored.
+body.index-events .card {
+  .card-body > *:not(.read-more) {
+    color: $black;
+    transition: color 0.22s ease;
+  }
+
+  .blazy,
+  .read-more {
+    transition: opacity 0.22s ease;
+  }
+
+  .blazy {
+    opacity: 1;
+  }
+
+  .read-more {
+    opacity: 1;
+  }
+}
+
+body.index-events .card:hover {
   cursor: pointer;
 
   .card-body > *:not(.read-more) {
