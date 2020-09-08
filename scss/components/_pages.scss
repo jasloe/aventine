@@ -394,11 +394,57 @@ body.news-features {
   @include margin-top;
 }
 
+.field-page-section-files,
+.field-page-section-links {
+  a {
+    color: $black;
+    transition: color 0.22s ease;
+  }
+
+  a:hover {
+    color: $gray;
+  }
+}
+
+.path-research-library-about,
+.path-ricerca-biblioteca-sulla-collezione {
+  .field-page-section-files {
+    margin-top: 1rem;
+
+    > .field__item:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.path-research-resources-tutorials,
+.path-ricerca-risorse-tutorial-di-ricerca {
+  .field-page-section-files {
+    margin-top: 1rem;
+
+    > .field__item:not(:first-child) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.publications .column-second .publication.wrapper {
+}
+
+// Support buttons
 .path-sostegno-fondo-annuale,
 .path-support-annual-fund {
-  .field__item:nth-child(4) .page-section {
-    .field-page-section-links {
-      padding-top: 1.25rem;
+  .field__items .field__item:nth-child(3) .page-section {
+    .column-second .field {
+      padding-top: 1.3rem;
+    }
+  }
+}
+.path-sostegno-beneficio-virtuale,
+.path-support-virtual-benefit {
+  .field__items .field__item:nth-child(4) .page-section {
+    .column-second .field {
+      padding-top: 1.3rem;
     }
   }
 }
@@ -521,41 +567,4 @@ body.news-features {
   .field__item:nth-child(3) .page-section {
     padding-top: 4rem;
   }
-}
-
-.field-page-section-files,
-.field-page-section-links {
-  a {
-    color: $black;
-    transition: color 0.22s ease;
-  }
-
-  a:hover {
-    color: $gray;
-  }
-}
-
-.path-research-library-about,
-.path-ricerca-biblioteca-sulla-collezione {
-  .field-page-section-files {
-    margin-top: 1rem;
-
-    > .field__item:not(:first-child) {
-      margin-top: 3rem;
-    }
-  }
-}
-
-.path-research-resources-tutorials,
-.path-ricerca-risorse-tutorial-di-ricerca {
-  .field-page-section-files {
-    margin-top: 1rem;
-
-    > .field__item:not(:first-child) {
-      margin-top: 3rem;
-    }
-  }
-}
-
-.publications .column-second .publication.wrapper {
 }
