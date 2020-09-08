@@ -131,6 +131,11 @@ body.events .region-content article {
   }
 }
 
+.event-image-wrapper {
+  max-width: 1380px !important;
+  margin: 0 auto !important;
+}
+
 body.news-features article {
   .field-news-features-date {
     @include label;

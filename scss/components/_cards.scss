@@ -56,6 +56,8 @@
 .index-events .card {
   position: relative;
 }
+
+.event-image-wrapper,
 .card-image-wrapper {
   .field-events-canceled {
     @include label;
@@ -79,16 +81,24 @@
   }
 }
 
+.event-image-wrapper,
 .card-image-wrapper {
   position: relative;
 }
 
+.event-image-wrapper .field-events-canceled,
 .card-image-wrapper .field-events-canceled {
   position: absolute;
   right: 0;
   padding: 0.5rem 1rem;
   color: $white;
   background-color: $black;
+}
+
+.event-image-wrapper .field-events-canceled {
+  top: 0;
+  max-width: 1380px;
+  margin: 0 auto;
 }
 
 // Profiles.
