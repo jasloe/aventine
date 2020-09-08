@@ -35,7 +35,7 @@
 
   @include mq($from: tablet) {
     flex-direction: row;
-    align-items: flex-end
+    align-items: flex-end;
   }
 }
 
@@ -65,4 +65,9 @@
       flex-basis: calc(25% - 3rem);
     }
   }
+}
+
+// Temporary spacing for "closed until further notice"
+.research-callout .field.body p:first-child {
+  padding-bottom: 1rem;
 }
