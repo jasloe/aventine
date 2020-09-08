@@ -1,17 +1,11 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../../../.."
-	},
-	{
-		"path": "../../../core/themes/stable"
-	},
-	{
-		"path": "../academy"
-	}
-],
+    {
+      "path": "."
+    },
+    {
+      "path": "../../../.."
+    }
+  ],
   "settings": {}
 }

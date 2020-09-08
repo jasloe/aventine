@@ -72,10 +72,11 @@
 #}
 
 <article{{attributes.addClass('card')}}>
-
 	<div class="card-image-wrapper">
 		{{ content.field_events_image }}
-		{{ content.field_events_canceled }}
+		{% if node.field_events_canceled.0.value %}
+			{{ content.field_events_canceled }}
+		{% endif %}
 	</div>
 
 	<div class='card-body'>
@@ -110,6 +111,4 @@
 
 
 	</div>
-
-
 </article>
