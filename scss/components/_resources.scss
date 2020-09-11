@@ -6,7 +6,6 @@
   max-width: $max-vw;
   margin: 0 auto 2rem auto;
   padding: 0 1rem;
-
 }
 
 .resources-list .column-first {
@@ -30,15 +29,16 @@
 }
 
 .resources-list .column-second {
+  .resource-title,
   .resource-title a {
     font-family: $tradegothiccond;
     @include font-size($body);
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   .resource-title a:after {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     content: url(../images/arrow_small_external.svg);
   }
 
