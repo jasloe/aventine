@@ -60,6 +60,12 @@
   }
 }
 
+.front.news-features {
+  @include mq($until: wide) {
+    padding: 0 1rem;
+  }
+}
+
 .front.rome-prize {
   padding: 0 1rem;
 
@@ -309,6 +315,7 @@
   }
   .items {
     display: flex;
+    flex-direction: row;
     margin-top: 1.2rem;
     .news-item {
       flex-basis: 33%;
@@ -322,7 +329,6 @@
 
     h2 {
       @include title-card-serif;
-      margin-top: 0.5rem;
       color: $black;
       transition: color 0.22s ease;
     }
@@ -347,6 +353,7 @@
   .more-link {
     text-align: right;
     @include label;
+    margin-top: 1rem;
     a {
       border-bottom: 1px solid #000;
       padding-bottom: 2px;
@@ -357,6 +364,30 @@
       color: $gray;
       transition: color 0.22s ease;
       border-bottom: 1px solid $gray;
+    }
+  }
+}
+
+@include mq($until: tablet) {
+  .front.news-features {
+    .items {
+      flex-direction: column;
+      margin-top: 1.2rem;
+      .news-item {
+        flex-basis: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .news-item:first-child {
+        margin-top: 0;
+      }
+
+      .news-item:last-child {
+        margin-bottom: 0;
+      }
+    }
+    h2 {
+      margin-top: 0;
     }
   }
 }
