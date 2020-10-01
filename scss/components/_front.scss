@@ -1,12 +1,12 @@
-// Global.
-.front.news {
+// Events.
+.front-events {
   .slick {
     max-width: $jumbotron;
     margin: 0 auto;
   }
 }
 
-.front.news {
+.front-events {
   .slide__caption {
     margin: 0 auto;
     max-width: $max-vw;
@@ -15,18 +15,39 @@
     @include mq($from: $jumbotron) {
       padding: 0;
     }
-
-    .slide__description {
-      margin-top: 1rem;
-    }
-  }
-
-  .field-media-caption {
-    display: none;
   }
 }
 
-.front.elsewhere,
+.front-events .slide__caption {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.front-events .slide__description {
+  @include label;
+}
+
+.front-events .slide__content {
+  opacity: 1;
+  transition: opacity 0.22s ease;
+  .slide__title,
+  .slide__description {
+    color: $black;
+    transition: color 0.22s ease;
+  }
+}
+
+.front-events .slide__content:hover {
+  opacity: 0.9;
+  transition: opacity 0.22s ease;
+  .slide__title,
+  .slide__description {
+    color: $gray;
+    transition: color 0.22s ease;
+  }
+}
+
+.front.news-features,
 .front.rome-prize,
 .front.fellows,
 .front.join-us,
@@ -39,7 +60,6 @@
   }
 }
 
-.front.elsewhere,
 .front.rome-prize {
   padding: 0 1rem;
 
@@ -67,113 +87,7 @@
   }
 }
 
-// News block.
-.front.news .front-wrapper,
-.front.elsewhere .item {
-  position: relative;
-}
-
-.front.news,
-.front.elsewhere {
-  .card-link {
-    font-size: 0;
-  }
-
-  .card-link a span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-}
-
-.front.news .slide__content {
-  .field-media-image {
-    opacity: 1;
-    transition: opacity 0.22s ease;
-  }
-
-  time,
-  h2.title {
-    color: $black;
-    transition: color 0.22s ease;
-  }
-}
-
-.front.news .slide__content:hover {
-  .field-media-image {
-    opacity: 0.8;
-  }
-
-  time,
-  h2.title {
-    color: $gray;
-  }
-}
-
-// Elsewhere block.
-.front.elsewhere {
-  .front-wrapper .items {
-    display: flex;
-    flex-direction: column;
-
-    @include mq($from: tablet) {
-      flex-direction: row;
-
-      .item {
-        flex-basis: 33%;
-        margin-bottom: 0;
-      }
-
-      .item:nth-child(2) {
-        margin: 0 1rem;
-      }
-    }
-  }
-
-  .item {
-    margin-bottom: 1rem;
-  }
-}
-
-.front.elsewhere {
-  .datetime {
-    @include label;
-    margin-bottom: 0.5rem;
-  }
-
-  h2:first-child {
-    @include title-card-sans;
-    margin-bottom: 1rem;
-  }
-  h2 {
-    @include title-card-serif;
-    margin-bottom: 1rem;
-  }
-
-  .more-link {
-    margin-top: 1rem;
-    text-align: left;
-    @include mq($from: tablet) {
-      text-align: right;
-    }
-  }
-  .more-link a {
-    @include label;
-    border-bottom: 1px solid $black;
-    padding-bottom: 2px;
-    text-align: right;
-    transition: color 0.22s ease;
-    display: inline;
-  }
-  .more-link a:hover {
-    color: $gray;
-    border-bottom: none;
-  }
-}
-
+// Rome Prize cta.
 .rome-prize-cta {
   display: flex;
   flex-direction: column;
@@ -387,4 +301,62 @@
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+.front.news-features {
+  > h2 {
+    @include title-card-sans;
+  }
+  .items {
+    display: flex;
+    margin-top: 1.2rem;
+    .news-item {
+      flex-basis: 33%;
+      position: relative;
+    }
+
+    time {
+      @include label;
+      color: $gray;
+    }
+
+    h2 {
+      @include title-card-serif;
+      margin-top: 0.5rem;
+      color: $black;
+      transition: color 0.22s ease;
+    }
+  }
+
+  .card-link a span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .news-item:hover {
+    h2 {
+      color: $gray;
+      transition: color 0.22s ease;
+    }
+  }
+
+  .more-link {
+    text-align: right;
+    @include label;
+    a {
+      border-bottom: 1px solid #000;
+      padding-bottom: 2px;
+      color: #000;
+      transition: color 0.22s ease;
+    }
+    a:hover {
+      color: $gray;
+      transition: color 0.22s ease;
+      border-bottom: 1px solid $gray;
+    }
+  }
 }
