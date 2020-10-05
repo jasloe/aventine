@@ -4,6 +4,8 @@ description: Aventine, a subtheme of Stable
 core: 8.x
 base theme: stable
 libraries:
+  - aventine/donorbox
+  - aventine/donorbox-widget
   - aventine/global-styling
   - aventine/global-scripts
 regions:

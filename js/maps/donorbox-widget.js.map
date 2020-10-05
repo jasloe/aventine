@@ -1,0 +1,1 @@
+{"version":3,"sources":["donorbox-widget.js"],"names":["window","DonorBox","widgetLinkClassName"],"mappings":"AAAAA,OAAOC,UACLC,oBAAqB","file":"../donorbox-widget.js","sourcesContent":["window.DonorBox = {\n  widgetLinkClassName: 'custom-dbox-popup'\n}\n"]}
