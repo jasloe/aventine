@@ -1,6 +1,10 @@
 $benefit-yellow: #dafc5d;
 $benefit-blue: #080d78;
 
+.path-benefit article {
+  margin: 2rem 0 2rem 0;
+}
+
 .path-benefit {
   .title-container {
     margin: 0 auto;
@@ -22,9 +26,7 @@ $benefit-blue: #080d78;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .title-first,
-    .title-second {
-    }
+
     .title-first {
       display: flex;
       flex-direction: column;
@@ -33,6 +35,7 @@ $benefit-blue: #080d78;
 
   .title-wrapper {
     .title-first {
+
       h1,
       div {
         @include title-serif;
@@ -41,12 +44,14 @@ $benefit-blue: #080d78;
         line-height: 0.8;
       }
     }
+
     div {
       line-height: 0.5;
     }
+
     p {
       @include title-serif;
-      @include font-size(2rem);
+      @include font-size(2.4rem);
       color: $benefit-yellow;
     }
   }
@@ -73,6 +78,7 @@ $benefit-blue: #080d78;
 
 .path-benefit {
   .title-wrapper {
+
     h1,
     div {
       @include title-serif;
@@ -80,6 +86,7 @@ $benefit-blue: #080d78;
       color: $benefit-yellow;
       line-height: 0.8;
     }
+
     div {
       line-height: 0.5;
     }
@@ -87,33 +94,56 @@ $benefit-blue: #080d78;
 }
 
 .path-benefit .wrapper-third {
+
+  .wrapper-third-inner {
+    margin: 0 auto;
+    max-width: $max-vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   background-color: $benefit-yellow;
   color: $benefit-blue;
-  .event-description p {
-    @include body;
-    @include font-size(2.6rem);
+
+
+  .card {
+    flex-basis: 50%;
   }
-  .event-honoring h2 {
-    @include label;
-    @include font-size(1.2rem);
-  }
-  .event-honoring p {
+
+  .card p {
     @include body;
     @include font-size(2.2rem);
     line-height: 1.2;
   }
+
+  .card h2 {
+    @include label;
+    @include font-size(1.3rem);
+  }
+
+  .card:first-child {
+    p:nth-child(3) {
+      padding-bottom: .5rem;
+    }
+  }
+
+
 }
 
 // Positioning
 .path-benefit .container-top {
   display: flex;
   flex-direction: column;
+
   .wrapper-first {
     order: 2;
   }
+
   .wrapper-second {
     order: 1;
   }
+
   .wrapper-third {
     order: 3;
   }
@@ -123,24 +153,31 @@ $benefit-blue: #080d78;
   .wrapper-first {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: left;
+    // margin: 0 auto;
+    // max-width: $max-vw;
   }
+
   .pane {
-    flex-basis: 50%;
+    flex-basis: 100%;
   }
+
   .wrapper-second {
     padding: 3rem;
+
     .button-group {
       display: flex;
       justify-content: center;
+
       a:first-child {
         margin-right: 0.5rem;
       }
+
       a:last-child {
         margin-left: 0.5rem;
       }
     }
   }
+
   .wrapper-third {
     padding: 3rem;
   }
@@ -172,6 +209,7 @@ $benefit-blue: #080d78;
     padding: 0.5rem 1.5rem;
     transition: color 0.22s ease;
   }
+
   a:hover {
     background: $benefit-yellow;
     color: $benefit-blue;
@@ -184,47 +222,64 @@ $benefit-blue: #080d78;
   background: linear-gradient(3deg, #dafc5d, #080d78);
   background-size: 400% 400%;
 }
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 100%;
   }
+
   50% {
     background-position: 100% 17%;
   }
+
   100% {
     background-position: 0% 100%;
   }
 }
+
 @-moz-keyframes AnimationName {
   0% {
     background-position: 0% 84%;
   }
+
   50% {
     background-position: 100% 17%;
   }
+
   100% {
     background-position: 0% 84%;
   }
 }
+
 @-o-keyframes AnimationName {
   0% {
     background-position: 0% 84%;
   }
+
   50% {
     background-position: 100% 17%;
   }
+
   100% {
     background-position: 0% 84%;
   }
 }
+
 @keyframes AnimationName {
   0% {
     background-position: 0% 84%;
   }
+
   50% {
     background-position: 100% 17%;
   }
+
   100% {
     background-position: 0% 84%;
   }
+}
+
+.path-benefit .title-second {
+  margin: 0 auto;
+  padding: 0 0 0 2rem;
 }

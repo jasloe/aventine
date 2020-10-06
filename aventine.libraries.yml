@@ -3,11 +3,11 @@ global-styling:
   css:
     base:
       css/main.css: { weight: 999 }
-donorbox:
-  header: true
-  js:
-    js/donorbox.js: {}
-    js/donorbox-widget.js: {}
+# donorbox:
+#   header: true
+#   js:
+#     js/donorbox.js: {}
+#     js/donorbox-widget.js: {}
 global-scripts:
   version: VERSION
   js:
