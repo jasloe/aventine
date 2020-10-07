@@ -1,285 +1,279 @@
-// $benefit-yellow: #dafc5d;
-// $benefit-blue: #080d78;
+$benefit-yellow: #dafc5d;
+$benefit-blue: #080d78;
 
-// .path-benefit article {
-//   margin: 2rem 0 2rem 0;
-// }
+.path-benefit-test article {
+  margin: 2rem 0 2rem 0;
+}
 
-// .path-benefit {
-//   .title-container {
-//     margin: 0 auto;
-//     max-width: $max-vw;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     width: 50%;
-//   }
+.path-benefit-test {
+  .title-container {
+    margin: 0 auto;
+    max-width: $max-vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
 
-//   .title-container .pre-title {
-//     @include label;
-//     color: $benefit-yellow;
-//     letter-spacing: 0.03rem;
-//     margin-bottom: 1rem;
-//   }
+  .title-container .pre-title {
+    @include label;
+    color: $benefit-yellow;
+    letter-spacing: 0.03rem;
+    margin-bottom: 1rem;
+  }
 
-//   .title-wrapper {
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
+  .title-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-//     .title-first {
-//       display: flex;
-//       flex-direction: column;
-//     }
-//   }
+    .title-first {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
-//   .title-wrapper {
-//     .title-first {
+  .title-wrapper {
+    .title-first {
+      h1,
+      div {
+        @include title-serif;
+        @include font-size(4rem);
+        color: $benefit-yellow;
+        line-height: 0.8;
+      }
+    }
 
-//       h1,
-//       div {
-//         @include title-serif;
-//         @include font-size(4rem);
-//         color: $benefit-yellow;
-//         line-height: 0.8;
-//       }
-//     }
+    div {
+      line-height: 0.5;
+    }
 
-//     div {
-//       line-height: 0.5;
-//     }
+    p {
+      @include title-serif;
+      @include font-size(2.4rem);
+      color: $benefit-yellow;
+    }
+  }
+}
 
-//     p {
-//       @include title-serif;
-//       @include font-size(2.4rem);
-//       color: $benefit-yellow;
-//     }
-//   }
-// }
+.path-benefit-test header {
+  display: none;
+}
 
-// .path-benefit header {
-//   display: none;
-// }
+.path-benefit-test footer {
+  display: none;
+}
 
-// .path-benefit footer {
-//   display: none;
-// }
+.path-benefit-test .layout-container {
+  padding-top: 0;
+  margin-top: 0;
+}
 
-// .path-benefit .layout-container {
-//   padding-top: 0;
-//   margin-top: 0;
-// }
+.path-benefit-test .region-page-title {
+  h1 {
+    display: none;
+  }
+}
 
-// .path-benefit .region-page-title {
-//   h1 {
-//     display: none;
-//   }
-// }
+.path-benefit-test {
+  .title-wrapper {
+    h1,
+    div {
+      @include title-serif;
+      @include font-size(5rem);
+      color: $benefit-yellow;
+      line-height: 0.8;
+    }
 
-// .path-benefit {
-//   .title-wrapper {
+    div {
+      line-height: 0.5;
+    }
+  }
+}
 
-//     h1,
-//     div {
-//       @include title-serif;
-//       @include font-size(5rem);
-//       color: $benefit-yellow;
-//       line-height: 0.8;
-//     }
+.path-benefit-test .wrapper-third {
+  .wrapper-third-inner {
+    margin: 0 auto;
+    max-width: $max-vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-//     div {
-//       line-height: 0.5;
-//     }
-//   }
-// }
+  background-color: $benefit-yellow;
+  color: $benefit-blue;
 
-// .path-benefit .wrapper-third {
+  .card {
+    flex-basis: 50%;
+  }
 
-//   .wrapper-third-inner {
-//     margin: 0 auto;
-//     max-width: $max-vw;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//   }
+  .card p {
+    @include body;
+    @include font-size(2.2rem);
+    line-height: 1.2;
+  }
 
-//   background-color: $benefit-yellow;
-//   color: $benefit-blue;
+  .card h2 {
+    @include label;
+    @include font-size(1.3rem);
+  }
 
+  .card:first-child {
+    p:nth-child(3) {
+      padding-bottom: 0.5rem;
+    }
+  }
+}
 
-//   .card {
-//     flex-basis: 50%;
-//   }
+// Positioning
+.path-benefit-test .container-top {
+  display: flex;
+  flex-direction: column;
 
-//   .card p {
-//     @include body;
-//     @include font-size(2.2rem);
-//     line-height: 1.2;
-//   }
+  .wrapper-first {
+    order: 2;
+  }
 
-//   .card h2 {
-//     @include label;
-//     @include font-size(1.3rem);
-//   }
+  .wrapper-second {
+    order: 1;
+  }
 
-//   .card:first-child {
-//     p:nth-child(3) {
-//       padding-bottom: .5rem;
-//     }
-//   }
+  .wrapper-third {
+    order: 3;
+  }
+}
 
+.path-benefit-test {
+  .wrapper-first {
+    display: flex;
+    flex-direction: column-reverse;
+    // margin: 0 auto;
+    // max-width: $max-vw;
+  }
 
-// }
+  .pane {
+    flex-basis: 100%;
+  }
 
-// // Positioning
-// .path-benefit .container-top {
-//   display: flex;
-//   flex-direction: column;
+  .wrapper-second {
+    padding: 3rem;
 
-//   .wrapper-first {
-//     order: 2;
-//   }
+    .button-group {
+      display: flex;
+      justify-content: center;
 
-//   .wrapper-second {
-//     order: 1;
-//   }
+      a:first-child {
+        margin-right: 0.5rem;
+      }
 
-//   .wrapper-third {
-//     order: 3;
-//   }
-// }
+      a:last-child {
+        margin-left: 0.5rem;
+      }
+    }
+  }
 
-// .path-benefit {
-//   .wrapper-first {
-//     display: flex;
-//     flex-direction: column-reverse;
-//     // margin: 0 auto;
-//     // max-width: $max-vw;
-//   }
+  .wrapper-third {
+    padding: 3rem;
+  }
+}
 
-//   .pane {
-//     flex-basis: 100%;
-//   }
+@include mq($from: tablet) {
+  .path-benefit-test {
+    .wrapper-first {
+      flex-direction: row;
+    }
+  }
+}
 
-//   .wrapper-second {
-//     padding: 3rem;
+.line {
+  width: 50px;
+  border-top: 3px solid $benefit-yellow;
+  line-height: 0;
 
-//     .button-group {
-//       display: flex;
-//       justify-content: center;
+  padding-bottom: 10px;
+}
 
-//       a:first-child {
-//         margin-right: 0.5rem;
-//       }
+// Buttons.
+.path-benefit-test .button-group {
+  a {
+    @include body;
+    @include font-size(2.4rem);
+    border: 2.5px solid $benefit-yellow;
+    color: $benefit-yellow;
+    padding: 0.5rem 1.5rem;
+    transition: color 0.22s ease;
+  }
 
-//       a:last-child {
-//         margin-left: 0.5rem;
-//       }
-//     }
-//   }
+  a:hover {
+    background: $benefit-yellow;
+    color: $benefit-blue;
+    transition: background-color 0.5s ease;
+  }
+}
 
-//   .wrapper-third {
-//     padding: 3rem;
-//   }
-// }
+// Background.
+.path-benefit-test {
+  background: linear-gradient(3deg, #dafc5d, #080d78);
+  background-size: 400% 400%;
+}
 
-// @include mq($from: tablet) {
-//   .path-benefit {
-//     .wrapper-first {
-//       flex-direction: row;
-//     }
-//   }
-// }
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 100%;
+  }
 
-// .line {
-//   width: 50px;
-//   border-top: 3px solid $benefit-yellow;
-//   line-height: 0;
+  50% {
+    background-position: 100% 17%;
+  }
 
-//   padding-bottom: 10px;
-// }
+  100% {
+    background-position: 0% 100%;
+  }
+}
 
-// // Buttons.
-// .path-benefit .button-group {
-//   a {
-//     @include body;
-//     @include font-size(2.4rem);
-//     border: 2.5px solid $benefit-yellow;
-//     color: $benefit-yellow;
-//     padding: 0.5rem 1.5rem;
-//     transition: color 0.22s ease;
-//   }
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 84%;
+  }
 
-//   a:hover {
-//     background: $benefit-yellow;
-//     color: $benefit-blue;
-//     transition: background-color 0.5s ease;
-//   }
-// }
+  50% {
+    background-position: 100% 17%;
+  }
 
-// // Background.
-// .path-benefit {
-//   background: linear-gradient(3deg, #dafc5d, #080d78);
-//   background-size: 400% 400%;
-// }
+  100% {
+    background-position: 0% 84%;
+  }
+}
 
-// @-webkit-keyframes AnimationName {
-//   0% {
-//     background-position: 0% 100%;
-//   }
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 84%;
+  }
 
-//   50% {
-//     background-position: 100% 17%;
-//   }
+  50% {
+    background-position: 100% 17%;
+  }
 
-//   100% {
-//     background-position: 0% 100%;
-//   }
-// }
+  100% {
+    background-position: 0% 84%;
+  }
+}
 
-// @-moz-keyframes AnimationName {
-//   0% {
-//     background-position: 0% 84%;
-//   }
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 84%;
+  }
 
-//   50% {
-//     background-position: 100% 17%;
-//   }
+  50% {
+    background-position: 100% 17%;
+  }
 
-//   100% {
-//     background-position: 0% 84%;
-//   }
-// }
+  100% {
+    background-position: 0% 84%;
+  }
+}
 
-// @-o-keyframes AnimationName {
-//   0% {
-//     background-position: 0% 84%;
-//   }
-
-//   50% {
-//     background-position: 100% 17%;
-//   }
-
-//   100% {
-//     background-position: 0% 84%;
-//   }
-// }
-
-// @keyframes AnimationName {
-//   0% {
-//     background-position: 0% 84%;
-//   }
-
-//   50% {
-//     background-position: 100% 17%;
-//   }
-
-//   100% {
-//     background-position: 0% 84%;
-//   }
-// }
-
-// .path-benefit .title-second {
-//   margin: 0 auto;
-//   padding: 0 0 0 2rem;
-// }
+.path-benefit-test .title-second {
+  margin: 0 auto;
+  padding: 0 0 0 2rem;
+}

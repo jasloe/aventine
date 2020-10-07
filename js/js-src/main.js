@@ -114,20 +114,20 @@ for (i = 0; i < quickNewsLinks.length; ++i) {
 //   }
 // });
 
-var input = document.querySelector('form-text');
-input.addEventListener('input', function (evt) {
-  var value = input.value;
+// var input = document.querySelector('form-text');
+// input.addEventListener('input', function (evt) {
+//   var value = input.value;
 
-  if (!value) {
-    input.dataset.state = '';
-    return;
-  }
+//   if (!value) {
+//     input.dataset.state = '';
+//     return;
+//   }
 
-  var trimmed = value.trim();
+//   var trimmed = value.trim();
 
-  if (trimmed) {
-    input.dataset.state = 'valid';
-  } else {
-    input.dataset.state = 'invalid';
-  }
-});
+//   if (trimmed) {
+//     input.dataset.state = 'valid';
+//   } else {
+//     input.dataset.state = 'invalid';
+//   }
+// });
