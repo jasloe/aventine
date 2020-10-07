@@ -1,3 +1,99 @@
 body.user-logged-in {
   padding-top: 0 !important;
 }
+
+.path-user-login .description {
+  display: none;
+}
+
+.path-user-login .layout-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.path-user-login .layout-content .region-page-title {
+  width: 100%;
+  text-align: left;
+  padding: 0 !important;
+}
+
+.path-user-login .form-item-persistent-login {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-left: 1rem;
+  }
+}
+
+.path-user-login .form-actions {
+  margin-top: 1rem;
+}
+
+.path-user-login .form-actions input[type=submit] {
+  border: 1px solid $gray;
+  padding: 1rem 2rem;
+  @include label;
+  background-color: none;
+  transition: background-color .22s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent;
+    transition: background-color .22s ease;
+  }
+}
+
+form.user-login-form {
+  .js-form-item {
+    position: relative;
+  }
+
+  input[type=text],
+  input[type=password] {
+    border: none;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+
+.form-item *:focus {
+  background: $accent;
+}
+
+form label {
+  position: absolute;
+}
+
+form label,
+form input,
+form textarea {
+  font-family: $dignitas;
+  font-size: $body;
+  padding: .75rem .25rem;
+}
+
+.form-item {
+
+  .form-text,
+  .form-email {
+    line-height: 1;
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+
+  .form-textarea {
+    border: 1px solid $black;
+  }
+}
+
+.form-active label {
+  display: none;
+}
