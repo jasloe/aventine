@@ -37,6 +37,7 @@ body.user-logged-in {
   }
 }
 
+.user-pass-reset .form-actions input[type="submit"],
 .path-user-password .form-actions input[type="submit"],
 .path-user-login .form-actions input[type="submit"] {
   border: 1px solid $gray;
@@ -120,4 +121,18 @@ div[role="alert"] {
       border: none;
     }
   }
+}
+
+.user-pass-reset {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.user-pass-reset p {
+  @include body;
+}
+
+.user-pass-reset p:last-of-type {
+  margin-bottom: 1rem;
 }
