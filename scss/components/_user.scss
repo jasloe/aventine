@@ -6,17 +6,33 @@ body.user-logged-in {
   display: none;
 }
 
+<<<<<<< HEAD
 .path-user-login .layout-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 
+=======
+.path-user-password .layout-content,
+.path-user-login .layout-content {
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   max-width: $max-vw;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+<<<<<<< HEAD
+=======
+.path-user-password .region-page-title {
+  padding: 0;
+}
+
+.user-pass p {
+  @include body;
+}
+
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
 .path-user-login .layout-content .region-page-title {
   width: 100%;
   text-align: left;
@@ -24,7 +40,10 @@ body.user-logged-in {
 }
 
 .path-user-login .form-item-persistent-login {
+<<<<<<< HEAD
   margin-top: 1rem;
+=======
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   display: flex;
   align-items: center;
 
@@ -33,21 +52,34 @@ body.user-logged-in {
   }
 }
 
+<<<<<<< HEAD
 .path-user-login .form-actions {
   margin-top: 1rem;
 }
 
 .path-user-login .form-actions input[type=submit] {
+=======
+.path-user-password .form-actions input[type="submit"],
+.path-user-login .form-actions input[type="submit"] {
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   border: 1px solid $gray;
   padding: 1rem 2rem;
   @include label;
   background-color: none;
+<<<<<<< HEAD
   transition: background-color .22s ease;
+=======
+  transition: background-color 0.22s ease;
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   cursor: pointer;
 
   &:hover {
     background-color: $accent;
+<<<<<<< HEAD
     transition: background-color .22s ease;
+=======
+    transition: background-color 0.22s ease;
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   }
 }
 
@@ -56,32 +88,50 @@ form.user-login-form {
     position: relative;
   }
 
+<<<<<<< HEAD
   input[type=text],
   input[type=password] {
+=======
+  input[type="text"],
+  input[type="password"] {
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
     border: none;
     border-bottom: 1px solid $gray;
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
 .form-item *:focus {
   background: $accent;
 }
 
+<<<<<<< HEAD
 form label {
   position: absolute;
 }
 
+=======
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
 form label,
 form input,
 form textarea {
   font-family: $dignitas;
   font-size: $body;
+<<<<<<< HEAD
   padding: .75rem .25rem;
 }
 
 .form-item {
 
+=======
+  padding: 0.75rem 0.25rem;
+}
+
+.form-item {
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
   .form-text,
   .form-email {
     line-height: 1;
@@ -97,3 +147,35 @@ form textarea {
 .form-active label {
   display: none;
 }
+<<<<<<< HEAD
+=======
+
+.path-user-password .user-pass p {
+  margin: 0.5rem 0;
+  @include font-size($caption);
+}
+
+.form-item-name .form-required,
+.form-item-pass .form-required {
+  display: none;
+}
+
+.region-highlighted {
+  max-width: $wide;
+  margin: 0 auto;
+  padding: 1rem;
+  @include label;
+}
+
+div[role="alert"] {
+  background-color: $accent;
+  padding: 1rem;
+  a {
+    border-bottom: 1px solid $black;
+    &:hover {
+      color: $gray;
+      border: none;
+    }
+  }
+}
+>>>>>>> d3f191e90bd984e76b90ced45724618ada4166e0
