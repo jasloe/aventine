@@ -1,3 +1,122 @@
 body.user-logged-in {
   padding-top: 0 !important;
 }
+
+.path-user-login .description {
+  display: none;
+}
+
+.path-user-password .layout-content,
+.path-user-login .layout-content {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.path-user-password .region-page-title {
+  padding: 0;
+}
+
+.user-pass p {
+  @include body;
+}
+
+.path-user-login .layout-content .region-page-title {
+  width: 100%;
+  text-align: left;
+  padding: 0 !important;
+}
+
+.path-user-login .form-item-persistent-login {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-left: 1rem;
+  }
+}
+
+.path-user-password .form-actions input[type="submit"],
+.path-user-login .form-actions input[type="submit"] {
+  border: 1px solid $gray;
+  padding: 1rem 2rem;
+  @include label;
+  background-color: none;
+  transition: background-color 0.22s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent;
+    transition: background-color 0.22s ease;
+  }
+}
+
+form.user-login-form {
+  .js-form-item {
+    position: relative;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    border: none;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+.form-item *:focus {
+  background: $accent;
+}
+
+form label,
+form input,
+form textarea {
+  font-family: $dignitas;
+  font-size: $body;
+  padding: 0.75rem 0.25rem;
+}
+
+.form-item {
+  .form-text,
+  .form-email {
+    line-height: 1;
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+
+  .form-textarea {
+    border: 1px solid $black;
+  }
+}
+
+.form-active label {
+  display: none;
+}
+
+.path-user-password .user-pass p {
+  margin: 0.5rem 0;
+  @include font-size($caption);
+}
+
+.form-item-name .form-required,
+.form-item-pass .form-required {
+  display: none;
+}
+
+.region-highlighted {
+  max-width: $wide;
+  margin: 0 auto;
+  padding: 1rem;
+  @include label;
+}
+
+div[role="alert"] {
+  background-color: $accent;
+  padding: 1rem;
+  a {
+    border-bottom: 1px solid $black;
+    &:hover {
+      color: $gray;
+      border: none;
+    }
+  }
+}
