@@ -13,8 +13,6 @@
   font-size: 1.05rem;
 }
 
-
-
 .decline-button {
   display: none;
 }
@@ -27,7 +25,7 @@
     border: 1px solid $gray;
     padding: 1rem 2rem;
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   button:hover {
@@ -61,7 +59,6 @@
     }
   }
 }
-
 
 button.agree-button {
   // @include link-cta;
