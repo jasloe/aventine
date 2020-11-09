@@ -60,15 +60,12 @@
   }
 }
 
-button.agree-button {
-  // @include link-cta;
-  // text-transform: uppercase;
-  // @include link-cta-box;
-  // background-image: url(../images/plus.svg);
-  // content: "";
-  // background-repeat: no-repeat;
-  // text-indent: -9999px;
-  // min-width: 5rem;
-  // max-height: 5rem;
-  // border: 0;
+.popup-content p a {
+  border-bottom: 1px solid $black;
+  color: $black;
+  transition: color .22s ease-in-out;
+  &:hover {
+    color: $gray;
+    border-bottom: none;
+  }
 }

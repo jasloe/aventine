@@ -2,7 +2,6 @@
 .field-media-caption {
   @include caption;
   padding-top: 0.5rem !important;
-  max-width: 75%;
 }
 
 .field-page-image .blazy__caption,
@@ -27,4 +26,12 @@
   max-width: 1290px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.programs .field-media-caption {
+  padding: 0 1rem;
+  @include mq($from: $jumbotron) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
