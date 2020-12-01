@@ -30,6 +30,7 @@
 .front-events .slide__content {
   opacity: 1;
   transition: opacity 0.22s ease;
+
   .slide__title,
   .slide__description {
     color: $black;
@@ -40,6 +41,7 @@
 .front-events .slide__content:hover {
   opacity: 0.9;
   transition: opacity 0.22s ease;
+
   .slide__title,
   .slide__description {
     color: $gray;
@@ -310,13 +312,15 @@
 }
 
 .front.news-features {
-  > h2 {
+  >h2 {
     @include title-card-sans;
   }
+
   .items {
     display: flex;
     flex-direction: row;
     margin-top: 1.2rem;
+
     .news-item {
       flex-basis: 33%;
       position: relative;
@@ -354,12 +358,14 @@
     text-align: right;
     @include label;
     margin-top: 1rem;
+
     a {
       border-bottom: 1px solid #000;
       padding-bottom: 2px;
       color: #000;
       transition: color 0.22s ease;
     }
+
     a:hover {
       color: $gray;
       transition: color 0.22s ease;
@@ -373,11 +379,13 @@
     .items {
       flex-direction: column;
       margin-top: 1.2rem;
+
       .news-item {
         flex-basis: 100%;
         margin-top: 1rem;
         margin-bottom: 1rem;
       }
+
       .news-item:first-child {
         margin-top: 0;
       }
@@ -386,8 +394,34 @@
         margin-bottom: 0;
       }
     }
+
     h2 {
       margin-top: 0;
+    }
+  }
+}
+
+// Basic pages. Beginning 2020-12-01.
+.front-events .media__image {
+  opacity: 1;
+  transition: opacity .22s ease;
+}
+
+.teaser-home p {
+  @include title-card-serif;
+  @include font-size(2rem);
+  margin-top: .5rem;
+  color: $black;
+  transition: color .22s ease;
+}
+
+.front-events {
+  &:hover {
+    .teaser-home p {
+      color: $gray;
+    }
+    .media__image {
+      opacity: .85;
     }
   }
 }
