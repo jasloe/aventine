@@ -410,6 +410,7 @@
 .teaser-home p {
   @include title-card-serif;
   @include font-size(2rem);
+  margin-top: .5rem;
   color: $black;
   transition: color .22s ease;
 }
