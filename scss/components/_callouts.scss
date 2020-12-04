@@ -49,6 +49,15 @@
     margin-bottom: 0;
   }
 
+  @include mq($until: mobile) {
+    .callout {
+      margin-bottom: 2rem;
+    }
+    .callout:last-child {
+      margin-bottom: 0rem;
+    }
+  }
+
   @include mq($from: tablet) {
     flex-direction: row;
     align-items: flex-start;
@@ -66,9 +75,3 @@
     }
   }
 }
-
-// Temporary spacing for "closed until further notice"
-.research-callout .field.body p:first-child {
-  padding-bottom: 1rem;
-}
-
