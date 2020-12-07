@@ -121,6 +121,12 @@
   }
 }
 
-.path-home .field-page-section-links .field__item a {
-  border: none !important;
+.path-home .field-page-section-links {
+  .field__item {
+    margin-bottom: 0;
+  }
+  .field__item a {
+    padding: 0 !important;
+    border: none !important;
+  }
 }
