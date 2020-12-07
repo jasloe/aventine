@@ -111,8 +111,12 @@
     margin-bottom: 1rem;
   }
   .field__item a {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border: 1px solid $black;
     display: inline-block;
+    @include label;
+    &:hover {
+      border: 1px solid $gray;
+    }
   }
 }
