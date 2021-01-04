@@ -25,6 +25,7 @@
 
 .front.elsewhere {
   .item {
+
     .datetime,
     h2 {
       color: $black;
@@ -40,6 +41,7 @@
 
 .front.elsewhere {
   .item:hover {
+
     .datetime,
     h2 {
       color: $gray;
@@ -51,6 +53,7 @@
     }
   }
 }
+
 .path-news-elsewhere,
 .path-attualita-altrove {
   .read-more {
@@ -110,13 +113,38 @@
   .field__item {
     margin-bottom: 1rem;
   }
+
   .field__item a {
     padding: 1rem 1.5rem;
     border: 1px solid $black;
     display: inline-block;
     @include label;
+
     &:hover {
       border: 1px solid $gray;
+    }
+  }
+}
+
+.field-press-releases-files {
+  display: flex;
+  margin-bottom: 2rem;
+  .field__item:first-child .field {
+margin-right: 1rem;
+  }
+}
+
+.field-press-releases-files .field-media-file {
+  margin-bottom: 1rem;
+
+  .file a {
+    border-bottom: 1px solid $black;
+    display: inline-block;
+    @include label;
+
+    &:hover {
+      color: $gray;
+      border-bottom: 1px solid $gray;
     }
   }
 }
@@ -125,6 +153,7 @@
   .field__item {
     margin-bottom: 0;
   }
+
   .field__item a {
     padding: 0 !important;
     border: none !important;
