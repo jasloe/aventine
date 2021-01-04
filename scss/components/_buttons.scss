@@ -130,17 +130,22 @@
   display: flex;
   margin-bottom: 2rem;
   .field__item:first-child .field {
-margin-right: 1rem;
+margin-right: 1.5rem;
   }
 }
 
 .field-press-releases-files .field-media-file {
   margin-bottom: 1rem;
 
+.file {
+
+}
+
   .file a {
     border-bottom: 1px solid $black;
     display: inline-block;
     @include label;
+    padding-bottom: .2rem;
 
     &:hover {
       color: $gray;
