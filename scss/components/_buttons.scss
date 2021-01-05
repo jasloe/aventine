@@ -12,7 +12,7 @@
   height: 2rem;
 }
 
-.front.elsewhere {
+.front.far-afield {
   .card-link {
     display: block;
     background-repeat: no-repeat;
@@ -23,9 +23,8 @@
   }
 }
 
-.front.elsewhere {
+.front.far-afield {
   .item {
-
     .datetime,
     h2 {
       color: $black;
@@ -39,9 +38,8 @@
   }
 }
 
-.front.elsewhere {
+.front.far-afield {
   .item:hover {
-
     .datetime,
     h2 {
       color: $gray;
@@ -54,7 +52,7 @@
   }
 }
 
-.path-news-elsewhere,
+.path-news-far-afield,
 .path-attualita-altrove {
   .read-more {
     background-image: url(../images/arrow_small_external.svg);
@@ -130,22 +128,21 @@
   display: flex;
   margin-bottom: 2rem;
   .field__item:first-child .field {
-margin-right: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
 .field-press-releases-files .field-media-file {
   margin-bottom: 1rem;
 
-.file {
-
-}
+  .file {
+  }
 
   .file a {
     border-bottom: 1px solid $black;
     display: inline-block;
     @include label;
-    padding-bottom: .2rem;
+    padding-bottom: 0.2rem;
 
     &:hover {
       color: $gray;
