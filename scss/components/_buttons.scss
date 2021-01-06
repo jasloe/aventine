@@ -12,46 +12,6 @@
   height: 2rem;
 }
 
-.front.far-afield {
-  .card-link {
-    display: block;
-    background-repeat: no-repeat;
-    text-indent: -9000px;
-    vertical-align: top;
-    background-image: url(../images/arrow_small_external.svg);
-    height: 1.5rem;
-  }
-}
-
-.front.far-afield {
-  .item {
-    .datetime,
-    h2 {
-      color: $black;
-      transition: color 0.22s ease;
-    }
-
-    .card-link {
-      opacity: 1;
-      transition: opacity 0.22s ease;
-    }
-  }
-}
-
-.front.far-afield {
-  .item:hover {
-    .datetime,
-    h2 {
-      color: $gray;
-      transition: color 0.22s ease;
-    }
-
-    .card-link {
-      opacity: 0.5;
-    }
-  }
-}
-
 .path-news-far-afield,
 .path-attualita-notizie-recenti {
   .read-more {
