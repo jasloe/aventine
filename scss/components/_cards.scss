@@ -192,7 +192,7 @@
   }
 
   .blazy,
-  .read-more {
+  .read-more {;
     transition: opacity 0.22s ease;
   }
 
@@ -227,6 +227,7 @@ body.index-events .card {
 
   .read-more {
     opacity: 1;
+    margin-top: 1rem;
   }
 }
 
@@ -343,12 +344,13 @@ body.index-events .card:hover {
   margin-top: 1.5rem;
 }
 
+.path-attualita-notizie-recenti,
 .path-news-far-afield {
   .datetime {
     margin-top: 1rem;
   }
 
-  .body {
+.body {
     margin-bottom: 1rem;
   }
 }
