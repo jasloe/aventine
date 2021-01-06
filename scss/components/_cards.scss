@@ -28,7 +28,7 @@
     font-family: $display-serif;
   }
 
-  .field > p {
+  .field>p {
     @include body-card;
   }
 }
@@ -65,6 +65,7 @@
 }
 
 .card-body {
+
   .field-events-event-type,
   .field-events-event-series {
     @include label;
@@ -76,6 +77,7 @@
   .field-events-event-dates-overrid {
     @include body-card;
   }
+
   .read-more {
     margin-top: 0.5rem;
   }
@@ -165,7 +167,7 @@
 
 // Card:hover.
 .card .card-inner {
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $black;
     transition: color 0.22s ease;
   }
@@ -187,7 +189,7 @@
 .card .card-inner:hover {
   cursor: pointer;
 
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $gray;
   }
 
@@ -211,7 +213,7 @@
 
 // Events card hover states. This is a hotfix and should be refactored.
 body.index-events .card {
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $black;
     transition: color 0.22s ease;
   }
@@ -233,7 +235,7 @@ body.index-events .card {
 body.index-events .card:hover {
   cursor: pointer;
 
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $gray;
   }
 
@@ -364,3 +366,42 @@ body.index-events .card:hover {
 .index-sof .datetime {
   margin-top: 1rem;
 }
+
+// Search results.
+.search-result {
+  margin-bottom: 2rem;
+}
+
+.search-result {
+  h2 {
+    @include title-serif;
+    @include font-size(2.2rem);
+    padding-bottom: .5rem;
+  }
+
+  .search-result__content-type {
+    @include label;
+padding-bottom: .5rem;
+  }
+
+  .search-result__excerpt {
+    @include body;
+    line-height: 1.2;
+  }
+    .search-result__event-tags {
+      margin-top: .5rem;
+    }
+
+    .search-result__event-tags li {
+      margin-right: .5rem;
+      color: $gray;
+    }
+
+  .search-result__event-tags,
+  .search-result__event-tags ul {
+    display: flex;
+    }
+
+
+  }
+

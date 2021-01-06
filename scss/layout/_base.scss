@@ -186,3 +186,28 @@ body.news-features article {
     padding-right: 20%;
   }
 }
+
+// Search page layout
+.search-page .layout-content {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.search-page .layout-content .two-col-layout {
+display: flex;
+flex-direction: column;
+}
+
+@include mq($from: desktop) {
+.search-page .layout-content .two-col-layout {
+flex-direction: row;
+.region-content-pre {
+flex-basis: 30%;
+}
+.region-content {
+  flex-basis: 70%;
+}
+}
+}
+
