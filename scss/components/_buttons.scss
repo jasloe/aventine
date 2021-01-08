@@ -14,6 +14,48 @@
 
 .path-news-far-afield,
 .path-attualita-notizie-recenti {
+.front.elsewhere {
+  .card-link {
+    display: block;
+    background-repeat: no-repeat;
+    text-indent: -9000px;
+    vertical-align: top;
+    background-image: url(../images/arrow_small_external.svg);
+    height: 1.5rem;
+  }
+}
+
+.front.elsewhere {
+  .item {
+    .datetime,
+    h2 {
+      color: $black;
+      transition: color 0.22s ease;
+    }
+
+    .card-link {
+      opacity: 1;
+      transition: opacity 0.22s ease;
+    }
+  }
+}
+
+.front.elsewhere {
+  .item:hover {
+    .datetime,
+    h2 {
+      color: $gray;
+      transition: color 0.22s ease;
+    }
+
+    .card-link {
+      opacity: 0.5;
+    }
+  }
+}
+
+.path-news-elsewhere,
+.path-attualita-altrove {
   .read-more {
     background-image: url(../images/arrow_small_external.svg);
   }
@@ -119,5 +161,30 @@
   .field__item a {
     padding: 0 !important;
     border: none !important;
+  }
+}
+
+// Search buttons.
+.search-page {
+  form input[type="submit"] {
+    @include label;
+    padding: 0.75rem 2rem !important;
+    border: 1px solid $black;
+    margin-right: 1rem;
+  }
+  form input[type="submit"]:nth-child(2) {
+    border: none;
+    padding: 0 !important;
+    padding-bottom: 0.1rem !important;
+    border-bottom: 1px solid $gray;
+    color: $gray;
+    text-transform: lowercase;
+  }
+  form input[type="text"] {
+    color: $black;
+    padding: 0.25rem 0;
+  }
+  .views-exposed-form div:first-child {
+    margin-top: 1rem;
   }
 }
