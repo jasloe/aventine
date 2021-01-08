@@ -25,7 +25,6 @@
 
 .front.elsewhere {
   .item {
-
     .datetime,
     h2 {
       color: $black;
@@ -41,7 +40,6 @@
 
 .front.elsewhere {
   .item:hover {
-
     .datetime,
     h2 {
       color: $gray;
@@ -130,22 +128,21 @@
   display: flex;
   margin-bottom: 2rem;
   .field__item:first-child .field {
-margin-right: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
 .field-press-releases-files .field-media-file {
   margin-bottom: 1rem;
 
-.file {
-
-}
+  .file {
+  }
 
   .file a {
     border-bottom: 1px solid $black;
     display: inline-block;
     @include label;
-    padding-bottom: .2rem;
+    padding-bottom: 0.2rem;
 
     &:hover {
       color: $gray;
@@ -162,5 +159,13 @@ margin-right: 1.5rem;
   .field__item a {
     padding: 0 !important;
     border: none !important;
+  }
+}
+
+// Search buttons.
+.search-page {
+  form input {
+    @include label;
+    padding: 0.75rem 1.5rem !important;
   }
 }
