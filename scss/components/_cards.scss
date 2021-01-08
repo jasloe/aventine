@@ -192,7 +192,7 @@
   }
 
   .blazy,
-  .read-more {;
+  .read-more {
     transition: opacity 0.22s ease;
   }
 
@@ -350,7 +350,7 @@ body.index-events .card:hover {
     margin-top: 1rem;
   }
 
-.body {
+  .card-body .body {
     margin-bottom: 1rem;
   }
 }
