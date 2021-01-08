@@ -164,8 +164,25 @@
 
 // Search buttons.
 .search-page {
-  form input {
+  form input[type="submit"] {
     @include label;
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.75rem 2rem !important;
+    border: 1px solid $black;
+    margin-right: 1rem;
+  }
+  form input[type="submit"]:nth-child(2) {
+    border: none;
+    padding: 0 !important;
+    padding-bottom: 0.1rem !important;
+    border-bottom: 1px solid $gray;
+    color: $gray;
+    text-transform: lowercase;
+  }
+  form input[type="text"] {
+    color: $black;
+    padding: 0.25rem 0;
+  }
+  .views-exposed-form div:first-child {
+    margin-top: 1rem;
   }
 }

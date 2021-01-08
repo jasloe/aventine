@@ -367,6 +367,7 @@ body.index-events .card:hover {
 }
 
 // Search results.
+
 .search-result {
   margin-bottom: 2rem;
 }
@@ -383,21 +384,27 @@ body.index-events .card:hover {
     padding-bottom: 0.5rem;
   }
 
-  .search-result__excerpt {
+  .body {
     @include body;
     line-height: 1.2;
+    strong {
+      color: gray;
+    }
   }
   .search-result__event-tags {
     margin-top: 0.5rem;
   }
 
-  .search-result__event-tags li {
+  .event-tags li {
     margin-right: 0.5rem;
     color: $gray;
   }
 
-  .search-result__event-tags,
-  .search-result__event-tags ul {
+  .date {
+    color: $gray;
+  }
+
+  .event-tags ul {
     display: flex;
   }
 }

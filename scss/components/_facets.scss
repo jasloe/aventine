@@ -1,5 +1,36 @@
 .search-page {
-  .facet-item {
-    @include label;
-  }
 }
+
+.search-page .facet-block {
+  margin-bottom: 1rem;
+}
+
+.search-page .facet-block:first-child span.facet-item__value {
+  @include label;
+}
+
+.search-page span.facet-item__value {
+  @include body;
+  text-transform: initial;
+}
+
+.facets h3 {
+  @include label;
+}
+
+// input[type="checkbox"] {
+//   position: absolute;
+//   opacity: 0;
+//   cursor: pointer;
+//   height: 0;
+//   width: 0;
+// }
+
+// .facets-checkbox {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #eee;
+// }
