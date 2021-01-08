@@ -12,50 +12,8 @@
   height: 2rem;
 }
 
-.front.elsewhere {
-  .card-link {
-    display: block;
-    background-repeat: no-repeat;
-    text-indent: -9000px;
-    vertical-align: top;
-    background-image: url(../images/arrow_small_external.svg);
-    height: 1.5rem;
-  }
-}
-
-.front.elsewhere {
-  .item {
-
-    .datetime,
-    h2 {
-      color: $black;
-      transition: color 0.22s ease;
-    }
-
-    .card-link {
-      opacity: 1;
-      transition: opacity 0.22s ease;
-    }
-  }
-}
-
-.front.elsewhere {
-  .item:hover {
-
-    .datetime,
-    h2 {
-      color: $gray;
-      transition: color 0.22s ease;
-    }
-
-    .card-link {
-      opacity: 0.5;
-    }
-  }
-}
-
-.path-news-elsewhere,
-.path-attualita-altrove {
+.path-news-far-afield,
+.path-attualita-notizie-recenti {
   .read-more {
     background-image: url(../images/arrow_small_external.svg);
   }
@@ -130,22 +88,21 @@
   display: flex;
   margin-bottom: 2rem;
   .field__item:first-child .field {
-margin-right: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
 .field-press-releases-files .field-media-file {
   margin-bottom: 1rem;
 
-.file {
-
-}
+  .file {
+  }
 
   .file a {
     border-bottom: 1px solid $black;
     display: inline-block;
     @include label;
-    padding-bottom: .2rem;
+    padding-bottom: 0.2rem;
 
     &:hover {
       color: $gray;
