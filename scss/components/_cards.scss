@@ -193,7 +193,7 @@
   }
 
   .blazy,
-  .read-more {;
+  .read-more {
     transition: opacity 0.22s ease;
   }
 
@@ -351,7 +351,7 @@ body.index-events .card:hover {
     margin-top: 1rem;
   }
 
-.body {
+  .body {
     margin-bottom: 1rem;
   }
 }
@@ -366,47 +366,4 @@ body.index-events .card:hover {
 
 .index-sof .datetime {
   margin-top: 1rem;
-}
-
-// Search results.
-
-.search-result {
-  margin-bottom: 2rem;
-}
-
-.search-result {
-  h2 {
-    @include title-serif;
-    @include font-size(2.2rem);
-    padding-bottom: 0.5rem;
-  }
-  .content-type,
-  .type {
-    @include label;
-    padding-bottom: 0.5rem;
-  }
-
-  .body {
-    @include body;
-    line-height: 1.2;
-    strong {
-      color: gray;
-    }
-  }
-  .search-result__event-tags {
-    margin-top: 0.5rem;
-  }
-
-  .event-tags li {
-    margin-right: 0.5rem;
-    color: $gray;
-  }
-
-  .date {
-    color: $gray;
-  }
-
-  .event-tags ul {
-    display: flex;
-  }
 }

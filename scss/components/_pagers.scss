@@ -4,7 +4,7 @@ ul.pager {
   a {
     @include label;
     border-bottom: 1px solid $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
 
     &:hover {
       color: $gray;
@@ -12,9 +12,10 @@ ul.pager {
     }
   }
 
-.search-page .pager ul {
-  display: flex;
-  .pager__item {
-    margin-right: 10px;
+  .search-page .pager ul {
+    display: flex;
+    .pager__item {
+      margin-right: 10px;
+    }
   }
 }
