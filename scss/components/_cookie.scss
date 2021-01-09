@@ -52,7 +52,7 @@
   .eu-cookie-compliance-message {
     float: none;
     max-width: 100%;
-
+    margin-right: 1rem;
     @include mq($from: tablet) {
       max-width: 75%;
       flex-basis: 75%;
@@ -63,7 +63,7 @@
 .popup-content p a {
   border-bottom: 1px solid $black;
   color: $black;
-  transition: color .22s ease-in-out;
+  transition: color 0.22s ease-in-out;
   &:hover {
     color: $gray;
     border-bottom: none;

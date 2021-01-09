@@ -92,11 +92,9 @@
   }
 }
 
+.field-publication-files .field-media-file,
 .field-press-releases-files .field-media-file {
   margin-bottom: 1rem;
-
-  .file {
-  }
 
   .file a {
     border-bottom: 1px solid $black;
@@ -108,6 +106,12 @@
       color: $gray;
       border-bottom: 1px solid $gray;
     }
+  }
+}
+
+.field-publication-files .field-media-file {
+  .file a {
+    padding-bottom: 0;
   }
 }
 
