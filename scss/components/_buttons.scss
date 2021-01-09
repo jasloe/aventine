@@ -109,10 +109,34 @@
   }
 }
 
+.field-publications-links {
+  .field__item a {
+    border-bottom: 1px solid $black;
+    display: inline-block;
+    @include label;
+    padding-bottom: 0.2rem;
+
+    &:hover {
+      color: $gray;
+      border-bottom: 1px solid $gray;
+    }
+  }
+}
+
 .field-publication-files .field-media-file {
   .file a {
     padding-bottom: 0;
   }
+}
+
+.field-publications-links {
+  .field__item a {
+    padding-bottom: 0;
+  }
+}
+
+.field-publications-links .field__item:first-child {
+  margin-bottom: 0.5rem;
 }
 
 .path-home .field-page-section-links {
