@@ -80,10 +80,17 @@
 
 	{{ content.field_people_affiliations }}
 
+  {{ content.field_program_dates }}
 
-	<div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
+  {{ content.field_events_event_dates }}
+  {{ content.field_events_event_dates_overrid	}}
+  {{ content.field_events_event_type }}
+  {{ content.field_events_event_series }}
+	{{ content.field_events_rel_places }}
 
+  {# {{ date }} #}
 
-	{# <div class="">{{ content }}</div> #}
+  <div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
+
 	{# <div class="">{{ url }}</div> #}
 </article>
