@@ -312,7 +312,7 @@
 }
 
 .front.news-features {
-  >h2 {
+  > h2 {
     @include title-card-sans;
   }
 
@@ -404,15 +404,15 @@
 // Basic pages. Beginning 2020-12-01.
 .front-events .media__image {
   opacity: 1;
-  transition: opacity .22s ease;
+  transition: opacity 0.22s ease;
 }
 
 .teaser-home p {
   @include title-card-serif;
   @include font-size(2rem);
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   color: $black;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
 .front-events {
@@ -421,7 +421,11 @@
       color: $gray;
     }
     .media__image {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
+}
+
+.news-item.views-row h2 {
+  margin-top: 0.3rem;
 }
