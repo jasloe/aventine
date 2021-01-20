@@ -27,26 +27,31 @@
   @include label;
 }
 
-.front-events .slide__content {
-  opacity: 1;
-  transition: opacity 0.22s ease;
-
-  .slide__title,
-  .slide__description {
-    color: $black;
-    transition: color 0.22s ease;
+.front.events {
+  .slick {
+    .media {
+      opacity: 1;
+      transition: opacity 0.22s ease;
+    }
+    .slide__description h2 {
+      color: $black;
+      transition: color 0.22s ease;
+    }
+  }
+  .slick:hover {
+    .media {
+      opacity: 0.9;
+      transition: opacity 0.22s ease;
+    }
+    .slide__description h2 {
+      color: $gray;
+      transition: color 0.22s ease;
+    }
   }
 }
 
-.front-events .slide__content:hover {
-  opacity: 0.9;
-  transition: opacity 0.22s ease;
-
-  .slide__title,
-  .slide__description {
-    color: $gray;
-    transition: color 0.22s ease;
-  }
+.front.events .date {
+  color: $gray;
 }
 
 .front.news-features,
@@ -312,7 +317,7 @@
 }
 
 .front.news-features {
-  >h2 {
+  > h2 {
     @include title-card-sans;
   }
 
@@ -335,6 +340,8 @@
       @include title-card-serif;
       color: $black;
       transition: color 0.22s ease;
+      margin-top: 0.33rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -397,31 +404,6 @@
 
     h2 {
       margin-top: 0;
-    }
-  }
-}
-
-// Basic pages. Beginning 2020-12-01.
-.front-events .media__image {
-  opacity: 1;
-  transition: opacity .22s ease;
-}
-
-.teaser-home p {
-  @include title-card-serif;
-  @include font-size(2rem);
-  margin-top: .5rem;
-  color: $black;
-  transition: color .22s ease;
-}
-
-.front-events {
-  &:hover {
-    .teaser-home p {
-      color: $gray;
-    }
-    .media__image {
-      opacity: .8;
     }
   }
 }
