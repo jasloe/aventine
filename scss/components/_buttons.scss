@@ -48,21 +48,21 @@
 }
 
 // Home page buttons.
-.rome-prize-cta .field-page-section-links .field__item:first-child a {
-  border: 1px solid $gray;
-  display: inline;
-  padding: 1rem 3rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.rome-prize-cta .field-page-section-links .field__item:nth-child(2) a {
+  border: none;
+  padding: 1rem 0 0.1rem 0;
+  border-bottom: 1px solid $black;
+  &:hover {
+    border-bottom: 1px solid $gray;
+  }
 }
 
-.rome-prize-cta .field-page-section-links .field__item a {
-  color: $black;
-  transition: color 0.22s ease;
-}
-
-.rome-prize-cta .field-page-section-links .field__item a:hover {
-  color: $gray;
+.join-us .field-page-section-links .field__item a {
+  padding: 0;
+  border: none;
+  &:hover {
+    border: none;
+  }
 }
 
 // File links.
@@ -137,15 +137,4 @@
 
 .field-publications-links .field__item:first-child {
   margin-bottom: 0.5rem;
-}
-
-.path-home .field-page-section-links {
-  .field__item {
-    margin-bottom: 0;
-  }
-
-  .field__item a {
-    padding: 0 !important;
-    border: none !important;
-  }
 }
