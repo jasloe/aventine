@@ -1,31 +1,31 @@
 // This should be a preprocess function at *.theme
-// var el = document.querySelectorAll('.field-page-internal-link > a');
-// var quickNewsLinks = document.querySelectorAll('.field-quick-news-links a')
+var el = document.querySelectorAll('.field-page-internal-link > a');
+var quickNewsLinks = document.querySelectorAll('.field-quick-news-links a')
 
-// for (i = 0; i < el.length; ++i) {
-//   el[i].innerHTML = '<span></span>';
-// }
+for (i = 0; i < el.length; ++i) {
+  el[i].innerHTML = '<span></span>';
+}
 
-// for (i = 0; i < quickNewsLinks.length; ++i) {
-//   quickNewsLinks[i].innerHTML = '<span></span>';
-// }
+for (i = 0; i < quickNewsLinks.length; ++i) {
+  quickNewsLinks[i].innerHTML = '<span></span>';
+}
 
 // Card links
-const card = document.querySelectorAll(".path-news-far-afield .card-inner")
-const externalLink = document.querySelectorAll(".field-quick-news-links a")
+// const card = document.querySelectorAll(".path-news-far-afield .card-inner")
+// const externalLink = document.querySelectorAll(".field-quick-news-links a")
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
 
-  for (i = 0; i < card.length; ++i) {
-    card[i].addEventListener("click", function(event) {
-      const isTextSelected = window.getSelection().toString();
-      if (!isTextSelected) {
-        // externalLink[i].click();
-      }
-    })
-  }
-});
+//   for (i = 0; i < card.length; ++i) {
+//     card[i].addEventListener("click", function(event) {
+//       const isTextSelected = window.getSelection().toString();
+//       if (!isTextSelected) {
+//         // externalLink[i].click();
+//       }
+//     })
+//   }
+// });
 
 // function handleClick(event) {
 //   const isTextSelected = window.getSelection().toString();
