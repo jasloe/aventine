@@ -16,12 +16,12 @@ const externalLink = document.querySelectorAll(".field-quick-news-links a")
 
 document.addEventListener("DOMContentLoaded", function () {
 
+
   for (i = 0; i < card.length; ++i) {
     card[i].addEventListener("click", function(event) {
       const isTextSelected = window.getSelection().toString();
       if (!isTextSelected) {
         // externalLink[i].click();
-
       }
     })
   }
