@@ -1,21 +1,24 @@
-ul.pager {
-  text-align: right;
-
-  a {
-    @include label;
-    border-bottom: 1px solid $black;
-    transition: color 0.22s ease;
-
-    &:hover {
-      color: $gray;
-      border-bottom: none;
-    }
-  }
-
-  .search-page .pager ul {
+.search-page {
+  ul.pager__items {
+    @include body;
     display: flex;
-    .pager__item {
-      margin-right: 10px;
+
+    li {
+      margin-right: 1rem;
+    }
+
+    li a {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding: 10px;
+      margin: -10px;
+      color: $black;
+      transition: color 0.22s ease;
+      &:hover {
+        color: $gray;
+        transition: color 0.22s ease;
+      }
     }
   }
 }

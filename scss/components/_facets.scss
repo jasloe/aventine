@@ -1,36 +1,50 @@
-.search-page {
-}
-
-.search-page .facet-block {
+h2.facets__title {
+  @include title-serif;
+  @include font-size(1.8rem);
   margin-bottom: 1rem;
 }
 
-.search-page .facet-block:first-child span.facet-item__value {
-  @include label;
+.search-page .facet-block {
+  margin-bottom: 2rem;
 }
 
-.search-page span.facet-item__value {
+.facet-item,
+.facet-item label {
+  display: flex;
+  align-items: flex-start;
+  .facet-item__value,
+  .facet-item__count {
+  }
+}
+
+.facet-item {
+  margin-bottom: 0.25rem;
+}
+
+.facet-item__value {
   @include body;
+  @include font-size(1.1rem);
   text-transform: initial;
+  line-height: initial;
 }
 
 .facets h3 {
   @include label;
+  @include font-size(0.9rem);
+  letter-spacing: 0.33px;
+  margin-bottom: 0.5rem;
 }
 
-// input[type="checkbox"] {
-//   position: absolute;
-//   opacity: 0;
-//   cursor: pointer;
-//   height: 0;
-//   width: 0;
-// }
+.facet-item__count {
+  @include font-size(0.8rem);
+  color: $gray;
+}
 
-// .facets-checkbox {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 25px;
-//   width: 25px;
-//   background-color: #eee;
-// }
+.facets-checkbox {
+  margin-top: 3px;
+  margin-right: 0.5rem;
+}
+
+.facet-item__count {
+  margin-left: 0.2rem;
+}

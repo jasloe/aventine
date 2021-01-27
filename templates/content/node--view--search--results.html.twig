@@ -70,7 +70,7 @@
  *   in different view modes.
  */
 #}
-<article{{attributes}}>
+<div{{attributes}} class="search-result">
 
 	<div class="content-type">{{ node.type.entity.label }}</div>
 	<h2>
@@ -96,4 +96,4 @@
   <div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
 
 	{# <div class="">{{ url }}</div> #}
-</article>
+</div>
