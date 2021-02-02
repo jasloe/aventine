@@ -71,43 +71,43 @@
  */
 #}
 
-<article{{attributes.addClass('card')}}>
-	<div class="card-image-wrapper">
-		{{ content.field_events_zoom_image }}
-		{% if node.field_events_canceled.0.value %}
-			{{ content.field_events_canceled }}
-		{% endif %}
-	</div>
+<div{{attributes.addClass('card')}}>
 
-	<div class='card-body'>
+	<a href="{{ content.field_events_zoom_link[0]['#url'] }}" target="_blank">
 
-		{% if content.field_events_event_series|render is not empty %}
-			{{ content.field_events_event_series }}
-		{% else %}
-			{{ content.field_events_event_type }}
-		{% endif %}
-
-		<h2 class="title serif">{{ label }}</h2>
-
-		{% if content.field_events_event_dates_overrid|render is not empty %}
-			{{ content.field_events_event_dates_overrid }}
-		{% else %}
-			{{ content.field_events_event_dates }}
-		{% endif %}
-
-		{% spaceless %}
-			<div class="field field-events-rel-places entity-reference field__items">
-				<span>
-					{{ content.field_events_rel_places[0]['#node'].getTitle() }},
-					{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-				</span>
-			</div>
-		{% endspaceless %}
-
-		<div class="read-more">
-			{{ content.field_events_zoom_link }}
+		<div class="card-image-wrapper">
+			{{ content.field_events_zoom_image }}
+			{% if node.field_events_canceled.0.value %}
+				{{ content.field_events_canceled }}
+			{% endif %}
 		</div>
 
+		<div class='card-body'>
 
-	</div>
-</article>
+			{% if content.field_events_event_series|render is not empty %}
+				{{ content.field_events_event_series }}
+			{% else %}
+				{{ content.field_events_event_type }}
+			{% endif %}
+
+			<h2 class="title serif">{{ label }}</h2>
+
+			{% if content.field_events_event_dates_overrid|render is not empty %}
+				{{ content.field_events_event_dates_overrid }}
+			{% else %}
+				{{ content.field_events_event_dates }}
+			{% endif %}
+
+			{% spaceless %}
+				<div class="field field-events-rel-places entity-reference field__items">
+					<span>
+						{{ content.field_events_rel_places[0]['#node'].getTitle() }},
+						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+					</span>
+				</div>
+			{% endspaceless %}
+
+			<div class="read-more"></div>
+		</div>
+	</a>
+</div>
