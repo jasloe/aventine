@@ -71,18 +71,22 @@
  */
 #}
 <div class="card">
-	<article{{attributes.addClass('card-inner')}}>
+	<a href="{{ content.field_quick_news_links[0]['#url'] }}" target="_blank">
 
-		{{ content.field_quick_news_image}}
 
-		<div class='card-body'>
-			{{ 	content.field_quick_news_published_date }}
-			<h2 class="title serif">{{ label }}</h2>
-			{{ content.body}}
-			<div class="read-more">
-				{{ content.field_quick_news_links }}
-			</a>
+		{{ content.field_quick_news_links.0.url }}
+
+		<div{{attributes.addClass('card-inner')}}>
+
+			{{ content.field_quick_news_image}}
+
+			<div class='card-body'>
+				{{ 	content.field_quick_news_published_date }}
+				<h2 class="title serif">{{ label }}</h2>
+				{{ content.body}}
+			</div>
+			<div class="read-more"></div>
 		</div>
-	</div>
 
-</article></div>
+	</a>
+</div>
