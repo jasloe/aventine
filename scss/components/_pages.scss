@@ -407,3 +407,12 @@ body.news-features {
     color: $gray;
   }
 }
+
+// Image tweak for For the Ages layout
+.extended {
+  img {
+    max-width: 100% !important;
+    height: auto;
+    width: auto;
+  }
+}
