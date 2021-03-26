@@ -39,11 +39,14 @@
  */
 #}
 
-{{ content.field_affil_type }}
+<div class="group prize">
+	{{ content.field_affil_year }}
+	{{ content.field_affil_type }}
+	{{ content.field_affil_discipline	}}
+</div>
 
-
-{{ content.field_affil_discipline	}}
-{{ content.field_affil_fellowship_name }}
-{{ content.field_affil_ital_fellowship_name }}
-{{ content.field_affil_residency_name }}
-{{ content.field_affil_dates }}
+<div class="group fellowship">
+	{{ content.field_affil_fellowship_name }}
+	{{ content.field_affil_ital_fellowship_name }}
+	{{ content.field_affil_residency_name }}
+</div>

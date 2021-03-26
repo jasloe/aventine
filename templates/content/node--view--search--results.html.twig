@@ -72,28 +72,32 @@
 #}
 <div class="search-result">
 
-	<div class="content-type">{{ node.type.entity.label }}</div>
+	{% if node.type.entity.label == 'Events' %}
+		<div class="content-type">{{ content.field_events_event_type }}</div>
+	{% else %}
+		<div class="content-type">{{ node.type.entity.label }}</div>
+	{% endif %}
+
 	<h2>
 		<a href="{{url}}" rel="bookmark">
 			{{ label }}</a>
 	</h2>
 
+	{{ content.field_events_image}}
+
 	{{ content.field_people_affiliations }}
 
-  {{ content.field_program_dates }}
+	{{ content.field_program_dates }}
 
-  {{ content.field_page_page_section }}
-  {{ content.field_page_internal_link.0.url }}
+	{{ content.field_page_page_section }}
+	{{ content.field_page_internal_link.0.url }}
 
-  {{ content.field_events_event_dates }}
-  {{ content.field_events_event_dates_overrid	}}
-  {{ content.field_events_event_type }}
-  {{ content.field_events_event_series }}
+	{{ content.field_events_event_dates }}
+	{{ content.field_events_event_dates_overrid	}}
+
+
 	{{ content.field_events_rel_places }}
 
-  {# {{ date }} #}
+	<div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
 
-  <div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
-
-	{# <div class="">{{ url }}</div> #}
 </div>
