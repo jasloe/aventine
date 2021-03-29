@@ -7,3 +7,25 @@
   color: $white;
   padding: .5rem 0;
 }
+
+// Appeal modal overrides
+.spb-popup-main-wrapper {
+  background: $white;
+  border: none;
+  border-radius: none;
+  padding: 5px 3rem;
+}
+
+.notice.appeal .field p {
+  @include title-serif;
+  @include font-size(3rem);
+  font-weight: 100;
+  padding: 3rem 0;
+  a {
+    color: $black;
+    transition: color .22s ease;
+    &:hover {
+      color: $gray;
+    }
+  }
+}
