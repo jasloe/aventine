@@ -16,7 +16,7 @@
   padding: 5px 3rem;
 }
 
-.notice.appeal .field p {
+.spb-popup-main-wrapper .notice .field p {
   @include title-serif;
   @include font-size(3rem);
   font-weight: 100;
@@ -31,3 +31,23 @@
 }
 
 // To do. Override close button.
+.spb_close {
+  float: none;
+  margin: 5px;
+  padding: 7px;
+}
+
+.spb-controls span.spb_close {
+  border: none;
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+  vertical-align: top;
+  background-image: url(../images/search-mobile_close.svg);
+  height: .8rem;
+  opacity: 1;
+  &:hover {
+    opacity: .8;
+    transition: opacity .22s ease;
+  }
+}
