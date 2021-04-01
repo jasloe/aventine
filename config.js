@@ -1,6 +1,6 @@
 module.exports = {
   browserSync: {
-    hostname: "aarome.dvm",
+    hostname: "local.d9-aarome.local",
     port: 8080,
     openAutomatically: true,
     reloadDelay: 50,
