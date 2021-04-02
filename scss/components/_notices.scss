@@ -32,7 +32,15 @@
     color: #808080;
   }
 
-  p a {
+  p:first-child a {
+    color: $black;
+    transition: color .33s ease;
+    &:hover {
+      color: #808080;
+    }
+  }
+
+  p:nth-child(2) a {
       color: #808080;
       transition: color .33s ease;
       border-bottom: 1px solid #808080;
