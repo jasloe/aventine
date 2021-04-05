@@ -22,6 +22,10 @@
     @include font-size(3rem);
     font-weight: 100;
     padding: 3rem 0 1rem 0;
+    span {
+      color: #f26641;
+          transition: color .33s ease;
+    }
   }
 
   p:nth-child(2) {
@@ -36,8 +40,12 @@
     color: $black;
     transition: color .33s ease;
     &:hover {
-      color: #808080;
+      color: #808080
     }
+  }
+
+  p:first-child a:hover span {
+    color: #808080
   }
 
   p:nth-child(2) a {
