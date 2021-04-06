@@ -59,6 +59,17 @@
     }
   }
 
+// Appeal modal, mobile
+@include mq($until: mobile) {
+  .spb-popup-main-wrapper {
+    background: $white;
+    border: none;
+    border-radius: none;
+    padding: 5px 3rem;
+    width: 90% !important;
+    margin-left: -45% !important;
+  }
+}
 
 // Override close button.
 .spb_close {
