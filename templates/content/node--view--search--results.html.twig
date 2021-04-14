@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+<a href="{{url}}">
 <div class="search-result">
 
 	{% if node.type.entity.label == 'Events' %}
@@ -79,25 +80,18 @@
 	{% endif %}
 
 	<h2>
-		<a href="{{url}}" rel="bookmark">
-			{{ label }}</a>
+			{{ label }}
 	</h2>
 
 	{{ content.field_events_image}}
-
 	{{ content.field_people_affiliations }}
-
 	{{ content.field_program_dates }}
-
 	{{ content.field_page_page_section }}
 	{{ content.field_page_internal_link.0.url }}
-
 	{{ content.field_events_event_dates }}
 	{{ content.field_events_event_dates_overrid	}}
-
-
 	{{ content.field_events_rel_places }}
-
-	<div class="excerpt body">{{ elements['#search_api_excerpt'] }}</div>
+  <div class="body excerpt">{{ content.search_api_excerpt }}</div>
 
 </div>
+</a>

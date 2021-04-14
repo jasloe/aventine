@@ -19,7 +19,7 @@
     @include body;
     line-height: 1.2;
     strong {
-      color: gray;
+      font-weight: 100;
     }
   }
   .search-result__event-tags {
@@ -31,8 +31,10 @@
     color: $gray;
   }
 
-  .date {
+  .date, .daterange {
+    @include body;
     color: $gray;
+    margin-bottom: .5rem;
   }
 
   .event-tags ul {
