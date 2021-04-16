@@ -1,1 +1,9 @@
-{{ content.field_places_address.0['locality']['#value'] }}
+
+{% if content.field_places_address.0['country']['#value'] == "United States" %}
+  {{ content.field_places_address.0['locality']['#value'] }}, {{ content.field_places_address.0['administrative_area']['#value'] }}, {{ content.field_places_address.0['country']['#value'] }}
+{% else %}
+  {{ content.field_places_address.0['locality']['#value'] }}, {{ content.field_places_address.0['country']['#value'] }}
+{% endif %}
+
+
+

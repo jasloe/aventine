@@ -16,6 +16,7 @@
   .field-events-event-type {
     @include label;
     padding-bottom: 0.5rem;
+    color: $black;
   }
 
   // Events
@@ -26,7 +27,7 @@
   .field-events-event-dates,
   .field-events-event-dates-overrid,
   .field-events-event-series,
-
+  .field-events-rel-places,
   .group.prize .field,
   .group.fellowship .field {
     @include body;
@@ -59,18 +60,17 @@
 // Search results transitions.
 .search-result > a {
   h2, .field, .body {
-    color: $black;
     transition: color .22s ease;
   }
   .daterange,
-  .field-events-event-series {
-    color: $gray;
+  .field-events-event-series,
+  .content-type {
     transition: color .22s ease;
   }
 }
 
 .search-result > a:hover {
-  h2, .field, .body {
+  h2, .field, .body, .content-type {
     color: $gray;
     transition: color .22s ease;
   }
@@ -88,15 +88,13 @@
   form input[type="submit"]:nth-child(2) {
     border: none;
     padding: 0 !important;
-    padding-bottom: 0.1rem !important;
-    border-bottom: 1px solid $gray;
     color: $gray;
     text-transform: lowercase;
   }
 
   form input[type="text"] {
     color: $black;
-    padding: 0.25rem 0;
+    padding: 0.2rem .1rem;
   }
 
   .views-exposed-form div:first-child {
