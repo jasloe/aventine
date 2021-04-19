@@ -1,11 +1,11 @@
+.facet-block {
+  margin-bottom: 1rem;
+}
+
 h2.facets__title {
   @include title-serif;
   @include font-size(1.8rem);
   margin-bottom: 1rem;
-}
-
-.search-page .facet-block {
-  margin-bottom: 2rem;
 }
 
 .facet-item,
