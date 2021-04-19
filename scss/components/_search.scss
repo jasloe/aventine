@@ -22,7 +22,16 @@
   .field-events-image {
     width: 50%;
     opacity: 1;
-    transition: opacity .22s ease;
+    transition: opacity .22s ease !important;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+  }
+
+  @include mq($until: tablet) {
+    .field-media-image,
+    .field-events-image {
+      width: 100%;
+    }
   }
 
   // Events
@@ -33,7 +42,6 @@
   .field-events-event-dates,
   .field-events-event-dates-overrid,
   .field-events-event-series,
-
   .group.prize .field,
   .group.fellowship .field {
     @include body;
@@ -64,7 +72,6 @@
 }
 
 
-
 // Search results transitions.
 .search-result > a {
   h2, .field, .body, .content-type {
@@ -85,8 +92,8 @@
   }
   .field-media-image,
   .field-events-image {
-    opacity: .8;
-    transition: opacity 2s ease;
+    opacity: .7;
+    transition: opacity .22s ease;
   }
 }
 
