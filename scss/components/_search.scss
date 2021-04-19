@@ -18,6 +18,13 @@
     padding-bottom: 0.5rem;
   }
 
+  .field-media-image,
+  .field-events-image {
+    width: 50%;
+    opacity: 1;
+    transition: opacity .22s ease;
+  }
+
   // Events
   .event-metadata-wrapper {
     margin-bottom: .5rem;
@@ -56,9 +63,11 @@
   }
 }
 
+
+
 // Search results transitions.
 .search-result > a {
-  h2, .field, .body {
+  h2, .field, .body, .content-type {
     color: $black;
     transition: color .22s ease;
   }
@@ -70,11 +79,17 @@
 }
 
 .search-result > a:hover {
-  h2, .field, .body {
+  h2, .field, .body, .content-type {
     color: $gray;
     transition: color .22s ease;
   }
+  .field-media-image,
+  .field-events-image {
+    opacity: .8;
+    transition: opacity 2s ease;
+  }
 }
+
 
 // Search buttons.
 .search-page {
