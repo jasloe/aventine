@@ -102,6 +102,8 @@
 				{{ content.field_events_event_dates }}
 			{% endif %}
 
+			{{ content.field_events_rel_places }}
+
 			{% if content.field_events_event_series|render|striptags|trim %}
 				<div class="field field-events-event-series">Part of the
 					<span>{{ content.field_events_event_series|render|striptags|trim }}</span>
@@ -111,7 +113,6 @@
 		</div>
 	{% endif %}
 
-	{# {{ content.field_events_rel_places }} #}
 
 	<div class="body excerpt">{{ content.search_api_excerpt }}</div>
 
