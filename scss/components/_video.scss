@@ -1,29 +1,35 @@
+// Embedded video, basic page, events.
+body.page,
+body.events {
+  .field-remote-video {
+    .media--video {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .media--video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Embedded video formatting, events.
 body.events .column-second {
   position: relative;
 }
 
 body.events .field-remote-video {
   margin-top: 1rem;
+
   .field__label {
     margin-bottom: .5rem;
     @include label;
   }
-  .media--video {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .media--video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
 }
-
-
