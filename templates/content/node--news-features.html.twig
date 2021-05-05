@@ -78,15 +78,16 @@
  %}
 
 <article{{attributes.addClass(classes)}}>
-	<div class="slideshow-wrapper">
+
+  {{ content.field_news_features_byline }}
+  {{ content.field_news_features_date }}
+
+  <div class="slideshow-wrapper">
 		{{ content.field_news_features_images }}
-		{# {{ content.field_news_features_byline }} #}
 		<div class="page-section">
 			<div class="column column-first"></div>
 			<div
 				class="column column-second">
-				{# {{ content.field_news_features_date }} #}
-
 				{{ content.body.0 }}
 			</div>
 		</div>
