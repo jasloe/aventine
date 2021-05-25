@@ -2,7 +2,7 @@
 .search-result {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .search-result {
@@ -20,23 +20,24 @@
   }
 
   .field-media-image,
-  .field-events-image {
+  .field-events-image,
+  .field-people-portrait {
     width: 50% !important;
     opacity: 1;
-    transition: opacity .22s ease !important;
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+    transition: opacity 0.22s ease !important;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   @include mq($until: tablet) {
     .field-media-image,
-    .field-events-image {
+    .field-events-image,
+    .field-people-portrait {
       width: 100%;
     }
   }
 
   // Events
-
 
   .field-events-event-dates,
   .field-events-event-dates-overrid,
@@ -57,13 +58,13 @@
     @include body;
     line-height: 1.2;
     color: $black;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 
 .search-result {
   h2 {
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 
   h2:hover {
@@ -71,32 +72,36 @@
   }
 }
 
-
 // Search results transitions.
 .search-result > a {
-  h2, .field, .body, .content-type {
+  h2,
+  .field,
+  .body,
+  .content-type {
     color: $black;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
   .daterange,
   .field-events-event-series,
   .content-type {
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
 }
 
 .search-result > a:hover {
-  h2, .field, .body, .content-type {
+  h2,
+  .field,
+  .body,
+  .content-type {
     color: $gray;
-    transition: color .22s ease;
+    transition: color 0.22s ease;
   }
   .field-media-image,
   .field-events-image {
-    opacity: .7;
-    transition: opacity .22s ease;
+    opacity: 0.7;
+    transition: opacity 0.22s ease;
   }
 }
-
 
 // Search buttons.
 .search-page {
@@ -116,7 +121,7 @@
 
   form input[type="text"] {
     color: $black;
-    padding: 0.2rem .1rem;
+    padding: 0.2rem 0.1rem;
   }
 
   .views-exposed-form div:first-child {
