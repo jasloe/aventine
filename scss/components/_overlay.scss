@@ -8,7 +8,6 @@ body.is-open {
   }
 }
 
-
 #overlay.is-closed {
   display: none;
 }
@@ -55,7 +54,7 @@ body.mobile {
 
   #overlay.is-open .main-menu li.menu-item {
     margin: 0;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
   #overlay.is-open .logo-wrapper {
@@ -67,5 +66,4 @@ body.mobile {
     margin-right: 2rem;
     margin-left: 3rem;
   }
-
 }

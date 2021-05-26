@@ -22,20 +22,26 @@
   .field-media-image,
   .field-events-image,
   .field-people-portrait {
-    width: 50% !important;
     opacity: 1;
     transition: opacity 0.22s ease !important;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-  }
+    width: 50% !important;
+    height: auto !important;
 
-  @include mq($until: tablet) {
-    .field-media-image,
-    .field-events-image,
-    .field-people-portrait {
+    img {
       width: 100%;
+      height: auto;
     }
   }
+
+  // @include mq($until: tablet) {
+  //   .field-media-image,
+  //   .field-events-image,
+  //   .field-people-portrait {
+  //     width: 100%;
+  //   }
+  // }
 
   // Events
 
@@ -132,4 +138,16 @@
 // Search pager.
 .search-page .pager__item {
   @include label;
+}
+
+// Search modal.
+.search-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $white;
+  z-index: 998;
 }
