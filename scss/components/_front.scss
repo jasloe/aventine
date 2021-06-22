@@ -1,12 +1,14 @@
 // Events.
-.front-events {
+.front-events,
+.front-news-slideshow {
   .slick {
     max-width: $jumbotron;
     margin: 0 auto;
   }
 }
 
-.front-events {
+.front-events,
+.front-news-slideshow {
   .slide__caption {
     margin: 0 auto;
     max-width: $max-vw;
@@ -27,7 +29,18 @@
   @include label;
 }
 
-.front.events {
+.front-news-slideshow {
+  .slide__description h2 {
+    @include title-serif;
+    @include font-size(2rem);
+  }
+  time {
+    @include label;
+  }
+}
+
+.front.events,
+.front.news-slideshow {
   .slick {
     .media {
       opacity: 1;
@@ -50,6 +63,7 @@
   }
 }
 
+.front.news-slideshow time,
 .front.events .date {
   color: $gray;
 }
