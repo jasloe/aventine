@@ -34,7 +34,6 @@
 }
 
 .slick-next {
-  margin-right: 1rem;
   background-image: url(../images/arrow_large_black_right.svg);
 }
 
@@ -46,14 +45,22 @@
 }
 
 .slick-arrow {
-  filter: invert(90%);
-  opacity: 0.85;
+  filter: invert(5%);
+  opacity: 1;
+  border-radius: 0%;
 }
 
-.slick-arrow:hover,
-.slick-arrow:hover::before {
-  filter: invert(100);
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  opacity: 1 !important
 }
+
+// .slick-next:hover,
+// .slick-prev:hover {
+//   filter: invert(80%) !important;
+// }
 
 // Home page buttons.
 .rome-prize-cta .field-page-section-links .field__item:nth-child(2) a {
