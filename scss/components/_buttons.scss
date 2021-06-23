@@ -50,11 +50,12 @@
   border-radius: 0%;
 }
 
+.slick-arrow:hover,
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
-  opacity: 1 !important
+  opacity: 1 !important;
 }
 
 // .slick-next:hover,
