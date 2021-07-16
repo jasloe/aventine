@@ -62,7 +62,7 @@ header {
   }
 }
 
-.search a {
+.search span {
   display: block;
   background-repeat: no-repeat;
   text-indent: -9000px;
@@ -70,9 +70,10 @@ header {
   background-image: url(../images/search.svg);
   width: 0.8rem;
   height: 0.8rem;
+  cursor: pointer;
 }
 
-.search a,
+.search span,
 .hamburger {
   &:hover {
     transition: opacity 0.22s ease;
