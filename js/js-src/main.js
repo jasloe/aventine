@@ -38,11 +38,16 @@ for (i = 0; i < el.length; ++i) {
   var $searchBtn = $(".search");
   var $searchContainer = $(".search-container");
   var $body = $("body");
+  var $closeSearchContainer = $(".search-menu");
   $searchBtn.on("click", function () {
     $searchBtn.toggleClass("is-active");
     $body.toggleClass("no-scroll");
     $body.toggleClass("is-open");
     $searchContainer.toggleClass("is-open");
-    // $searchContainer.toggleClass("is-open");
   });
+  $closeSearchContainer.on('click', function () {
+    $body.toggleClass("no-scroll");
+    $body.toggleClass("is-open");
+    $searchContainer.toggleClass("is-open");
+  })
 })(jQuery);

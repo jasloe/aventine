@@ -164,9 +164,26 @@
   }
 }
 
+.search-page .views-exposed-form {
+  margin-bottom: 5rem;
+}
+
+.search-page .views-exposed-form,
 .search-container .search-wrapper > form {
   display: flex;
   align-items: flex-end;
+}
+
+.search-page .views-exposed-form,
+.search-container .search-wrapper {
+  .js-form-submit:first-child:hover {
+    color: $gray;
+    border: 1px solid $gray;
+  }
+  .js-form-submit:last-child:hover {
+    color: $black;
+
+  }
 }
 
 // Search pager.
@@ -175,8 +192,7 @@
 }
 
 .search-container {
-  // display: none;
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -184,14 +200,40 @@
   width: 100%;
   background: $white;
   z-index: 998;
-  display: flex;
+  // display: flex;
   flex-flow: column nowrap;
-  justify-content: center; /* aligns on vertical for column */
-  align-items: center; /* aligns on horizontal for column */
+  justify-content: flex-start; /* aligns on vertical for column */
+  align-items: flex-end; /* aligns on horizontal for column */
+}
+
+.search-container.is-open {
+  display: flex;
 }
 
 .search-wrapper {
   margin: 0 auto;
   max-width: $max-vw;
   height: 80px;
+  margin-top: 10%;
+
+  // hide reset button
+  input[value="Reset"] {
+    display: none;
+  }
+}
+
+button.search-menu {
+  height: 15px;
+  width: 15px;
+  display: block;
+  text-indent: -9999px;
+  background: url(../images/search-mobile_close.svg);
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+
+  &:hover {
+    transition: opacity .33s ease;
+    opacity: 0.5;
+  }
 }
