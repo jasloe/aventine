@@ -25,14 +25,16 @@
   flex-direction: column-reverse;
 }
 
-.front-events .slide__description {
+.front-events .date {
   @include label;
 }
 
+.front-events,
 .front-news-slideshow {
   .slide__description h2 {
     @include title-serif;
-    @include font-size(2rem);
+    @include font-size(2.2rem);
+    margin-top: .25rem;
   }
   time {
     @include label;

@@ -42,21 +42,16 @@
 .research-callout .region-callout .callout-inner {
   h2 {
     @include label;
-    margin-bottom: 1rem;
+    padding-bottom: .5rem;
   }
 
   .callout {
-    margin-bottom: 0;
+    padding-bottom: 1.5rem;
   }
 
-  @include mq($until: mobile) {
-    .callout {
-      margin-bottom: 2rem;
-    }
     .callout:last-child {
-      margin-bottom: 0rem;
+          padding-bottom: 0rem;
     }
-  }
 
   @include mq($from: tablet) {
     flex-direction: row;
@@ -65,7 +60,7 @@
 
     .callout {
       flex-basis: calc(50% - 3rem);
-      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
     }
   }
 
