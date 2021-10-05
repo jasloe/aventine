@@ -39,7 +39,7 @@
  */
 #}
 
-{% set ids = content.field_page_section_title.0|render|clean_class %}
+{% set ids = content.field_page_section_title.0|render|clean_id %}
 
 {%
   set classes = [
@@ -54,7 +54,7 @@
 
 		{% block content %}
 			<div class="column column-first">
-				<h2{{ attributes.setAttribute('id', ids).addClass("subtitle") }}>{{ content.field_page_section_title.0 }}</h2>
+				<h2{{ attributes.setAttribute('id', ids).addClass("subtitle").removeClass('page-section') }}>{{ content.field_page_section_title.0 }}</h2>
 			</div>
 			<div class="column column-second">
 				{{ content.field_page_section_body.0 }}
