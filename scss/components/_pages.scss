@@ -18,22 +18,22 @@ body.page {
   margin-bottom: 0;
 }
 
-.page-section {
-  display: flex;
-  flex-direction: column;
+// .page-section {
+//   display: flex;
+//   flex-direction: column;
 
-  @include mq($from: tablet) {
-    flex-direction: row;
+//   @include mq($from: tablet) {
+//     flex-direction: row;
 
-    .column-first {
-      flex-basis: $column-first;
-    }
+//     .column-first {
+//       flex-basis: $column-first;
+//     }
 
-    .column-second {
-      flex-basis: $column-second;
-    }
-  }
-}
+//     .column-second {
+//       flex-basis: $column-second;
+//     }
+//   }
+// }
 
 .page-section h2.subtitle {
   @include subtitle-sans;
@@ -429,7 +429,7 @@ body.news-features {
   .field-news-features-byline {
     display: flex;
     .field__label {
-      margin-right: .25rem;
+      margin-right: 0.25rem;
     }
   }
   .field-news-features-byline,

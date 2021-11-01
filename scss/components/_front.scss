@@ -34,7 +34,7 @@
   .slide__description h2 {
     @include title-serif;
     @include font-size(2.2rem);
-    margin-top: .25rem;
+    margin-top: 0.25rem;
   }
   time {
     @include label;
@@ -196,14 +196,14 @@
   @include title-serif;
   @include font-size(2.5rem);
   line-height: 1;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .front.join-us .links .field__item {
   margin-bottom: 1.5rem;
 
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
 }
 
@@ -233,6 +233,20 @@
 
 .front.join-us .join-us .field__item a:hover:before {
   opacity: 0.5;
+}
+
+.front.join-us .page-section .column-second {
+  flex-basis: 100% !important;
+}
+
+.front.join-us .field-page-section-links .field__item {
+  margin-bottom: 1rem;
+  @include mq($from: tablet) {
+    margin-bottom: 2rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Front fellows.
