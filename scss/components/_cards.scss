@@ -369,7 +369,7 @@ body.index-events .card:hover {
 }
 
 // Hotfix for publications/* anchor links
-.publication.wrapper p>a {
+.publication.wrapper p > a {
   padding-bottom: 2px;
   border-bottom: 1px solid black;
   color: $black;
@@ -398,7 +398,9 @@ body.index-events .card:hover {
 }
 
 @include mq($from: tablet) {
-.field-page-page-section .column-second figure {
-  width: 80%;
-}
+  .field-page-page-section .column-second figure,
+  .events-body .page-section .column-second figure {
+    // Hotfix for width of inline images on events pages
+    width: 80%;
+  }
 }
