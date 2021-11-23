@@ -437,3 +437,46 @@
     }
   }
 }
+
+// Contains hotfix for front page blocks.
+.rome-prize-cta .field-page-page-section .page-section .column-first {
+  display: none;
+}
+
+.rome-prize-cta .page-section {
+  padding-right: 5rem;
+  padding-left: 0rem;
+}
+
+.rome-prize-cta .page-section .column {
+  flex-basis: 100%;
+}
+
+.rome-prize-cta .page-section .column-second p {
+  margin-bottom: 3rem;
+}
+
+.join-us .field-page-section-links .field__item a {
+  display: inline;
+}
+
+// Disable throbber.
+.ajax-progress {
+  display: none !important;
+}
+[dir="rtl"] .ajax-progress {
+  display: none !important;
+}
+.ajax-progress-throbber .throbber {
+  display: none !important;
+  background: none !important;
+}
+.ajax-progress-throbber .message {
+  display: none !important;
+}
+
+/* Full screen throbber */
+.ajax-progress-fullscreen {
+  display: none !important;
+  background-image: none !important;
+}
