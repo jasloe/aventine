@@ -6,7 +6,7 @@ header {
 
 .header-menu,
 .main-menu__utilities,
-.language-switcher-language-url {
+.language-switcher-language-url ul {
   display: flex;
   align-items: center;
 }
@@ -150,5 +150,19 @@ ul.language-switcher-language-url li.is-active a:hover {
 
 .site-name a:hover {
   color: $gray;
+  transition: color 0.22s ease;
+}
+
+// Fix language selector.
+.language-switcher-language-url li.is-active a {
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+  transition: color 0.22s ease;
+  &:hover {
+  }
+}
+.language-switcher-language-url li a:hover {
+  color: #919191;
   transition: color 0.22s ease;
 }

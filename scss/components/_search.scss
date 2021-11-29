@@ -156,6 +156,7 @@
   form input[type="text"] {
     color: $black;
     padding: 0.2rem 0.1rem;
+    margin-right: 1rem;
   }
   .views-exposed-form div:first-child {
     // margin-top: 1rem;
@@ -182,7 +183,6 @@
   }
   .js-form-submit:last-child:hover {
     color: $black;
-
   }
 }
 
@@ -233,7 +233,7 @@ button.search-menu {
   margin: 1rem;
 
   &:hover {
-    transition: opacity .33s ease;
+    transition: opacity 0.33s ease;
     opacity: 0.5;
   }
 }
