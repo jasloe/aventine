@@ -150,7 +150,7 @@ span.select2 {
     @include body;
     display: flex;
     flex-direction: column;
-    color: red;
+    // color: red;
 
     li {
       display: inline-block;
@@ -178,4 +178,18 @@ span.select2 {
 
 .ajax-progress .throbber {
   display: none;
+}
+
+// No results for discipline, date pickers for people/* pages.
+.people-current p.no-results {
+  font-family: $display-serif;
+  @include font-size(1.4rem);
+}
+
+// @HACK, add padding to select list for narrow view ports.
+.people-current .views-exposed-form,
+.people-current p.no-results {
+  @include mq($until: $tablet) {
+    padding: 0 1rem;
+  }
 }

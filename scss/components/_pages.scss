@@ -443,3 +443,19 @@ body.news-features {
     padding-bottom: 1rem !important;
   }
 }
+
+.page .media-wrapper--blazy,
+.events .media-wrapper--blazy {
+  max-width: 80%;
+}
+
+.page figure .media-wrapper--blazy,
+.events figure .media-wrapper--blazy {
+  max-width: 100%;
+}
+
+body.page .inline-logo img,
+body.events .inline-logo img {
+  width: initial;
+  max-width: 250px;
+}
