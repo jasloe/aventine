@@ -449,6 +449,10 @@ body.news-features {
   max-width: 80%;
 }
 
+.page .media-wrapper--video {
+  max-width: 100%;
+}
+
 .page figure .media-wrapper--blazy,
 .events figure .media-wrapper--blazy {
   max-width: 100%;
@@ -458,4 +462,12 @@ body.page .inline-logo img,
 body.events .inline-logo img {
   width: initial;
   max-width: 250px;
+}
+
+@include mq($until: tablet) {
+  .page .media-wrapper--blazy,
+  .page .media-wrapper--video,
+  .events .media-wrapper--blazy {
+    max-width: 100%;
+  }
 }
