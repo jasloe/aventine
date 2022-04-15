@@ -426,6 +426,13 @@ body.news-features {
     padding: 0 1rem;
   }
 
+  .field-news-features-date {
+    padding: 0 1rem;
+  }
+  .field-news-features-byline {
+    padding: 0rem;
+  }
+
   .field-news-features-byline {
     display: flex;
     .field__label {
@@ -444,6 +451,7 @@ body.news-features {
   }
 }
 
+// Fixes for inline images.
 .page .media-wrapper--blazy,
 .events .media-wrapper--blazy {
   max-width: 80%;
@@ -470,4 +478,9 @@ body.events .inline-logo img {
   .events .media-wrapper--blazy {
     max-width: 100%;
   }
+}
+
+// For the ages.
+.path-news-features-ages .page.extended .field__item {
+  margin-bottom: 1rem;
 }
