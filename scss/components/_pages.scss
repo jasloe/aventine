@@ -341,7 +341,7 @@ body.news-features {
 }
 
 .society-of-fellows .field-media-image,
-.news-features .field-media-image {
+.news-features .slick__slide .field-media-image {
   margin: 0 auto;
   max-width: $jumbotron;
 
@@ -453,7 +453,8 @@ body.news-features {
 
 // Fixes for inline images.
 .page .media-wrapper--blazy,
-.events .media-wrapper--blazy {
+.events .media-wrapper--blazy,
+.news-features .media-wrapper--blazy {
   max-width: 80%;
 }
 
@@ -462,20 +463,27 @@ body.news-features {
 }
 
 .page figure .media-wrapper--blazy,
-.events figure .media-wrapper--blazy {
+.events figure .media-wrapper--blazy,
+.news-features .media-wrapper--blazy {
   max-width: 100%;
 }
 
 body.page .inline-logo img,
-body.events .inline-logo img {
+body.events .inline-logo img,
+body.news-features .inline-logo img {
   width: initial;
   max-width: 250px;
+}
+
+.news-features .column-second .field-media-image {
+  margin-top: 1rem;
 }
 
 @include mq($until: tablet) {
   .page .media-wrapper--blazy,
   .page .media-wrapper--video,
-  .events .media-wrapper--blazy {
+  .events .media-wrapper--blazy,
+  .news-features .media-wrapper--blazy {
     max-width: 100%;
   }
 }

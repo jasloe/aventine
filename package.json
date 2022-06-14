@@ -7,7 +7,7 @@
     "gulp": "^3.9.1",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^2.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-shell": "^0.5.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
@@ -16,9 +16,10 @@
     "npm-run": "^5.0.1",
     "postcss-sorting": "^5.0.1",
     "rimraf": "*",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "sass": "^1.52.3"
   },
-  "scripts": {
-    "postinstall": "node_modules/.bin/rimraf node_modules/**/*.info && gulp sass && gulp compress"
+  "overrides": {
+    "graceful-fs": "^4.2.9"
   }
 }
