@@ -480,3 +480,13 @@
   display: none !important;
   background-image: none !important;
 }
+
+// Add external arrow to quick news items
+.news-item h2:after {
+  content: url("../images/arrow_external.svg");
+  transition: opacity 0.22s ease;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
