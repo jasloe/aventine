@@ -74,7 +74,8 @@
 .front.rome-prize,
 .front.fellows,
 .front.join-us,
-.front.residents {
+.front.residents,
+.front.leadership {
   margin: 3rem auto;
   max-width: $max-vw;
 
@@ -99,7 +100,8 @@
 
 .front.fellows h2,
 .front.fellows header,
-.front.residents h2 {
+.front.residents h2,
+.front.leadership h2 {
   padding: 0 1rem;
 
   @include mq($from: $jumbotron) {
@@ -108,7 +110,8 @@
 }
 
 .front.fellows .slick-list,
-.front.residents .slick-list {
+.front.residents .slick-list,
+.front.leadership .slick-list {
   padding-left: 1rem;
 
   @include mq($from: wide) {
@@ -251,13 +254,15 @@
 
 // Front fellows.
 .front.fellows,
-.front.residents {
+.front.residents,
+.front.leadership {
   h2 {
     @include subtitle-sans;
   }
 }
 
-.front.residents h2 {
+.front.residents h2,
+.front.leadership h2 {
   margin-bottom: 0.5rem;
 }
 
@@ -291,7 +296,8 @@
 }
 
 .front.fellows,
-.front.residents {
+.front.residents,
+.front.leadership {
   .slick__slide {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -317,6 +323,7 @@
     transition: color 22s ease;
   }
 
+  .field-role,
   .field-affil-discipline {
     @include body;
     line-height: 1;
@@ -325,7 +332,8 @@
 }
 
 .front.fellows,
-.front.residents {
+.front.residents,
+.front.leadership {
   .slick__slide:hover {
     .blazy {
       opacity: 0.8;
