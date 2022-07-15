@@ -1,0 +1,13 @@
+{
+  "name": "drupal/aventine",
+  "description": "Custom theme based on Stable9 for aarome.org",
+  "type": "drupal-custom-theme",
+  "authors": [
+    {
+      "name": "Jason Loeffler",
+      "email": "j@minorscience.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
