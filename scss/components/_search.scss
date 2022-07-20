@@ -237,3 +237,9 @@ button.search-menu {
     opacity: 0.5;
   }
 }
+
+.region-content > #views-exposed-form-search-results {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
