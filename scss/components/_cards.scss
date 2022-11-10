@@ -404,3 +404,19 @@ body.index-events .card:hover {
     width: 80%;
   }
 }
+
+// @HACK, temporarily add 2023 CSS card to /apply index page
+body.index .card.academic-programs {
+  .field-program-summary {
+    margin-bottom: 1rem;
+  }
+}
+
+// @HACK, fix spacing between call-to-action buttons on programs inside pages
+.programs .field-page-section-files .field__item {
+  margin-bottom: 1rem !important;
+}
+
+.programs .field-page-section-files {
+  margin-top: 0rem !important;
+}
