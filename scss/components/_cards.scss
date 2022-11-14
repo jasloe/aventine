@@ -420,3 +420,11 @@ body.index .card.academic-programs {
 .programs .field-page-section-files {
   margin-top: 0rem !important;
 }
+
+// @HACK, temporarily hide daterange field so we don't have to create YAT (yet another template)
+.path-apply,
+.path-partecipazione {
+  .field.field-program-dates.daterange.field__item {
+    display: none;
+  }
+}
