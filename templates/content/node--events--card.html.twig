@@ -71,44 +71,46 @@
  */
 #}
 
-<article{{attributes.addClass('card')}}>
-	<div class="card-image-wrapper">
-		{{ content.field_events_image }}
-		{% if node.field_events_canceled.0.value %}
-			{{ content.field_events_canceled }}
-		{% endif %}
-	</div>
+<article{{attributes.addClass('ac')}}>
+	<div class="ac-header">
+		<div class="ac-trigger">
+			<div class="event-metadata">
+				<div class="col-1">
+					{% if content.field_events_event_dates_overrid|render is not empty %}
+						{{ content.field_events_event_dates_overrid }}
+					{% else %}
+						{{ content.field_events_event_dates }}
+					{% endif %}
+					{% spaceless %}
+						<div class="field field-events-rel-places entity-reference field__items">
+							<span>
+								{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+							</span>
+						</div>
+					{% endspaceless %}
+				</div>
+				<div class="col-2"></div>
 
-	<div class='card-body'>
 
-		{% if content.field_events_event_series|render is not empty %}
-			{{ content.field_events_event_series }}
-		{% else %}
-			{{ content.field_events_event_type }}
-		{% endif %}
-
-		<h2 class="title serif">{{ label }}</h2>
-
-		{% if content.field_events_event_dates_overrid|render is not empty %}
-			{{ content.field_events_event_dates_overrid }}
-		{% else %}
-			{{ content.field_events_event_dates }}
-		{% endif %}
-
-		{% spaceless %}
-			<div class="field field-events-rel-places entity-reference field__items">
-				<span>
-					{{ content.field_events_rel_places[0]['#node'].getTitle() }},
-					{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-				</span>
 			</div>
-		{% endspaceless %}
+			{% if content.field_events_event_series|render is not empty %}
+				{{ content.field_events_event_series }}
+			{% else %}
+				{{ content.field_events_event_type }}
+			{% endif %}
+			<h2 class="title serif">{{ label }}</h2>
 
-		<div class="read-more">
-			<a href="{{ url }}">Read more<span></span>
-			</a>
 		</div>
+		<div class="ac-panel">
+			{{ content.field_events_image }}
+			<div class="event-summary">
+				{{ "
+David Brooks is the 2020 Rome Prize Fellow in Visual Arts, completing a fellowship curtailed by the pandemic. An artist based in New York and New Orleans, he is on the faculty of the Maryland Institute College of Art in Baltimore.
 
-
-	</div>
-</article>
+James Casebere is the 2020 Abigail Cohen Rome Prize Fellow in Visual Arts and an artist based in Canaan, New York. Like Brooks, he is completing a fellowship cut short by the pandemic." }}
+			</div>
+			<div class="more-info">
+				<a href={{ url }}>More information about this event</a>
+			</div>
+		</div>
+	</article>

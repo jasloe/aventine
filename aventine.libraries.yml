@@ -2,12 +2,14 @@ global-styling:
   version: VERSION
   css:
     base:
+      css/accordion.css: { weight: 888 }
       css/main.css: { weight: 999 }
 global-scripts:
   version: VERSION
   js:
     js/headroom.js: {}
     js/header.js: {}
+    js/accordion.js: {}
     js/main.js: {}
   dependencies:
     - core/jquery

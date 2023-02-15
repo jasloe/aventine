@@ -492,3 +492,102 @@ body.news-features .inline-logo img {
 .path-news-features-ages .page.extended .field__item {
   margin-bottom: 1rem;
 }
+
+.path-events-calendar-new .accordion-container {
+  max-width: $max-vw;
+  margin: 0 auto;
+  padding-left: 33%;
+}
+
+.path-events-calendar-new .ac {
+  border-top: 1px solid $gray;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  .ac-header {
+    padding: 2rem 0 0 0;
+  }
+}
+
+.path-events-calendar-new .ac-panel {
+  padding-top: 3rem;
+}
+
+.ac .ac-trigger {
+  padding: 0px 0px 0px 0px !important;
+}
+
+.path-events-calendar-new {
+  .daterange,
+  .field-events-event-dates-overrid p,
+  .field-events-rel-places {
+    font-family: $display-serif;
+    @include font-size($small);
+  }
+  .title {
+    padding-right: 20%;
+  }
+  .field-events-event-type .field__item,
+  .field-events-event-series .field__item {
+    font-family: "Dignitas Regular";
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1;
+    text-transform: initial;
+    color: $gray;
+  }
+}
+
+.path-events-calendar-new h2 {
+}
+
+.path-events-calendar-new h2 span {
+  font-family: "Dignitas Regular";
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1;
+  text-transform: initial;
+}
+
+.path-events-calendar-new .event-metadata {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.path-events-calendar-new .pager__items {
+  display: flex;
+  .pager__item {
+    padding: 1rem;
+  }
+  .pager__item:first-child {
+    padding-left: 0rem;
+  }
+  .pager__item:last-child {
+    padding-right: 0rem;
+  }
+}
+
+.path-events-calendar-new .pager {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.path-events-calendar-new .event-summary {
+  font-family: "Dignitas Regular";
+  font-size: 1.6rem;
+  line-height: 1.4;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-right: 25%;
+}
+
+.path-events-calendar-new .more-info {
+  @include label;
+  margin: 1rem 0 1rem 0;
+  &:after {
+    content: "→";
+  }
+}

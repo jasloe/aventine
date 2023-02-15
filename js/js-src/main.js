@@ -1,3 +1,7 @@
+new Accordion('.accordion-container');
+
+console.log(Accordion);
+
 var el = document.querySelectorAll(".field-page-internal-link > a");
 
 for (i = 0; i < el.length; ++i) {
