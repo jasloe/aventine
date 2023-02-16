@@ -25,6 +25,7 @@ body.index-sof,
   .layout-content {
     @include mq($from: tablet) {
       display: flex;
+      flex-wrap: wrap;
 
       .region-page-title {
         flex-basis: $column-first;
