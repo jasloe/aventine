@@ -100,7 +100,7 @@
 .front.fellows header,
 .front.residents h2,
 .front.leadership h2 {
-  padding: 0 1rem @include mq($from: $jumbotron) {
+  @include mq($from: $jumbotron) {
     padding: 0 1rem;
   }
 }
