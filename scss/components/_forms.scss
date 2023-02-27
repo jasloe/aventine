@@ -205,8 +205,27 @@ span.select2 {
   }
   > div {
     flex-basis: 50%;
-    padding-right: 10%;
     padding-top: 3px;
+  }
+}
+
+.mailchimp-signup-subscribe-form {
+  padding: 0 7rem !important;
+}
+
+@include mq($until: tablet) {
+  .callout-inner .mailchimp-signup-subscribe-form {
+    flex-direction: column;
+    padding: 0 3rem !important;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+    > div {
+      flex-basis: 50%;
+      padding-right: 0 !important;
+      padding-top: 3px;
+    }
   }
 }
 
@@ -249,15 +268,13 @@ label[for="edit-gdpr-consent"] a {
   margin: 0.5rem 0;
 }
 
-.form-checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 .mailchimp-signup-subscribe-form .button {
+  margin-top: 1rem;
   padding: 1rem 1.5rem;
   border: 1px solid $black;
   display: inline-block;
@@ -268,4 +285,17 @@ label[for="edit-gdpr-consent"] a {
     cursor: pointer;
     color: $gray;
   }
+}
+
+.mailchimp-signup-subscribe-form div[role="alert"] {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.mailchimp-signup-subscribe-form .message-list {
+  font-family: $tradegothic;
+  font-size: 14px;
+  border: 1px solid red;
+  padding: 0.5rem;
+  color: red;
 }
