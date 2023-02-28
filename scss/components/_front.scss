@@ -501,6 +501,9 @@
 .front.leadership .front-wrapper {
   display: flex;
   gap: 1rem;
+  @include mq($until: tablet) {
+    flex-direction: column;
+  }
 }
 
 .front.leadership .front-wrapper h3 {
@@ -514,13 +517,12 @@
   color: $gray;
 }
 
-.front.leadership .front-wrapper .more a span {
-}
-
 .front.news-feature,
 .front.rome-prize,
 .front.fellows h2,
-.front.fellows h2 + div:first-of-type {
+.front.fellows h2 + div:first-of-type,
+.front.residents h2,
+.front.leadership {
   padding: 0 1rem !important;
 }
 
