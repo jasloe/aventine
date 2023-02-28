@@ -91,8 +91,6 @@
 }
 
 .front.rome-prize {
-  padding: 0 1rem;
-
   @include mq($from: $jumbotron) {
     padding: 0;
   }
@@ -102,10 +100,8 @@
 .front.fellows header,
 .front.residents h2,
 .front.leadership h2 {
-  padding: 0 1rem;
-
   @include mq($from: $jumbotron) {
-    padding: 0;
+    padding: 0 1rem;
   }
 }
 
@@ -296,8 +292,7 @@
 }
 
 .front.fellows,
-.front.residents,
-.front.leadership {
+.front.residents {
   .slick__slide {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -332,8 +327,7 @@
 }
 
 .front.fellows,
-.front.residents,
-.front.leadership {
+.front.residents {
   .slick__slide:hover {
     .blazy {
       opacity: 0.8;
@@ -498,3 +492,38 @@
 //   height: 15px;
 //   margin-left: 10px;
 // }
+
+/* refactor leadership carousel */
+.front.leadership .leadership-container a {
+  position: relative !important;
+}
+
+.front.leadership .front-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.front.leadership .front-wrapper h3 {
+  @include label;
+  padding-top: 0.3rem;
+}
+
+.front.leadership .front-wrapper .field-role {
+  @include body;
+  line-height: 1;
+  color: $gray;
+}
+
+.front.leadership .front-wrapper .more a span {
+}
+
+.front.news-feature,
+.front.rome-prize,
+.front.fellows h2,
+.front.fellows h2 + div:first-of-type {
+  padding: 0 1rem !important;
+}
+
+.front.fellows .slick-list {
+  padding-left: 0 !important;
+}

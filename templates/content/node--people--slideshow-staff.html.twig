@@ -71,16 +71,15 @@
  */
 #}
 
-<div class="portrait-wrapper">
-	{{ content.field_people_portrait }}
-</div>
-
-<div class="bio-wrapper">
-	<h3 class="title">{{ label }}</h3>
-	{{ content.field_people_affiliations }}
-</div>
-<div class="more">
+<div class="leaderhip-container">
 	<a href="{{ url }}" class="more">
-		<span></span>
+		<div class="portrait-wrapper">
+			{{ content.field_people_portrait }}
+		</div>
+
+		<div class="bio-wrapper">
+			<h3 class="title">{{ label }}</h3>
+			{{ content.field_people_affiliations }}
+		</div>
 	</a>
 </div>
