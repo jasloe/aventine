@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -71,44 +71,42 @@
  */
 #}
 
-<article{{attributes.addClass('ac')}}>
-	<div class="ac-header">
-		<div class="ac-trigger">
-			<div class="event-metadata">
-				<div class="col-1">
+<article{{attributes.addClass(classes)}}>
 
-					{{ content.field_events_event_dates }}
+	{% if content.field_events_event_series|render is not empty %}
+		{{ content.field_events_event_series }}
+	{% else %}
+		{{ content.field_events_event_type }}
+	{% endif %}
 
-					{% spaceless %}
-						<div class="field field-events-rel-places entity-reference field__items">
-							<span>
-								{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-							</span>
-						</div>
-					{% endspaceless %}
-				</div>
-				<div class="col-2"></div>
+	<h1 class="title serif">{{ label }}</h1>
 
+	<div class="events-detail">
 
-			</div>
-			{% if content.field_events_event_series|render is not empty %}
-				{{ content.field_events_event_series }}
-			{% else %}
-				{{ content.field_events_event_type }}
-			{% endif %}
-			<h2 class="title serif">{{ label }}</h2>
+		{% if content.field_events_event_dates_overrid|render is not empty %}
+			{{ content.field_events_event_dates_overrid }}
+		{% else %}
+			{{ content.field_events_event_dates }}
+		{% endif %}
 
+		{{ content.field_events_rel_places }}
+	</div>
+</div>
+
+<div class="events-body">
+	<div class="event-image-wrapper">
+
+		{{ content.field_events_image}}
+		{% if node.field_events_canceled.0.value %}
+			{{ content.field_events_canceled }}
+		{% endif %}
+	</div>
+
+	<div class="page-section">
+		<div class="column column-first"></div>
+		<div class="column column-second">
+			{{ content.body }}
+			{{ content.field_remote_video }}
 		</div>
-		<div class="ac-panel">
-			{{ content.field_events_image }}
-			<div class="event-summary">
-				{{ "
-David Brooks is the 2020 Rome Prize Fellow in Visual Arts, completing a fellowship curtailed by the pandemic. An artist based in New York and New Orleans, he is on the faculty of the Maryland Institute College of Art in Baltimore.
-
-James Casebere is the 2020 Abigail Cohen Rome Prize Fellow in Visual Arts and an artist based in Canaan, New York. Like Brooks, he is completing a fellowship cut short by the pandemic." }}
-			</div>
-			<div class="more-info">
-				<a href={{ url }}>More information about this event</a>
-			</div>
-		</div>
-	</article>
+	</div>
+</div></article>

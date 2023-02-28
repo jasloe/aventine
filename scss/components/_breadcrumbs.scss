@@ -4,15 +4,12 @@
 
 #block-aventine-breadcrumbs {
   font-family: $breadcrumbs;
-  text-transform: lowercase;
 }
 
 #block-aventine-breadcrumbs li {
-  color: $gray;
 }
 
 #block-aventine-breadcrumbs a {
-  color: $gray;
   transition: color 0.22s ease;
 }
 
@@ -24,5 +21,4 @@
   content: " \2F";
   padding-right: 5px;
   vertical-align: baseline;
-  color: #919191;
 }

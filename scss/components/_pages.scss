@@ -497,6 +497,9 @@ body.news-features .inline-logo img {
   max-width: $max-vw;
   margin: 0 auto;
   padding-left: 33%;
+  @include mq($until: tablet) {
+    padding: 0 1rem;
+  }
 }
 
 .path-events-calendar-new .ac {
@@ -522,7 +525,8 @@ body.news-features .inline-logo img {
   .field-events-event-dates-overrid p,
   .field-events-rel-places {
     font-family: $display-serif;
-    @include font-size($small);
+    @include font-size($medium);
+    font-weight: 100;
   }
   .title {
     padding-right: 20%;
@@ -530,20 +534,18 @@ body.news-features .inline-logo img {
   .field-events-event-type .field__item,
   .field-events-event-series .field__item {
     font-family: "Dignitas Regular";
-    font-size: 3rem;
+    @include font-size($medium);
     font-weight: 100;
     line-height: 1;
     text-transform: initial;
     color: $gray;
+    margin-bottom: 2px;
   }
-}
-
-.path-events-calendar-new h2 {
 }
 
 .path-events-calendar-new h2 span {
   font-family: "Dignitas Regular";
-  font-size: 3rem;
+  @include font-size(3rem);
   font-weight: 100;
   line-height: 1;
   text-transform: initial;
@@ -577,17 +579,99 @@ body.news-features .inline-logo img {
 
 .path-events-calendar-new .event-summary {
   font-family: "Dignitas Regular";
-  font-size: 1.6rem;
-  line-height: 1.4;
+  @include font-size($small);
+  line-height: 1.2;
   padding-top: 2rem;
   padding-bottom: 1rem;
   padding-right: 25%;
+  @include mq($until: tablet) {
+    padding-right: 1rem;
+  }
 }
 
 .path-events-calendar-new .more-info {
-  @include label;
+  font-family: $tradegothic;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.02rem;
   margin: 1rem 0 1rem 0;
   &:after {
     content: "→";
   }
+}
+
+body.events .region-content article {
+  .field-events-event-series,
+  .field-events-event-type {
+    font-family: $dignitas;
+    text-transform: initial;
+    @include font-size($xsmall);
+    color: $gray;
+    font-weight: 100;
+    line-height: 1;
+  }
+  .daterange,
+  .field-events-event-dates-overrid p,
+  .field-events-rel-places {
+    font-family: $display-serif;
+    @include font-size($xsmall);
+    font-weight: 100;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  h1 {
+    @include font-size($medium);
+    margin: 0 !important;
+  }
+}
+
+body.events .region-content .row-first {
+  display: flex;
+  align-items: top;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  @include mq($until: tablet) {
+    flex-direction: column;
+  }
+  .column {
+    flex-basis: 50%;
+  }
+  .columm-second {
+  }
+  .blazy__caption {
+    padding-left: 1rem;
+  }
+  // overrides
+  .event-image-wrapper {
+    max-width: initial;
+    margin: 0;
+  }
+}
+
+body.events .region-content .row-second {
+  .body {
+    margin-top: 3rem;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+  .body p {
+    @include body;
+    @include font-size($xsmall !important);
+    margin-bottom: 1rem;
+  }
+  h3,
+  strong {
+    @include body;
+    @include font-size($xsmall !important);
+    color: $gray;
+    font-weight: 100;
+  }
+}
+
+body.events .event-container {
+  max-width: $max-vw;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }

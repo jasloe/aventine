@@ -154,3 +154,19 @@
 .field-publications-links .field__item:first-child {
   margin-bottom: 0.5rem;
 }
+
+.ac .ac-trigger {
+  font: initial;
+  font-weight: initial;
+  font-family: $tradegothic;
+}
+
+.ac .ac-trigger::after {
+  content: "+";
+  font-size: 2rem;
+  width: 25px;
+  -webkit-transform: translate(0, -100%);
+  position: absolute;
+  top: 7.5%;
+  color: $gray;
+}
