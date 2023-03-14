@@ -493,16 +493,13 @@ body.news-features .inline-logo img {
   margin-bottom: 1rem;
 }
 
-.path-events-calendar-new .accordion-container {
-  max-width: $max-vw;
-  margin: 0 auto;
-  padding-left: 33%;
+.path-events .accordion-container {
   @include mq($until: tablet) {
     padding: 0 1rem;
   }
 }
 
-.path-events-calendar-new .ac {
+.path-events .ac {
   border-top: 1px solid $gray;
   border-bottom: none;
   border-left: none;
@@ -512,7 +509,7 @@ body.news-features .inline-logo img {
   }
 }
 
-.path-events-calendar-new .ac-panel {
+.path-events .ac-panel {
   padding-top: 3rem;
 }
 
@@ -520,7 +517,7 @@ body.news-features .inline-logo img {
   padding: 0px 0px 0px 0px !important;
 }
 
-.path-events-calendar-new {
+.path-events {
   .daterange,
   .field-events-event-dates-overrid p,
   .field-events-rel-places {
@@ -543,21 +540,21 @@ body.news-features .inline-logo img {
   }
 }
 
-.path-events-calendar-new h2 span {
+.path-events h2 span {
   font-family: "Dignitas Regular";
-  @include font-size(3rem);
+  @include font-size(2.8rem);
   font-weight: 100;
   line-height: 1;
   text-transform: initial;
 }
 
-.path-events-calendar-new .event-metadata {
+.path-events .event-metadata {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
 }
 
-.path-events-calendar-new .pager__items {
+.path-events .pager__items {
   display: flex;
   .pager__item {
     padding: 1rem;
@@ -570,14 +567,14 @@ body.news-features .inline-logo img {
   }
 }
 
-.path-events-calendar-new .pager {
+.path-events .pager {
   display: flex;
   padding: 1rem 0;
   justify-content: center;
   align-items: center;
 }
 
-.path-events-calendar-new .event-summary {
+.path-events .event-summary {
   font-family: "Dignitas Regular";
   @include font-size($small);
   line-height: 1.2;
@@ -589,7 +586,7 @@ body.news-features .inline-logo img {
   }
 }
 
-.path-events-calendar-new .more-info {
+.path-events .more-info {
   font-family: $tradegothic;
   text-transform: uppercase;
   font-variant: small-caps;
