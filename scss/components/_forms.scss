@@ -167,7 +167,8 @@ span.select2 {
   }
 }
 
-// Discipline, date pickers for people/* pages.
+// Discipline, date pickers for people/* pages. Now includes event/* pages.
+.path-events .form-item select,
 .people-current .form-item select {
   padding: 0.5rem 0.3rem;
 }

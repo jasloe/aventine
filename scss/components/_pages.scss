@@ -493,6 +493,25 @@ body.news-features .inline-logo img {
   margin-bottom: 1rem;
 }
 
+/* Events refactoring
+   Includes support for new event page template,
+   filters, and accordion functionality */
+
+/* reset page title region */
+.path-events .region-page-title {
+  max-width: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.path-events .events-container {
+  display: flex;
+}
+
+body.index-events .region-content {
+  margin-top: 0;
+}
+
 .path-events .accordion-container {
   @include mq($until: tablet) {
     padding: 0 1rem;
@@ -504,6 +523,7 @@ body.news-features .inline-logo img {
   border-bottom: none;
   border-left: none;
   border-right: none;
+  margin-top: 0; // override default styling
   .ac-header {
     padding: 2rem 0 0 0;
   }

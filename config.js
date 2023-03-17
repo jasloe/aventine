@@ -1,6 +1,6 @@
 module.exports = {
   browserSync: {
-    hostname: "http://sound-american.lndo.site",
+    hostname: "http://aarome.lndo.site",
     port: 8080,
     openAutomatically: true,
     reloadDelay: 50,
