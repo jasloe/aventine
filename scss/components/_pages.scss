@@ -619,76 +619,67 @@ body.index-events .region-content {
   }
 }
 
-body.events .region-content article {
-  .field-events-event-series,
-  .field-events-event-type {
-    font-family: $dignitas;
-    text-transform: initial;
-    @include font-size($xsmall);
-    color: $gray;
-    font-weight: 100;
-    line-height: 1;
-  }
-  .daterange,
-  .field-events-event-dates-overrid p,
-  .field-events-rel-places {
-    font-family: $display-serif;
-    @include font-size($xsmall);
-    font-weight: 100;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-  h1 {
-    @include font-size($medium);
-    margin: 0 !important;
-  }
+/* Event detail page */
+.events article:first-of-type {
+  @include global-margin;
+  padding: 0 1rem;
 }
 
-body.events .region-content .row-first {
-  display: flex;
-  align-items: top;
-  gap: 1rem;
-  margin-bottom: 4rem;
-  @include mq($until: tablet) {
-    flex-direction: column;
+.event-container {
+  .row {
+    display: flex;
   }
   .column {
     flex-basis: 50%;
   }
-  .columm-second {
+  .column.page-section {
+    display: flex;
+    flex-direction: column;
   }
-  .blazy__caption {
-    padding-left: 1rem;
+  .row {
+    display: flex;
   }
-  // overrides
-  .event-image-wrapper {
-    max-width: initial;
-    margin: 0;
+  .row-second,
+  .row-third {
+    margin-top: 2rem;
   }
 }
 
-body.events .region-content .row-second {
-  .body {
-    margin-top: 3rem;
-    margin-right: 20%;
-    margin-left: 20%;
+.event-container {
+}
+
+.event-container {
+  /* overrides begin here */
+  .field-events-image,
+  .field-events-event-type,
+  .title,
+  .page-section {
+    margin: initial !important;
+    padding: initial !important;
+    max-width: initial !important;
   }
-  .body p {
+  .field.body {
+    margin-top: initial !important;
+  }
+  .field.body p {
     @include body;
-    @include font-size($xsmall !important);
+    @include font-size(1.5rem !important);
     margin-bottom: 1rem;
   }
-  h3,
-  strong {
-    @include body;
-    @include font-size($xsmall !important);
-    color: $gray;
-    font-weight: 100;
+  .field__label {
   }
-}
-
-body.events .event-container {
-  max-width: $max-vw;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  .place-wrapper {
+    font-family: $tradegothic;
+    @include font-size(1rem);
+  }
+  /* override at base.scss:113 */
+  .field-events-event-type {
+    margin: initial !important;
+    padding: initial !important;
+    max-width: initial !important;
+    font-family: $display-serif !important;
+    @include font-size($medium !important);
+    text-transform: initial !important;
+    color: $gray;
+  }
 }
