@@ -22,14 +22,3 @@
 .page.wrapper h4 {
   @include caption;
 }
-
-.events-body .blazy__caption {
-  max-width: 1290px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.events-body .page-section .blazy__caption {
-  padding-left: 0rem;
-  padding-right: 0rem;
-}

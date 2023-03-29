@@ -1,11 +1,8 @@
 body.index .region-content,
 body.index-people .region-content,
-body.index-events .region-content,
 body.index-news .region-content,
 body.index-sof .region-content,
 .path-news-features,
-.path-events-calendar,
-.path-events-exhibitions,
 .path-news-press-releases .region-content,
 .path-attualita-comunicati-stampa .region-content {
   @include mq($from: tablet) {
@@ -14,12 +11,9 @@ body.index-sof .region-content,
 }
 
 body.index,
-body.index-events,
 body.index-news,
 body.index-sof,
 .path-news-features,
-.path-events-calendar,
-.path-events-exhibitions,
 .path-news-press-releases,
 .path-attualita-comunicati-stampa {
   .layout-content {

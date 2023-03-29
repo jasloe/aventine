@@ -68,36 +68,6 @@ body.page {
   @include label;
 }
 
-// Events.
-body.events .field-events-event-series,
-body.events .field-events-event-type {
-  @include label;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-body.events h1 {
-  margin-bottom: 1rem;
-}
-
-.events-detail {
-  .daterange,
-  .field-events-event-dates-overrid p {
-    @include body;
-    margin-bottom: 1rem;
-  }
-
-  .field-events-rel-places {
-    margin-bottom: 2rem;
-  }
-}
-
-body.events {
-  .blazy img {
-    width: 100%;
-  }
-}
-
 // News features.
 body.news-features {
   .field-news-features-byline,
@@ -497,189 +467,231 @@ body.news-features .inline-logo img {
    Includes support for new event page template,
    filters, and accordion functionality */
 
-/* reset page title region */
+/* Events index positioning */
+.path-events .region-content {
+  margin-top: 0rem !important;
+}
+
 .path-events .region-page-title {
   max-width: initial;
   margin: 0;
   padding: 0;
+  margin-bottom: 2rem;
+  h1 {
+    margin-bottom: 0;
+  }
+}
+@include mq($until: tablet) {
+  .path-events {
+    .region-page-title {
+      margin-bottom: 1rem;
+    }
+    .region-page-title,
+    .region-content-pre {
+      padding-left: 1rem;
+    }
+  }
 }
 
 .path-events .events-container {
   display: flex;
-}
 
-body.index-events .region-content {
-  margin-top: 0;
-}
-
-.path-events .accordion-container {
   @include mq($until: tablet) {
-    padding: 0 1rem;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .region-content-pre {
+    flex-basis: 35%;
+  }
+  .region-content {
+    flex-basis: 65%;
+  }
+  .row-first {
+    margin-bottom: 2rem;
+  }
+  .event-description {
+    margin-top: 2rem;
+    @include mq($until: tablet) {
+      padding: 0 1rem;
+    }
+  }
+  .event-body {
+    padding-right: 10%;
+    margin-bottom: 2rem;
+  }
+  .row-fourth {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
-.path-events .ac {
-  border-top: 1px solid $gray;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  margin-top: 0; // override default styling
-  .ac-header {
-    padding: 2rem 0 0 0;
+/* Events index styling */
+.path-events .events-container {
+  .field__item,
+  .field-events-rel-places,
+  .event-body p {
+    font-family: $display-serif !important;
+    em {
+      font-family: $dignitasital;
+    }
   }
-}
-
-.path-events .ac-panel {
-  padding-top: 3rem;
-}
-
-.ac .ac-trigger {
-  padding: 0px 0px 0px 0px !important;
-}
-
-.path-events {
-  .daterange,
-  .field-events-event-dates-overrid p,
-  .field-events-rel-places {
-    font-family: $display-serif;
+  .field-events-event-dates,
+  .field-events-rel-places,
+  .field-events-event-series,
+  .event-body p {
     @include font-size($medium);
-    font-weight: 100;
+    line-height: 1.1;
   }
-  .title {
-    padding-right: 20%;
-  }
-  .field-events-event-type .field__item,
-  .field-events-event-series .field__item {
-    font-family: "Dignitas Regular";
-    @include font-size($medium);
-    font-weight: 100;
+  h2 {
+    @include font-size(3.2rem);
     line-height: 1;
-    text-transform: initial;
+  }
+  .blazy {
+    padding-top: 2rem;
+  }
+  .field-events-event-series {
     color: $gray;
-    margin-bottom: 2px;
   }
-}
-
-.path-events h2 span {
-  font-family: "Dignitas Regular";
-  @include font-size(2.8rem);
-  font-weight: 100;
-  line-height: 1;
-  text-transform: initial;
-}
-
-.path-events .event-metadata {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.path-events .pager__items {
-  display: flex;
-  .pager__item {
-    padding: 1rem;
+  .more-info,
+  .register {
+    font-family: $tradegothic;
+    display: inline;
   }
-  .pager__item:first-child {
-    padding-left: 0rem;
+  .more-info {
+    @include font-size(1.4rem);
   }
-  .pager__item:last-child {
-    padding-right: 0rem;
+  .register {
+    @include font-size(1.4rem);
   }
-}
-
-.path-events .pager {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.path-events .event-summary {
-  font-family: "Dignitas Regular";
-  @include font-size($small);
-  line-height: 1.2;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  padding-right: 25%;
-  @include mq($until: tablet) {
-    padding-right: 1rem;
-  }
-}
-
-.path-events .more-info {
-  font-family: $tradegothic;
-  text-transform: uppercase;
-  font-variant: small-caps;
-  font-weight: 400;
-  font-size: 0.75rem;
-  letter-spacing: 0.02rem;
-  margin: 1rem 0 1rem 0;
-  &:after {
+  .more-info:after {
     content: "→";
+  }
+  .register {
+    padding: 0.875rem 1.3rem;
+    border: 2px solid $black;
+    color: $white;
+  }
+}
+
+/* Events index accordion */
+.path-events {
+  .ac {
+    border-top: 2px solid $gray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 0; // override default styling
+  }
+
+  .ac .ac-panel {
+    padding-top: 0;
+  }
+
+  .ac-trigger,
+  .ac-panel {
+    padding: 1.5rem;
+    @include mq($until: tablet) {
+      padding: 1rem;
+    }
+  }
+
+  .ac-trigger {
+    padding: 1.5rem 1.5rem 0rem 1.5rem;
+    @include mq($until: tablet) {
+      padding: 1rem;
+    }
+  }
+  .ac-panel {
+    @include mq($until: tablet) {
+      padding: 0rem;
+    }
+  }
+  /* Trigger override */
+  .ac-trigger {
+    &::after {
+      transform: translate(0, -100%) !important;
+      right: 1rem !important;
+      top: 22% !important;
+      color: $black !important;
+    }
   }
 }
 
 /* Event detail page */
-.events article:first-of-type {
-  @include global-margin;
+#block-aventine-breadcrumbs {
+  display: none;
+}
+
+.events .region-content article {
+  max-width: $max-vw;
+  margin: 0 auto;
   padding: 0 1rem;
-}
-
-.event-container {
-  .row {
-    display: flex;
-  }
-  .column {
-    flex-basis: 50%;
-  }
-  .column.page-section {
-    display: flex;
-    flex-direction: column;
-  }
-  .row {
-    display: flex;
-  }
-  .row-second,
-  .row-third {
-    margin-top: 2rem;
+  .event-image-wrapper {
+    padding: 0 -1rem;
   }
 }
 
-.event-container {
+.event-container .media img {
+  width: 100%;
 }
 
 .event-container {
-  /* overrides begin here */
-  .field-events-image,
-  .field-events-event-type,
-  .title,
-  .page-section {
-    margin: initial !important;
-    padding: initial !important;
-    max-width: initial !important;
+  .row-first {
+    margin-bottom: 2rem;
+    @include mq($from: tablet) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 2rem;
+      align-items: center;
+      .column {
+        flex-basis: 50%;
+      }
+    }
   }
-  .field.body {
-    margin-top: initial !important;
+}
+
+.event-container .grid-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  .grid-item-1 {
+    order: 3;
   }
-  .field.body p {
-    @include body;
-    @include font-size(1.5rem !important);
-    margin-bottom: 1rem;
+  .grid-item-2 {
+    order: 1;
   }
-  .field__label {
+  .grid-item-3 {
+    order: 2;
   }
-  .place-wrapper {
-    font-family: $tradegothic;
-    @include font-size(1rem);
+  .grid-item-4 {
+    order: 4;
   }
-  /* override at base.scss:113 */
-  .field-events-event-type {
-    margin: initial !important;
-    padding: initial !important;
-    max-width: initial !important;
-    font-family: $display-serif !important;
-    @include font-size($medium !important);
-    text-transform: initial !important;
-    color: $gray;
+  .grid-item-5 {
+    order: 5;
+  }
+  @include mq($from: tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+  .grid-item-1 {
+    grid-row: 1 / 5;
+  }
+  .grid-item-2 {
+    grid-area: auto / auto;
+  }
+  .grid-item-3 {
+    grid-area: auto / auto;
+  }
+  .grid-item-4 {
+    grid-area: auto / auto;
+  }
+  .grid-item-5 {
+    grid-column: 2 / 2;
   }
 }

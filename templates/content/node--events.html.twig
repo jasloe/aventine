@@ -72,62 +72,70 @@
 #}
 
 <article{{attributes.addClass(classes)}}>
-	<div
-		class="event-container">
-		{# row: image & title #}
-		<div
-			class="row row-first">
-			{# marquee image #}
+	<div class="event-container">
+		<div class="row row-first">
 			<div class="column column-first">
-				<div class="event-image-wrapper">
-					{{ content.field_events_image}}
+				<div class="field daterange">
+					{{ node.field_events_event_dates.value|date('U')|format_date('events') }}
 				</div>
-			</div>
-			{# title card #}
-			<div class="column column-second">
+				{% spaceless %}
+					<div class="field field-events-rel-places entity-reference field__items">
+						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+					</div>
+				{% endspaceless %}
 				{% if content.field_events_event_series|render is not empty %}
 					{{ content.field_events_event_series }}
 				{% else %}
 					{{ content.field_events_event_type }}
 				{% endif %}
+
 				<h1 class="title serif">{{ label }}</h1>
+			</div>
+			<div class="column column-second">
+				<div class="event-image-wrapper">
+					{{ content.field_events_image}}
+				</div>
 			</div>
 		</div>
 
 		{# row: primary content #}
-		<div
-			class="row row-second">
-			{# body #}
-			<div class="column column-first page-section">
+		<div class="grid-parent row-second">
+			<div class="grid-item grid-item-1 event-body">
 				{{ content.body }}
-				{{ content.field_remote_video }}
+				{{ content.field_events_sponsors }}
 			</div>
-			{# metadata #}
-			<div class="column column-second event-metadata">
-				<div class="events-detail">
-					{{ content.field_events_event_dates }}
-					{% spaceless %}
-						<div class="field field-events-rel-places entity-reference field__items">
-							<span>
-								{{ content.field_events_rel_places }}
-							</span>
-						</div>
-					{% endspaceless %}
-				</div>
+			<div class="grid-item grid-item-2 event-dates">
+				{{ content.field_events_event_dates }}
+			</div>
+			<div class="grid-item grid-item-3 event-location">
+
+
+				{{ content.field_events_rel_places }}
+
+			</div>
+			<div class="grid-item grid-item-4 event-register">
+				{{ content.field_event_registration_copy }}
+				<a href={{ content.field_events_registration.0['#url'] }} target="_blank">
+
+					{{ content.field_events_registration.0['#title'] }}
+				</a>
+			</div>
+			<div class="grid-item grid-item-5 event-security">
+				{{ content.field_security_notice }}
 			</div>
 		</div>
-	</div>
-	{# related content #}
-	<div class="row row-third">
-		<div class="related-container">
 
-			{{ drupal_block('views_block:related_content-events_people', {'label': true} ) }}
+		{# related content #}
+		<div class="row row-third">
+			<div class="related-container">
 
+				{{ drupal_block('views_block:related_content-events_people', {'label': true} ) }}
+
+			</div>
+			<div class="related-news-container">
+
+				{{ drupal_block('views_block:related_content-events_news', {'label': true} ) }}
+
+			</div>
 		</div>
-		<div class="related-news-container">
-
-			{{ drupal_block('views_block:related_content-events_news', {'label': true} ) }}
-
-		</div>
-	</div>
-</div></article>
+	</article>

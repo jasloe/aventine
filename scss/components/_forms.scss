@@ -300,3 +300,15 @@ input:focus {
   padding: 0.5rem;
   color: red;
 }
+
+.path-events .region-content-pre {
+  .js-form-item {
+    margin-right: 0rem;
+  }
+  select {
+    border: 2px solid $black;
+    @include font-size(1.2rem);
+    max-width: 100%;
+    width: 100%;
+  }
+}

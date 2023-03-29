@@ -74,41 +74,47 @@
 <article{{attributes.addClass('ac')}}>
 	<div class="ac-header">
 		<div class="ac-trigger">
-			<div class="event-metadata">
-				<div class="col-1">
 
-					{{ content.field_events_event_dates }}
+			<div class="row row-first">
 
-					{% spaceless %}
-						<div class="field field-events-rel-places entity-reference field__items">
-							<span>
-								{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-							</span>
-						</div>
-					{% endspaceless %}
-				</div>
-				<div class="col-2"></div>
+				{{ content.field_events_event_dates }}
 
-
+				{% spaceless %}
+					<div class="field field-events-rel-places entity-reference field__items">
+						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+					</div>
+				{% endspaceless %}
 			</div>
-			{% if content.field_events_event_series|render is not empty %}
-				{{ content.field_events_event_series }}
-			{% else %}
-				{{ content.field_events_event_type }}
-			{% endif %}
-			<h2 class="title serif">{{ label }}</h2>
 
+			<div class="row row-second">
+				{% if content.field_events_event_series|render is not empty %}
+					{{ content.field_events_event_series }}
+				{% else %}
+					{{ content.field_events_event_type }}
+				{% endif %}
+				<h2 class="title serif">{{ label }}</h2>
+			</div>
 		</div>
 		<div class="ac-panel">
 			{{ content.field_events_image }}
-			<div class="event-summary">
-				{{ "
-David Brooks is the 2020 Rome Prize Fellow in Visual Arts, completing a fellowship curtailed by the pandemic. An artist based in New York and New Orleans, he is on the faculty of the Maryland Institute College of Art in Baltimore.
+			<div class="event-description">
+				<div class="row row-third event-body">
+					{{ content.field_events_summary.0 }}
+				</div>
+				{% if content.field_events_registration|render %}
+					<div class="row row-fourth">
+						<div class="register">
+							<a href={{ content.field_events_registration.0['#url'] }} target="_blank">
+								{{ content.field_events_registration.0['#title'] }}
+							</a>
+						</div>
+						<div class="more-info">
+							<a href={{ url }}>More info</a>
+						</div>
+					</div>
+				{% endif %}
 
-James Casebere is the 2020 Abigail Cohen Rome Prize Fellow in Visual Arts and an artist based in Canaan, New York. Like Brooks, he is completing a fellowship cut short by the pandemic." }}
-			</div>
-			<div class="more-info">
-				<a href={{ url }}>About this event</a>
 			</div>
 		</div>
-	</article>
+	</div>
+</article>

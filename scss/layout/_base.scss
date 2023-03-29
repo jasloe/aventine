@@ -27,7 +27,6 @@
 .path-news-press-releases .layout-content,
 .index-news .layout-content,
 .index-sof .layout-content,
-.index-events .layout-content,
 .index .layout-content {
   max-width: $max-vw;
   margin: 0 auto;
@@ -95,45 +94,6 @@
       padding: 0;
     }
   }
-}
-
-body.events .region-content article {
-  .events-detail {
-    max-width: $max-vw;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  h1.title {
-    margin: 0rem auto 0.5rem auto;
-    padding: 0 1rem;
-    max-width: $max-vw;
-  }
-
-  .field-events-event-series,
-  .field-events-event-type {
-    margin: 1rem auto 0 auto;
-    padding: 0 1rem;
-    max-width: $max-vw;
-  }
-
-  .field-events-image {
-    max-width: 1380px;
-    margin: 0 auto;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .field.body {
-    margin-top: 100px;
-  }
-}
-
-.event-image-wrapper {
-  max-width: 1380px !important;
-  margin: 0 auto !important;
 }
 
 body.news-features article {
