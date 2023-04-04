@@ -199,17 +199,17 @@ input {
   border-radius: 0;
 }
 
-.callout-inner .mailchimp-signup-subscribe-form .form-actions input {
+.newsletter-inner .mailchimp-signup-subscribe-form .form-actions input {
   color: $black;
 }
 
-.home .region-callout .callout-inner {
+.home .region-newsletter .newsletter-inner {
   @include mq($until: tablet) {
     padding: 1rem 0rem;
   }
 }
 
-.callout-inner .mailchimp-signup-subscribe-form {
+.newsletter-inner .mailchimp-signup-subscribe-form {
   display: flex;
   padding: 0 5rem;
   @include mq($until: desktop) {
@@ -228,7 +228,7 @@ input {
 }
 
 @include mq($until: tablet) {
-  .callout-inner .mailchimp-signup-subscribe-form {
+  .newsletter-inner .mailchimp-signup-subscribe-form {
     flex-direction: column;
     padding: 0 1rem;
 

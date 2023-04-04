@@ -15,6 +15,7 @@ regions:
   content_pre: Pre-content
   content: Content
   callout: Callout
+  newsletter: Newsletter
   footer: Footer
   footer_second: Second footer
   notice: Notice
