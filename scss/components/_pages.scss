@@ -554,7 +554,7 @@ body.news-features .inline-logo img {
   }
   .field-events-event-series,
   .field-events-event-type {
-    display: none;
+    color: $gray;
   }
   .more-info,
   .register {
@@ -563,6 +563,7 @@ body.news-features .inline-logo img {
   }
   .more-info {
     @include font-size(1.4rem);
+    margin-left: auto;
   }
   .register {
     @include font-size(1.4rem);

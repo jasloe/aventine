@@ -76,9 +76,12 @@
 		<div class="ac-trigger">
 
 			<div class="row row-first">
-
-				{{ content.field_events_event_dates }}
-
+				{{ node.field_events_event_dates.value|date('U')|date('F d')  }}
+				{% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
+					foo
+				{% endif %}
+				{{ node.field_events_event_dates.end_value|date('U')|date('F d')  }}
+				{{ node.field_events_event_dates.value|date('U')|format_date('exhibition') }}
 				{% spaceless %}
 					<div class="field field-events-rel-places entity-reference field__items">
 						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
@@ -96,23 +99,25 @@
 			</div>
 		</div>
 		<div class="ac-panel">
-			{{ content.field_events_image }}
+			<a href={{ url }}>
+				{{ content.field_events_image }}
+			</a>
 			<div class="event-description">
 				<div class="row row-third event-body">
 					{{ content.field_events_summary.0 }}
 				</div>
-				{% if content.field_events_registration|render %}
-					<div class="row row-fourth">
+				<div class="row row-fourth">
+					{% if content.field_events_registration|render %}
 						<div class="register">
 							<a href={{ content.field_events_registration.0['#url'] }} target="_blank">
 								{{ content.field_events_registration.0['#title'] }}
 							</a>
 						</div>
-						<div class="more-info">
-							<a href={{ url }}>More info</a>
-						</div>
+					{% endif %}
+					<div class="more-info">
+						<a href={{ url }}>More info</a>
 					</div>
-				{% endif %}
+				</div>
 
 			</div>
 		</div>
