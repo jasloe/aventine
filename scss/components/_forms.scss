@@ -310,5 +310,16 @@ input:focus {
     @include font-size(1.2rem);
     max-width: 100%;
     width: 100%;
+    color: $black;
+  }
+}
+
+@include mq($until: tablet) {
+  .path-events .region-content-pre {
+    select {
+      border: none;
+      border-bottom: 1px solid $black;
+      -webkit-appearance: none;
+    }
   }
 }

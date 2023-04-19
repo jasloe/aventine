@@ -131,6 +131,12 @@
 				<div class="grid-item grid-item-6 event-more-info col-right">
 					{{ content.field_events_more_info }}
 				</div>
+				<div class="grid-item grid-item-7 event-more-info col-right">
+					{{ content.field_events_accessibility }}
+				</div>
+				<div class="grid-item grid-item-8 event-more-info col-right">
+					{{ content.field_events_sponsorship }}
+				</div>
 			{% endif %}
 
 		</div>
@@ -141,12 +147,9 @@
 			<div class="related-container">
 				<div class="block-title">Related content</div>
 				<div class="related-group">
-					<div class="related-item">
-						{{ drupal_block('views_block:related_content-events_people', {'label': true} ) }}
-					</div>
-					<div class="related-item">
-						{{ drupal_block('views_block:related_content-events_news', {'label': true} ) }}
-					</div>
+					{{ drupal_block('views_block:related_content-events_events', {'label': true} ) }}
+					{{ drupal_block('views_block:related_content-events_news', {'label': true} ) }}
+					{{ drupal_block('views_block:related_content-events_people', {'label': true} ) }}
 				</div>
 			</div>
 		</div>

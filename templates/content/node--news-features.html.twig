@@ -79,17 +79,23 @@
 
 <article{{attributes.addClass(classes)}}>
 
-  {{ content.field_news_features_byline }}
-  {{ content.field_news_features_date }}
+	{{ content.field_news_features_byline }}
+	{{ content.field_news_features_date }}
 
-  <div class="slideshow-wrapper">
+	<div class="slideshow-wrapper">
 		{{ content.field_news_features_images }}
 		<div class="page-section">
 			<div class="column column-first"></div>
-			<div
-				class="column column-second">
+			<div class="column column-second">
 				{{ content.body.0 }}
 			</div>
+		</div>
+	</div>
+	<div class="related-container">
+		<div class="block-title">Related content</div>
+		<div class="related-group">
+			{{ drupal_block('views_block:backlinks_news-events', {'label': true} ) }}
+			{{ drupal_block('views_block:backlinks_news-people', {'label': true} ) }}
 		</div>
 	</div>
 </article>
