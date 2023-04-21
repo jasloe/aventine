@@ -65,10 +65,13 @@
 				{{ page.breadcrumb }}
 			{% endif %}
 
-			{{ page.page_title}}
+			<div class="title-container">{{ page.page_title}}
+				<div class="event-menu">
+					<a href="/events/past">View past events</a>
+				</div>
+			</div>
 			<div class="events-container">
 				{{ page.content_pre }}
-
 				{{ page.content }}
 			</div>
 			{{ page.callout }}

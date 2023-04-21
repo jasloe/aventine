@@ -310,16 +310,6 @@ body.news-features {
   }
 }
 
-.society-of-fellows .field-media-image,
-.news-features .slick__slide .field-media-image {
-  margin: 0 auto;
-  max-width: $jumbotron;
-
-  img {
-    width: 100%;
-  }
-}
-
 .news-features .page.extended {
   .summary-wrapper {
     margin: 0 auto 1rem 0;
@@ -399,9 +389,6 @@ body.news-features {
   .field-news-features-date {
     padding: 0 1rem;
   }
-  .field-news-features-byline {
-    padding: 0rem;
-  }
 
   .field-news-features-byline {
     display: flex;
@@ -468,7 +455,34 @@ body.news-features .inline-logo img {
    filters, and accordion functionality */
 
 /* Events index positioning */
-.path-events .region-page-title,
+.path-events .region-page-title {
+  max-width: initial;
+  margin: initial;
+  padding: initial;
+}
+
+.path-events .title-container {
+  margin: 0 auto 1rem auto;
+  max-width: $max-vw;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.path-events .event-menu a {
+  font-family: $tradegothic;
+  color: $black;
+  border-bottom: 1px solid $black;
+  padding-bottom: 2px;
+  font-weight: 900;
+  transition: color 0.33s ease-in-out;
+  &:hover {
+    color: $gray;
+    border-bottom: 1px solid $gray;
+  }
+}
+
 .path-events .events-container {
   max-width: $max-vw;
   margin: 0 auto;
@@ -480,10 +494,6 @@ body.news-features .inline-logo img {
 
 @include mq($until: tablet) {
   .path-events {
-    .region-page-title {
-      margin-bottom: 1rem;
-    }
-    .region-page-title,
     .region-content-pre {
       padding-left: 1rem;
     }
@@ -501,10 +511,10 @@ body.news-features .inline-logo img {
     gap: 0rem;
   }
   .region-content-pre {
-    flex-basis: 35%;
+    flex-basis: calc(30% - 1.3rem);
   }
   .region-content {
-    flex-basis: 65%;
+    flex-basis: 70%;
   }
   .row-first {
     margin-bottom: 2rem;
@@ -544,6 +554,9 @@ body.news-features .inline-logo img {
   .event-body p {
     @include font-size($medium);
     line-height: 1.1;
+  }
+  .field-events-event-dates {
+    font-family: $dignitas;
   }
   h2 {
     @include font-size(3.2rem);
@@ -589,7 +602,7 @@ body.news-features .inline-logo img {
 /* Events index accordion */
 .path-events {
   .ac {
-    border-top: 2px solid $gray;
+    border-top: 2px solid lightgray;
     border-bottom: none;
     border-left: none;
     border-right: none;
@@ -642,12 +655,8 @@ body.news-features .inline-logo img {
 }
 
 /* Event detail page, positioning */
-#block-aventine-breadcrumbs {
-  display: none;
-}
-
 .events .region-content article {
-  max-width: $jumbotron;
+  max-width: 1290px;
   margin: 0 auto;
 }
 
@@ -674,8 +683,8 @@ body.news-features .inline-logo img {
   padding: 0 1rem;
 }
 .event-container .row-second {
-  padding: 0 5% 0 10%;
-  margin-bottom: 1rem;
+  padding: 0 5% 0 13.5%;
+  margin: 3rem 0 1rem 0;
 }
 
 .event-container .row-second .field-events-more-info p {
@@ -728,8 +737,8 @@ body.news-features .inline-logo img {
 
 /* Event detail, first row, styling. */
 .event-container {
-  .row-first {
-    margin-bottom: 4rem;
+  .event-header {
+    margin-top: 2rem;
   }
   .row-first {
     .daterange,
@@ -737,7 +746,7 @@ body.news-features .inline-logo img {
     .field-events-event-series,
     .field-events-event-type {
       font-family: $dignitas;
-      @include font-size($small);
+      @include font-size(1.45rem);
       line-height: 1.1;
     }
     .field-events-rel-places {
@@ -792,7 +801,6 @@ body.news-features .inline-logo img {
   h3 {
     @include font-size(1.3rem);
     color: $gray;
-    margin-top: 2.5rem;
     margin-bottom: 0.33rem;
   }
   h3 + p {
@@ -866,6 +874,7 @@ body.news-features .inline-logo img {
       padding-right: 10%;
     }
     .row-second {
+      margin-top: 1rem;
       padding: 0 1rem;
     }
     .row-second .body hr {
@@ -884,9 +893,12 @@ body.news-features .inline-logo img {
 }
 
 .related-container {
-  max-width: 1380;
+  max-width: 1290px;
   margin: 0 auto;
-  padding: 0 5% 0 10%;
+  padding: 0 5% 0 13.5%;
+  @include mq($until: tablet) {
+    padding: 1rem;
+  }
   border-top: 1px solid $gray;
   padding-top: 2.5rem;
   .block-title {
@@ -907,7 +919,7 @@ body.news-features .inline-logo img {
     @include mq($until: tablet) {
       flex-basis: 100%;
       border-bottom: 1px solid $gray;
-      padding-top: 2rem;
+      padding-top: 1rem;
       padding-bottom: 1rem;
       &:first-child {
         padding-top: 0rem;
@@ -958,3 +970,5 @@ body.news-features .inline-logo img {
 .related-content time {
   color: $gray;
 }
+
+//

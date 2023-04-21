@@ -75,32 +75,18 @@
 	<div class="event-container">
 		<div class="row row-first">
 			<div class="event-header">
-				<div class="event-time-place">
-					<div class="field daterange">
-						{% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
-							{{ node.field_events_event_dates.value|date('F j') }}–{{ node.field_events_event_dates.end_value|date('F j, Y') }}
-						{% else %}
-							{{ node.field_events_event_dates.value|date('U')|format_date('events') }}
-						{% endif %}
-					</div>
 
-					<div class="field field-events-rel-places entity-reference field__items">
-						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-					</div>
+				{% if content.field_events_event_series|render is not empty %}
+					{{ content.field_events_event_series }}
+				{% else %}
+					{{ content.field_events_event_type }}
+				{% endif %}
+				<h1 class="title serif">{{ label }}</h1>
 
-					{% if content.field_events_event_series|render is not empty %}
-						{{ content.field_events_event_series }}
-					{% else %}
-						{{ content.field_events_event_type }}
-					{% endif %}
-
-					<h1 class="title serif">{{ label }}</h1>
-				</div>
 			</div>
 			<div class="event-image-wrapper">
 				{{ content.field_events_image}}
 			</div>
-
 		</div>
 
 		{# row: primary content #}
@@ -150,6 +136,7 @@
 					{{ drupal_block('views_block:related_content-events_events', {'label': true} ) }}
 					{{ drupal_block('views_block:related_content-events_news', {'label': true} ) }}
 					{{ drupal_block('views_block:related_content-events_people', {'label': true} ) }}
+
 				</div>
 			</div>
 		</div>

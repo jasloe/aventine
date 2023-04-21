@@ -168,9 +168,13 @@ span.select2 {
 }
 
 // Discipline, date pickers for people/* pages. Now includes event/* pages.
-.path-events .form-item select,
+
 .people-current .form-item select {
   padding: 0.5rem 0.3rem;
+}
+
+.path-events .form-item select {
+  padding: 0.5rem 0;
 }
 
 .ajax-progress-throbber {
@@ -307,9 +311,7 @@ input:focus {
   }
   select {
     border: 2px solid $black;
-    @include font-size(1.2rem);
-    max-width: 100%;
-    width: 100%;
+    @include font-size(1rem);
     color: $black;
   }
 }

@@ -76,12 +76,14 @@
 		<div class="ac-trigger">
 
 			<div class="row row-first">
-				{{ node.field_events_event_dates.value|date('U')|date('F d')  }}
-				{% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
-					foo
-				{% endif %}
-				{{ node.field_events_event_dates.end_value|date('U')|date('F d')  }}
-				{{ node.field_events_event_dates.value|date('U')|format_date('exhibition') }}
+				<div class="field field-events-event-dates daterange">
+					{% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
+						<time>{{ node.field_events_event_dates.value }}</time>-<time>{{ node.field_events_event_dates.end_value }}</time>
+						{# {{ node.field_events_event_dates.value|date('U')|format_date('events') }}–{{ node.field_events_event_dates.end_value|date('U')|format_date('events') }} #}
+					{% else %}
+						{{ node.field_events_event_dates.value|date('U')|date('F d')  }}
+					{% endif %}
+				</div>
 				{% spaceless %}
 					<div class="field field-events-rel-places entity-reference field__items">
 						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
