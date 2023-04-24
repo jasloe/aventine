@@ -158,6 +158,7 @@ body.news-features {
 
   .field .field__label {
     @include label-ulcase;
+    line-height: 2;
   }
 
   .field-people-professions,
@@ -165,7 +166,6 @@ body.news-features {
   .field-people-project-description p,
   .field-people-biographical-note p {
     @include body;
-    line-height: 1.4;
     margin-bottom: 1rem;
   }
 }
@@ -533,7 +533,7 @@ body.news-features .inline-logo img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -564,6 +564,11 @@ body.news-features .inline-logo img {
   }
   .blazy {
     padding-top: 2rem;
+  }
+  @include mq($until: tablet) {
+    .blazy {
+      padding-top: 0;
+    }
   }
   .field-events-event-series,
   .field-events-event-type {
@@ -630,15 +635,6 @@ body.news-features .inline-logo img {
   .ac-panel {
     @include mq($until: tablet) {
       padding: 0rem;
-    }
-  }
-  /* Trigger override */
-  .ac-trigger {
-    &::after {
-      transform: translate(0, -100%) !important;
-      right: 1rem !important;
-      top: 22% !important;
-      color: $black !important;
     }
   }
 }
@@ -899,12 +895,13 @@ body.news-features .inline-logo img {
   @include mq($until: tablet) {
     padding: 1rem;
   }
-  border-top: 1px solid $gray;
-  padding-top: 2.5rem;
+
   .block-title {
     font-family: $dignitas;
     @include font-size($medium);
     margin-bottom: 2rem;
+    border-top: 1px solid $gray;
+    padding-top: 3rem;
   }
   .related-group {
     display: flex;

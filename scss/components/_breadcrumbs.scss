@@ -11,7 +11,7 @@
 
 #block-aventine-breadcrumbs a,
 #block-aventine-breadcrumbs li:after {
-  transition: color 1s ease;
+  transition: color 0.33s ease;
   font-family: $dignitas;
 }
 
@@ -23,7 +23,11 @@
   font-weight: 900;
 }
 
+#block-aventine-breadcrumbs li:last-child:after {
+  content: "";
+}
+
 #block-aventine-breadcrumbs a:hover,
 #block-aventine-breadcrumbs li:hover:after {
-  color: $black;
+  color: $gray;
 }

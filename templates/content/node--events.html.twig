@@ -124,20 +124,21 @@
 					{{ content.field_events_sponsorship }}
 				</div>
 			{% endif %}
-
 		</div>
-
-
 		{# related content #}
-		<div class="row row-third">
-			<div class="related-container">
-				<div class="block-title">Related content</div>
-				<div class="related-group">
-					{{ drupal_block('views_block:related_content-events', {'label': true} ) }}
-					{{ drupal_block('views_block:related_content-news', {'label': true} ) }}
-					{{ drupal_block('views_block:related_content-people', {'label': true} ) }}
-
+		{% set news = drupal_block('views_block:related_content-news')|render|trim|length %}
+		{% set people = drupal_block('views_block:related_content-people')|render|trim|length %}
+		{% set events = drupal_block('views_block:related_content-events')|render|trim|length %}
+		{% if (news > 0 or people > 0 or events > 0) %}
+			<div class="row row-third">
+				<div class="related-container">
+					<div class="block-title">{{ 'Related content'|t }}</div>
+					<div class="related-group">
+						{{ drupal_block('views_block:related_content-events', {'label': true} ) }}
+						{{ drupal_block('views_block:related_content-news', {'label': true} ) }}
+						{{ drupal_block('views_block:related_content-people', {'label': true} ) }}
+					</div>
 				</div>
 			</div>
-		</div>
+		{% endif %}
 	</article>

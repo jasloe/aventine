@@ -1,7 +1,10 @@
-.search-page {
+.search-page,
+.path-events {
   ul.pager__items {
     @include body;
     display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
 
     li {
       margin-right: 1rem;
@@ -14,6 +17,7 @@
       padding: 10px;
       margin: -10px;
       color: $black;
+      @include font-size(1.4rem);
       transition: color 0.22s ease;
       &:hover {
         color: $gray;
@@ -36,4 +40,7 @@ ul.pager {
       border-bottom: none;
     }
   }
+}
+
+.path-events {
 }

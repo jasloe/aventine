@@ -32,15 +32,6 @@ function aventine_preprocess_page(&$variables) {
 }
 
 /**
- * Implements template_preprocess_node.
- *
- * @param array $variables
- */
-// Function aventine_preprocess_node(&$variables) {
-//
-// }.
-
-/**
  * Change the link title of the language block.
  */
 function aventine_preprocess_links__language_block(&$variables) {

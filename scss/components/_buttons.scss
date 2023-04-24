@@ -147,6 +147,10 @@
   margin-bottom: 0.5rem;
 }
 
+.ac {
+  position: relative;
+}
+
 .ac .ac-trigger {
   font: initial;
   font-weight: initial;
@@ -155,10 +159,13 @@
 
 .ac .ac-trigger::after {
   content: "+";
-  font-size: 2rem;
+  text-align: center;
   width: 25px;
-  -webkit-transform: translate(0, -100%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   position: absolute;
-  top: 7.5%;
-  color: $gray;
+  right: 1rem;
+  @include font-size(1.8rem);
+  transform: translate(0, -100%) !important;
+  top: 3.2rem !important;
 }
