@@ -6,6 +6,7 @@ base theme: stable
 libraries:
   - aventine/global-styling
   - aventine/global-scripts
+  - aventine/accordion
 regions:
   header_pre: Pre-header
   header: Header
