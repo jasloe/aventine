@@ -585,14 +585,20 @@ body.news-features .inline-logo img {
   }
   .register {
     @include font-size(1.4rem);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .register a {
+    padding: 0.675rem 1rem;
+    border: 2px solid $black;
+    color: $black;
+  }
+  .register a:first-child {
+    margin-bottom: 1rem;
   }
   .more-info:after {
     content: "→";
-  }
-  .register {
-    padding: 0.675rem 1rem;
-    border: 2px solid $black;
-    color: $white;
   }
 }
 
