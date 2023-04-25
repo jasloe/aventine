@@ -325,3 +325,12 @@ input:focus {
     }
   }
 }
+
+.bef-exposed-form {
+  input,
+  select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    padding-left: 0.5rem !important;
+  }
+}
