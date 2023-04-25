@@ -475,7 +475,7 @@ body.news-features .inline-logo img {
   color: $black;
   border-bottom: 1px solid $black;
   padding-bottom: 2px;
-  font-weight: 900;
+  font-weight: 100;
   transition: color 0.33s ease-in-out;
   &:hover {
     color: $gray;
@@ -933,7 +933,7 @@ body.news-features .inline-logo img {
     margin-bottom: 0.5rem;
   }
   .related-group .related-item {
-    padding: 5px 0;
+    padding: 0 0 5px 0;
     line-height: 1.3;
   }
   .related-content .related-item a {
@@ -953,7 +953,7 @@ body.news-features .inline-logo img {
 .profile .related-group h2 {
   font-family: $tradegothic;
   @include font-size(0.925rem);
-  font-weight: 900;
+  font-weight: 100;
   color: $black;
   text-transform: initial;
   margin-bottom: 0.5rem;
