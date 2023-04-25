@@ -23,10 +23,6 @@
   font-weight: 900;
 }
 
-#block-aventine-breadcrumbs li:last-child:after {
-  content: "";
-}
-
 #block-aventine-breadcrumbs a:hover,
 #block-aventine-breadcrumbs li:hover:after {
   color: $gray;
