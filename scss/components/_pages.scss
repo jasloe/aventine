@@ -710,7 +710,7 @@ body.news-features .inline-logo img {
       order: 2;
     }
     .grid-item-4.event-register {
-      order: 3;
+      order: 5;
     }
     .grid-item-5.event-security {
       order: 6;
@@ -721,8 +721,8 @@ body.news-features .inline-logo img {
     .grid-item-7.event-more-info {
       order: 4;
     }
-    .grid-item-8.event-more-info {
-      order: 4;
+    .grid-item-9.event-sponsorship {
+      order: 9;
     }
 
     .event-container .row-second {
@@ -819,6 +819,7 @@ body.news-features .inline-logo img {
   }
   .grid-item .field__label,
   .related-group h2 {
+    font-family: $tradegothic;
     @include font-size(0.925rem);
     font-weight: 400;
     color: $black;
@@ -973,4 +974,22 @@ body.news-features .inline-logo img {
   color: $gray;
 }
 
-//
+.registration-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.event-container p a {
+  border-bottom: 1px solid $black;
+  padding-bottom: 2px;
+}
+
+.event-container p em {
+  font-family: $dignitasital;
+}
+
+.related-item .views-field {
+  text-indent: -10px;
+  padding-left: 10px;
+}
