@@ -6,10 +6,22 @@
   background: $black;
 }
 
-#block-aventine-notice .field p {
+#block-aventine-notice .field p,
+#block-aventine-notice .field p a {
   @include label;
   color: $white;
   padding: 0.5rem 0;
+  transition: color 0.22s ease-in-out;
+}
+
+#block-aventine-notice .field p a {
+  border-bottom: 1px solid $white;
+  padding-bottom: 1px;
+}
+
+#block-aventine-notice .field p a:hover {
+  color: $gray;
+  border-bottom-color: $gray;
 }
 
 // Appeal modal overrides
