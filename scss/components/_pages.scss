@@ -595,7 +595,7 @@ body.news-features .inline-logo img {
     color: $black;
   }
   .register a:first-child {
-    margin-bottom: 1rem;x
+    margin-bottom: 1rem;
   }
   .more-info:after {
     content: "→";
@@ -958,7 +958,20 @@ body.news-features .inline-logo img {
 // People (related) overrides
 .news-features .related-container,
 .profile .related-container {
-  margin-top: 4rem;
+  margin-top: 3em;
+}
+
+.people .related-container {
+  padding-left: calc(30% + 0.5rem);
+}
+
+@include mq($until: tablet) {
+  .people .related-container {
+    padding-left: 1rem;
+  }
+  .profile .related-container {
+    margin-top: 1rem;
+  }
 }
 
 .news-features .related-container h2,

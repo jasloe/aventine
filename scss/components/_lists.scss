@@ -1,8 +1,10 @@
+.event-container ul,
 .page-section ul {
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
+.event-container li,
 .page-section li {
   @include body;
   padding-left: 1rem;
@@ -10,11 +12,20 @@
   padding-bottom: 1rem;
 
   &:before {
-    content: "–";
+    content: "—";
     margin-right: 1rem;
   }
 }
 
+.event-container li {
+  padding-bottom: 0rem;
+}
+
+.event-container ul {
+  padding-bottom: 1rem;
+}
+
+.event-container li a,
 .page-section li a {
   padding-bottom: 2px;
   border-bottom: 1px solid $black;
@@ -35,6 +46,7 @@
   }
 }
 
+.event-container h3 + ul,
 .page-section h3 + ul {
   margin-top: 1rem;
 }
