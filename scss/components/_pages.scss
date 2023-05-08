@@ -1012,3 +1012,28 @@ body.news-features .inline-logo img {
   text-indent: -10px;
   padding-left: 10px;
 }
+
+.event-description .field-events-summary,
+.event-description {
+  p > em {
+    font-family: $dignitasital;
+  }
+  p > a {
+    color: $black;
+    border-bottom: 1px solid $black;
+    transition: color 0.22s ease-in-out;
+    &:hover {
+      border-bottom-color: $gray;
+      color: $gray;
+    }
+  }
+}
+
+.event-description .more-info {
+  color: $black;
+  transition: color 0.22s ease-in-out;
+  &:hover a,
+  &:hover:after {
+    color: $gray;
+  }
+}

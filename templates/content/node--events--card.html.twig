@@ -107,8 +107,9 @@
 			<div class="event-description">
 				<div class="row row-third event-body">
 					{% if content.field_events_summary.0|render|trim is not empty %}
-						{% else %}
-							{{ node.field_events_event_series[0].entity.description.value|raw }}
+						{{ content.field_events_summary }}
+					{% else %}
+						{{ node.field_events_event_series[0].entity.description.value|raw }}
 					{% endif %}
 				</div>
 				<div class="row row-fourth">
