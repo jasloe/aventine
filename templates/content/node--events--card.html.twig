@@ -71,6 +71,7 @@
  */
 #}
 
+
 <article{{attributes.addClass('ac')}}>
 	<div class="ac-header">
 		<div class="ac-trigger">
@@ -93,7 +94,7 @@
 
 			<div class="row row-second">
 				{% if content.field_events_event_series|render is not empty %}
-					{{ content.field_events_event_series }}
+					{{ node.field_events_event_series|view('name')  }}
 				{% else %}
 					{{ content.field_events_event_type }}
 				{% endif %}
@@ -109,7 +110,7 @@
 					{% if content.field_events_summary.0|render|trim is not empty %}
 						{{ content.field_events_summary }}
 					{% else %}
-						{{ node.field_events_event_series[0].entity.description.value|raw }}
+						{{ node.field_events_event_series[0]|view('description') }}
 					{% endif %}
 				</div>
 				<div class="row row-fourth">
