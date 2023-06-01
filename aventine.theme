@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implements template_preprocess_html().
@@ -52,6 +53,56 @@ function aventine_preprocess_region(&$variables) {
  */
 function aventine_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-	$suggestions[] = 'page__' . $node->bundle();
+    $suggestions[] = 'page__' . $node->bundle();
   }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function aventine_preprocess_node__events__card(array &$variables) {
+  $node = $variables['elements']['#node'];
+  $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $is_event_series = $node->field_events_event_series->isEmpty();
+  $is_event_type = $node->get('field_events_event_type')->isEmpty();
+  $term_reference_event_series = 'field_events_event_series';
+  $term_reference_event_type = 'field_events_event_type';
+  $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  $is_event_date = $node->get('field_events_event_dates');
+
+  // Grab current dateTime using NON static.
+  $date = new DrupalDateTime('now');
+  // Format it.
+  $date->format('l, F j, Y - H:i');
+
+  // $event_date = $node->field_events_event_date->date->format('Y-m-d H:i:s');
+  dump($node);
+  dump($date);
+  // dump($event_date);
+  // dump($is_event_date[0]);.
+  if ($node && !$node->field_events_event_series->isEmpty()) {
+    $referenced_entities_event_series = $node->get($term_reference_event_series)->referencedEntities();
+    foreach ($referenced_entities_event_series as $term) {
+      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $lang_code);
+      $description = $term->getDescription();
+      if (!$description == NULL) {
+        $variables['event_description'] = t($description);
+      }
+    }
+  }
+
+  elseif ($node && $is_event_series == TRUE && $is_event_type == FALSE) {
+    $referenced_entities_event_type = $node->get($term_reference_event_type)->referencedEntities();
+    foreach ($referenced_entities_event_type as $term) {
+      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $lang_code);
+      // $name = $term->getName();
+      $description = $term->getDescription();
+      if (!$description == NULL) {
+        $variables['event_description'] = t($description);
+      }
+      // $variables['attributes']['class'][] = Html::cleanCssIdentifier($term->getType());
+    }
+  }
+
 }
