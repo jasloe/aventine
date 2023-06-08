@@ -20,7 +20,6 @@
     height: 0;
     overflow: hidden;
     padding-top: 56.25%;
-    background: white;
     position: relative;
     background-color: #f8faf5;
 
@@ -41,16 +40,15 @@
   }
 }
 
-.society-of-fellows .slick.slideshow-wrapper,
-.news-features .slick.slideshow-wrapper {
-  max-width: 1380px;
+.society-of-fellows .slideshow-wrapper .slick,
+.news-features .slideshow-wrapper .slick {
+  max-width: $jumbotron;
   margin: 0 auto;
 
   .field-media-image {
     height: 0;
     overflow: hidden;
     padding-top: 56.25%;
-    background: white;
     position: relative;
     background-color: #f8faf5;
 

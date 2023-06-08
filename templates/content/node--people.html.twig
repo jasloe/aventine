@@ -94,4 +94,18 @@
 			{{ content.field_people_website }}
 		</div>
 	</div>
+	{# related content #}
+	{% set news = drupal_block('views_block:backlinks_people-news')|render|trim|length %}
+	{% set events = drupal_block('views_block:backlinks_people-events')|render|trim|length %}
+	{% if (news > 0 or events > 0) %}
+		<div class="row row-third">
+			<div class="related-container">
+				<div class="block-title">{{ 'Related content'|t }}</div>
+				<div class="related-group">
+					{{ drupal_block('views_block:backlinks_people-events', {'label': true} ) }}
+					{{ drupal_block('views_block:backlinks_people-news', {'label': true} ) }}
+				</div>
+			</div>
+		</div>
+	{% endif %}
 </article>

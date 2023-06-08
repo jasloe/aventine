@@ -41,8 +41,7 @@
   margin-bottom: 0rem;
 }
 
-// Overrides default, news, events title.
-.index-events,
+// Overrides default, news, title.
 .index-news,
 .path-news-features {
   .card-body {
@@ -52,54 +51,8 @@
   }
 }
 
-// Overrides events.
-.index-events .card {
-  position: relative;
-}
-
-.event-image-wrapper,
-.card-image-wrapper {
-  .field-events-canceled {
-    @include label;
-  }
-}
-
-.card-body {
-  .field-events-event-type,
-  .field-events-event-series {
-    @include label;
-    margin-top: 1rem;
-  }
-
-  .daterange,
-  .field-events-rel-places,
-  .field-events-event-dates-overrid {
-    @include body-card;
-  }
-
-  .read-more {
-    margin-top: 0.5rem;
-  }
-}
-
-.event-image-wrapper,
 .card-image-wrapper {
   position: relative;
-}
-
-.event-image-wrapper .field-events-canceled,
-.card-image-wrapper .field-events-canceled {
-  position: absolute;
-  right: 0;
-  padding: 0.5rem 1rem;
-  color: $white;
-  background-color: $black;
-}
-
-.event-image-wrapper .field-events-canceled {
-  top: 0;
-  max-width: 1380px;
-  margin: 0 auto;
 }
 
 // Profiles.
@@ -128,7 +81,6 @@
 @include mq($from: tablet) {
   .profile-container {
     flex-direction: row;
-
     flex-wrap: wrap;
   }
 
@@ -203,57 +155,6 @@
 
   .read-more {
     opacity: 0.5;
-  }
-
-  .field-events-canceled {
-    background: $gray;
-  }
-}
-
-// Events card hover states. This is a hotfix and should be refactored.
-body.index-events .card {
-  .card-body > *:not(.read-more) {
-    color: $black;
-    transition: color 0.22s ease;
-  }
-
-  .blazy,
-  .read-more {
-    transition: opacity 0.22s ease;
-  }
-
-  .blazy {
-    opacity: 1;
-  }
-
-  .read-more {
-    opacity: 1;
-    margin-top: 1rem;
-  }
-}
-
-body.index-events .card:hover {
-  cursor: pointer;
-
-  .card-body > *:not(.read-more) {
-    color: $gray;
-  }
-
-  .blazy,
-  .read-more {
-    transition: opacity 0.22s ease;
-  }
-
-  .blazy {
-    opacity: 0.9;
-  }
-
-  .read-more {
-    opacity: 0.5;
-  }
-
-  .field-events-canceled {
-    background: $gray;
   }
 }
 
@@ -398,8 +299,7 @@ body.index-events .card:hover {
 }
 
 @include mq($from: tablet) {
-  .field-page-page-section .column-second figure,
-  .events-body .page-section .column-second figure {
+  .field-page-page-section .column-second figure {
     // Hotfix for width of inline images on events pages
     width: 80%;
   }

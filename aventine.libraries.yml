@@ -2,7 +2,14 @@ global-styling:
   version: VERSION
   css:
     base:
-      css/main.css: { weight: 999 }
+      css/vendor/accordion.css: { weight: 800 }
+      css/main.css: { weight: 900 }
+accordion:
+  version: VERSION
+  js:
+    js/accordion.js: {}
+  dependencies:
+    - aventine/global-scripts
 global-scripts:
   version: VERSION
   js:

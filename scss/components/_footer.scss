@@ -14,7 +14,7 @@ footer {
   padding-top: 5rem;
 }
 
-.region-footer>a {
+.region-footer > a {
   flex-basis: 30%;
 }
 
@@ -23,8 +23,7 @@ footer {
 }
 
 @include mq($from: tablet) {
-
-  .region-footer>a {
+  .region-footer > a {
     flex-basis: 12.5%;
   }
 
@@ -37,17 +36,16 @@ footer {
   margin-bottom: 3rem;
 }
 
-.footer-menu>ul {
+.footer-menu > ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
+.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item {
   display: none; // hide sub-menu items by default
 }
 
-.footer-menu>ul.menu>li.menu-item {
+.footer-menu > ul.menu > li.menu-item {
   flex-basis: 50%;
   padding-right: 1rem;
   padding-bottom: 1rem;
@@ -58,29 +56,27 @@ footer {
 }
 
 @include mq($from: mobile) {
-  .footer-menu>ul.menu>li {
+  .footer-menu > ul.menu > li {
     margin-bottom: 3rem;
   }
 
-  .footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
+  .footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item {
     display: flex;
   }
 
-  .footer-menu>ul.menu>li.menu-item {
-
+  .footer-menu > ul.menu > li.menu-item {
     flex-basis: 50%;
     padding-right: 2rem;
 
     &:nth-child(even) {
       padding-right: 0rem;
     }
-
   }
 }
 
 @include mq($from: desktop) {
-  .footer-menu>ul.menu {
-    >li.menu-item {
+  .footer-menu > ul.menu {
+    > li.menu-item {
       flex-basis: 20%;
       padding-right: 1rem;
 
@@ -100,13 +96,12 @@ footer {
   }
 }
 
-.footer-menu>ul.menu>li.menu-item>ul.menu {
+.footer-menu > ul.menu > li.menu-item > ul.menu {
   padding-left: 15px;
   text-indent: -15px;
 }
 
 .region-footer-second {
-
   .social ul.menu,
   .legal ul.menu {
     display: flex;
@@ -114,7 +109,6 @@ footer {
 }
 
 .region-footer-second {
-
   .addresses,
   .social ul.menu,
   .legal ul.menu {

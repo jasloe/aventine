@@ -6,35 +6,45 @@
   @include label;
 }
 
-.footer-menu>ul.menu>li.menu-item>a {
+.footer-menu > ul.menu > li.menu-item > a {
   @include label;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
-.footer-menu>ul.menu>li.menu-item--active-trail>a {
+.footer-menu > ul.menu > li.menu-item--active-trail > a {
   color: $gray;
 }
 
-.footer-menu>ul.menu>li.menu-item--active-trail>a:hover {
+.footer-menu > ul.menu > li.menu-item--active-trail > a:hover {
   color: $black;
 }
 
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
-  padding-bottom: .3rem;
+.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item {
+  padding-bottom: 0.3rem;
 }
 
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a {
+.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item > a {
   font-family: $tradegothic;
   color: $gray;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a:hover,
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail>a {
+.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item > a:hover,
+.footer-menu
+  > ul.menu
+  > li.menu-item
+  > ul.menu
+  > li.menu-item--active-trail
+  > a {
   color: $black;
 }
 
-.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail:hover>a {
+.footer-menu
+  > ul.menu
+  > li.menu-item
+  > ul.menu
+  > li.menu-item--active-trail:hover
+  > a {
   color: $gray;
 }
 
@@ -58,16 +68,15 @@
 }
 
 .region-footer-second,
-.region-footer-second li a,
-.region-footer-second p {
+.region-footer-second p,
+.region-footer-second .addresses p {
   font-family: $tradegothic;
-  font-size: 1rem !important;
   color: $gray;
 }
 
 .region-footer-second a {
   color: $gray;
-  transition: color .22s ease;
+  transition: color 0.22s ease;
 }
 
 .region-footer-second a:hover {
@@ -86,8 +95,6 @@
   }
 }
 
-
-
 .social .menu li a {
   display: block;
   background-repeat: no-repeat;
@@ -97,11 +104,11 @@
   width: 1.2rem;
   height: 1.2rem;
   opacity: 1;
-  transition: opacity .22s ease;
+  transition: opacity 0.22s ease;
 }
 
 .social .menu li a:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 li a.shop {
@@ -121,8 +128,8 @@ li a.instagram {
 }
 
 .legal li.menu-item:after {
-  padding-right: .4rem;
-  padding-left: .2rem;
+  padding-right: 0.4rem;
+  padding-left: 0.2rem;
   content: "\B7";
 }
 

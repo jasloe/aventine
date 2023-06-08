@@ -70,39 +70,45 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'page',
-    'wrapper',
-  ]
- %}
 
-<article{{attributes.addClass(classes)}}>
+<article{{attributes.addClass('ac')}}>
+	<div class="ac-header">
+		<div class="ac-trigger">
+			<div class="event-metadata">
+				<div class="col-1">
 
-	{{ content.field_news_features_byline }}
-	{{ content.field_news_features_date }}
+					{{ content.field_events_event_dates }}
 
-	<div class="slideshow-wrapper">
-		{{ content.field_news_features_images }}
-		<div class="page-section">
-			<div class="column column-first"></div>
-			<div class="column column-second">
-				{{ content.body.0 }}
-			</div>
-		</div>
-	</div>
-	{# related content #}
-	{% set events = drupal_block('views_block:backlinks_news-events')|render|trim|length %}
-	{% set people = drupal_block('views_block:backlinks_news-people')|render|trim|length %}
-	{% if (news > 0 or events > 0) %}
-		<div class="row row-third">
-			<div class="related-container">
-				<div class="block-title">{{ 'Related content'|t }}</div>
-				<div class="related-group">
-					{{ drupal_block('views_block:backlinks_news-events', {'label': true} ) }}
-					{{ drupal_block('views_block:backlinks_news-people', {'label': true} ) }}
+					{% spaceless %}
+						<div class="field field-events-rel-places entity-reference field__items">
+							<span>
+								{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+							</span>
+						</div>
+					{% endspaceless %}
 				</div>
+				<div class="col-2"></div>
+
+
+			</div>
+			{% if content.field_events_event_series|render is not empty %}
+				{{ content.field_events_event_series }}
+			{% else %}
+				{{ content.field_events_event_type }}
+			{% endif %}
+			<h2 class="title serif">{{ label }}</h2>
+
+		</div>
+		<div class="ac-panel">
+			{{ content.field_events_image }}
+			<div class="event-summary">
+				{{ "
+David Brooks is the 2020 Rome Prize Fellow in Visual Arts, completing a fellowship curtailed by the pandemic. An artist based in New York and New Orleans, he is on the faculty of the Maryland Institute College of Art in Baltimore.
+
+James Casebere is the 2020 Abigail Cohen Rome Prize Fellow in Visual Arts and an artist based in Canaan, New York. Like Brooks, he is completing a fellowship cut short by the pandemic." }}
+			</div>
+			<div class="more-info">
+				<a href={{ url }}>About this event</a>
 			</div>
 		</div>
-	{% endif %}
-</article>
+	</article>

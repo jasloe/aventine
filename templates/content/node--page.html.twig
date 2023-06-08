@@ -70,6 +70,9 @@
  *   in different view modes.
  */
 #}
+
+
+
 {%
   set classes = [
     'page',
@@ -78,7 +81,7 @@
  %}
 
 <article{{attributes.addClass(classes)}}>
-
+  <h1>{{ output }}</h1>
 	<div{{content_attributes}}>
 
 		{{ content.field_remote_video }}
