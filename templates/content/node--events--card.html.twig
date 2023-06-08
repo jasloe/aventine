@@ -1,7 +1,8 @@
-{#
-$context["elements"]["#node"]->values["field_events_event_dates"]["x-default"][0]["value"]
-
-$context["content"]["field_events_event_dates"]["#items"]->list[0]->values["value"] #}
+{% set build = {
+  '#type':   'processed_text',
+  '#text':    description,
+  '#format': 'full_html',
+} %}
 
 <article{{attributes.addClass('ac')}}>
 {{ event_term }}
@@ -9,12 +10,7 @@ $context["content"]["field_events_event_dates"]["#items"]->list[0]->values["valu
 		<div class="ac-trigger">
 			<div class="row row-first">
 				<div class="field field-events-event-dates daterange">
-					{% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
-						{# <time>{{ node.field_events_event_dates.value }}</time>-<time>{{ node.field_events_event_dates.end_value }}</time> #}
-						{{ node.field_events_event_dates.value|date('U')|format_date('events') }}–{{ node.field_events_event_dates.end_value|date('U')|format_date('events') }}
-					{% else %}
-            {{ content.field_events_event_dates }}
-					{% endif %}
+          {{ content.field_events_event_dates }}
 				</div>
 				{% spaceless %}
 					<div class="field field-events-rel-places entity-reference field__items">
@@ -37,11 +33,11 @@ $context["content"]["field_events_event_dates"]["#items"]->list[0]->values["valu
 			</a>
 			<div class="event-description">
 				<div class="row row-third event-body">
-					{% if content.field_events_summary is not empty %}
-						{{ content.field_events_summary }}
+			    {% if node.field_events_summary.value %}
+					  {{ content.field_events_summary }}
 					{% else %}
-         {{ event_description }}
-					{% endif %}
+{{ build }}
+	        {% endif %}
 				</div>
 				<div class="row row-fourth">
 					{% if content.field_events_registration|render %}
@@ -55,7 +51,7 @@ $context["content"]["field_events_event_dates"]["#items"]->list[0]->values["valu
 						</div>
 					{% endif %}
 					<div class="more-info">
-						<a href={{ url }}>More info</a>
+						<a href={{ url }}>{{ 'More info'|t }}</a>
 					</div>
 				</div>
 
@@ -63,7 +59,6 @@ $context["content"]["field_events_event_dates"]["#items"]->list[0]->values["valu
 		</div>
 	</div>
 </article>
-
 
 
 

@@ -1,7 +1,7 @@
 name: Aventine
 type: theme
 description: Aventine, a subtheme of Stable
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 base theme: stable
 libraries:
   - aventine/global-styling

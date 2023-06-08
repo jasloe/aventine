@@ -60,74 +60,81 @@ function aventine_suggestions_page_alter(array &$suggestions, array $variables) 
 /**
  * Implements hook_preprocess_node().
  */
-function aventine_preprocess_node__events(array &$variables) {
+function aventine_preprocess_node__events__card(array &$variables) {
+  // Node.
   $node = $variables['elements']['#node'];
-  $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // Langcode.
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // Vocabularies.
   $is_event_series = $node->field_events_event_series->isEmpty();
   $is_event_type = $node->get('field_events_event_type')->isEmpty();
   $term_reference_event_series = 'field_events_event_series';
   $term_reference_event_type = 'field_events_event_type';
-  $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
-  $date_start = $node->get('field_events_event_dates')->value;
-  $date_end = $node->get('field_events_event_dates')->end_value;
-  $variables['date_start'] = $date_start;
-  $variables['date_end'] = $date_end;
-
-  // $date = $node->get('field_events_event_dates')->value;
-  // $start_date_formatted = $node->field_events_event_dates->start_date->format('Y-m-d H:i:s');
-  // $date = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'academy_time');
-  // $date = \Drupal::service('date.formatter')->format($node->field_events_event_dates->getTimestamp(), 'academy_time');
-  // $date = $node->field_events_event_dates->value;
-  $timestamp = $node->field_events_event_dates->value;
-  // $date_formatter = \Drupal::service('date.formatter');
-  // $date = $date_formatter->format($datetime, 'custom', 'Y-m-d H:i');
-  $date_created = $variables['node']->getCreatedTime();
-  $format = gettype($date_created);
-
+  // Setting datetime variables.
   $date_formatter = \Drupal::service('date.formatter');
-  $start_date = new DrupalDateTime($node->field_events_event_dates->value, 'UTC');
-  $end_date = new DrupalDateTime($node->field_events_event_dates->end_value, 'UTC');
-  $start_date_formatted = $date_formatter->format($start_date->getTimestamp(), 'academy_time');
-  $end_date_formatted = \Drupal::service('date.formatter')->format($end_date->getTimestamp(), 'academy_time');
+  $date_start = new DrupalDateTime($node->field_events_event_dates->value, 'UTC');
+  $date_end = new DrupalDateTime($node->field_events_event_dates->end_value, 'UTC');
+  $date_end_check = $node->field_events_event_dates->end_value;
+  // Variables for single datetime.
+  $academy_date_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date');
+  $academy_date_no_year_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date_no_year');
+  $academy_date_time_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date_and_time');
+  $academy_time_start = $date_formatter->format($date_start->getTimestamp(), 'academy_time');
+  $academy_date_end = $date_formatter->format($date_end->getTimestamp(), 'academy_date');
+  $academy_date_no_year_end = $date_formatter->format($date_end->getTimestamp(), 'academy_date_no_year');
+  // Variables for daterange, start.
+  $date_start_year = $date_formatter->format($date_start->getTimestamp(), 'year');
+  $date_start_month = $date_formatter->format($date_start->getTimestamp(), 'month');
+  $date_start_date = $date_formatter->format($date_start->getTimestamp(), 'date');
+  // Variables for daterange, end.
+  $date_end_year = $date_formatter->format($date_end->getTimestamp(), 'year');
+  $date_end_month = $date_formatter->format($date_end->getTimestamp(), 'month');
+  $date_end_date = $date_formatter->format($date_end->getTimestamp(), 'date');
 
-  $variables['custom_date'] = $start_date_formatted;
-  $variables['format'] = $format;
-
-  // $date_formatter = \Drupal::service('date.formatter');
-  // $date = $date_formatter->format($node->field_events_event_dates->value->date->getTimestamp(), 'events', 'Y-m-d H:i');
-  // $variables['custom_date'] = $date;
-  // dump($date_end);
-  // $is_event_date = $get_event_date->format('l, F j, Y - H:i');
-  // $variables['is_event_date'] = $is_event_date;
-  // Grab current dateTime using NON static.
-  // Format it.
-  // $is_event_date->format('l, F j, Y - H:i');.
-  // $is_event_date = $node->field_events_event_date->date->format('Y-m-d H:i:s');
-  // $variables['is_event_date'] = $is_event_date;
-  // dump($event_date);
-  // dump($is_event_date[0]);.
-  if ($node && !$node->field_events_event_series->isEmpty()) {
-    $referenced_entities_event_series = $node->get($term_reference_event_series)->referencedEntities();
-    foreach ($referenced_entities_event_series as $term) {
-      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $lang_code);
-      $description = $term->getDescription();
-      if (!$description == NULL) {
-        $variables['event_description'] = t($description);
+  if (!is_null($date_end_check)) {
+    if ($date_start_year != $date_end_year) {
+      $variables['custom_date_range'] = $academy_date_start . "–" . $academy_date_end;
+    }
+    elseif ($date_start_year == $date_end_year && $date_start_month != $date_end_month) {
+      $variables['custom_date_range'] = $academy_date_no_year_start . "–" . $academy_date_no_year_end . ", " . $date_start_year;
+    }
+    elseif ($date_start_year == $date_end_year && $date_start_month == $date_end_month) {
+      if ($langcode == 'en') {
+        $variables['custom_date_range'] = $date_start_month . " " . $date_start_date . "–" . $date_end_date . ", " . $date_start_year;
+      }
+      elseif ($langcode == 'it') {
+        $variables['custom_date_range'] = $date_start_date . "–" . $date_end_date . " " . $date_start_month . " " . $date_start_year;
       }
     }
   }
+  else {
+    $variables['academy_date'] = $academy_date_start;
+    $variables['academy_date_time_start'] = $academy_date_time_start;
+    $variables['academy_time'] = $academy_time_start;
+  }
 
+  $variables['academy_date'] = 'foobar';
+  $variables['academy_date_time_start'] = $academy_date_time_start;
+  $variables['academy_time'] = $academy_time_start;
+
+  if ($node && !$node->field_events_event_series->isEmpty()) {
+    $referenced_entities_event_series = $node->get($term_reference_event_series)->referencedEntities();
+    foreach ($referenced_entities_event_series as $term) {
+      $variables['event_description'] = $term;
+      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
+    }
+    $variables['description'] = $referenced_entities_event_series[0]->description->value;
+  }
   elseif ($node && $is_event_series == TRUE && $is_event_type == FALSE) {
     $referenced_entities_event_type = $node->get($term_reference_event_type)->referencedEntities();
     foreach ($referenced_entities_event_type as $term) {
-      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $lang_code);
-      // $name = $term->getName();
+      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
+      $name = $term->getName();
       $description = $term->getDescription();
       if (!$description == NULL) {
         $variables['event_description'] = t($description);
+        // $variables['attributes']['class'][] = Html::cleanCssIdentifier($term->getType());
       }
-      // $variables['attributes']['class'][] = Html::cleanCssIdentifier($term->getType());
     }
   }
 }

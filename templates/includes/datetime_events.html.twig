@@ -11,7 +11,6 @@ date("H:i:s");                          17:16:18
 date("Y-m-d H:i:s");                    2001-03-10 17:16:18 (the MySQL DATETIME format)
 #}
 
-<div>test</div>
 {# {{ custom_date }} #}
 	{# {% if (node.field_events_event_type.entity.name.value == "Exhibition") %}
 		{{ node.field_events_event_dates.value|date('U')|format_date('events') }}–{{ node.field_events_event_dates.end_value|date('U')|format_date('events') }}
@@ -19,31 +18,24 @@ date("Y-m-d H:i:s");                    2001-03-10 17:16:18 (the MySQL DATETIME 
         {{ content.field_events_event_dates }}
 	{% endif %} #}
 
-  {{vardumper()}}
 
-<h3>{{ custom_date }}</h3>
-<h3>{{ format }}</h3>
-{{ dump(custom_date)}}
+{{vardumper()}}
+{{dump(date_test)}}
+{{dump(custom_date_range)}}
 
 {% set date_start_year = date_start|date('Y') %}
-{% set date_start_month = date_start|date('M') %}
+{% set date_start_month = date_start|date('F') %}
 {% set date_start_day = date_start|date('j') %}
 {% set date_end_year = date_end|date('Y') %}
-{% set date_end_month = date_end|date('M') %}
+{% set date_end_month = date_end|date('F') %}
 {% set date_end_day = date_start|date('j') %}
 
-{{ date_end_month }}
 
-{% if (date_override == TRUE) %}
-  <div>print override</div>
-{% elseif (date_start_year != date_end_year) %}
-
-  {# <h1>{{ date_start|date('F j Y') }}–{{ date_end|date('F j Y') }}</h1> #}
+{#
 {% elseif (date_start_year == date_end_year) and (date_start_month != date_end_month) %}
   <h1>{{ date_start|date('F j') }}–{{ date_end|date('F j Y') }}</h1>
-{% elseif (date_start_year == date_end_year) and (date_start_month == date_end_month) and (date_start_day == date_end_day) %}
+{% elseif (date_start_year == date_end_year) and (date_start_month == date_end_month) and (date_start_day == date_end_day) %} #}
 
-  {# <h1>{{ date_start|date('F j') }}–{{ date_end|date('j Y') }}</h1> #}
-{% endif %}
+{# {% endif %} #}
 
 
