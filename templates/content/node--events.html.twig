@@ -1,3 +1,6 @@
+{# {{ dump(custom_date_range) }}
+{{ dump(testing) }} #}
+
 <article{{attributes.addClass(classes)}}>
 	<div class="event-container">
 		<div class="row row-first">
@@ -20,13 +23,13 @@
 				{{ content.body }}
 			</div>
 			<div class="grid-item grid-item-2 event-dates col-right">
-        {% if content.field_events_event_dates_overrid|render|striptags|trim %}
           <div class="field__label">{{ 'Date & time'|t }}</div>
+        {% if content.field_events_event_dates_overrid|render|striptags|trim %}
 	        <div class="field__item">{{ content.field_events_event_dates_overrid}}</div>
 	      {% else %}
-	        <div class="field__label">{{ 'Date & time'|t }}</div>
-		      <div class="field__item">{{ custom_date_range }}
-					{{ academy_date }}
+		      <div class="field__item">
+				    <div class="event-date">{{ custom_date_range }}</div>
+            <div class="event-date">{{ custom_date_time }}</div>
 					</div>
         {% endif %}
 			</div>

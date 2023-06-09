@@ -169,3 +169,21 @@
   transform: translate(0, -100%) !important;
   top: 3.2rem !important;
 }
+
+.events-container {
+  input[type="submit"] {
+    margin-top: 1rem;
+    padding: initial;
+    padding-bottom: 2px;
+    font-family: $tradegothic;
+    font-size: 1rem;
+    border: initial;
+    border-bottom: 1px solid $gray;
+    color: $gray;
+    transition: color .22s ease-in-out;
+    &:hover {
+      color: $black;
+      border: none;
+    }
+  }
+}

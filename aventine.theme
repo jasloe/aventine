@@ -60,9 +60,10 @@ function aventine_suggestions_page_alter(array &$suggestions, array $variables) 
 /**
  * Implements hook_preprocess_node().
  */
-function aventine_preprocess_node__events__card(array &$variables) {
+function aventine_preprocess_node__events(array &$variables) {
   // Node.
   $node = $variables['elements']['#node'];
+
   // Langcode.
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
   // Vocabularies.
@@ -77,10 +78,11 @@ function aventine_preprocess_node__events__card(array &$variables) {
   $date_end_check = $node->field_events_event_dates->end_value;
   // Variables for single datetime.
   $academy_date_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date');
+  $academy_date_end = $date_formatter->format($date_end->getTimestamp(), 'academy_date');
   $academy_date_no_year_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date_no_year');
   $academy_date_time_start = $date_formatter->format($date_start->getTimestamp(), 'academy_date_and_time');
-  $academy_time_start = $date_formatter->format($date_start->getTimestamp(), 'academy_time');
-  $academy_date_end = $date_formatter->format($date_end->getTimestamp(), 'academy_date');
+  $academy_time_start = $date_formatter->format($date_start->getTimestamp(), 'academy_time_start');
+  $academy_time_end = $date_formatter->format($date_end->getTimestamp(), 'academy_time_end');
   $academy_date_no_year_end = $date_formatter->format($date_end->getTimestamp(), 'academy_date_no_year');
   // Variables for daterange, start.
   $date_start_year = $date_formatter->format($date_start->getTimestamp(), 'year');
@@ -89,21 +91,35 @@ function aventine_preprocess_node__events__card(array &$variables) {
   // Variables for daterange, end.
   $date_end_year = $date_formatter->format($date_end->getTimestamp(), 'year');
   $date_end_month = $date_formatter->format($date_end->getTimestamp(), 'month');
-  $date_end_date = $date_formatter->format($date_end->getTimestamp(), 'date');
+  $date_end_year = $date_formatter->format($date_end->getTimestamp(), 'year');
+  $date_end_month = $date_formatter->format($date_end->getTimestamp(), 'month');
+  $day = $date_formatter->format($date_end->getTimestamp(), 'day');
+  $day_end = $date_formatter->format($date_end->getTimestamp(), 'day');
 
-  if (!is_null($date_end_check)) {
+  $variables['testing'] = $date_end_check;
+
+  if (is_null($date_end_check)) {
+    $variables['custom_date_range'] = $academy_date_time_start;
+  }
+  elseif ($academy_date_start == $academy_date_end) {
+    $variables['custom_date_range'] = $academy_date_time_start;
+  }
+  elseif (!is_null($date_end_check) && $academy_date_start != $academy_date_end) {
+    // Spans multiple years.
     if ($date_start_year != $date_end_year) {
       $variables['custom_date_range'] = $academy_date_start . "–" . $academy_date_end;
     }
+    // Spans multiple months.
     elseif ($date_start_year == $date_end_year && $date_start_month != $date_end_month) {
       $variables['custom_date_range'] = $academy_date_no_year_start . "–" . $academy_date_no_year_end . ", " . $date_start_year;
     }
-    elseif ($date_start_year == $date_end_year && $date_start_month == $date_end_month) {
+    // Same month.
+    elseif ($date_start_year == $date_end_year && $date_start_month == $date_end_month && $date_start_date == $date_start_date) {
       if ($langcode == 'en') {
-        $variables['custom_date_range'] = $date_start_month . " " . $date_start_date . "–" . $date_end_date . ", " . $date_start_year;
+        $variables['custom_date_range'] = $day . ", " . $date_start_month . " " . $date_start_date . ", " . $date_start_year;
       }
       elseif ($langcode == 'it') {
-        $variables['custom_date_range'] = $date_start_date . "–" . $date_end_date . " " . $date_start_month . " " . $date_start_year;
+        $variables['custom_date_range'] = $day . " " . $date_start_date . " " . $date_start_month . " " . $date_start_year;
       }
     }
   }
@@ -111,11 +127,8 @@ function aventine_preprocess_node__events__card(array &$variables) {
     $variables['academy_date'] = $academy_date_start;
     $variables['academy_date_time_start'] = $academy_date_time_start;
     $variables['academy_time'] = $academy_time_start;
+    $variables['academy_time_end'] = $academy_time_end;
   }
-
-  $variables['academy_date'] = 'foobar';
-  $variables['academy_date_time_start'] = $academy_date_time_start;
-  $variables['academy_time'] = $academy_time_start;
 
   if ($node && !$node->field_events_event_series->isEmpty()) {
     $referenced_entities_event_series = $node->get($term_reference_event_series)->referencedEntities();
