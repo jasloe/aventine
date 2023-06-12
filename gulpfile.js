@@ -135,7 +135,7 @@ gulp.task('watch', function () {
 
   // If user has specified an override, rebuild Drupal cache
   if (!config.twig.useCache) {
-    gulp.watch(['templates/**/*.html.twig'], ['flush']);
+    gulp.watch(['templates/**/*.html.twig', '*.theme'], ['drush:cc']);
   }
 });
 

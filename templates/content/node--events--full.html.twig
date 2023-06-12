@@ -1,6 +1,3 @@
-{# {{ dump(custom_date_range) }}
-{{ dump(testing) }} #}
-
 <article{{attributes.addClass(classes)}}>
 	<div class="event-container">
 		<div class="row row-first">
@@ -28,8 +25,8 @@
 	        <div class="field__item">{{ content.field_events_event_dates_overrid}}</div>
 	      {% else %}
 		      <div class="field__item">
-				    <div class="event-date">{{ custom_date_range }}</div>
-            <div class="event-date">{{ custom_date_time }}</div>
+				    <div class="event-date">{{ custom_date }}</div>
+            <div class="event-time">{{ custom_time }}</div>
 					</div>
         {% endif %}
 			</div>
