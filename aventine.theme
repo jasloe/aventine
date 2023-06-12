@@ -121,7 +121,7 @@ function aventine_preprocess_node(&$variables) {
 
     case "card":
       // Vocabularies.
-      if ($node && !$node->field_events_event_series->isEmpty()) {
+      if ($node && !$node->field_events_event_series?->isEmpty()) {
         $referenced_entities_event_series = $node->field_events_event_series?->referencedEntities();
         foreach ($referenced_entities_event_series as $term) {
           $variables['event_description'] = $term;
