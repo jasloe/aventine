@@ -12,7 +12,6 @@
   .slide__caption {
     margin: 0 auto;
     max-width: $max-vw;
-    padding: 0 1rem;
 
     @include mq($from: $jumbotron) {
       padding: 0;
@@ -78,15 +77,16 @@
 .front.leadership {
   margin: 3rem auto;
   max-width: $max-vw;
-
   @include mq($from: tablet) {
     margin: 7rem auto;
   }
 }
 
+.front-fellows {
+}
+
 .front.news-features {
   @include mq($until: wide) {
-    padding: 0 1rem;
   }
 }
 
@@ -97,18 +97,17 @@
 }
 
 .front.fellows h2,
-.front.fellows header,
 .front.residents h2,
 .front.leadership h2 {
   @include mq($from: $jumbotron) {
-    padding: 0 1rem;
+
   }
 }
 
 .front.fellows .slick-list,
 .front.residents .slick-list,
 .front.leadership .slick-list {
-  padding-left: 1rem;
+
 
   @include mq($from: wide) {
     padding: 0;
@@ -357,6 +356,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 1.2rem;
+    gap: 1rem;
 
     .news-item {
       flex-basis: 33%;
@@ -503,6 +503,7 @@
   gap: 1rem;
   @include mq($until: tablet) {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -517,15 +518,17 @@
   color: $gray;
 }
 
-.front.news-feature,
-.front.rome-prize,
-.front.fellows h2,
-.front.fellows h2 + div:first-of-type,
-.front.residents h2,
-.front.leadership {
-  padding: 0 1rem !important;
-}
-
 .front.fellows .slick-list {
   padding-left: 0 !important;
+}
+
+@include mq($until: wide) {
+  .front .slide__description,
+  .front.news-features,
+  .rome-prize-cta,
+  .front.fellows,
+  .front.residents,
+  .front.leadership {
+    padding: 0 1rem;
+  }
 }
