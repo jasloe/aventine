@@ -79,13 +79,13 @@
 
 					{{ content.field_events_event_dates }}
 
-					{% spaceless %}
+					{% apply spaceless %}
 						<div class="field field-events-rel-places entity-reference field__items">
 							<span>
 								{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
 							</span>
 						</div>
-					{% endspaceless %}
+					{% endapply %}
 				</div>
 				<div class="col-2"></div>
 

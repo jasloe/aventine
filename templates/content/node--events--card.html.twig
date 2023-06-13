@@ -11,11 +11,11 @@
 				<div class="field field-events-event-dates daterange">
             {{ content.field_events_event_dates }}
 				</div>
-				{% spaceless %}
+				{% apply spaceless %}
 					<div class="field field-events-rel-places entity-reference field__items">
 						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
 					</div>
-				{% endspaceless %}
+				{% endapply %}
 			</div>
 			<div class="row row-second">
 				{% if content.field_events_event_series|render is not empty %}
