@@ -65,7 +65,6 @@ function aventine_preprocess_node(&$variables) {
   $view_mode = $variables['elements']['#view_mode'];
   $date_formatter = \Drupal::service('date.formatter');
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
   switch ($view_mode) {
     case "full":
       // Create datetime objects.
@@ -143,5 +142,4 @@ function aventine_preprocess_node(&$variables) {
       }
       break;
   }
-
 }

@@ -1,17 +1,17 @@
-.b-lazy,
-.b-responsive {
+.is-lazy,
+.is-responsive {
   // opacity: 0 !important;
   transition: opacity 500ms ease-in-out !important;
 }
 
-.b-loaded {
+.is-loaded {
   // opacity: 1 !important;
   transition: opacity 500ms ease-in-out !important;
 }
 
 /* Needed to display preloader with CSS BG image, otherwise hidden. */
-.b-loaded,
-.b-error,
+.is-loaded,
+.is-error,
 .media--loading.media--background {
   opacity: 1;
 }
@@ -24,4 +24,20 @@
 
 .media img {
   background: $light-brown !important;
+}
+
+
+.is-b-loading:not(.is-b-loaded):not([data-animation])::before {
+  content: '';
+  background: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: 0;
+  margin-top: 0;
+  font-size: 0;
+  z-index: initial;
+  -webkit-animation: none;
+  animation: none;
+  opacity: .4;
 }
