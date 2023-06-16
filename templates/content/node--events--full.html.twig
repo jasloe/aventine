@@ -13,11 +13,12 @@
 				{{ content.field_events_image}}
 			</div>
 		</div>
-
 		{# row: primary content #}
 		<div class="grid-parent row-second">
 			<div class="grid-item grid-item-1 event-body">
 				{{ content.body }}
+				{# inset oembed video #}
+        <div class="remote-video">{{ content.field_remote_video }}</div>
 			</div>
 			<div class="grid-item grid-item-2 event-dates col-right">
           <div class="field__label">{{ 'Date & time'|t }}</div>
