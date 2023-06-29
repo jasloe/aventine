@@ -31,38 +31,49 @@
 					</div>
         {% endif %}
 			</div>
-			<div class="grid-item grid-item-3 event-location col-right">
-				{{ content.field_events_rel_places }}
-			</div>
+		  {% if content.field_events_rel_places|render|striptags|trim %}
+			  <div class="grid-item grid-item-3 event-location col-right">
+				<div class="field__label">{{ 'Location'|t }}</div>
+				  {{ content.field_events_rel_places }}
+			  </div>
+			{% endif %}
 			{% if content.field_events_registration.0['#url']|render is not empty %}
 				<div class="grid-item grid-item-4 event-register col-right">
-					{{ content.field_event_registration_copy }}
 					<div class="field__label">{{ 'Registration'|t }}</div>
+					{{ content.field_event_registration_copy }}
 					<div class="registration-button">
+					{% if content.field_events_registration.0['#url']|render is not empty %}
 						<a href={{ content.field_events_registration.0['#url'] }} target="_blank">
 							{{ content.field_events_registration.0['#title'] }}</a>
+					{% endif %}
+					{% if content.field_events_registration.1['#url']|render is not empty %}
 						<a href={{ content.field_events_registration.1['#url'] }} target="_blank">
 							{{ content.field_events_registration.1['#title'] }}</a>
+					{% endif %}
 					</div>
 				</div>
 			{% endif %}
 			{% if content.field_security_notice|render is not empty %}
-				<div class="grid-item grid-item-5 event-security col-right">
-					{{ content.field_security_notice }}
-				</div>
+				  <div class="grid-item grid-item-5 event-security col-right">
+			      <div class="field__label">{{ 'Security notice'|t }}</div>
+					    {{ content.field_security_notice }}
+				  </div>
 			{% endif %}
 			{% if content.field_events_more_info|render is not empty %}
-				<div class="grid-item grid-item-6 event-more-info col-right">
-					{{ content.field_events_more_info }}
-				</div>
-			{% endif %}
+				  <div class="grid-item grid-item-6 event-more-info col-right">
+            <div class="field__label">{{ 'For more information'|t }}</div>
+					    {{ content.field_events_more_info }}
+				  </div>
+		  {% endif %}
 			{% if content.field_events_accessibility|render is not empty %}
 				<div class="grid-item grid-item-8 event-accessibility col-right">
+				<div class="field__label">{{ 'Accessibility'|t }}</div>
 					{{ content.field_events_accessibility }}
 				</div>
 			{% endif %}
 			{% if content.field_events_sponsorship|render is not empty %}
 				<div class="grid-item grid-item-9 event-sponsorship col-right">
+				<div class="field__label">{{ 'Event sponsorship'|t }}</div>
 					{{ content.field_events_sponsorship }}
 				</div>
 			{% endif %}
