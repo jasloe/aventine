@@ -69,7 +69,11 @@
 
 			<div class="title-container">{{ page.page_title}}
 				<div class="event-menu">
+				{% if language.id == 'en' %}
 					<a href="/events/past">{{ 'View past events'|t }}</a>
+					  {% else %}
+					<a href="/it/eventi/passati">{{ 'View past events'|t }}</a>
+        {% endif %}
 				</div>
 			</div>
 			<div class="events-container">
