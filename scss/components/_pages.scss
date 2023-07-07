@@ -838,7 +838,7 @@ body.news-features .inline-logo img {
     font-weight: 400;
     color: $black;
   }
-  .grid-item .field .field__item p,
+  .grid-item .field__item p,
   .grid-item .field .field__item time,
   .grid-item .place-title,
   .grid-item .field__item {
@@ -1044,4 +1044,8 @@ body.news-features .inline-logo img {
   &:hover:after {
     color: $gray;
   }
+}
+
+.event-container .place-title {
+
 }
