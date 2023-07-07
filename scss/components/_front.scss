@@ -356,7 +356,9 @@
     display: flex;
     flex-direction: row;
     margin-top: 1.2rem;
-    gap: 1rem;
+    @include mq($from: tablet) {
+      gap: 1rem;
+    }
 
     .news-item {
       flex-basis: 33%;
@@ -422,7 +424,7 @@
       .news-item {
         flex-basis: 100%;
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
       }
 
       .news-item:first-child {
