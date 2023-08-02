@@ -534,3 +534,15 @@
     padding: 0 1rem;
   }
 }
+
+@include mq($until: tablet) {
+  .rome-prize-cta .column-second {
+    margin-top: .5rem;
+  }
+  .rome-prize-cta .field-page-page-section {
+    margin-top: .75rem;
+  }
+  .rome-prize-cta .page-section .column-second p {
+    margin-bottom: 1.6rem;
+  }
+}
