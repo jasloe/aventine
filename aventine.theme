@@ -65,6 +65,8 @@ function aventine_preprocess_node(&$variables) {
   $view_mode = $variables['elements']['#view_mode'];
   $date_formatter = \Drupal::service('date.formatter');
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $timezone = $node->field_events_rel_places?->entity->field_time_zone->value;
+
   switch ($view_mode) {
     case "full":
       // Create datetime objects.
@@ -110,11 +112,12 @@ function aventine_preprocess_node(&$variables) {
       }
       // Time formatting, single value.
       if (is_null($date_end_check) || $datetime_start == $datetime_end) {
-        $variables['custom_time'] = $time_start_default;
+        $variables['custom_time'] = !$timezone ? $time_start_default : $time_start_default . " " . $timezone;
       }
       // Time formatting, range.
       elseif ($date_start_date != $date_end_date) {
-        $variables['custom_time'] = $time_start . '–' . $time_end;
+        $variables['custom_time'] = $time_start . '–' . $time_end . " " . $timezone;
+        ;
       }
       break;
 

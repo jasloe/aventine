@@ -724,7 +724,7 @@ body.news-features .inline-logo img {
       order: 2;
     }
     .grid-item-4.event-register {
-      order: 5;
+      order: 3;
     }
     .grid-item-5.event-security {
       order: 6;
@@ -795,7 +795,6 @@ body.news-features .inline-logo img {
   }
   .col-right a {
     border-bottom: 1px solid rgb(42, 42, 42);
-    padding-bottom: 2px;
   }
   .body p {
     @include font-size(1.45rem);
@@ -821,6 +820,7 @@ body.news-features .inline-logo img {
   }
   .event-dates {
     margin-top: 4px;
+    color: rgb(42, 42, 42);
   }
   .field-events-sponsorship {
     @include font-size(1.2rem);
@@ -857,13 +857,6 @@ body.news-features .inline-logo img {
     &:last-child {
       padding-bottom: 0rem;
     }
-  }
-  .event-register a {
-    display: inline-block;
-    margin-top: 1rem;
-    border: 2px solid rgb(92, 91, 91) !important;
-    color: rgb(92, 91, 91) !important;
-    padding: 0.75rem 1rem;
   }
 }
 
@@ -1005,6 +998,14 @@ body.news-features .inline-logo img {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.registration-button a {
+  display: inline-block;
+  margin-top: 1rem;
+  border: 2px solid rgb(92, 91, 91) !important;
+  color: rgb(92, 91, 91) !important;
+  padding: 0.75rem 1rem;
 }
 
 .event-container p a {
