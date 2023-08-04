@@ -16,6 +16,7 @@ body.index-sof,
 .path-news-features,
 .path-news-press-releases,
 .path-news-watch,
+.path-attualita-guardare,
 .path-attualita-comunicati-stampa {
   .layout-content {
     @include mq($from: tablet) {
@@ -45,6 +46,9 @@ body.index {
 
 // @HACK no longer dependent on infinite scroll wrapper; instead use .cards
 
-.path-news-watch .cards {
-  @include layout-cards;
+.path-attualita-guardare,
+.path-news-watch {
+  .cards {
+    @include layout-cards;
+  }
 }

@@ -1,9 +1,20 @@
+.path-news-watch,
+.path-attualita-guardare,
+  .pager {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+
 .search-page,
-.path-events {
+.path-events,
+.path-news-watch,
+.path-attualita-guardare {
   ul.pager__items {
     @include body;
     display: flex;
-    justify-content: center;
     margin: 1rem 0 0;
 
     li {
@@ -42,5 +53,3 @@ ul.pager {
   }
 }
 
-.path-events {
-}

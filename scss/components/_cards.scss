@@ -44,7 +44,9 @@
 // Overrides default, news, title.
 .index-news,
 .path-news-features,
-.path-news-watch {
+.path-news-watch,
+.path-attualita-guardare,
+ {
   .card-body {
     h2.title {
       @include title-card-serif;
@@ -208,6 +210,7 @@
 
 .path-news-features,
 .path-news-watch,
+.path-attualita-guardare,
 .path-attualita-articoli,
 .path-attualita-altrove {
   .field-quick-news-published-date {
@@ -330,34 +333,57 @@ body.index .card.academic-programs {
     display: none;
   }
 }
-
-.path-news-watch .field-events-event-type,
-.path-news-watch .field-events-event-series  {
-  @include label;
-  margin-top: 1rem;
+.path-news-watch,
+.path-attualita-guardare {
+  .field-events-event-type,
+  .field-events-event-series  {
+    @include label;
+    margin-top: 1rem;
+  }
 }
 
+.path-attualita-guardare h2,
 .path-news-watch h2 {
   padding: 1rem 0;
 }
 
-.path-news-watch .card-inner time,
-.path-news-watch .card-inner .place {
-  font-family: "Dignitas Regular";
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-size: 1.1rem;
+.path-attualita-guardare,
+.path-news-watch {
+  .card-inner time,
+  .card-inner .place {
+    font-family: "Dignitas Regular";
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-size: 1.1rem;
+  }
 }
-
-.path-news-watch .card:hover {
+.path-attualita-guardare,
+.path-news-watch {
+  .card:hover {
   opacity: .9;
 }
+}
 
-.path-news-watch .read-more {
+.path-attualita-guardare,
+.path-news-watch {
+  .read-more {
   display: block;
   background-repeat: no-repeat;
   text-indent: -9000px;
   background-image: url(../images/arrow_small_external.svg);
   height: 1.5rem;
   margin-top: 1rem;
+}
+}
+
+@include mq($until: tablet) {
+  .path-news-watch .card-inner .field:not(:first-of-type),
+  .path-news-watch .card-inner h2.title {
+    padding-left: 1rem;
+  }
+  .path-news-watch .card-inner .read-more {
+    margin-left: 1rem;
+  }
+
+
 }
