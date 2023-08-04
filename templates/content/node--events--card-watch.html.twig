@@ -1,0 +1,22 @@
+{% set video_url = file_url(content.field_remote_video[0]['#media'].field_media_oembed_video.value) %}
+
+<div class="card">
+	<article role="article" class="card-inner">
+		<a href="{{ video_url }}" target="_blank">
+			{{ content.field_events_image }}
+
+			{% if content.field_events_event_series|render is not empty %}
+				{{ node.field_events_event_series|view('name')  }}
+			{% else %}
+				{{ content.field_events_event_type }}
+			{% endif %}
+
+			<h2 class="title serif">{{ label }}</h2>
+
+			{{ content.field_events_event_dates }}
+			<div class="place">{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}</div>
+			<div class="read-more">Watch the video</div>
+		</a>
+
+	</article>
+</div>
