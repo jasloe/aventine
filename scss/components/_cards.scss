@@ -45,8 +45,7 @@
 .index-news,
 .path-news-features,
 .path-news-watch,
-.path-attualita-guardare,
- {
+.path-attualita-guardare {
   .card-body {
     h2.title {
       @include title-card-serif;
