@@ -356,6 +356,9 @@ body.index .card.academic-programs {
     line-height: 1.4;
     font-size: 1.1rem;
   }
+  // .card-inner .field-events-event-dates {
+  //   margin-bottom: 1rem;
+  // }
 }
 .path-attualita-guardare,
 .path-news-watch {
@@ -367,13 +370,13 @@ body.index .card.academic-programs {
 .path-attualita-guardare,
 .path-news-watch {
   .read-more {
-  display: block;
-  background-repeat: no-repeat;
-  text-indent: -9000px;
-  background-image: url(../images/arrow_small_external.svg);
-  height: 1.5rem;
-  margin-top: 1rem;
-}
+    display: block;
+    background-repeat: no-repeat;
+    text-indent: -9000px;
+    background-image: url(../images/arrow_small_external.svg);
+    height: 1.5rem;
+    margin-top: 1rem;
+  }
 }
 
 @include mq($until: tablet) {
