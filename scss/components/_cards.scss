@@ -392,6 +392,7 @@ body.index .card.academic-programs {
   }
 }
 
+.path-comunita-personale,
 .path-people-staff {
   .profile .department,
   .profile .role {
@@ -399,3 +400,12 @@ body.index .card.academic-programs {
     line-height: 1;
   }
 }
+
+.profile .field-email,
+.profile .field-telephone {
+  @include body;
+ }
+
+ .profile .field-email {
+  margin-bottom: 1rem;
+ }
