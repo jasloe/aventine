@@ -34,11 +34,12 @@ h3.sans {
 .people h3 .name {
   @include title-card-sans;
 }
-
+.path-comunita-personale .people-staff > h3,
 .path-people-staff .people-staff > h3 {
   margin-bottom: .5rem;
 }
 
+.path-comunita-personale .profile > h3,
 .path-people-staff .profile > h3 {
   @include label;
 
