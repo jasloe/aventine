@@ -40,12 +40,12 @@
 #}
 
 
-{% if content.field_affil_type.0['#plain_text'] == 'Staff' %}
+{% if content.field_affil_type['#items'].0.target_id == 394 %}
 	{{ content.field_role }}
 	{{ content.field_office }}
 {% endif %}
 
-{% if content.field_affil_type.0['#plain_text'] != 'Staff' %}
+{% if content.field_affil_type['#items'].0.target_id != 394 %}
 	{{ content.field_affil_discipline	}}
 	{{ content.field_affil_fellowship_name }}
 	{{ content.field_affil_ital_fellowship_name }}
