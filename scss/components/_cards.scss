@@ -44,8 +44,8 @@
 // Overrides default, news, title.
 .index-news,
 .path-news-features,
-.path-news-watch,
-.path-attualita-guardare {
+.path-news-video,
+.path-attualita-video {
   .card-body {
     h2.title {
       @include title-card-serif;
@@ -212,8 +212,8 @@
 }
 
 .path-news-features,
-.path-news-watch,
-.path-attualita-guardare,
+.path-news-video,
+.path-attualita-video,
 .path-attualita-articoli,
 .path-attualita-altrove {
   .field-quick-news-published-date {
@@ -336,22 +336,22 @@ body.index .card.academic-programs {
     display: none;
   }
 }
-.path-news-watch,
-.path-attualita-guardare {
+.path-news-video,
+.path-attualita-video {
   .field-events-event-type,
-  .field-events-event-series  {
+  .field-events-event-series {
     @include label;
     margin-top: 1rem;
   }
 }
 
-.path-attualita-guardare h2,
-.path-news-watch h2 {
+.path-attualita-video h2,
+.path-news-video h2 {
   padding: 1rem 0;
 }
 
-.path-attualita-guardare,
-.path-news-watch {
+.path-attualita-video,
+.path-news-video {
   .card-inner time,
   .card-inner .place {
     font-family: "Dignitas Regular";
@@ -363,15 +363,15 @@ body.index .card.academic-programs {
   //   margin-bottom: 1rem;
   // }
 }
-.path-attualita-guardare,
-.path-news-watch {
+.path-attualita-video,
+.path-news-video {
   .card:hover {
-  opacity: .9;
-}
+    opacity: 0.9;
+  }
 }
 
-.path-attualita-guardare,
-.path-news-watch {
+.path-attualita-video,
+.path-news-video {
   .read-more {
     display: block;
     background-repeat: no-repeat;
@@ -383,11 +383,11 @@ body.index .card.academic-programs {
 }
 
 @include mq($until: tablet) {
-  .path-news-watch .card-inner .field:not(:first-of-type),
-  .path-news-watch .card-inner h2.title {
+  .path-news-video .card-inner .field:not(:first-of-type),
+  .path-news-video .card-inner h2.title {
     padding-left: 1rem;
   }
-  .path-news-watch .card-inner .read-more {
+  .path-news-video .card-inner .read-more {
     margin-left: 1rem;
   }
 }
@@ -404,8 +404,8 @@ body.index .card.academic-programs {
 .profile .field-email,
 .profile .field-telephone {
   @include body;
- }
+}
 
- .profile .field-email {
+.profile .field-email {
   margin-bottom: 1rem;
- }
+}
