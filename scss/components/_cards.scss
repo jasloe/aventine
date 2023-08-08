@@ -84,10 +84,14 @@
   .profile-container {
     flex-direction: row;
     flex-wrap: wrap;
+    column-gap: 1rem;
   }
 
   .profile {
-    margin-right: 1rem;
+    flex: 0 1 200px;
+  }
+
+  .profile .field-role {
   }
 
   .profile .field-media-image {
@@ -386,6 +390,12 @@ body.index .card.academic-programs {
   .path-news-watch .card-inner .read-more {
     margin-left: 1rem;
   }
+}
 
-
+.path-people-staff {
+  .profile .department,
+  .profile .role {
+    @include body;
+    line-height: 1;
+  }
 }

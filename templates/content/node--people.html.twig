@@ -78,6 +78,8 @@
   ]
  %}
 
+
+{# {{ vardumper(content.field_people_affiliations )}} #}
 <article{{attributes.addClass(classes)}}>
 	<div class="columns">
 		<div class="column column-first">
@@ -92,6 +94,9 @@
 			{{ content.field_people_project_description }}
 			{{ content.field_people_biographical_note }}
 			{{ content.field_people_website }}
+			{{ content.field_email }}
+			{{ content.field_telephone }}
+
 		</div>
 	</div>
 	{# related content #}
