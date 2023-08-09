@@ -409,3 +409,23 @@ body.index .card.academic-programs {
 .profile .field-email {
   margin-bottom: 1rem;
 }
+
+.path-comunita-personale,
+.path-people-staff {
+  img {
+    width: 100%;
+  }
+}
+
+@include mq($until: tablet) {
+  .path-comunita-personale,
+  .path-people-staff {
+    h3 {
+      padding-left: 1rem;
+    }
+    .profile .department,
+    .profile .role {
+      padding-left: 1rem;
+    }
+  }
+}
