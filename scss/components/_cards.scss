@@ -28,7 +28,7 @@
     font-family: $display-serif;
   }
 
-  .field > p {
+  .field>p {
     @include body-card;
   }
 }
@@ -91,8 +91,7 @@
     flex: 0 1 200px;
   }
 
-  .profile .field-role {
-  }
+  .profile .field-role {}
 
   .profile .field-media-image {
     img {
@@ -124,7 +123,7 @@
 
 // Card:hover.
 .card .card-inner {
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $black;
     transition: color 0.22s ease;
   }
@@ -146,7 +145,7 @@
 .card .card-inner:hover {
   cursor: pointer;
 
-  .card-body > *:not(.read-more) {
+  .card-body>*:not(.read-more) {
     color: $gray;
   }
 
@@ -278,7 +277,7 @@
 }
 
 // Hotfix for publications/* anchor links
-.publication.wrapper p > a {
+.publication.wrapper p>a {
   padding-bottom: 2px;
   border-bottom: 1px solid black;
   color: $black;
@@ -336,8 +335,10 @@ body.index .card.academic-programs {
     display: none;
   }
 }
+
 .path-news-video,
 .path-attualita-video {
+
   .field-events-event-type,
   .field-events-event-series {
     @include label;
@@ -352,6 +353,7 @@ body.index .card.academic-programs {
 
 .path-attualita-video,
 .path-news-video {
+
   .card-inner time,
   .card-inner .place {
     font-family: "Dignitas Regular";
@@ -359,10 +361,12 @@ body.index .card.academic-programs {
     line-height: 1.4;
     font-size: 1.1rem;
   }
+
   // .card-inner .field-events-event-dates {
   //   margin-bottom: 1rem;
   // }
 }
+
 .path-attualita-video,
 .path-news-video {
   .card:hover {
@@ -383,10 +387,12 @@ body.index .card.academic-programs {
 }
 
 @include mq($until: tablet) {
+
   .path-news-video .card-inner .field:not(:first-of-type),
   .path-news-video .card-inner h2.title {
     padding-left: 1rem;
   }
+
   .path-news-video .card-inner .read-more {
     margin-left: 1rem;
   }
@@ -394,6 +400,7 @@ body.index .card.academic-programs {
 
 .path-comunita-personale,
 .path-people-staff {
+
   .profile .department,
   .profile .role {
     @include body;
@@ -418,14 +425,26 @@ body.index .card.academic-programs {
 }
 
 @include mq($until: tablet) {
+
   .path-comunita-personale,
   .path-people-staff {
     h3 {
       padding-left: 1rem;
     }
+
     .profile .department,
     .profile .role {
       padding-left: 1rem;
     }
+  }
+}
+
+.people-staff .profile img {
+  width: auto;
+  height: 300px;
+
+  @include mq($until: tablet) {
+    width: 100%;
+    height: auto;
   }
 }
