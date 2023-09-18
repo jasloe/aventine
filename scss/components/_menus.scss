@@ -1,3 +1,13 @@
+body.path-home .site-name a {
+  color: #c74c13;
+  font-family: $trajan;
+  font-size: 1.2rem;
+  line-height: .7;
+  vertical-align: baseline;
+}
+
+body.path-home .site-name {}
+
 .site-name a {
   @include label;
 }
@@ -6,45 +16,35 @@
   @include label;
 }
 
-.footer-menu > ul.menu > li.menu-item > a {
+.footer-menu>ul.menu>li.menu-item>a {
   @include label;
   transition: color 0.22s ease;
 }
 
-.footer-menu > ul.menu > li.menu-item--active-trail > a {
+.footer-menu>ul.menu>li.menu-item--active-trail>a {
   color: $gray;
 }
 
-.footer-menu > ul.menu > li.menu-item--active-trail > a:hover {
+.footer-menu>ul.menu>li.menu-item--active-trail>a:hover {
   color: $black;
 }
 
-.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item {
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item {
   padding-bottom: 0.3rem;
 }
 
-.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item > a {
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a {
   font-family: $tradegothic;
   color: $gray;
   transition: color 0.22s ease;
 }
 
-.footer-menu > ul.menu > li.menu-item > ul.menu > li.menu-item > a:hover,
-.footer-menu
-  > ul.menu
-  > li.menu-item
-  > ul.menu
-  > li.menu-item--active-trail
-  > a {
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item>a:hover,
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail>a {
   color: $black;
 }
 
-.footer-menu
-  > ul.menu
-  > li.menu-item
-  > ul.menu
-  > li.menu-item--active-trail:hover
-  > a {
+.footer-menu>ul.menu>li.menu-item>ul.menu>li.menu-item--active-trail:hover>a {
   color: $gray;
 }
 
