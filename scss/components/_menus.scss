@@ -1,12 +1,11 @@
+body.path-home .site-name {
+  padding-top: 3px;
+}
+
 body.path-home .site-name a {
   color: #c74c13;
   font-family: $trajan;
-  font-size: 1.2rem;
-  line-height: .7;
-  vertical-align: baseline;
 }
-
-body.path-home .site-name {}
 
 .site-name a {
   @include label;
@@ -15,6 +14,20 @@ body.path-home .site-name {}
 .main-menu {
   @include label;
 }
+
+@include mq($until: 400px) {
+
+  body.path-home .site-name a,
+  .language-switcher-language-url li a {
+    font-size: .9rem;
+  }
+
+  button.hamburger {
+    margin-top: 2px;
+  }
+}
+
+
 
 .footer-menu>ul.menu>li.menu-item>a {
   @include label;
@@ -135,4 +148,9 @@ li a.instagram {
 
 .legal li.menu-item:last-child:after {
   display: none;
+}
+
+
+.hamburger-box {
+  height: 20px;
 }
