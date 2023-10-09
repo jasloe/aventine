@@ -8,7 +8,7 @@ header {
 .main-menu__utilities,
 .language-switcher-language-url ul {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .header-menu {
@@ -23,7 +23,7 @@ header {
 .header-menu nav {
   display: none;
 
-  @include mq($from: 1075px) {
+  @include mq($from: desktop) {
     display: flex;
     justify-content: space-between;
     margin-left: auto;
@@ -33,7 +33,7 @@ header {
 .hamburger {
   padding: 0;
 
-  @include mq($from: 1075px) {
+  @include mq($from: desktop) {
     display: none;
   }
 }
@@ -142,26 +142,16 @@ ul.language-switcher-language-url li.is-active a:hover {
   transition: color 0.22s ease;
 }
 
-// Site name.
-.site-name a {
-  color: $black;
-  transition: color 0.22s ease;
-}
-
-.site-name a:hover {
-  color: $gray;
-  transition: color 0.22s ease;
-}
-
 // Fix language selector.
 .language-switcher-language-url li.is-active a {
   color: #000;
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
   transition: color 0.22s ease;
-  &:hover {
-  }
+
+  &:hover {}
 }
+
 .language-switcher-language-url li a:hover {
   color: #919191;
   transition: color 0.22s ease;
