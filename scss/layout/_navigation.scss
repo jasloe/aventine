@@ -4,9 +4,13 @@ header {
   z-index: 501 !important;
 }
 
-.header-menu,
 .main-menu__utilities,
 .language-switcher-language-url ul {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu {
   display: flex;
   align-items: flex-start;
 }

@@ -4,49 +4,70 @@
   display: none;
 }
 
-@include mq($from: wide) {
-  .wordmark-default {
-    display: block;
-  }
+.site-name a {
+  font-family: "Trade Gothic Bold Condensed Twenty";
+  font-size: 1rem;
+  text-transform: uppercase;
 
-  .site-name {
-    flex-basis: 50%;
-    padding-right: 3vw;
-  }
-
-}
-
-@include mq($from: desktop, $until: wide) {
-  .site-name {
-    flex-basis: 40%;
-    padding-right: 1vw;
-  }
-
-  .wordmark-narrow {
-    display: block;
+  &:hover {
+    color: #919191;
+    transition: color .22s ease;
   }
 }
 
-@include mq($from: tablet, $until: desktop) {
-  .layout-container {
-    margin-top: calc(100px + 2vw);
-  }
-
+.path-home {
   .site-name {
-    flex-basis: 20%;
+    padding-top: 2px;
   }
 
-  .wordmark-stacked {
-    display: block;
-  }
-}
-
-@include mq($until: tablet) {
-  .site-name {
-    flex-basis: 30%;
+  .site-name a span {
+    display: none;
   }
 
-  .wordmark-stacked {
-    display: block;
+  @include mq($from: wide) {
+    .wordmark-default {
+      display: block;
+    }
+
+    .site-name {
+      flex-basis: 50%;
+      padding-right: 3vw;
+    }
+
+  }
+
+  @include mq($from: desktop, $until: wide) {
+    .site-name {
+      flex-basis: 40%;
+      padding-right: 1vw;
+    }
+
+    .wordmark-narrow {
+      display: block;
+    }
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    .layout-container {
+      margin-top: calc(100px + 2vw);
+    }
+
+    .site-name {
+      flex-basis: 20%;
+    }
+
+    .wordmark-stacked {
+      display: block;
+    }
+  }
+
+  @include mq($until: tablet) {
+    .site-name {
+      flex-basis: 30%;
+    }
+
+    .wordmark-stacked {
+      display: block;
+    }
   }
 }
