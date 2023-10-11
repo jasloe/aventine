@@ -15,59 +15,58 @@
   }
 }
 
-body.home {
+
+.site-name {
+  padding-top: 4px;
+}
+
+.site-name a span {
+  display: none;
+}
+
+@include mq($from: wide) {
+  .wordmark-default {
+    display: block;
+  }
+
   .site-name {
-    padding-top: 4px;
+    flex-basis: 40%;
+    padding-right: 3vw;
   }
 
-  .site-name a span {
-    display: none;
+}
+
+@include mq($from: desktop, $until: wide) {
+  .site-name {
+    flex-basis: 25%;
+    padding-right: 1vw;
   }
 
-  @include mq($from: wide) {
-    .wordmark-default {
-      display: block;
-    }
+  .wordmark-narrow {
+    display: block;
+  }
+}
 
-    .site-name {
-      flex-basis: 40%;
-      padding-right: 3vw;
-    }
-
+@include mq($until: desktop) {
+  .layout-container {
+    margin-top: calc(100px + 3vw) !important;
   }
 
-  @include mq($from: desktop, $until: wide) {
-    .site-name {
-      flex-basis: 25%;
-      padding-right: 1vw;
-    }
-
-    .wordmark-narrow {
-      display: block;
-    }
+  .site-name {
+    flex-basis: 20%;
   }
 
-  @include mq($from: tablet, $until: desktop) {
-    .layout-container {
-      margin-top: calc(100px + 2vw);
-    }
+  .wordmark-stacked {
+    display: block;
+  }
+}
 
-    .site-name {
-      flex-basis: 20%;
-    }
-
-    .wordmark-stacked {
-      display: block;
-    }
+@include mq($until: tablet) {
+  .site-name {
+    flex-basis: 27%;
   }
 
-  @include mq($until: tablet) {
-    .site-name {
-      flex-basis: 27%;
-    }
-
-    .wordmark-stacked {
-      display: block;
-    }
+  .wordmark-stacked {
+    display: block;
   }
 }
