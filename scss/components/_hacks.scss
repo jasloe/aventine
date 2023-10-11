@@ -6,3 +6,8 @@
 .region-highlighted {
   display: none;
 }
+
+// Add padding to program-summary field on "Classical Summer School" card
+.region-content .card-body .program-summary {
+  margin-bottom: 1rem;
+}
