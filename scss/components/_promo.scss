@@ -9,6 +9,15 @@
   .media img {
     width: 100%;
   }
+
+  @include mq($until: tablet) {
+    flex-direction: column;
+    gap: 0;
+
+    article {
+      flex-basis: 100%;
+    }
+  }
 }
 
 // page promo styles
@@ -54,5 +63,21 @@
 .promo-layout .card-promo.news {
   .field-news-features-summary {
     @include body;
+  }
+
+}
+
+@include mq($until: tablet) {
+  .card-promo {
+    margin-bottom: 2rem;
+
+    h2,
+    .card-body {
+      padding-right: 2rem;
+    }
+  }
+
+  .card-promo:last-child {
+    margin-bottom: 0;
   }
 }
