@@ -1,0 +1,58 @@
+.promo-layout .promo {
+  display: flex;
+  gap: 1rem;
+
+  article {
+    flex-basis: 33%;
+  }
+
+  .media img {
+    width: 100%;
+  }
+}
+
+// page promo styles
+.promo-layout {
+  margin: 7rem auto;
+  max-width: $max-vw;
+  padding: 0 1rem;
+}
+
+.promo-layout .card-promo.page {
+  .card-body .field-page-summary {
+    @include body;
+    padding-right: 2rem;
+  }
+}
+
+// event promo styles
+.promo-layout .card-promo.event {
+
+  .field-events-event-series,
+  .field-events-event-type {
+    font-family: "Dignitas Regular";
+    font-size: 1.45rem;
+    line-height: 1.1;
+    color: #919191;
+  }
+
+  .event-date,
+  .event-time {
+    @include body;
+  }
+
+  .card-body {
+    margin-top: 1rem;
+  }
+
+  .read-more {
+    margin-top: 1rem;
+  }
+}
+
+// event promo styles
+.promo-layout .card-promo.news {
+  .field-news-features-summary {
+    @include body;
+  }
+}

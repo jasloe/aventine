@@ -79,7 +79,7 @@ function aventine_preprocess_node(&$variables) {
   $timezone = $node->field_events_rel_places?->entity->field_time_zone->value;
 
   switch ($view_mode) {
-    case "full":
+    case "full" || "promo":
       // Create datetime objects.
       $date_formatter = \Drupal::service('date.formatter');
       $datetime_start = new DrupalDateTime($node->field_events_event_dates?->value, 'UTC');
