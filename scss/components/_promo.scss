@@ -77,3 +77,31 @@
     margin-bottom: 0;
   }
 }
+
+.card-promo a {
+
+  h2,
+  p,
+  .field__item {
+    color: $black;
+    transition: color .22s ease-in-out;
+  }
+
+  img {
+    opacity: 100%;
+    transition: opacity .22s ease-in-out;
+  }
+}
+
+.card-promo a:hover {
+
+  h2,
+  .field__item,
+  p {
+    color: $gray;
+  }
+
+  img {
+    opacity: 90%;
+  }
+}
