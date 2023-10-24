@@ -2,11 +2,11 @@
 	<a href={{ url }}>
 		{{ content.field_events_image}}
 		<div class="card-body">
-			{% if content.field_events_event_series|render is not empty %}
+			{# {% if content.field_events_event_series|render is not empty %}
 				{{ content.field_events_event_series }}
 			{% else %}
 				{{ content.field_events_event_type }}
-			{% endif %}
+			{% endif %} #}
 			<h2 class="title serif">{{ label }}</h2>
 			<div class="event-dates">
 				{% if content.field_events_event_dates_overrid|render|striptags|trim %}
