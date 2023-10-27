@@ -35,12 +35,12 @@ h3.sans {
   @include title-card-sans;
 }
 
-.path-informazioni-amministrazione .people-staff>h3,
+.path-informazioni-personale .people-staff>h3,
 .path-about-staff .people-staff>h3 {
   margin-bottom: .5rem;
 }
 
-.path-informazioni-amministrazione .profile>h3,
+.path-informazioni-personale .profile>h3,
 .path-about-staff .profile>h3 {
   @include label;
 

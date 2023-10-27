@@ -398,7 +398,7 @@ body.index .card.academic-programs {
   }
 }
 
-.path-informazioni-amministrazione,
+.path-informazioni-personale,
 .path-about-staff {
 
   .profile .department,
@@ -417,7 +417,7 @@ body.index .card.academic-programs {
   margin-bottom: 1rem;
 }
 
-.path-informazioni-amministrazione,
+.path-informazioni-personale,
 .path-about-staff {
   img {
     width: 100%;
@@ -426,7 +426,7 @@ body.index .card.academic-programs {
 
 @include mq($until: tablet) {
 
-  .path-informazioni-amministrazione,
+  .path-informazioni-personale,
   .path-about-staff {
     h3 {
       padding-left: 1rem;
