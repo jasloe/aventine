@@ -35,6 +35,7 @@
     @include font-size(2.2rem);
     margin-top: 0.25rem;
   }
+
   time {
     @include label;
   }
@@ -47,16 +48,19 @@
       opacity: 1;
       transition: opacity 0.22s ease;
     }
+
     .slide__description h2 {
       color: $black;
       transition: color 0.22s ease;
     }
   }
+
   .slick:hover {
     .media {
       opacity: 0.9;
       transition: opacity 0.22s ease;
     }
+
     .slide__description h2 {
       color: $gray;
       transition: color 0.22s ease;
@@ -74,20 +78,22 @@
 .front.fellows,
 .front.join-us,
 .front.residents,
-.front.leadership {
+.front.leadership,
+.front.promo-layout {
   margin: 3rem auto;
   max-width: $max-vw;
+
   @include mq($from: tablet) {
     margin: 7rem auto;
   }
 }
 
-.front-fellows {
+.front.front.promo-layout {
+  padding: 0 1rem;
 }
 
 .front.news-features {
-  @include mq($until: wide) {
-  }
+  @include mq($until: wide) {}
 }
 
 .front.rome-prize {
@@ -99,9 +105,7 @@
 .front.fellows h2,
 .front.residents h2,
 .front.leadership h2 {
-  @include mq($from: $jumbotron) {
-
-  }
+  @include mq($from: $jumbotron) {}
 }
 
 .front.fellows .slick-list,
@@ -239,9 +243,11 @@
 
 .front.join-us .field-page-section-links .field__item {
   margin-bottom: 1rem;
+
   @include mq($from: tablet) {
     margin-bottom: 2rem;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -348,7 +354,7 @@
 }
 
 .front.news-features {
-  > h2 {
+  >h2 {
     @include title-card-sans;
   }
 
@@ -356,6 +362,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 1.2rem;
+
     @include mq($from: tablet) {
       gap: 1rem;
     }
@@ -468,13 +475,16 @@
 .ajax-progress {
   display: none !important;
 }
+
 [dir="rtl"] .ajax-progress {
   display: none !important;
 }
+
 .ajax-progress-throbber .throbber {
   display: none !important;
   background: none !important;
 }
+
 .ajax-progress-throbber .message {
   display: none !important;
 }
@@ -503,6 +513,7 @@
 .front.leadership .front-wrapper {
   display: flex;
   gap: 1rem;
+
   @include mq($until: tablet) {
     flex-direction: column;
     align-items: flex-start;
@@ -525,6 +536,7 @@
 }
 
 @include mq($until: wide) {
+
   .front .slide__description,
   .front.news-features,
   .rome-prize-cta,
@@ -539,9 +551,11 @@
   .rome-prize-cta .column-second {
     margin-top: .5rem;
   }
+
   .rome-prize-cta .field-page-page-section {
     margin-top: .75rem;
   }
+
   .rome-prize-cta .page-section .column-second p {
     margin-bottom: 1.6rem;
   }

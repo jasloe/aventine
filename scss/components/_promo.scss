@@ -20,13 +20,6 @@
   }
 }
 
-// page promo styles
-.promo-layout {
-  margin: 7rem auto;
-  max-width: $max-vw;
-  padding: 0 1rem;
-}
-
 .promo-layout .card-promo.page {
   .card-body .field-page-summary {
     @include body;
@@ -37,6 +30,10 @@
 // event promo styles
 .promo-layout .card-promo.event {
 
+  .blazy__caption {
+    display: none;
+  }
+
   .field-events-event-series,
   .field-events-event-type {
     font-family: "Dignitas Regular";
@@ -46,7 +43,8 @@
   }
 
   .event-date,
-  .event-time {
+  .event-time,
+  .event-location {
     @include body;
   }
 
@@ -54,6 +52,7 @@
     margin-top: 1rem;
   }
 }
+
 
 // event promo styles
 .promo-layout .card-promo.news {
@@ -82,7 +81,8 @@
 
   h2,
   p,
-  .field__item {
+  .field__item,
+  .event-location {
     color: $black;
     transition: color .22s ease-in-out;
   }
@@ -97,6 +97,7 @@
 
   h2,
   .field__item,
+  .event-location,
   p {
     color: $gray;
   }
