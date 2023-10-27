@@ -398,8 +398,8 @@ body.index .card.academic-programs {
   }
 }
 
-.path-comunita-personale,
-.path-people-staff {
+.path-informazioni-amministrazione,
+.path-about-staff {
 
   .profile .department,
   .profile .role {
@@ -417,8 +417,8 @@ body.index .card.academic-programs {
   margin-bottom: 1rem;
 }
 
-.path-comunita-personale,
-.path-people-staff {
+.path-informazioni-amministrazione,
+.path-about-staff {
   img {
     width: 100%;
   }
@@ -426,8 +426,8 @@ body.index .card.academic-programs {
 
 @include mq($until: tablet) {
 
-  .path-comunita-personale,
-  .path-people-staff {
+  .path-informazioni-amministrazione,
+  .path-about-staff {
     h3 {
       padding-left: 1rem;
     }

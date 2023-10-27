@@ -11,3 +11,12 @@
 .region-content .card-body .field-program-summary {
   margin-bottom: 1rem;
 }
+
+// Fix caption padding-left once and for all.
+body.page .page.wrapper {
+  .field-media-caption {
+    @include mq($until: 1390px) {
+      padding-left: 1rem;
+    }
+  }
+}
