@@ -8,7 +8,7 @@
 .page-section li {
   @include body;
   padding-left: 1rem;
-  text-indent: -1.5rem;
+  text-indent: -1.9rem;
   padding-bottom: 1rem;
 
   &:before {
@@ -31,22 +31,25 @@
   border-bottom: 1px solid $black;
   color: $black;
   transition: color 0.22s ease;
+
   &:hover {
     color: $link-hover;
     border-bottom: 1px solid $link-hover;
     transition: color 0.22s ease;
   }
+
   &:visited {
     color: $gray;
     border-bottom: 1px solid $gray;
   }
+
   &:visited:hover {
     color: $link-hover;
     border-bottom: 1px solid $link-hover;
   }
 }
 
-.event-container h3 + ul,
-.page-section h3 + ul {
+.event-container h3+ul,
+.page-section h3+ul {
   margin-top: 1rem;
 }
