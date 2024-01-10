@@ -1,13 +1,16 @@
+.index-news,
 .path-news-video,
-.path-attualita-video,
-.pager {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0;
-  width: 100%;
+.path-attualita-video {
+  .pager {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
 }
 
+.index-news,
 .search-page,
 .path-events,
 .path-news-video,
@@ -15,6 +18,7 @@
   ul.pager__items {
     @include body;
     display: flex;
+    justify-content: center;
     margin: 1rem 0 0;
 
     li {
@@ -30,12 +34,19 @@
       color: $black;
       @include font-size(1.4rem);
       transition: color 0.22s ease;
+
       &:hover {
         color: $gray;
         transition: color 0.22s ease;
       }
     }
+
+    li.is-active {
+      border-bottom: 1px solid $black;
+    }
   }
+
+
 }
 
 ul.pager {
