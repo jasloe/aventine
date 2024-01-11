@@ -60,6 +60,7 @@
   border: none;
   padding: 1rem 0 0.1rem 0;
   border-bottom: 1px solid $black;
+
   &:hover {
     border-bottom: 1px solid $gray;
   }
@@ -68,6 +69,7 @@
 .join-us .field-page-section-links .field__item a {
   padding: 0;
   border: none;
+
   &:hover {
     border: none;
   }
@@ -95,6 +97,7 @@
 .field-press-releases-files {
   display: flex;
   margin-bottom: 2rem;
+
   .field__item:first-child .field {
     margin-right: 1.5rem;
   }
@@ -172,7 +175,6 @@
 
 .events-container {
   input[type="submit"] {
-    margin-top: 1rem;
     padding: initial;
     padding-bottom: 2px;
     font-family: $tradegothic;
@@ -181,6 +183,7 @@
     border-bottom: 1px solid $gray;
     color: $gray;
     transition: color .22s ease-in-out;
+
     &:hover {
       color: $black;
       border: none;

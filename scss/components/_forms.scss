@@ -3,201 +3,84 @@
   display: flex;
 }
 
-.views-exposed-form div:first-child {
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
-.select2-search__field {
-  display: none;
-}
-
-// .select2-results__options li:first-of-type {
-//   display: none;
-// }
-
-// Select2 overrides.
-span.select2-selection,
-.select2-results__options li {
-  @include label;
-}
-
-span.select2 {
-  border: none;
-}
-
-.select2-container--default .select2-results > .select2-results__options {
-  max-height: 100%;
-  overflow-y: auto;
-}
-
-.select2-container--default
-  .select2-results__option--highlighted[aria-selected] {
-  background-color: $green;
-  color: $gray;
-}
-
-// Webforms.
-// Webform layout.
-.webform {
-  .region-content {
-    margin: 0 auto;
-    max-width: $max-vw;
-    padding: 0 1rem;
-  }
-
-  article .body {
-    @include margin-top;
-    margin-bottom: 3rem;
-    max-width: 100%;
-
-    @include mq($from: tablet) {
-      max-width: 50%;
-      margin-left: $column-first;
-    }
-  }
-
-  article .body p {
-    @include body;
-  }
-
-  h2 {
-    @include label;
-    margin-bottom: 1rem;
-  }
-
-  .webform-section-wrapper {
-    margin-bottom: 2rem;
-  }
-
-  .form-item {
-    display: flex;
-    flex-direction: column;
-
-    @include mq($from: tablet) {
-      flex-direction: row;
-
-      h2 {
-        flex-basis: $column-first;
-        padding-top: 8px;
-      }
-
-      .webform-section-wrapper {
-        flex-basis: $column-second;
-      }
-
-      .webform-name--wrapper label {
-        display: none;
-        margin: 0;
-      }
-    }
-  }
-
-  .webform-actions,
-  ul.message-list {
-    margin-left: 0;
-
-    @include mq($from: tablet) {
-      margin-left: $column-first;
-    }
-  }
-
-  fieldset.webform-composite-hidden-title {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .js-form-item input {
-    border: none;
-    border-bottom: 1px solid $gray;
-    margin-bottom: 1rem;
-    @include body;
-  }
-
-  textarea {
-    @include body;
-    width: 100%;
-  }
-
-  textarea,
-  input {
-    margin: 5px 0;
-    padding-left: 5px;
-    outline: none;
-  }
-
-  textarea:focus,
-  textarea:active {
-    background-color: $green;
-    border: 1px solid $black;
-  }
-
-  input:focus,
-  input:active {
-    border-bottom: 1px solid $black;
-    background-color: $green;
-  }
-
-  input[type="submit"] {
-    padding: 1rem 2rem;
-    border: 1px solid $gray;
-    @include label;
-  }
-
-  ul.message-list {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    @include body;
-    display: flex;
-    flex-direction: column;
-    // color: red;
-
-    li {
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    li em {
-    }
-
-    li:before {
-      content: "–";
-      padding-right: 5px;
-    }
-  }
-}
-
-// Discipline, date pickers for people/* pages. Now includes event/* pages.
-
-.people-current .form-item select {
-  padding: 0.5rem 0.3rem;
-}
-
-.path-events .form-item select {
-  padding: 0.5rem 0;
-}
-
-.ajax-progress-throbber {
-  display: none;
-}
-
+.ajax-progress-throbber,
 .ajax-progress .throbber {
   display: none;
 }
 
-// No results for discipline, date pickers for people/* pages.
-.people-current p.no-results {
-  font-family: $display-serif;
-  @include font-size(1.4rem);
+// Select lists defaults
+select.form-select {
+  padding: .5rem 1rem;
 }
 
-// @HACK, add padding to select list for narrow view ports.
-.people-current .views-exposed-form,
-.people-current p.no-results {
-  @include mq($until: $tablet) {
-    padding: 0 1rem;
+select {
+  border: 1px solid $black;
+  border-radius: 0;
+  color: inherit;
+  outline: none;
+}
+
+.views-exposed-form {
+  display: flex;
+  align-items: center;
+}
+
+// Select lists events
+.index-events .views-exposed-form {
+
+  .views-exposed-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .js-form-item:not(:last-child) {
+    margin-bottom: .5rem;
   }
 }
+
+// Select lists people
+.index-people .views-exposed-form {
+  margin-bottom: 1rem;
+
+  select {
+    margin-right: .5rem;
+  }
+
+  @include mq($until: tablet) {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .js-form-item:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+// Select list, occupy available space
+.index-events .views-exposed-form {
+  margin-right: 2vw;
+}
+
+.views-exposed-form {
+
+  .js-form-item {
+    display: flex;
+  }
+
+  select {
+    flex: 1;
+    max-width: 250px;
+  }
+}
+
+
+
 
 // @Mailchimp styling
 input {
@@ -217,16 +100,19 @@ input {
 .newsletter-inner .mailchimp-signup-subscribe-form {
   display: flex;
   padding: 0 5rem;
+
   @include mq($until: desktop) {
     padding: 0rem;
   }
+
   h2 {
     flex-basis: 50%;
     padding-right: 10%;
     @include title-serif;
     @include font-size(2.5rem);
   }
-  > div {
+
+  >div {
     flex-basis: 50%;
     padding-top: 3px;
   }
@@ -240,7 +126,8 @@ input {
     h2 {
       margin-bottom: 1.5rem;
     }
-    > div {
+
+    >div {
       flex-basis: 50%;
       padding-right: 0 !important;
       padding-top: 3px;
@@ -255,19 +142,23 @@ input {
     font-family: $tradegothic;
     font-size: 0.9rem;
     font-weight: 100;
-    input:focus + & {
+
+    input:focus+& {
       letter-spacing: -0.01em;
       // color: red;
     }
   }
+
   input {
     background-color: transparent;
     font-size: 18px;
     width: 100%;
+
     &:focus {
       // box-shadow: 0px 3px 4px -2px rgba(0, 0, 115, 0.25) inset;
     }
   }
+
   margin-bottom: 0.5rem;
 }
 
@@ -287,11 +178,6 @@ label[for="edit-gdpr-consent"] a {
   margin: 0.5rem 0;
 }
 
-textarea:focus,
-input:focus {
-  outline: none;
-}
-
 .mailchimp-signup-subscribe-form .button {
   margin-top: 1rem;
   padding: 1rem 1.5rem;
@@ -307,6 +193,7 @@ input:focus {
 }
 
 .mailchimp-signup-subscribe-form {
+
   div[role="alert"],
   div[role="contentinfo"] {
     padding: 0;
@@ -322,38 +209,9 @@ input:focus {
     color: #ae0909;
     text-align: center;
     margin-bottom: 1.5rem;
+
     em {
       font-style: oblique;
     }
   }
-}
-
-form#views-exposed-form-events-events-past {
-  .js-form-item option {
-    font-size: 1rem;
-    text-transform: lowercase;
-  }
-}
-
-// Hotfix for Past Events BEF
-.bef-exposed-form {
-  padding-right: 1rem;
-}
-
-.views-exposed-form div:first-child {
-  select {
-    width: 100%;
-  }
-}
-
-.path-events .form-item select {
-  padding: 0.5rem 0.5rem;
-}
-
-@include mq($until: $tablet) {
-.path-events .events-container .region-content-pre {
-  select {
-    width: 100%;
-  }
-}
 }
