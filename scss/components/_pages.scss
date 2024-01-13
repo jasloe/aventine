@@ -1,4 +1,5 @@
 body.page {
+
   .field-page-image,
   .field-page-video {
     margin: 0 auto;
@@ -18,11 +19,11 @@ body.page {
   @include margin-top;
 }
 
-.field-page-page-section > .field__item {
+.field-page-page-section>.field__item {
   margin-bottom: 3rem;
 }
 
-.field-page-page-section > .field__item:last-child {
+.field-page-page-section>.field__item:last-child {
   margin-bottom: 0;
 }
 
@@ -78,6 +79,7 @@ body.page {
 
 // News features.
 body.news-features {
+
   .field-news-features-byline,
   .datetime {
     @include body;
@@ -179,11 +181,11 @@ body.news-features {
 }
 
 // Publications.
-.publications > div {
+.publications>div {
   margin-bottom: 4rem;
 }
 
-.publications > div:last-of-type {
+.publications>div:last-of-type {
   margin-bottom: 0;
 }
 
@@ -353,6 +355,7 @@ body.news-features {
 }
 
 @include mq($from: tablet) {
+
   .news-features .page-section .column-second,
   .society-of-fellows .page-section .column-second {
     padding-right: 20% !important;
@@ -387,6 +390,7 @@ body.news-features {
 
 // News feature metadata
 .news-features {
+
   .field-news-features-byline,
   .field-news-features-date {
     max-width: $max-vw;
@@ -400,10 +404,12 @@ body.news-features {
 
   .field-news-features-byline {
     display: flex;
+
     .field__label {
       margin-right: 0.25rem;
     }
   }
+
   .field-news-features-byline,
   .field-news-features-date {
     font-family: $dignitas !important;
@@ -445,6 +451,7 @@ body.news-features .inline-logo img {
 }
 
 @include mq($until: tablet) {
+
   .page .media-wrapper--blazy,
   .page .media-wrapper--video,
   .events .media-wrapper--blazy,
@@ -485,6 +492,7 @@ body.news-features .inline-logo img {
   padding-bottom: 2px;
   font-weight: 100;
   transition: color 0.33s ease-in-out;
+
   &:hover {
     color: $gray;
     border-bottom: none;
@@ -505,6 +513,7 @@ body.news-features .inline-logo img {
     .region-content-pre {
       padding-left: 1rem;
     }
+
     .region-content-pre {
       margin-bottom: 2rem;
     }
@@ -518,25 +527,32 @@ body.news-features .inline-logo img {
     flex-direction: column;
     gap: 0rem;
   }
+
   .region-content-pre {
     flex-basis: calc(30% - 1.3rem);
   }
+
   .region-content {
     flex-basis: 70%;
   }
+
   .row-first {
     margin-bottom: 2rem;
   }
+
   .event-description {
     margin-top: 2rem;
+
     @include mq($until: tablet) {
       padding: 0 1rem;
     }
   }
+
   .event-body {
     padding-right: 10%;
     margin-bottom: 2rem;
   }
+
   .row-fourth {
     display: flex;
     align-items: center;
@@ -547,14 +563,17 @@ body.news-features .inline-logo img {
 
 /* Events index styling */
 .path-events .events-container {
+
   .field__item,
   .field-events-rel-places,
   .event-body p {
     font-family: $display-serif !important;
+
     em {
       font-family: $dignitasital;
     }
   }
+
   .field-events-event-dates,
   .field-events-rel-places,
   .field-events-event-series,
@@ -563,48 +582,59 @@ body.news-features .inline-logo img {
     @include font-size($medium);
     line-height: 1.1;
   }
+
   .field-events-event-dates {
     font-family: $dignitas;
   }
+
   h2 {
     @include font-size(3.2rem);
     line-height: 1;
   }
+
   .blazy {
     padding-top: 2rem;
   }
+
   @include mq($until: tablet) {
     .blazy {
       padding-top: 0;
     }
   }
+
   .field-events-event-series,
   .field-events-event-type {
     color: $gray;
   }
+
   .more-info,
   .register {
     font-family: $tradegothic;
     display: inline;
   }
+
   .more-info {
     @include font-size(1.4rem);
     margin-left: auto;
   }
+
   .register {
     @include font-size(1.4rem);
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
   }
+
   .register a {
     padding: 0.675rem 1rem;
     border: 2px solid $black;
     color: $black;
   }
+
   .register a:first-child {
     margin-bottom: 1rem;
   }
+
   .more-info:after {
     content: "→";
   }
@@ -635,6 +665,7 @@ body.news-features .inline-logo img {
   .ac-trigger,
   .ac-panel {
     padding: 1.5rem;
+
     @include mq($until: tablet) {
       padding: 1rem;
     }
@@ -642,10 +673,12 @@ body.news-features .inline-logo img {
 
   .ac-trigger {
     padding: 1.5rem 1.5rem 0rem 1.5rem;
+
     @include mq($until: tablet) {
       padding: 1rem;
     }
   }
+
   .ac-panel {
     @include mq($until: tablet) {
       padding: 0rem;
@@ -658,6 +691,7 @@ body.news-features .inline-logo img {
     .ac {
       border-top: 1px solid $gray;
     }
+
     // .ac:first-of-type {
     //   border: none;
     // }
@@ -692,6 +726,7 @@ body.news-features .inline-logo img {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 .event-container .row-second {
   padding: 0 5% 0 13.5%;
   margin: 3rem 0 1rem 0;
@@ -713,28 +748,36 @@ body.news-features .inline-logo img {
     .grid-item {
       grid-template-columns: 100%;
     }
+
     .grid-item-1.event-body {
       grid-row: auto;
       order: 5;
     }
+
     .grid-item-2.event-dates {
       order: 1;
     }
+
     .grid-item-3.event-location {
       order: 2;
     }
+
     .grid-item-4.event-register {
       order: 3;
     }
+
     .grid-item-5.event-security {
       order: 6;
     }
+
     .grid-item-6.event-more-info {
       order: 4;
     }
+
     .grid-item-7.event-more-info {
       order: 4;
     }
+
     .grid-item-9.event-sponsorship {
       order: 9;
     }
@@ -750,7 +793,9 @@ body.news-features .inline-logo img {
   .event-header {
     margin-top: 2rem;
   }
+
   .row-first {
+
     .daterange,
     .field-events-rel-places,
     .field-events-event-series,
@@ -759,13 +804,16 @@ body.news-features .inline-logo img {
       @include font-size(1.45rem);
       line-height: 1.1;
     }
+
     .field-events-rel-places {
       margin-bottom: 2rem;
     }
+
     .field-events-event-series,
     .field-events-event-type {
       color: $gray;
     }
+
     h1 {
       @include font-size(3.2rem);
       line-height: 1;
@@ -778,59 +826,74 @@ body.news-features .inline-logo img {
     padding-left: 1rem;
     padding-right: 30%;
   }
+
   .event-body p {
     margin-bottom: 1rem;
+
     &:last-child {
       margin-bottom: 0rem;
     }
   }
+
   .event-body {
     padding-right: 10%;
   }
+
   .col-right time,
   .col-right p,
   .col-right a,
   .col-right .field-events-rel-places {
     color: rgb(42, 42, 42);
   }
+
   .col-right a {
     border-bottom: 1px solid rgb(42, 42, 42);
   }
+
   .body p {
     @include font-size(1.45rem);
     font-family: $dignitas;
     line-height: 1.4;
+
     em {
       font-family: $dignitasital;
     }
   }
+
   .body hr {
     margin: 2rem 0;
   }
+
   h3 {
     @include font-size(1.3rem);
     color: $gray;
     margin-bottom: 0.33rem;
   }
-  h3 + p {
+
+  h3+p {
     margin-bottom: 1.5rem !important;
   }
+
   h3:first-of-type {
     padding-top: 0;
   }
+
   .event-dates {
     margin-top: 4px;
     color: rgb(42, 42, 42);
   }
+
   .field-events-sponsorship {
     @include font-size(1.2rem);
     font-family: $dignitas;
     line-height: 1.4;
   }
+
   .grid-item {
     margin-bottom: 2rem;
     line-height: 1.4;
   }
+
   .grid-item .field__label,
   .related-group h2 {
     font-family: $tradegothic;
@@ -838,6 +901,7 @@ body.news-features .inline-logo img {
     font-weight: 400;
     color: $black;
   }
+
   .grid-item .field__item p,
   .grid-item .field .field__item time,
   .grid-item .place-title,
@@ -845,15 +909,19 @@ body.news-features .inline-logo img {
     font-family: $dignitas;
     @include font-size(1.25rem);
   }
+
   .field-events-more-info a {
     border-bottom: 1px solid $black;
     display: inline;
   }
+
   time {
     @include font-size(1rem);
   }
+
   .grid-item.col-right p {
     padding-bottom: 1rem;
+
     &:last-child {
       padding-bottom: 0rem;
     }
@@ -862,34 +930,43 @@ body.news-features .inline-logo img {
 
 @include mq($until: tablet) {
   .event-container {
+
     .row-first .column-first,
     .blazy__caption--media-caption {
       padding-right: 0rem;
       padding-left: 1rem;
     }
+
     .row-first {
       margin-bottom: 1.25rem;
     }
+
     .row-first .field-events-rel-places {
       margin-bottom: 1rem;
     }
+
     .row-first h1 {
       // margin-bottom: 1.25rem;
       padding-right: 10%;
     }
+
     .row-second {
       margin-top: 1rem;
       padding: 0 1rem;
     }
+
     .row-second .body hr {
       margin: 1.25rem 0rem;
     }
+
     .grid-item {
       margin-bottom: 1.25rem;
     }
+
     .grid-item .field__label {
       margin-bottom: 0;
     }
+
     .event-body {
       padding-right: 0rem;
     }
@@ -900,6 +977,7 @@ body.news-features .inline-logo img {
   max-width: 1290px;
   margin: 0 auto;
   padding: 0 5% 0 13.5%;
+
   @include mq($until: tablet) {
     padding: 1rem;
   }
@@ -911,44 +989,57 @@ body.news-features .inline-logo img {
     border-top: 1px solid $gray;
     padding-top: 3rem;
   }
+
   .related-group {
     display: flex;
     justify-content: stretch;
+
     @include mq($until: tablet) {
       flex-direction: column;
     }
   }
+
   .related-group .views-element-container {
-    flex-basis: 25%;
+    flex-basis: 1;
     margin-right: 5%;
+
+    @include mq($from: desktop) {
+      max-width: 50%;
+    }
+
+
+
     @include mq($until: tablet) {
       flex-basis: 100%;
       border-bottom: 1px solid $gray;
       padding-top: 1rem;
       padding-bottom: 1rem;
+
       &:first-child {
         padding-top: 0rem;
       }
+
       &:last-child {
         border: none;
       }
     }
   }
-  .related-content {
-    margin-right: 10% !important;
-  }
+
   .related-group h2 {
     margin-bottom: 0.5rem;
   }
+
   .related-group .related-item {
     padding: 0 0 0.5rem 0;
     line-height: 1.3;
   }
+
   .related-content .related-item a {
     border-bottom: 1px solid rgb(42, 42, 42);
     padding-bottom: 1px;
     color: rgb(42, 42, 42);
     transition: color 0.22s ease-in-out;
+
     &:hover {
       color: $gray;
       border-bottom-color: $gray;
@@ -970,6 +1061,7 @@ body.news-features .inline-logo img {
   .people .related-container {
     padding-left: 1rem;
   }
+
   .profile .related-container {
     margin-top: 1rem;
   }
@@ -990,6 +1082,7 @@ body.news-features .inline-logo img {
   font-family: $dignitas;
   @include font-size(1.2rem);
 }
+
 .related-content time {
   color: $gray;
 }
@@ -1024,13 +1117,15 @@ body.news-features .inline-logo img {
 
 .event-description .field-events-summary,
 .event-description {
-  p > em {
+  p>em {
     font-family: $dignitasital;
   }
-  p > a {
+
+  p>a {
     color: $black;
     border-bottom: 1px solid $black;
     transition: color 0.22s ease-in-out;
+
     &:hover {
       border-bottom-color: $gray;
       color: $gray;
@@ -1041,6 +1136,7 @@ body.news-features .inline-logo img {
 .event-description .more-info {
   color: $black;
   transition: color 0.22s ease-in-out;
+
   &:hover a,
   &:hover:after {
     color: $gray;

@@ -73,62 +73,87 @@ function aventine_suggestions_page_alter(array &$suggestions, array $variables) 
  */
 function aventine_preprocess_node(&$variables) {
   $node = $variables['elements']['#node'];
+
+  // Check if the content type is 'events'.
+  if ($node->getType() !== 'events') {
+    // Exit the function if it's not 'events' content type.
+    return;
+  }
+
   $view_mode = $variables['elements']['#view_mode'];
   $date_formatter = \Drupal::service('date.formatter');
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $timezone = $node->field_events_rel_places?->entity->field_time_zone->value;
 
   switch ($view_mode) {
-    case "full" || "promo":
-      // Create datetime objects.
-      $date_formatter = \Drupal::service('date.formatter');
-      $datetime_start = new DrupalDateTime($node->field_events_event_dates?->value, 'UTC');
-      $datetime_end = (new DrupalDateTime($node->field_events_event_dates?->end_value, 'UTC'));
-      // Defaults, fallbacks.
-      $date_start_default = $date_formatter->format($datetime_start->getTimestamp(), 'date_default');
-      $date_end_default = $date_formatter->format($datetime_end->getTimestamp(), 'date_default');
-      // Set up formats.
-      $daterange_start_no_year = $date_formatter->format($datetime_start->getTimestamp(), 'date_range_no_year');
-      $daterange_end_no_year = $date_formatter->format($datetime_end->getTimestamp(), 'date_range_no_year');
-      $date_start_year = $date_formatter->format($datetime_start->getTimestamp(), 'year');
-      $date_end_year = $date_formatter->format($datetime_end->getTimestamp(), 'year');
-      $date_start_month = $date_formatter->format($datetime_start->getTimestamp(), 'month');
-      $date_end_month = $date_formatter->format($datetime_end->getTimestamp(), 'month');
-      $date_start_date = $date_formatter->format($datetime_start->getTimestamp(), 'day');
-      $date_end_date = $date_formatter->format($datetime_end->getTimestamp(), 'day');
-      $time_start_default = $date_formatter->format($datetime_start->getTimestamp(), 'time_default');
-      $time_start = $date_formatter->format($datetime_start->getTimestamp(), 'time_start');
-      $time_end = $date_formatter->format($datetime_end->getTimestamp(), 'time_end');
-      $date_end_check = $node->field_events_event_dates?->end_value;
-      // Set fallbacks.
-      // If date end is empty and date start and date end are equivalent, assume the standard date and time output.
-      if (is_null($date_end_check) || $datetime_start == $datetime_end) {
-        $variables['custom_date'] = $date_start_default;
+    case "full":
+    case "promo":
+      // Check if date values are not null.
+      $start_date = NULL;
+      if ($node->hasField('field_events_event_dates') && !$node->field_events_event_dates->isEmpty()) {
+        $start_date = $node->field_events_event_dates->value;
       }
-      // Date range spans multiple years.
-      elseif (!is_null($date_end_check) && $date_start_year != $date_end_year) {
-        $variables['custom_date'] = $date_start_default . "–" . $date_end_default;
+      $end_date = NULL;
+      if ($node->hasField('field_events_event_dates') && !$node->field_events_event_dates->isEmpty()) {
+        $end_date = $node->field_events_event_dates->end_value;
       }
-      // Date range spans multiple months in the same year.
-      elseif (!is_null($date_end_check) && $date_start_year == $date_end_year && $date_start_month != $date_end_month) {
-        $variables['custom_date'] = $daterange_start_no_year . "–" . $daterange_end_no_year . ", " . $date_start_year;
+
+      try {
+        // Create datetime objects if values are not null and are in a valid format.
+        $datetime_start = !empty($start_date) ? new DrupalDateTime($start_date, 'UTC') : NULL;
+        $datetime_end = !empty($end_date) ? new DrupalDateTime($end_date, 'UTC') : NULL;
+
+        // Defaults, fallbacks.
+        $date_start_default = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'date_default') : '';
+        $date_end_default = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'date_default') : '';
+        // Set up formats.
+        $daterange_start_no_year = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'date_range_no_year') : '';
+        $daterange_end_no_year = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'date_range_no_year') : '';
+        $date_start_year = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'year') : '';
+        $date_end_year = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'year') : '';
+        $date_start_month = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'month') : '';
+        $date_end_month = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'month') : '';
+        $date_start_date = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'day') : '';
+        $date_end_date = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'day') : '';
+        $time_start_default = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'time_default') : '';
+        $time_start = $datetime_start ? $date_formatter->format($datetime_start->getTimestamp(), 'time_start') : '';
+        $time_end = $datetime_end ? $date_formatter->format($datetime_end->getTimestamp(), 'time_end') : '';
+        $date_end_check = $datetime_end;
+
+        // Set fallbacks.
+        // If date end is empty and date start and date end are equivalent, assume the standard date and time output.
+        if (is_null($date_end_check) || $datetime_start == $datetime_end) {
+          $variables['custom_date'] = $date_start_default;
+        }
+        // Date range spans multiple years.
+        elseif (!is_null($date_end_check) && $date_start_year != $date_end_year) {
+          $variables['custom_date'] = $date_start_default . "–" . $date_end_default;
+        }
+        // Date range spans multiple months in the same year.
+        elseif (!is_null($date_end_check) && $date_start_year == $date_end_year && $date_start_month != $date_end_month) {
+          $variables['custom_date'] = $daterange_start_no_year . "–" . $daterange_end_no_year . ", " . $date_start_year;
+        }
+        // Date range spans multiple days in the same month.
+        elseif (!is_null($date_end_check) && $date_start_year == $date_end_year && $date_start_month == $date_end_month && $date_start_date != $date_end_date) {
+          $variables['custom_date'] = $daterange_start_no_year . "–" . $daterange_end_no_year . ", " . $date_start_year;
+        }
+        // Fallback to standard formatting.
+        else {
+          $variables['custom_date'] = $date_start_default;
+        }
+
+        // Time formatting, single value.
+        if (is_null($date_end_check) || $datetime_start == $datetime_end) {
+          $variables['custom_time'] = $time_start_default;
+        }
+        // Time formatting, range.
+        elseif ($date_start_date != $date_end_date) {
+          $variables['custom_time'] = $time_start . '–' . $time_end;
+        }
       }
-      // Date range spans multiple days in the same month.
-      elseif (!is_null($date_end_check) && $date_start_year == $date_end_year && $date_start_month == $date_start_month && $date_start_date != $date_start_date) {
-        $variables['custom_date'] = $daterange_start_no_year . "–" . $daterange_end_no_year . ", " . $date_start_year;
-      }
-      // Fallback to standard formatting.
-      else {
-        $variables['custom_date'] = $date_start_default;
-      }
-      // Time formatting, single value.
-      if (is_null($date_end_check) || $datetime_start == $datetime_end) {
-        $variables['custom_time'] = $time_start_default;
-      }
-      // Time formatting, range.
-      elseif ($date_start_date != $date_end_date) {
-        $variables['custom_time'] = $time_start . '–' . $time_end;
-        ;
+      catch (Exception $e) {
+        // Handle datetime construction exceptions.
+        // Log the error or handle it as needed.
+        // Example: watchdog('my_module', 'Error creating datetime: !error', ['!error' => $e->getMessage()]);
       }
       break;
 
@@ -146,13 +171,13 @@ function aventine_preprocess_node(&$variables) {
         $referenced_entities_event_type = $node->field_events_event_type?->referencedEntities();
         foreach ($referenced_entities_event_type as $term) {
           $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
-          // $name = $term->getName();
           $description = $term->getDescription();
           if (!$description == NULL) {
             $variables['description'] = t($description);
-            // $variables['attributes']['class'][] = Html::cleanCssIdentifier($term->getType());
+
           }
         }
       }
+      break;
   }
 }
