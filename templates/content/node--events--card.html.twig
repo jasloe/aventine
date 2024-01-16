@@ -9,12 +9,12 @@
 		<div class="ac-trigger">
 			<div class="row row-first">
 				<div class="field field-events-event-dates daterange">
-            {{ content.field_events_event_dates }}
+					{{ content.field_events_event_dates }}
 				</div>
 				{% apply spaceless %}
-					<div class="field field-events-rel-places entity-reference field__items">
-						{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
-					</div>
+				<div class="field field-events-rel-places entity-reference field__items">
+					{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
+				</div>
 				{% endapply %}
 			</div>
 			<div class="row row-second">
@@ -32,11 +32,11 @@
 			</a>
 			<div class="event-description">
 				<div class="row row-third event-body">
-			    {% if node.field_events_summary.value %}
-					  {{ content.field_events_summary }}
+					{% if node.field_events_summary.value %}
+						{{ content.field_events_summary }}
 					{% else %}
-{{ build }}
-	        {% endif %}
+						{{ build }}
+					{% endif %}
 				</div>
 				<div class="row row-fourth">
 					{% if content.field_events_registration|render %}
@@ -45,8 +45,8 @@
 								{{ content.field_events_registration.0['#title'] }}
 							</a>
 							{% if content.field_events_registration.1 %}
-							  <a href={{ content.field_events_registration.1['#url'] }} target="_blank">
-								{{ content.field_events_registration.1['#title'] }}
+								<a href={{ content.field_events_registration.1['#url'] }} target="_blank">
+									{{ content.field_events_registration.1['#title'] }}
 								{% endif %}
 							</a>
 						</div>
@@ -60,6 +60,3 @@
 		</div>
 	</div>
 </article>
-
-
-
