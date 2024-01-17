@@ -97,6 +97,10 @@ function aventine_preprocess_node(&$variables) {
         $end_date = $node->field_events_event_dates->end_value;
       }
 
+      // Show security notice on the basis of whether or not it is an Academy or SOF event.
+      $eventTypeTermId = $variables['node']->get('field_events_event_type')->target_id;
+      $variables['show_security_notice'] = ($eventTypeTermId != 1375);
+
       try {
         // Create datetime objects if values are not null and are in a valid format.
         $datetime_start = !empty($start_date) ? new DrupalDateTime($start_date, 'UTC') : NULL;

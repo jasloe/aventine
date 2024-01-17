@@ -37,6 +37,7 @@
 					{{ content.field_events_rel_places }}
 				</div>
 			{% endif %}
+
 			{% if content.field_events_registration.0['#url']|render is not empty %}
 				<div class="grid-item grid-item-4 event-register col-right">
 					<div class="field__label">{{ 'Registration'|t }}</div>
@@ -53,11 +54,13 @@
 					</div>
 				</div>
 			{% endif %}
-			{% if content.field_security_notice|render is not empty %}
-				<div class="grid-item grid-item-5 event-security col-right">
-					<div class="field__label">{{ 'Security notice'|t }}</div>
-					{{ content.field_security_notice }}
-				</div>
+			{% if show_security_notice %}
+				{% if content.field_security_notice|render is not empty %}
+					<div class="grid-item grid-item-5 event-security col-right">
+						<div class="field__label">{{ 'Security notice'|t }}</div>
+						{{ content.field_security_notice }}
+					</div>
+				{% endif %}
 			{% endif %}
 			{% if content.field_events_more_info|render is not empty %}
 				<div class="grid-item grid-item-6 event-more-info col-right">
