@@ -92,8 +92,6 @@
     flex: 0 1 200px;
   }
 
-  .profile .field-role {}
-
   .profile .field-media-image {
     img {
       width: auto;
@@ -339,12 +337,20 @@ body.index .card.academic-programs {
 
 .path-news-video,
 .path-attualita-video {
+  .media {
+    margin-bottom: 1rem;
+  }
+}
+
+.path-news-video,
+.path-attualita-video {
 
   .field-events-event-type,
   .field-events-event-series {
     @include label;
-    margin-top: 1rem;
   }
+
+
 }
 
 .path-attualita-video h2,
@@ -363,89 +369,86 @@ body.index .card.academic-programs {
     font-size: 1.1rem;
   }
 
-  // .card-inner .field-events-event-dates {
-  //   margin-bottom: 1rem;
-  // }
-}
 
-.path-attualita-video,
-.path-news-video {
-  .card:hover {
-    opacity: 0.9;
-  }
-}
-
-.path-attualita-video,
-.path-news-video {
-  .read-more {
-    display: block;
-    background-repeat: no-repeat;
-    text-indent: -9000px;
-    background-image: url(../images/arrow_small_external.svg);
-    height: 1.5rem;
-    margin-top: 1rem;
-  }
-}
-
-@include mq($until: tablet) {
-
-  .path-news-video .card-inner .field:not(:first-of-type),
-  .path-news-video .card-inner h2.title {
-    padding-left: 1rem;
+  .path-attualita-video,
+  .path-news-video {
+    .card:hover {
+      opacity: 0.9;
+    }
   }
 
-  .path-news-video .card-inner .read-more {
-    margin-left: 1rem;
+  .path-attualita-video,
+  .path-news-video {
+    .read-more {
+      display: block;
+      background-repeat: no-repeat;
+      text-indent: -9000px;
+      background-image: url(../images/arrow_small_external.svg);
+      height: 1.5rem;
+      margin-top: 1rem;
+    }
   }
-}
 
-.path-informazioni-personale,
-.path-about-staff {
+  @include mq($until: tablet) {
 
-  .profile .department,
-  .profile .role {
-    @include body;
-    line-height: 1;
+    .path-news-video .card-inner .field:not(:first-of-type),
+    .path-news-video .card-inner h2.title {
+      padding-left: 1rem;
+    }
+
+    .path-news-video .card-inner .read-more {
+      margin-left: 1rem;
+    }
   }
-}
-
-.profile .field-email,
-.profile .field-telephone {
-  @include body;
-}
-
-.profile .field-email {
-  margin-bottom: 1rem;
-}
-
-.path-informazioni-personale,
-.path-about-staff {
-  img {
-    width: 100%;
-  }
-}
-
-@include mq($until: tablet) {
 
   .path-informazioni-personale,
   .path-about-staff {
-    h3 {
-      padding-left: 1rem;
-    }
 
     .profile .department,
     .profile .role {
-      padding-left: 1rem;
+      @include body;
+      line-height: 1;
     }
   }
-}
 
-.people-staff .profile img {
-  width: auto;
-  height: 300px;
+  .profile .field-email,
+  .profile .field-telephone {
+    @include body;
+  }
+
+  .profile .field-email {
+    margin-bottom: 1rem;
+  }
+
+  .path-informazioni-personale,
+  .path-about-staff {
+    img {
+      width: 100%;
+    }
+  }
 
   @include mq($until: tablet) {
-    width: 100%;
-    height: auto;
+
+    .path-informazioni-personale,
+    .path-about-staff {
+      h3 {
+        padding-left: 1rem;
+      }
+
+      .profile .department,
+      .profile .role {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .people-staff .profile img {
+    width: auto;
+    height: 300px;
+
+    @include mq($until: tablet) {
+      width: 100%;
+      height: auto;
+    }
   }
 }
