@@ -25,3 +25,20 @@ body.page .page.wrapper {
 .event-container .body strong {
   font-family: $dignitasbold;
 }
+
+// Add spacing between remove videos in event detail template
+.event-container .body+.remote-video {
+  margin-top: 1.5rem;
+}
+
+.event-container .remote-video .blazy .field__item {
+  margin-bottom: 1rem;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0rem;
+  }
+}
