@@ -401,54 +401,56 @@ body.index .card.academic-programs {
     }
   }
 
+
+}
+
+.path-informazioni-personale,
+.path-about-staff {
+
+  .profile .department,
+  .profile .role {
+    @include body;
+    line-height: 1;
+  }
+}
+
+.profile .field-email,
+.profile .field-telephone {
+  @include body;
+}
+
+.profile .field-email {
+  margin-bottom: 1rem;
+}
+
+.path-informazioni-personale,
+.path-about-staff {
+  img {
+    width: 100%;
+  }
+}
+
+@include mq($until: tablet) {
+
   .path-informazioni-personale,
   .path-about-staff {
+    h3 {
+      padding-left: 1rem;
+    }
 
     .profile .department,
     .profile .role {
-      @include body;
-      line-height: 1;
+      padding-left: 1rem;
     }
   }
+}
 
-  .profile .field-email,
-  .profile .field-telephone {
-    @include body;
-  }
-
-  .profile .field-email {
-    margin-bottom: 1rem;
-  }
-
-  .path-informazioni-personale,
-  .path-about-staff {
-    img {
-      width: 100%;
-    }
-  }
+.people-staff .profile img {
+  width: auto;
+  height: 300px;
 
   @include mq($until: tablet) {
-
-    .path-informazioni-personale,
-    .path-about-staff {
-      h3 {
-        padding-left: 1rem;
-      }
-
-      .profile .department,
-      .profile .role {
-        padding-left: 1rem;
-      }
-    }
-  }
-
-  .people-staff .profile img {
-    width: auto;
-    height: 300px;
-
-    @include mq($until: tablet) {
-      width: 100%;
-      height: auto;
-    }
+    width: 100%;
+    height: auto;
   }
 }
