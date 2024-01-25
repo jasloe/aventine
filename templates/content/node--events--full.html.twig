@@ -38,6 +38,13 @@
 				</div>
 			{% endif %}
 
+			{% if content.field_events_rel_places_override|render|striptags|trim %}
+				<div class="grid-item grid-item-3 event-location col-right">
+					<div class="field__label">{{ 'Location'|t }}</div>
+					{{ content.field_events_rel_places_override }}
+				</div>
+
+			{% endif %}
 			{% if content.field_events_registration.0['#url']|render is not empty %}
 				<div class="grid-item grid-item-4 event-register col-right">
 					<div class="field__label">{{ 'Registration'|t }}</div>

@@ -736,6 +736,12 @@ body.news-features .inline-logo img {
   padding-bottom: 0rem !important;
 }
 
+/* Styles event location override */
+
+.event-container .grid-item.col-right .field-events-rel-places-override p {
+  padding-bottom: 0rem;
+}
+
 .event-container .col-right time {
   font-family: $dignitas;
 }
