@@ -1,4 +1,4 @@
-// Events.
+// Start carousel
 .front-events,
 .front-news-slideshow {
   .slick {
@@ -73,6 +73,48 @@
   color: $gray;
 }
 
+// End carousel
+
+// Start hero carousel overrides + updates
+.front.hero-carousel-container {
+  max-width: $wide;
+  margin: 0 auto;
+}
+
+.front.hero-carousel-container {
+  .media img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.front.front.hero-carousel-container {
+  .media {
+    margin-bottom: .75rem;
+  }
+
+  h2 {
+    font-family: $dignitas;
+    @include font-size($large);
+  }
+
+  time {
+    @include label;
+
+  }
+
+  h2,
+  time {
+    padding: 0 1rem;
+
+    @include mq($from: wide) {
+      padding: 0rem;
+    }
+  }
+}
+
+// End hero carousel overrides
+
 .front.news-features,
 .front.rome-prize,
 .front.fellows,
@@ -90,6 +132,10 @@
 
 .front.front.promo-layout {
   padding: 0 1rem;
+
+  @include mq($from: wide) {
+    padding: 0rem;
+  }
 }
 
 .front.news-features {

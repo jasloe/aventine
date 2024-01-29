@@ -28,10 +28,20 @@ function aventine_preprocess_html(&$variables) {
  * @param array $variables
  */
 function aventine_preprocess_page(&$variables) {
+  // Get the site name and create a linked site name variable.
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
-  $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
-  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['linked_site_name'] = [
+    '#type' => 'link',
+    '#title' => $site_name,
+    '#url' => Url::fromRoute('<front>'),
+  ];
 
+  // Check if it's the front page.
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    // Attach the 'swiper' library defined in aventine.libraries.yml.
+    $variables['#attached']['library'][] = 'aventine/swiper';
+    $variables['#attached']['library'][] = 'aventine/swiper-home-hero';
+  }
 }
 
 /**

@@ -1,7 +1,7 @@
 global-styling:
   version: VERSION
   css:
-    base:
+    theme:
       css/vendor/accordion.css: { weight: 800 }
       css/main.css: { weight: 900 }
 accordion:
@@ -10,6 +10,17 @@ accordion:
     js/accordion.js: {}
   dependencies:
     - aventine/global-scripts
+swiper:
+  version: VERSION
+  js:
+    js/swiper-bundle.min.js: {}
+    js/swiper-home-hero.js: {}
+swiper-home-hero:
+  version: VERSION
+  css:
+    theme:
+      css/vendor/swiper-bundle.min.css: { weight: 500 }
+      css/swiper.css: { weight: 600 }
 global-scripts:
   version: VERSION
   js:

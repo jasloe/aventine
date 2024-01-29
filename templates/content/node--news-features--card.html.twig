@@ -70,20 +70,18 @@
  *   in different view modes.
  */
 #}
+
 <div class="card">
 	<article{{attributes.addClass('card-inner')}}>
-
-		{{ content.field_news_features_images.0 }}
-
-		<div class='card-body'>
-			{{ 	content.field_news_features_date}}
-			<h2 class="title serif">{{ label }}</h2>
-			{{ content.field_news_features_summary }}
-			<div class="read-more">
-				<a href="{{ url }}">Read more<span></span>
-				</a>
+		<a href="{{ link_url }}" class="card-link">
+			{{ content.field_news_features_images.0 }}
+			<div class='card-body'>
+				{{ 	content.field_news_features_date}}
+				<h2 class="title serif">{{ label }}</h2>
+				{{ content.field_news_features_summary }}
+				<div class="read-more">Read more
+				</div>
 			</div>
-		</div>
-
+		</a>
 	</article>
 </div>

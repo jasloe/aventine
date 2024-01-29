@@ -1,13 +1,7 @@
 <article{{attributes.addClass('card-promo','event')}}>
 	<a href={{ url }}>
 		{{ content.field_events_image}}
-		<div
-			class="card-body">
-			{# {% if content.field_events_event_series|render is not empty %}
-													{{ content.field_events_event_series }}
-												{% else %}
-													{{ content.field_events_event_type }}
-												{% endif %} #}
+		<div class="card-body">
 			<h2 class="title serif">{{ label }}</h2>
 			<div class="event-dates">
 				{% if content.field_events_event_dates_overrid|render|striptags|trim %}
@@ -24,9 +18,7 @@
 					{{ content.field_events_rel_places[0]['#node'].field_places_address.locality }}
 				</div>
 			{% endif %}
-
 			<div class="read-more"></div>
 		</div>
-
 	</a>
 </article>

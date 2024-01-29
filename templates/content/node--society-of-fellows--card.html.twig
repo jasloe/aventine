@@ -72,17 +72,16 @@
 #}
 <div class="card">
 	<article{{attributes.addClass('card-inner')}}>
+		<a href="{{ url }}">
+			{{ content.field_sof_images.0 }}
 
-		{{ content.field_sof_images.0 }}
-
-		<div class='card-body'>
-			<div class="datetime">{{ node.getCreatedTime()|date("F j, Y") }}</div>
-			<h2 class="title serif">{{ label }}</h2>
-			<div class="read-more">
-				<a href="{{ url }}">Read more<span></span>
-				</a>
+			<div class='card-body'>
+				<div class="datetime">{{ node.getCreatedTime()|date("F j, Y") }}</div>
+				<h2 class="title serif">{{ label }}</h2>
+				<div class="read-more">
+					Read more
+				</div>
 			</div>
-		</div>
-
+		</a>
 	</article>
 </div>

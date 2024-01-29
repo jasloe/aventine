@@ -1,21 +1,18 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass')(require('sass'));
-var watch = require('gulp-watch');
+var babel = require('gulp-babel');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
-var fs = require("fs");
 var runSequence = require('run-sequence');
 var config = require("./config");
 
-/**
- * This task generates CSS from all SCSS files and compresses them down.
- */
+// Task for compiling all SCSS files except the specific one for the homepage
 gulp.task('sass', function () {
-  return gulp.src('./scss/**/*.scss')
+  return gulp.src(['./scss/**/*.scss', '!./scss/components/swiper.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({
       noCache: true,
@@ -36,36 +33,57 @@ gulp.task('sass', function () {
     }));
 });
 
-/**
- * This task minifies javascript in the js/js-src folder and places them in the js directory.
- */
-gulp.task('compress', function () {
-  return gulp.src('./js/js-src/*.js')
+// Task for compiling the specific homepage SCSS file
+gulp.task('compile-swiper-styles', function () {
+  return gulp.src('./scss/components/swiper.scss') // Path to the specific SCSS file
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(sass({
+      noCache: true,
+      outputStyle: "compressed",
+      lineNumbers: false,
+      loadPath: './css/*',
+      sourceMap: true
+    })).on('error', function (error) {
+      gutil.log(error);
+      this.emit('end');
+    })
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./css')) // Destination for the compiled CSS file
     .pipe(notify({
-      title: "JS Minified",
-      message: "All JS files in the theme have been minified.",
+      title: "Homepage SASS Compiled",
+      message: "Homepage SCSS file has been compiled to CSS.",
       onLast: true
     }));
 });
 
-/**
- * Defines a task that triggers a Drush cache clear (css-js).
- */
+// Task for minifying JavaScript
+gulp.task('compress', function () {
+  return gulp.src('./js/js-src/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
+    .pipe(uglify())
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString());
+      this.emit('end');
+    })
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./js'))
+    .pipe(notify({
+      title: "JS Transpiled and Minified",
+      message: "All JS files in the theme have been transpiled and minified.",
+      onLast: true
+    }));
+});
+
+// Drush cache clear tasks
 gulp.task('drush:cc', function () {
   if (!config.drush.enabled) {
     return;
   }
-
-  return gulp.src('', {
-      read: false
-    })
-    .pipe(shell([
-      config.drush.alias.css_js
-    ]))
+  return gulp.src('', {read: false})
+    .pipe(shell([config.drush.alias.css_js]))
     .pipe(notify({
       title: "Caches cleared",
       message: "Drupal CSS/JS caches cleared.",
@@ -73,20 +91,12 @@ gulp.task('drush:cc', function () {
     }));
 });
 
-/**
- * Defines a task that triggers a Drush cache rebuild.
- */
 gulp.task('drush:cr', function () {
   if (!config.drush.enabled) {
     return;
   }
-
-  return gulp.src('', {
-      read: false
-    })
-    .pipe(shell([
-      config.drush.alias.cr
-    ]))
+  return gulp.src('', {read: false})
+    .pipe(shell([config.drush.alias.cr]))
     .pipe(notify({
       title: "Cache rebuilt",
       message: "Drupal cache rebuilt.",
@@ -94,10 +104,7 @@ gulp.task('drush:cr', function () {
     }));
 });
 
-/**
- * Define a task to spawn Browser Sync.
- * Options are defaulted, but can be overridden within your config.js file.
- */
+// Browser Sync task
 gulp.task('browser-sync', function () {
   browserSync.init({
     files: ['css/**/*.css', 'js/*.js'],
@@ -109,34 +116,23 @@ gulp.task('browser-sync', function () {
   });
 });
 
-/**
- * Define a task to be called to instruct browser sync to reload.
- */
 gulp.task('reload', function () {
   browserSync.reload();
 });
 
-/**
- * Combined tasks that are run synchronously specifically for twig template changes.
- */
+// Task for flushing Drupal cache specifically for twig template changes
 gulp.task('flush', function () {
   runSequence('drush:cr', 'reload');
 });
 
-/**
- * Defines the watcher task.
- */
+// Watcher tasks
 gulp.task('watch', function () {
-  // watch scss for changes and clear drupal theme cache on change
-  gulp.watch(['scss/**/*.scss'], ['sass', 'drush:cc']);
-
-  // watch js for changes and clear drupal theme cache on change
+  gulp.watch(['scss/**/*.scss', '!./scss/components/swiper.scss'], ['sass', 'drush:cc']);
+  gulp.watch(['scss/components/swiper.scss'], ['compile-swiper-styles', 'drush:cc']);
   gulp.watch(['js/js-src/**/*.js'], ['compress', 'drush:cc']);
-
-  // If user has specified an override, rebuild Drupal cache
   if (!config.twig.useCache) {
     gulp.watch(['templates/**/*.html.twig', '*.theme'], ['drush:cc']);
   }
 });
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', ['watch', 'browser-sync', 'compile-swiper-styles']);

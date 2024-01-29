@@ -1,11 +1,4 @@
-var el = document.querySelectorAll(".field-page-internal-link > a");
-
-for (i = 0; i < el.length; ++i) {
-  el[i].innerHTML = "<span></span>";
-}
-
 (function ($) {
-  // add markup to region-header
   var $window = $(window);
   var $hamburger = $(".hamburger");
   var $body = $("body");

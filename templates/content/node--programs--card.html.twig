@@ -71,16 +71,14 @@
  */
 #}
 <article{{attributes.addClass('card-inner')}}>
-
-	{{ content.field_program_image }}
-	<div class='card-body'>
-		{{ content.field_program_dates}}
-		<h2 class="title">{{ label }}</h2>
-		{{ content.field_program_summary }}
-
-		<div class="read-more">
-			<a href="{{ url }}">Read more<span></span>
-			</a>
-		</div>
-
+	<a href="{{ url }}">
+		{{ content.field_program_image }}
+		<div class='card-body'>
+			{{ content.field_program_dates}}
+			<h2 class="title">{{ label }}</h2>
+			{{ content.field_program_summary }}
+			<div class="read-more">
+				Read more
+			</div>
+		</a>
 	</article>
