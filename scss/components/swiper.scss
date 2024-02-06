@@ -16,13 +16,13 @@
 }
 
 /* Swiper navigation overrides */
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.hero-carousel-container .swiper-button-next:after,
+.hero-carousel-container .swiper-button-prev:after {
   content: '' !important;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.hero-carousel-container .swiper-button-prev,
+.hero-carousel-container .swiper-button-next {
   position: absolute;
   top: 0;
   height: 20vh;
@@ -32,21 +32,21 @@
   padding: 1px !important;
 }
 
-.swiper-button-prev {
+.hero-carousel-container .swiper-button-prev {
   cursor: url('../images/arrow_carousel_left.png') 10 15, auto;
   left: 0;
 }
 
-.swiper-button-next {
+.hero-carousel-container .swiper-button-next {
   cursor: url('../images/arrow_carousel_right.png') 10 15, auto;
   right: 0;
 }
 
 
-.swiper-button-next:focus {
+.hero-carousel-container .swiper-button-next:focus {
   outline: none;
 }
 
-.swiper-button-prev:focus {
+.hero-carousel-container.swiper-button-prev:focus {
   outline: none;
 }

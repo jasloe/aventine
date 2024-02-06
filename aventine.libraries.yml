@@ -15,6 +15,7 @@ swiper:
   js:
     js/swiper-bundle.min.js: {}
     js/swiper-home-hero.js: {}
+    js/swiper-home-promo-events.js: {}
 swiper-home-hero:
   version: VERSION
   css:
