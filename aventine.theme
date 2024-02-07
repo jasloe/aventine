@@ -97,6 +97,7 @@ function aventine_preprocess_node(&$variables) {
   switch ($view_mode) {
     case "full":
     case "promo":
+    case "promo_no_image":
       // Check if date values are not null.
       $start_date = NULL;
       if ($node->hasField('field_events_event_dates') && !$node->field_events_event_dates->isEmpty()) {

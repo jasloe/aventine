@@ -1,8 +1,6 @@
 <article{{attributes.addClass('card-promo','event')}}>
 	<a href={{ url }}>
 		<div class="card-body">
-
-
 			{% if content.field_events_event_series|render is not empty %}
 				{{ node.field_events_event_series|view('name')  }}
 			{% else %}
