@@ -1,5 +1,3 @@
-console.log('Swiper loaded');
-
 const swiperHomeHero = new Swiper('.swiper-home-hero', {
   slidesPerView: 1,
   centeredSlides: "auto",

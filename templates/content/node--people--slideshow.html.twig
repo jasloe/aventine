@@ -72,15 +72,13 @@
 #}
 
 <div class="portrait-wrapper">
-	{{ content.field_people_portrait }}
-</div>
+	<a href="{{ url }}" class="more">
+		{{ content.field_people_portrait }}
+	</div>
 
-<div class="bio-wrapper">
-	<h3 class="title">{{ label }}</h3>
-	{{ content.field_people_affiliations }}
-</div>
-<div class="more">
-	  <a href="{{ url }}" class="more">
-		<span></span>
-	</a>
+	<div class="bio-wrapper">
+		<h3 class="title">{{ label }}</h3>
+		{{ content.field_people_affiliations }}
+	</div>
+	<div class="more"></a>
 </div>

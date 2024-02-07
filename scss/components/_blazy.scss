@@ -26,7 +26,6 @@
   background: $light-brown !important;
 }
 
-
 .is-b-loading:not(.is-b-loaded):not([data-animation])::before {
   content: '';
   background: none;
@@ -40,4 +39,26 @@
   -webkit-animation: none;
   animation: none;
   opacity: .4;
+}
+
+/* Hide for non-js users. */
+.is-b-loading::before {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 30px;
+  max-width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  content: "";
+  background: #2eaae0;
+  font-size: 0;
+}
+
+/* Only animate when being visible. */
+.is-b-loading.is-b-visible::before {
+  display: none !important;
 }

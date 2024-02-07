@@ -541,16 +541,6 @@
   background-image: none !important;
 }
 
-// Add external arrow to quick news items
-// .news-item h2:after {
-//   content: url("../images/arrow_external.svg");
-//   transition: opacity 0.22s ease;
-//   display: inline-block;
-//   width: 15px;
-//   height: 15px;
-//   margin-left: 10px;
-// }
-
 /* refactor leadership carousel */
 .front.leadership .leadership-container a {
   position: relative !important;
@@ -608,11 +598,17 @@
 }
 
 // issue 599, swiper implementation
-.front .swiper.swiper-home-promo-events {
+.front .swiper.swiper-home-promo-events,
+.front .swiper.swiper-home-leadership,
+.front .swiper.swiper-home-fellows {
   padding-bottom: 35px !important;
 }
 
+.front .swiper.swiper-home-hero {
+  padding-bottom: 40px !important;
+}
 
+// issue 599, promo events
 .front .swiper-home-promo-events {
   max-width: $wide;
   margin: 3rem auto;
@@ -662,4 +658,17 @@
 
 
   }
+}
+
+// issue 599, fellows
+.front .swiper-home-fellows .swiper-wrapper {
+  height: 100%;
+}
+
+.front .swiper-home-fellows img {
+  width: auto;
+}
+
+.front .swiper-home-fellows .swiper-slide {
+  width: auto !important;
 }
