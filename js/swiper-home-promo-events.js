@@ -1,2 +1,2 @@
-"use strict";var swiperHomePromoEvents=new Swiper(".swiper-home-promo-events",{slidesPerView:6,centeredSlides:"auto",spaceBetween:1,loop:!0,pagination:{el:".swiper-pagination",clickable:!0,renderBullet:function(e,n){return'<span class="'+n+'"></span>'}},keyboard:{enabled:!0}});
+"use strict";var swiperHomePromoEvents=new Swiper(".swiper-home-promo-events",{slidesPerView:2,spaceBetween:3,loop:!0,pagination:{el:".swiper-pagination",clickable:!0,renderBullet:function(e,s){return'<span class="'+s+'"></span>'}},breakpoints:{480:{slidesPerView:2,spaceBetween:3},768:{slidesPerView:4,spaceBetween:3},1020:{slidesPerView:5,spaceBetween:3}}});
 //# sourceMappingURL=maps/swiper-home-promo-events.js.map

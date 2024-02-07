@@ -606,3 +606,60 @@
     margin-bottom: 1.6rem;
   }
 }
+
+// issue 599, swiper implementation
+.front .swiper.swiper-home-promo-events {
+  padding-bottom: 35px !important;
+}
+
+
+.front .swiper-home-promo-events {
+  max-width: $wide;
+  margin: 3rem auto;
+}
+
+.front .swiper-home-promo-events .swiper-wrapper {
+  height: 340px;
+}
+
+.front .swiper-home-promo-events .swiper-wrapper .card-promo {
+  background: $accent;
+  height: 100%;
+  padding: 1rem 1rem 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.front .swiper-home-promo-events .swiper-wrapper .card-body .read-more {
+  margin-top: 1rem;
+}
+
+.front .swiper-home-promo-events .swiper-wrapper .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .event-dates,
+  .field-events-event-dates-overrid {
+    margin-top: auto;
+  }
+}
+
+.front .swiper-home-promo-events {
+
+  .card-promo {
+
+    .field-events-event-series,
+    .field-events-event-type {
+      @include label;
+    }
+
+    .field-events-event-dates-overrid,
+    .event-location,
+    .event-date,
+    .event-time {
+      @include body;
+    }
+
+
+  }
+}
