@@ -3,13 +3,13 @@
 }
 
 #block-aventine-notice {
-  background: $black;
+  background: #00dec4;
 }
 
 #block-aventine-notice .field p,
 #block-aventine-notice .field p a {
   @include label;
-  color: $white;
+  color: $black;
   padding: 0.5rem 0;
   transition: color 0.22s ease-in-out;
 }
@@ -21,8 +21,8 @@
 // }
 
 #block-aventine-notice .field p a:hover {
-  color: $gray;
-  border-bottom-color: $gray;
+  color: #6a6a6a;
+  border-bottom-color: #6a6a6a;
 }
 
 
