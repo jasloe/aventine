@@ -608,6 +608,30 @@
   padding-bottom: 40px !important;
 }
 
+// issue 599, hero hover state
+
+.swiper-slide,
+.swiper-slide h2.title {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+.swiper-slide h2.title,
+.swiper-slide time,
+{
+color: $black;
+transition: color .25s ease-in-out;
+}
+
+.swiper-slide:hover {
+  opacity: .9;
+
+  h2.title,
+  time {
+    color: $gray;
+  }
+}
+
 // issue 599, promo events
 .front .swiper-home-promo-events {
   max-width: $wide;
@@ -615,6 +639,7 @@
 }
 
 .front .swiper-home-promo-events .swiper-wrapper {
+  min-height: 300px;
   height: 340px;
 }
 
@@ -636,7 +661,7 @@
 
   .event-dates,
   .field-events-event-dates-overrid {
-    margin-top: auto;
+    // margin-top: auto;
   }
 }
 
@@ -663,6 +688,7 @@
 // issue 599, fellows
 .front .swiper-home-fellows .swiper-wrapper {
   height: 100%;
+  margin-bottom: 1rem;
 }
 
 .front .swiper-home-fellows img {
