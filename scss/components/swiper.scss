@@ -56,6 +56,11 @@
       font-size: 0;
     }
   }
+}
 
-
+// hide promo pagination above 786px
+.promo.swiper .swiper-pagination {
+  @media (min-width: 1020px) {
+    display: none;
+  }
 }

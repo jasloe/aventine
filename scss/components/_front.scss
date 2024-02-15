@@ -639,14 +639,29 @@ transition: color .25s ease-in-out;
 }
 
 .front .swiper-home-promo-events .swiper-wrapper {
-  min-height: 300px;
-  height: 340px;
+  // min-height: 300px;
+  // height: 320px;
+
+  @include mq($from: tablet, $until: desktop) {
+    // min-height: 260px;
+    // height: 260px;
+  }
+
+  @include mq($until: $narrow) {
+    // min-height: 250px;
+    // height: 250px;
+  }
+}
+
+.front .swiper-home-promo-events .swiper-slide {
+  background-color: $accent;
+  height: auto;
 }
 
 .front .swiper-home-promo-events .swiper-wrapper .card-promo {
   background: $accent;
   height: 100%;
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -657,12 +672,6 @@ transition: color .25s ease-in-out;
 .front .swiper-home-promo-events .swiper-wrapper .card-body {
   display: flex;
   flex-direction: column;
-  height: 100%;
-
-  .event-dates,
-  .field-events-event-dates-overrid {
-    // margin-top: auto;
-  }
 }
 
 .front .swiper-home-promo-events {

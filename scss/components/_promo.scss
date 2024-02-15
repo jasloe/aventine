@@ -62,14 +62,6 @@
 }
 
 @include mq($until: tablet) {
-  .card-promo {
-    margin-bottom: 2rem;
-
-    h2,
-    .card-body {
-      padding-right: 2rem;
-    }
-  }
 
   .card-promo:last-child {
     margin-bottom: 0;
