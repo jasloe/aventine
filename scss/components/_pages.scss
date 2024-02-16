@@ -1148,3 +1148,8 @@ body.news-features .inline-logo img {
     color: $gray;
   }
 }
+
+// Add p.small style to events page
+body.events .event-container .event-body p.small {
+  @include font-size(1.1rem);
+}

@@ -707,3 +707,16 @@ transition: color .25s ease-in-out;
 .front .swiper-home-fellows .swiper-slide {
   width: auto !important;
 }
+
+// increase spacing between promo w/image cards
+.front.promo-layout .card-promo {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0rem;
+  }
+
+  @include mq($from: tablet) {
+    margin-bottom: 0rem;
+  }
+}

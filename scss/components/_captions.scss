@@ -22,3 +22,7 @@
 .page.wrapper h4 {
   @include caption;
 }
+
+.event-image-wrapper .blazy__caption {
+  padding: 0 1rem;
+}

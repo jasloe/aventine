@@ -20,3 +20,5 @@ regions:
   footer: Footer
   footer_second: Second footer
   notice: Notice
+ckeditor5-stylesheets:
+  - css/ckeditor.css

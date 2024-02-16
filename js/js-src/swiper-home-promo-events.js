@@ -30,7 +30,7 @@ const swiperHomePromoEvents = new Swiper('.swiper-home-promo-events', {
       // loopFillGroupWithBlank: false,
     },
     1020: {
-      slidesPerView: 6,
+      slidesPerView: 5,
       spaceBetween: 3,
     }
   }

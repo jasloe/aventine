@@ -3,6 +3,7 @@ global-styling:
   css:
     theme:
       css/vendor/accordion.css: { weight: 800 }
+      css/ckeditor.css: { weight: 900 }
       css/main.css: { weight: 900 }
 accordion:
   version: VERSION
