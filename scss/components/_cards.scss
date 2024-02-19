@@ -88,9 +88,10 @@
     column-gap: 1rem;
   }
 
-  .profile {
-    flex: 0 1 200px;
-  }
+  // fix constrainted aspect ratio
+  // .profile {
+  //   flex: 1 0 300px;
+  // }
 
   .profile .field-media-image {
     img {
