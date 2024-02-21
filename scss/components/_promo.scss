@@ -43,7 +43,8 @@
 
   .event-date,
   .event-time,
-  .event-location {
+  .event-location,
+  .field-events-event-dates-overrid p {
     @include body;
   }
 
@@ -97,3 +98,7 @@
     opacity: 90%;
   }
 }
+
+// .card-promo.event h2 {
+//   word-break: break-word;
+// }

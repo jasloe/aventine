@@ -633,9 +633,15 @@ transition: color .25s ease-in-out;
 }
 
 // issue 599, promo events
-.front .swiper-home-promo-events {
+.front.promo-layout-swiper {
   max-width: $wide;
   margin: 3rem auto;
+
+  >h2 {
+    @include title-card-sans;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .front .swiper-home-promo-events .swiper-wrapper {
