@@ -456,3 +456,13 @@ body.index .card.academic-programs {
 .path-news-video .read-more {
   margin-top: 1rem;
 }
+
+.path-informazioni-personale .profile,
+.path-about-staff .profile {
+  flex: 0 1 200px !important;
+}
+
+.path-informazioni-personale .profile-container:first-of-type .profile,
+.path-about-staff .profile-container:first-of-type .profile {
+  flex: 0 1 300px !important;
+}
