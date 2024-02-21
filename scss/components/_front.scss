@@ -637,11 +637,18 @@ transition: color .25s ease-in-out;
   max-width: $wide;
   margin: 3rem auto;
 
+}
+
+.front.promo-layout,
+.front.promo-layout-swiper {
   >h2 {
     @include title-card-sans;
-    padding: 0 1rem;
     margin-bottom: 1rem;
   }
+}
+
+.front.front.promo-layout-swiper>h2 {
+  padding: 0 1rem;
 }
 
 .front .swiper-home-promo-events .swiper-wrapper {
