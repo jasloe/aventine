@@ -627,7 +627,7 @@ body.news-features .inline-logo img {
 
   .register a {
     padding: 0.675rem 1rem;
-    border: 2px solid $black;
+    border: 1px solid $black;
     color: $black;
   }
 
@@ -643,7 +643,7 @@ body.news-features .inline-logo img {
 @include mq($until: tablet) {
   .path-events .events-container {
     .register {
-      border: 1px solid $black;
+      // border: 1px solid $black;
     }
   }
 }
@@ -784,6 +784,10 @@ body.news-features .inline-logo img {
       order: 4;
     }
 
+    .grid-item-8.event-accessibility {
+      order: 7;
+    }
+
     .grid-item-9.event-sponsorship {
       order: 9;
     }
@@ -791,6 +795,7 @@ body.news-features .inline-logo img {
     .event-container .row-second {
       padding: 0 1rem;
     }
+
   }
 }
 
