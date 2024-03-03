@@ -47,8 +47,13 @@
 							{% if content.field_events_registration.1 %}
 								<a href={{ content.field_events_registration.1['#url'] }} target="_blank">
 									{{ content.field_events_registration.1['#title'] }}
-								{% endif %}
-							</a>
+								</a>
+							{% endif %}
+							{% if content.field_events_registration.2 %}
+								<a href={{ content.field_events_registration.2['#url'] }} target="_blank">
+									{{ content.field_events_registration.2['#title'] }}
+								</a>
+							{% endif %}
 						</div>
 					{% endif %}
 					<div class="more-info">

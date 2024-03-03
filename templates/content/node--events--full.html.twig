@@ -58,6 +58,10 @@
 							<a href={{ content.field_events_registration.1['#url'] }} target="_blank">
 								{{ content.field_events_registration.1['#title'] }}</a>
 						{% endif %}
+						{% if content.field_events_registration.2['#url']|render is not empty %}
+							<a href={{ content.field_events_registration.2['#url'] }} target="_blank">
+								{{ content.field_events_registration.2['#title'] }}</a>
+						{% endif %}
 					</div>
 				</div>
 			{% endif %}
