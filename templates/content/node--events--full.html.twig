@@ -89,12 +89,21 @@
 					{{ content.field_events_more_info }}
 				</div>
 			{% endif %}
+
 			{% if content.field_events_accessibility|render is not empty %}
-				<div class="grid-item grid-item-8 event-accessibility col-right">
-					<div class="field__label">{{ 'Accessibility'|t }}</div>
-					{{ content.field_events_accessibility }}
-				</div>
+				{% if node.langcode.value == 'en' %}
+					<div class="grid-item grid-item-8 event-accessibility col-right">
+						<div class="field__label">{{ 'Accessibility'|t }}</div>
+						{{ content.field_events_accessibility }}
+					</div>
+				{% elseif content.field_events_accessib_italian|render is not empty %}
+					<div class="grid-item grid-item-8 event-accessibility col-right">
+						<div class="field__label">{{ 'Accessibility'|t }}</div>
+						{{ content.field_events_accessib_italian }}
+					</div>
+				{% endif %}
 			{% endif %}
+
 			{% if content.field_events_sponsorship|render is not empty %}
 				<div class="grid-item grid-item-9 event-sponsorship col-right">
 					<div class="field__label">{{ 'Event sponsorship'|t }}</div>
