@@ -66,13 +66,23 @@
 				</div>
 			{% endif %}
 			{% if show_security_notice %}
-				{% if content.field_security_notice|render is not empty %}
-					<div class="grid-item grid-item-5 event-security col-right">
-						<div class="field__label">{{ 'Security notice'|t }}</div>
-						{{ content.field_security_notice }}
-					</div>
+				{% if node.langcode.value == 'en' %}
+					{% if content.field_security_notice|render is not empty %}
+						<div class="grid-item grid-item-5 event-security col-right">
+							<div class="field__label">{{ 'Security notice'|t }}</div>
+							{{ content.field_security_notice }}
+						</div>
+					{% endif %}
+				{% else %}
+					{% if content.field_security_notice_italian|render is not empty %}
+						<div class="grid-item grid-item-5 event-security col-right">
+							<div class="field__label">{{ 'Security notice'|t }}</div>
+							{{ content.field_security_notice_italian }}
+						</div>
+					{% endif %}
 				{% endif %}
 			{% endif %}
+
 			{% if content.field_events_more_info|render is not empty %}
 				<div class="grid-item grid-item-6 event-more-info col-right">
 					<div class="field__label">{{ 'For more information'|t }}</div>
